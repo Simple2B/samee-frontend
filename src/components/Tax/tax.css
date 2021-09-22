@@ -1,0 +1,18 @@
+.tax {
+  display: flex;
+  align-items: center;
+}
+
+.tax_title {
+  font-size: 40px;
+}
+
+.pop_up_triger {
+  color: white;
+}
+
+@media (max-width: 375px) {
+  .tax {
+    display: block;
+  }
+}
