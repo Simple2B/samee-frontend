@@ -1,0 +1,12 @@
+.employee_salary_range {
+  display: block;
+}
+
+.employee_inputs_set {
+  display: flex;
+  align-items: center;
+}
+
+.gold_text {
+  color: #eac28c;
+}
