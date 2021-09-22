@@ -1,0 +1,14 @@
+.housing {
+  display: flex;
+  align-items: center;
+}
+
+.housing_title {
+  font-size: 40px;
+}
+
+@media (max-width: 375px) {
+  .housing {
+    display: block;
+  }
+}
