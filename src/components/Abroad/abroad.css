@@ -1,0 +1,14 @@
+.abroad {
+  display: flex;
+  align-items: center;
+}
+
+.abroad_title {
+  font-size: 40px;
+}
+
+@media (max-width: 375px) {
+  .abroad {
+    display: block;
+  }
+}
