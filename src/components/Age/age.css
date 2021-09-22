@@ -1,0 +1,19 @@
+.age {
+  margin-top: 100px;
+}
+
+.age_text {
+  margin-bottom: 20px;
+}
+
+.age_calculation {
+  color: #eac28c;
+}
+
+.age_text:nth-child(2) {
+  margin-bottom: 60px;
+}
+
+.error {
+  color: red;
+}
