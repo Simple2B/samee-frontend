@@ -1,4 +1,5 @@
 import React, { ReactElement, useState } from 'react'
+import { useHistory } from 'react-router-dom';
 import Popup from 'reactjs-popup'
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -34,6 +35,8 @@ export default function SelfEmployed(): ReactElement {
   const [period, setPeriod] = useState<any>('mensuel');
   const [error, setError] = useState('')
 
+  const history = useHistory()
+
   const classes = useStyles();
 
   const handleSalary = (e: { target: { value: any; }; }) => {
@@ -57,6 +60,7 @@ export default function SelfEmployed(): ReactElement {
       setError('')
       localStorage.setItem('salary', salary)
       localStorage.setItem('period', period)
+      history.push('/savings-calculation')
     }
   }
 
@@ -121,7 +125,7 @@ export default function SelfEmployed(): ReactElement {
         />)
       }
 
-      <button className="next_button">Continuer</button>
+      <button onClick={handleSubmit} className="next_button">Continuer</button>
 
       <Popup modal trigger={<div className="pop_up_triger">Comment fonctionne l'économie d'impôts?</div>}>
         {(close: ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined) => (

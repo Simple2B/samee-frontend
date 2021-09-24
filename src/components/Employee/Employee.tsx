@@ -1,4 +1,5 @@
 import React, { ReactElement, useState } from 'react'
+import { useHistory } from 'react-router-dom';
 import Popup from 'reactjs-popup'
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -35,6 +36,8 @@ export default function Employee(): ReactElement {
   const [period, setPeriod] = useState<any>('mensuel');
   const [error, setError] = useState('')
 
+  const history = useHistory()
+
   const classes = useStyles();
 
   const handleSalary = (e: { target: { value: any; }; }) => {
@@ -58,6 +61,7 @@ export default function Employee(): ReactElement {
       setError('')
       localStorage.setItem('salary', salary)
       localStorage.setItem('period', period)
+      history.push('/savings-calculation')
     }
   }
 
