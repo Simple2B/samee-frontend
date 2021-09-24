@@ -1,0 +1,22 @@
+.investment_solution {
+  display: flex;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.investment_solution_list-item {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.investment_solution_title_big {
+  font-size: 40px;
+}
+
+@media (max-width: 376px) {
+  .investment_solution {
+    display: block;
+  }
+}
