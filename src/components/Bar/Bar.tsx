@@ -12,8 +12,8 @@ export default function Bar(): ReactElement {
         <span className="contacts_text">
           Besoin d'aide ?
         </span>
-        <a href="mailto:"><img className="contact_mail" alt="mail" /></a>
-        <a href="tel:"><img className="contact_phone" alt="phone" /></a>
+        <a href="mailto:"><img src="/image/mail.svg" className="contact_mail" alt="mail" /></a>
+        <a href="tel:"><img src="/image/phone.svg" className="contact_phone" alt="phone" /></a>
       </div>
     </div>
   )

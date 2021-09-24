@@ -28,6 +28,11 @@ body {
   height: 100vh;
 }
 
+.phone_img {
+  width: 250px;
+  height: auto;
+}
+
 @media (max-width: 376px) {
 
   body {
@@ -38,5 +43,9 @@ body {
     padding: 20px;
     overflow: scroll;
     padding-bottom: 70px;
+  }
+
+  .title {
+    font-size: 25px !important;
   }
 }

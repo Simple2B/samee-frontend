@@ -26,6 +26,20 @@ import { localStorageApi } from './helpers/localStorage';
 import Occupation from './components/Occupation/Occupation';
 import Employee from './components/Employee/Employee';
 import SelfEmployed from './components/SelfEmployed/SelfEmployed';
+import SavingCalculation from './components/SavingCalculation/SavingCalculation';
+import GuaranteedSavingSolution from './components/GuaranteedSavingSolution/GuaranteedSavingSolution';
+import WhatIsGuaranteesSolution from './components/WhatIsGuaranteesSolution/WhatIsGuaranteesSolution';
+import GuaranteesSolutionAdvantages from './components/GuaranteesSolutionAdvantages/GuaranteesSolutionAdvantages';
+import GuaranteesSavingSolutionForWhom from './components/GuaranteesSavingSolutionForWhom/GuaranteesSavingSolutionForWhom';
+import HalfGuaranteedSolution from './components/HalfGuaranteedSolution/HalfGuaranteedSolution';
+import WhatIsHalfGuaranteedSolution from './components/WhatIsHalfGuaranteedSolution/WhatIsHalfGuaranteedSolution';
+import HalfGuaranteedSolutionAdvantages from './components/HalfGuaranteedSolutionAdvantages/HalfGuaranteedSolutionAdvantages';
+import HalfGuaranteedSolutionForWhom from './components/HalfGuaranteedSolutionForWhom/HalfGuaranteedSolutionForWhom';
+import InvestmentSolution from './components/InvestmentSolution/InvestmentSolution';
+import WhatIsInvestmentSolution from './components/WhatIsInvestmentSolution/WhatIsInvestmentSolution';
+import InvestmentSolutionAdvantages from './components/InvestmentSolutionAdvantages/InvestmentSolutionAdvantages';
+import InvestmentSolutionForWhom from './components/InvestmentSolutionForWhom/InvestmentSolutionForWhom';
+import ChooseSolution from './components/ChooseSolution/ChooseSolution';
 
 
 function App() {
@@ -63,17 +77,59 @@ function App() {
 
         <div className="steps">
           <ul className="nav">
-            <Stepper activeStep={activeStep.id - 1} alternativeLabel>
+            {/* <Stepper activeStep={activeStep.id - 1} alternativeLabel>
               {steps.map((label) => (
                 <Step key={label.key}>
                   <StepLabel>{label.label}</StepLabel>
                 </Step>
               ))}
-            </Stepper>
+            </Stepper> */}
           </ul>
         </div>
         <Router>
           <Switch>
+            <Route path="/choose-solution">
+              <ChooseSolution />
+            </Route>
+            <Route path="/investment-solution-for-whom">
+              <InvestmentSolutionForWhom />
+            </Route>
+            <Route path="/investment-solution-advantages">
+              <InvestmentSolutionAdvantages />
+            </Route>
+            <Route path="/what-is-investment-solution">
+              <WhatIsInvestmentSolution />
+            </Route>
+            <Route path="/investment-solution">
+              <InvestmentSolution />
+            </Route>
+            <Route path="/half-guaranteed-solution-for-whom">
+              <HalfGuaranteedSolutionForWhom />
+            </Route>
+            <Route path="/half-guaranteed-solution-advantages">
+              <HalfGuaranteedSolutionAdvantages />
+            </Route>
+            <Route path="/what-is-half-guaranteed-solution">
+              <WhatIsHalfGuaranteedSolution />
+            </Route>
+            <Route path="/half-guarantee-saving-solution">
+              <HalfGuaranteedSolution />
+            </Route>
+            <Route path="/saving-solution-for-whom">
+              <GuaranteesSavingSolutionForWhom />
+            </Route>
+            <Route path="/saving-solution-advantages">
+              <GuaranteesSolutionAdvantages />
+            </Route>
+            <Route path="/what-is-saving-solution">
+              <WhatIsGuaranteesSolution />
+            </Route>
+            <Route path="/guarantee-saving-solution">
+              <GuaranteedSavingSolution />
+            </Route>
+            <Route path="/savings-calculation">
+              <SavingCalculation />
+            </Route>
             <Route path="/self-employed">
               <SelfEmployed />
             </Route>

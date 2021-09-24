@@ -10,6 +10,21 @@
   height: auto;
 }
 
+.contact_mail {
+  width: 40px;
+  height: auto;
+  margin: 0 15px 0 15px;
+}
+
+.contact_phone {
+  width: 40px;
+  height: auto;
+}
+
+.bar_contacts {
+  display: flex;
+}
+
 @media (max-width: 376px) {
   .bar {
     display: flex;
@@ -28,6 +43,12 @@
 
   .logo_img {
     width: 43px;
+    height: auto;
+  }
+
+
+  .contact_phone {
+    width: 35px;
     height: auto;
   }
 

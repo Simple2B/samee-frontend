@@ -31,7 +31,7 @@ export default function Welcome(): ReactElement {
         <button onClick={handleSubmit} className="next_button">Continuer</button>
       </div>
       <div className="welcome_image">
-        <img className="phone_img" src="#" alt="phone" />
+        <img className="phone_img" src="/image/screen1.png" alt="phone" />
       </div>
 
     </div>
