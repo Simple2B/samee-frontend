@@ -51,6 +51,8 @@
   .choose_solution_block_wrapper {
     flex-direction: row;
     justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
   }
 
   .choose_solution_block {

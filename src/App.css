@@ -6,7 +6,7 @@ body {
   background-color: #000519;
   color: #fff;
   font-size: 35px;
-  font-family: 'Archivo Narrow, sans-serif';
+  font-family: "Archivo Narrow, sans-serif";
 }
 
 .nav {
@@ -34,7 +34,6 @@ body {
 }
 
 @media (max-width: 376px) {
-
   body {
     font-size: 20px;
   }

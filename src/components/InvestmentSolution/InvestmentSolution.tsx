@@ -1,27 +1,26 @@
-import React, { ReactElement } from 'react'
-import { useHistory } from 'react-router-dom'
-import Popup from 'reactjs-popup'
-import './investmentSolution.css'
-
+import React, { ReactElement } from "react";
+import { useHistory } from "react-router-dom";
+import Popup from "reactjs-popup";
+import "./investmentSolution.css";
 
 export default function InvestmentSolution(): ReactElement {
-  const history = useHistory()
+  const history = useHistory();
 
   const handleSubmit = () => {
-    history.push('/choose-solution')
-  }
+    history.push("/choose-solution");
+  };
 
   const handleWhatIs = () => {
-    history.push('/what-is-investment-solution')
-  }
+    history.push("/what-is-investment-solution");
+  };
 
   const handleAdvantages = () => {
-    history.push('/investment-solution-advantages')
-  }
+    history.push("/investment-solution-advantages");
+  };
 
   const handleForWhom = () => {
-    history.push('/investment-solution-for-whom')
-  }
+    history.push("/investment-solution-for-whom");
+  };
 
   return (
     <>
@@ -29,37 +28,59 @@ export default function InvestmentSolution(): ReactElement {
         <div className="investment_solution_text">
           <div className="investment_solution_title_big gold_text title">
             La solution "100% fonds de placement"
-        </div>
+          </div>
           <div className="investment_solution_title">
-            Aucun capital garanti, le 100% de votre argent est en fonds de placement
-        </div>
+            Aucun capital garanti, le 100% de votre argent est en fonds de
+            placement
+          </div>
 
           <ul className="investment_solution_list">
-            <li onClick={handleWhatIs} className="investment_solution_list-item">
+            <li
+              onClick={handleWhatIs}
+              className="investment_solution_list-item"
+            >
               Qu'est-ce que c'est ?
-          </li>
-            <li onClick={handleAdvantages} className="investment_solution_list-item">
+            </li>
+            <li
+              onClick={handleAdvantages}
+              className="investment_solution_list-item"
+            >
               Quels sont les avantages ?
-          </li>
-            <li onClick={handleForWhom} className="investment_solution_list-item">
+            </li>
+            <li
+              onClick={handleForWhom}
+              className="investment_solution_list-item"
+            >
               À qui est-elle destinée ?
-          </li>
+            </li>
           </ul>
         </div>
 
-        <Popup modal trigger={<div className="pop_up_triger"><img className="video_img" alt="video" src="/image/video2.png" /></div>}>
-          {(close: ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined) => (
+        <Popup
+          modal
+          trigger={
+            <div className="pop_up_triger">
+              <img className="video_img" alt="video" src="/image/video2.png" />
+            </div>
+          }
+        >
+          {(
+            close:
+              | ((
+                event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+              ) => void)
+              | undefined
+          ) => (
             <>
               <button className="close" onClick={close}>
                 X
               </button>
               <div className="pop_up">
                 <span>Here is video</span>
-
               </div>
-            </>)}
+            </>
+          )}
         </Popup>
-
       </div>
       <div className="buttons_set">
         <button onClick={handleSubmit} className="next_button">
@@ -67,5 +88,5 @@ export default function InvestmentSolution(): ReactElement {
         </button>
       </div>
     </>
-  )
-}
+  );
+};

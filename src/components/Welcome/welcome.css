@@ -28,6 +28,14 @@
   transition: background-color 1s;
 }
 
+.next_button:disabled {
+  background-color: grey;
+}
+
+.next_button:disabled:hover {
+  background-color: grey;
+}
+
 .next_button:hover {
   background-color: #a88b64;
 }
