@@ -25,7 +25,7 @@
   display: flex;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 425px) {
   .bar {
     display: flex;
     justify-content: space-between;

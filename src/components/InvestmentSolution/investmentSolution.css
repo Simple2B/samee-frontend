@@ -15,7 +15,19 @@
   font-size: 40px;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 1024px) {
+  .investment_solution {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .investment_solution {
+    display: block;
+  }
+}
+
+@media (max-width: 425px) {
   .investment_solution {
     display: block;
   }

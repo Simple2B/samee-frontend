@@ -40,7 +40,17 @@
   background-color: #a88b64;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 768px) {
+
+
+  .welcome_image {
+    display: none;
+  }
+
+
+}
+
+@media (max-width: 425px) {
   .welcome {
     display: flex;
     align-items: center;

@@ -56,7 +56,25 @@
   margin-left: 10px;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 768px) {
+  .guaranteed_saving_solution {
+    display: block;
+  }
+
+  .video_button_next {
+    width: 180px;
+    height: auto;
+    font-size: 18px;
+  }
+
+  .video_button_pass {
+    width: 180px;
+    height: auto;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 425px) {
   .guaranteed_saving_solution {
     display: block;
   }

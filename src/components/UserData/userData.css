@@ -55,7 +55,7 @@
   color: #eac28c;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 425px) {
   .user_data {
     /* padding: 25px; */
     font-size: 20px;

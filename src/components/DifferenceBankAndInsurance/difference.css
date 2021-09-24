@@ -16,6 +16,10 @@
 
 }
 
+.desc-img {
+  width: 150px;
+}
+
 .difference_block:first-child {
   padding-right: 30px;
   border-right: 1px solid #fff;
@@ -60,7 +64,18 @@
   background-color: #a88b64;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 768px) {
+  .difference_block:first-child {
+    padding-right: 30px;
+    border: none;
+  }
+
+  .difference_text {
+    display: block;
+  }
+}
+
+@media (max-width: 425px) {
   .difference_text {
     display: block;
   }
@@ -75,5 +90,10 @@
     width: 180px;
     height: auto;
     font-size: 18px;
+  }
+
+  .difference_block:first-child {
+    padding-right: 30px;
+    border: none;
   }
 }

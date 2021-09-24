@@ -7,13 +7,22 @@
   background-color: white;
   border-radius: 150px;
   margin-left: 20px;
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .housing_title {
   font-size: 40px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 768px) {
+  .housing {
+    display: block;
+  }
+}
+
+@media (max-width: 425px) {
   .housing {
     display: block;
   }

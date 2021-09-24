@@ -24,7 +24,7 @@ export default function Difference(): ReactElement {
           <div className="difference_block-title">Assurance</div>
           <div className="difference_block_desc">
             <div className="difference_block_desc-img">
-              <img className="desc-img" alt="Assurance" />
+              <img src="/image/doc.svg" className="desc-img" alt="Assurance" />
             </div>
             <ul className="desc-list">
               <li className="desc-list-item">Capital garanti à la retraite</li>
@@ -42,7 +42,7 @@ export default function Difference(): ReactElement {
           <div className="difference_block-title">Banque</div>
           <div className="difference_block_desc">
             <div className="difference_block_desc-img">
-              <img className="desc-img" alt="Banque" />
+              <img src="/image/bank.svg" className="desc-img" alt="Banque" />
             </div>
             <ul className="desc-list">
               <li className="desc-list-item">Épargne non contractuelle</li>

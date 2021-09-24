@@ -11,9 +11,18 @@
   background-color: white;
   border-radius: 150px;
   margin-left: 20px;
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 768px) {
+  .abroad {
+    display: block;
+  }
+}
+
+@media (max-width: 425px) {
   .abroad {
     display: block;
   }

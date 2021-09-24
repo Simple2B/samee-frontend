@@ -79,7 +79,12 @@ export default function HalfGuaranteedSolution(): ReactElement {
                 X
               </button>
               <div className="pop_up">
-                <span>Here is video</span>
+                <video width="700" height="auto" controls>
+                  <source
+                    src="video/video.sol.mi-mi.mp4"
+                    type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+                  />
+                </video>
               </div>
             </>
           )}

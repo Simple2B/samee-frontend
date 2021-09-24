@@ -15,7 +15,19 @@
   font-size: 40px;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 1024px) {
+  .half_guaranteed_solution {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .half_guaranteed_solution {
+    display: block;
+  }
+}
+
+@media (max-width: 425px) {
   .half_guaranteed_solution {
     display: block;
   }
