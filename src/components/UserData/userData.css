@@ -1,0 +1,78 @@
+.user_data {
+  /* padding: 20px 140px; */
+}
+
+.sexe_lebel {
+  display: inline;
+}
+
+.age_lebel {
+  display: inline;
+}
+
+.user_data_inputs_sexe {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.user_data_inputs_birth {
+  margin-bottom: 50px;
+}
+
+.pop_up_triger {
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.pop_up {
+  background-color: #fff;
+  color: #000;
+  max-width: 1000px;
+  height: 500px;
+  padding: 50px;
+  overflow: scroll;
+}
+
+.pop_up_title {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.pop_up_text {
+  margin-bottom: 20px;
+}
+
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  background-color: transparent;
+  border: 1px solid #eac28c;
+  color: #eac28c;
+}
+
+@media (max-width: 376px) {
+  .user_data {
+    /* padding: 25px; */
+    font-size: 20px;
+  }
+
+  .pop_up {
+    font-size: 20px;
+    margin: 20px;
+    overflow: scroll;
+  }
+
+  .close {
+    right: 30px;
+    top: 30px;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    font-size: 10px;
+  }
+}

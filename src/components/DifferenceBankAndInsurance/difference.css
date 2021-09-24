@@ -1,0 +1,79 @@
+.difference_title {
+  margin-bottom: 40px;
+}
+
+.difference_text {
+  display: flex;
+}
+
+.difference_block {
+  padding-left: 30px;
+}
+
+.difference_block_desc {
+  display: flex;
+  align-items: center;
+
+}
+
+.difference_block:first-child {
+  padding-right: 30px;
+  border-right: 1px solid #fff;
+}
+
+.difference_buttons {
+  margin-top: 30px;
+}
+
+.button_discover {
+  width: 400px;
+  height: 40px;
+  background-color: #eac28c;
+  color: #000519;
+  border: none;
+  font-size: 25px;
+  font-family: 'Archivo Narrow, sans-serif';
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 1s;
+  margin-right: 15px;
+}
+
+.button_discover:hover {
+  background-color: #a88b64;
+}
+
+.button_recalculate {
+  width: 400px;
+  height: 40px;
+  background-color: #fff;
+  color: #000519;
+  border: none;
+  font-size: 25px;
+  font-family: 'Archivo Narrow, sans-serif';
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 1s;
+}
+
+.button_recalculate:hover {
+  background-color: #a88b64;
+}
+
+@media (max-width: 375px) {
+  .difference_text {
+    display: block;
+  }
+
+  .button_recalculate {
+    width: 180px;
+    height: auto;
+    font-size: 18px;
+  }
+
+  .button_discover {
+    width: 180px;
+    height: auto;
+    font-size: 18px;
+  }
+}
