@@ -11,6 +11,12 @@
   color: white;
 }
 
+.tax_animation {
+  background-color: white;
+  border-radius: 150px;
+  margin-left: 20px;
+}
+
 @media (max-width: 375px) {
   .tax {
     display: block;

@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import { useHistory } from "react-router-dom";
+import { Player } from '@lottiefiles/react-lottie-player';
 import Popup from "reactjs-popup";
 import "./abroad.css";
 
@@ -34,7 +35,13 @@ export default function Abroad(): ReactElement {
           </ol>
         </div>
         <div className="abroad_animation">
-          <img src="#" alt="animation" />
+          <Player
+            autoplay
+            loop
+            src="/animations/13598-pensjonisten.json"
+            style={{ height: '300px', width: '300px' }}
+          >
+          </Player>
         </div>
       </div>
       <button onClick={handleSubmit} className="next_button">

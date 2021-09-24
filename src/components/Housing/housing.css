@@ -3,6 +3,12 @@
   align-items: center;
 }
 
+.housing_animation {
+  background-color: white;
+  border-radius: 150px;
+  margin-left: 20px;
+}
+
 .housing_title {
   font-size: 40px;
 }

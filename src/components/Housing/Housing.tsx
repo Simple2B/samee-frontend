@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import { useHistory } from "react-router-dom";
+import { Player } from '@lottiefiles/react-lottie-player';
 import Popup from "reactjs-popup";
 import "./housing.css";
 
@@ -33,7 +34,13 @@ export default function Housing(): ReactElement {
           </ol>
         </div>
         <div className="housing_animation">
-          <img src="#" alt="animation" />
+          <Player
+            autoplay
+            loop
+            src="/animations/24209-house-ou-apartment.json"
+            style={{ height: '300px', width: '300px' }}
+          >
+          </Player>
         </div>
       </div>
       <button onClick={handleSubmit} className="next_button">

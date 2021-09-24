@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import { useHistory } from "react-router-dom";
+import { Player } from '@lottiefiles/react-lottie-player';
 import Popup from "reactjs-popup";
 import "./tax.css";
 
@@ -31,7 +32,13 @@ export default function Tax(): ReactElement {
           </ol>
         </div>
         <div className="tax_animation">
-          <img src="#" alt="animation" />
+          <Player
+            autoplay
+            loop
+            src="/animations/24811-saving-money.json"
+            style={{ height: '300px', width: '300px' }}
+          >
+          </Player>
         </div>
       </div>
       <button onClick={handleSubmit} className="next_button">

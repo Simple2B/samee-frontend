@@ -7,6 +7,12 @@
   font-size: 40px;
 }
 
+.abroad_animation {
+  background-color: white;
+  border-radius: 150px;
+  margin-left: 20px;
+}
+
 @media (max-width: 375px) {
   .abroad {
     display: block;
