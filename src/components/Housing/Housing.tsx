@@ -37,7 +37,7 @@ export default function Housing(): ReactElement {
           <Player
             autoplay
             loop
-            src="/animations/24209-house-ou-apartment.json"
+            src="/animations/59875-home.json"
             style={{ height: '300px', width: '300px' }}
           >
           </Player>

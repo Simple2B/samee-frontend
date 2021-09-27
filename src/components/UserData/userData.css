@@ -24,6 +24,15 @@
   margin-top: 50px;
 }
 
+.pop_up_triger::after {
+  height: 10px;
+  width: 10px;
+  content: url(/src/image/arrow-down.svg);
+  background-size: contain;
+  padding-left: 7px;
+  margin-top: 7px;
+}
+
 .pop_up {
   background-color: #fff;
   color: #000;

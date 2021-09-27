@@ -169,7 +169,7 @@ export default function ChooseSolution(): ReactElement {
           </Popup>
         </div>
       </div>
-      <button onClick={handleSubmit} className="next_button">
+      <button disabled={choice === ''} onClick={handleSubmit} className="next_button">
         Continuer
       </button>
     </div>
