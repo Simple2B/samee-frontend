@@ -38,7 +38,7 @@ export default function WhatIsHalfGuaranteedSolution(): ReactElement {
         augmenter votre rendement ou pour sécuriser votre épargne.
       </div>
 
-      <button onClick={handleSubmit} className="next_button">
+      <button onClick={handleSubmit} className="next_button button_position">
         C'est compris
       </button>
     </div>

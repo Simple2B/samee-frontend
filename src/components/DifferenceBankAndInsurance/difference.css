@@ -13,7 +13,7 @@
 .difference_block_desc {
   display: flex;
   align-items: center;
-
+  height: 265px;
 }
 
 .desc-img {
@@ -30,17 +30,18 @@
 }
 
 .button_discover {
-  width: 400px;
-  height: 40px;
+  /* width: 400px;
+  height: 40px; */
   background-color: #eac28c;
   color: #000519;
   border: none;
   font-size: 25px;
-  font-family: 'Archivo Narrow, sans-serif';
+  font-family: 'Archivo Narrow';
   margin-top: 20px;
   cursor: pointer;
   transition: background-color 1s;
   margin-right: 15px;
+  padding: 10px 20px;
 }
 
 .button_discover:hover {
@@ -48,13 +49,14 @@
 }
 
 .button_recalculate {
-  width: 400px;
-  height: 40px;
+  /* width: 400px;
+  height: 40px; */
+  padding: 10px 20px;
   background-color: #fff;
   color: #000519;
   border: none;
   font-size: 25px;
-  font-family: 'Archivo Narrow, sans-serif';
+  font-family: 'Archivo Narrow';
   margin-top: 20px;
   cursor: pointer;
   transition: background-color 1s;

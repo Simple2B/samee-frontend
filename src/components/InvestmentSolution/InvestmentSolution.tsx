@@ -59,7 +59,7 @@ export default function InvestmentSolution(): ReactElement {
         <Popup
           modal
           trigger={
-            <div className="pop_up_triger">
+            <div className="pop_up_triger-video">
               <img className="video_img" alt="video" src="/image/video2.png" />
             </div>
           }
@@ -75,8 +75,8 @@ export default function InvestmentSolution(): ReactElement {
               <button className="close" onClick={close}>
                 X
               </button>
-              <div className="pop_up">
-                <video width="700" height="auto" controls>
+              <div className="pop_up_video">
+                <video width="1000" height="auto" autoPlay controls>
                   <source
                     src="video/video.sol.fonds.mp4"
                     type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
@@ -87,7 +87,7 @@ export default function InvestmentSolution(): ReactElement {
           )}
         </Popup>
       </div>
-      <div className="buttons_set">
+      <div className="buttons_set button_position">
         <button onClick={handleSubmit} className="next_button">
           Continuer
         </button>

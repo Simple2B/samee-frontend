@@ -25,7 +25,7 @@ export default function InvestmentSolutionForWhom(): ReactElement {
         car c’est la plus volatile.
       </div>
 
-      <button onClick={handleSubmit} className="next_button">
+      <button onClick={handleSubmit} className="next_button button_position">
         C'est compris
       </button>
     </div>

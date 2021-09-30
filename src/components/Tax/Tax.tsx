@@ -41,7 +41,7 @@ export default function Tax(): ReactElement {
           </Player>
         </div>
       </div>
-      <button onClick={handleSubmit} className="next_button">
+      <button onClick={handleSubmit} className="next_button button_position">
         Continuer
       </button>
       <Popup

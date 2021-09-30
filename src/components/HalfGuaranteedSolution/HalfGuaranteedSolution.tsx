@@ -7,10 +7,6 @@ export default function HalfGuaranteedSolution(): ReactElement {
   const history = useHistory();
 
   const handleSubmit = () => {
-    history.push("/investment-solution");
-  };
-
-  const handleSubmitPass = () => {
     history.push("/choose-solution");
   };
 
@@ -62,7 +58,7 @@ export default function HalfGuaranteedSolution(): ReactElement {
         <Popup
           modal
           trigger={
-            <div className="pop_up_triger">
+            <div className="pop_up_triger-video">
               <img className="video_img" alt="video" src="/image/video2.png" />
             </div>
           }
@@ -78,8 +74,8 @@ export default function HalfGuaranteedSolution(): ReactElement {
               <button className="close" onClick={close}>
                 X
               </button>
-              <div className="pop_up">
-                <video width="700" height="auto" controls>
+              <div className="pop_up_video">
+                <video width="1000" height="auto" autoPlay controls>
                   <source
                     src="video/video.sol.mi-mi.mp4"
                     type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
@@ -90,12 +86,9 @@ export default function HalfGuaranteedSolution(): ReactElement {
           )}
         </Popup>
       </div>
-      <div className="buttons_set">
-        <button onClick={handleSubmit} className="video_button_next">
-          Voir la solution suivante
-        </button>
-        <button onClick={handleSubmitPass} className="video_button_pass">
-          Vers le choix des solutions
+      <div className="buttons_set button_position">
+        <button onClick={handleSubmit} className="next_button">
+          Continuer
         </button>
       </div>
     </>

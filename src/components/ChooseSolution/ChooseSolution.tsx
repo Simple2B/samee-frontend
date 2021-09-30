@@ -6,6 +6,8 @@ import { useHistory } from "react-router-dom";
 import Popup from "reactjs-popup";
 import { makeStyles } from "@material-ui/styles";
 import "./chooseSolution.css";
+import { JsxEmit } from "typescript";
+import { useEffect } from "react";
 
 const useStyles = makeStyles({
   root: {
@@ -17,161 +19,105 @@ const useStyles = makeStyles({
 });
 
 export default function ChooseSolution(): ReactElement {
-  const [choice, setChoice] = useState("");
+  const [choiceFirst, setChoiceFirst] = useState(false);
+  const [choiceSecond, setChoiceSecond] = useState(false);
 
   const history = useHistory();
 
   const classes = useStyles();
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChoice(event.target.value);
+  const handleChangeFirst = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChoiceFirst(state => !state);
   };
 
+  const handleChangeSecond = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChoiceSecond(state => !state);
+  };
+
+  // console.log(choiceFirst);
+  // console.log(choiceSecond);
+
+  useEffect(() => {
+    console.log(choiceFirst);
+    console.log(choiceSecond);
+
+
+  }, [choiceSecond, choiceFirst])
+
   const handleSubmit = () => {
-    localStorage.setItem("solutionChoice", choice);
-    history.push("/");
+    let solutionChoiceObject;
+
+    const solutionChoice = localStorage.getItem("solutionChoice");
+
+    if (solutionChoice) {
+      solutionChoiceObject = JSON.parse(solutionChoice);
+    } else {
+      solutionChoiceObject = {};
+    }
+
+    solutionChoiceObject["solutionChoice"] = []
+
+    choiceFirst && solutionChoiceObject["solutionChoice"].push("garanties");
+    choiceSecond && solutionChoiceObject["solutionChoice"].push("rendement");
+
+    localStorage.setItem('solutionChoice', JSON.stringify(solutionChoiceObject.solutionChoice))
+
+    // history.push("/");
   };
 
   return (
     <div className="choose_solution">
-      <div className="choose_solution_text">
-        Afin de connaître les montants que vous pourrez obtenir grâce à votre
-        troisième pilier, veuillez choisir les solutions qui vous intéressent.
-        (cochez la ou les cases - à la fin du calculateur vous aurez accès à un
-        résumé basé sur vos choix)
+      <div className="choose_solution_title">
+        Choisir son profil d'investisseur
       </div>
+      <div className="choose_solution_text">
+        L'argument de la sécurité en cas d'invalidité et de décès est choisi
+        dans la grande majorité des cas. Cependant, certains cherchent juste à
+        placer un capital tout en économisant aux impôts.
+      </div>
+      <div className="choose_solution_text">
+        Veuillez cocher la case qui vous correspond le mieux. (vous pouvez
+        cocher les deux cases)
+      </div>
+      <div className="choose_solution_text">
+        Il est bien de savoir que nous pourrons toujours trouver une solution
+        sur-mesure. Ce calculateur est là pour vous aider à mieux visualiser les
+        opportunités offertes par le troisième pilier.
+      </div>
+
       <div className="choose_solution_blocks">
         <div className="choose_solution_block">
-          <div className="choose_solution_block_wrapper">
-            <div className="choose_solution_block-title gold_text">
-              Solution {"\n"} épargne
-            </div>
-            <Radio
-              checked={choice === "Solution épargne"}
-              onChange={handleChange}
-              value="Solution épargne"
-              name="radio-buttons"
-              classes={{ root: classes.root }}
-            />
-          </div>
-
-          <Popup
-            modal
-            trigger={<div className="pop_up_triger">Revoir la vidéo</div>}
-          >
-            {(
-              close:
-                | ((
-                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-                ) => void)
-                | undefined
-            ) => (
-              <>
-                <button className="close" onClick={close}>
-                  X
-                </button>
-                <div className="pop_up">
-                  <video width="700" height="auto" controls>
-                    <source
-                      src="video/video.sol.epargne.mp4"
-                      type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-                    />
-                  </video>
-                </div>
-              </>
-            )}
-          </Popup>
+          <ul className="choose_solution_list">
+            <li className="choose_solution_list-item">
+              Les garanties m'intéressent
+            </li>
+          </ul>
+          <Checkbox
+            value={choiceFirst}
+            onChange={handleChangeFirst}
+            classes={{ root: classes.root, checked: classes.checked }}
+            sx={{ "& .MuiSvgIcon-root": { fontSize: 35 } }}
+          />
         </div>
 
         <div className="choose_solution_block">
-          <div className="choose_solution_block_wrapper">
-            <div className="choose_solution_block-title gold_text">
-              Solution{"\n"}
-              mi-garantie/mi-rendement
-            </div>
-            <Radio
-              checked={choice === "Solution mi-garantie/mi-rendement"}
-              onChange={handleChange}
-              value="Solution mi-garantie/mi-rendement"
-              name="radio-buttons"
-              classes={{ root: classes.root }}
-            />
-          </div>
-
-          <Popup
-            modal
-            trigger={<div className="pop_up_triger">Revoir la vidéo</div>}
-          >
-            {(
-              close:
-                | ((
-                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-                ) => void)
-                | undefined
-            ) => (
-              <>
-                <button className="close" onClick={close}>
-                  X
-                </button>
-                <div className="pop_up">
-                  <video width="700" height="auto" controls>
-                    <source
-                      src="video/video.sol.mi-mi.mp4"
-                      type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-                    />
-                  </video>
-                </div>
-              </>
-            )}
-          </Popup>
-        </div>
-
-        <div className="choose_solution_block">
-          <div className="choose_solution_block_wrapper">
-            <div className="choose_solution_block-title gold_text">
-              Solution{"\n"}
-              100% Fonds de placement
-            </div>
-            <Radio
-              checked={choice === "Solution 100% Fonds de placement"}
-              onChange={handleChange}
-              value="Solution 100% Fonds de placement"
-              name="radio-buttons"
-              classes={{ root: classes.root }}
-            />
-          </div>
-
-          <Popup
-            modal
-            trigger={<div className="pop_up_triger">Revoir la vidéo</div>}
-          >
-            {(
-              close:
-                | ((
-                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-                ) => void)
-                | undefined
-            ) => (
-              <>
-                <button className="close" onClick={close}>
-                  X
-                </button>
-                <div className="pop_up">
-                  <video width="700" height="auto" controls>
-                    <source
-                      src="video/video.sol.fonds.mp4"
-                      type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-                    />
-                  </video>
-                </div>
-              </>
-            )}
-          </Popup>
+          <ul className="choose_solution_list">
+            <li className="choose_solution_list-item">
+              Le rendement m'intéresse
+            </li>
+          </ul>
+          <Checkbox
+            value={choiceSecond}
+            onChange={handleChangeSecond}
+            classes={{ root: classes.root, checked: classes.checked }}
+            sx={{ "& .MuiSvgIcon-root": { fontSize: 35 } }}
+          />
         </div>
       </div>
-      <button disabled={choice === ''} onClick={handleSubmit} className="next_button">
+
+      <button onClick={handleSubmit} className="next_button button_position">
         Continuer
       </button>
     </div>
   );
-};
+}

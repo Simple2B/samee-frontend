@@ -40,6 +40,11 @@ import WhatIsInvestmentSolution from "./components/WhatIsInvestmentSolution/What
 import InvestmentSolutionAdvantages from "./components/InvestmentSolutionAdvantages/InvestmentSolutionAdvantages";
 import InvestmentSolutionForWhom from "./components/InvestmentSolutionForWhom/InvestmentSolutionForWhom";
 import ChooseSolution from "./components/ChooseSolution/ChooseSolution";
+import SavingGuaranteeInterest from "./components/SavingGuaranteeInterest/SavingGuaranteeInterest";
+import SavingGuaranteeInterestCalc from "./components/SavingGuaranteeInterestCalc/SavingGuaranteeInterestCalc";
+import HalfGuaranteeSolutionInterest from "./components/HalfGuaranteeSolutionInterest/HalfGuaranteeSolutionInterest";
+import HalfGOptimalProportion from "./components/HalfGOptimalProportion/HalfGOptimalProportion";
+import PercentCalc from "./components/PercentCalc/PercentCalc";
 
 function App() {
   const [steps, setSteps] = useState([
@@ -101,6 +106,21 @@ function App() {
         </div>
         <Router>
           <Switch>
+            <Route path="/percent-calculation">
+              <PercentCalc />
+            </Route>
+            <Route path="/half-guarantee-optimal-proportion">
+              <HalfGOptimalProportion />
+            </Route>
+            <Route path="/half-guarantee-interest">
+              <HalfGuaranteeSolutionInterest />
+            </Route>
+            <Route path="/saving-guarantee-interest-calculation">
+              <SavingGuaranteeInterestCalc />
+            </Route>
+            <Route path="/saving-guarantee-interest">
+              <SavingGuaranteeInterest />
+            </Route>
             <Route path="/choose-solution">
               <ChooseSolution />
             </Route>

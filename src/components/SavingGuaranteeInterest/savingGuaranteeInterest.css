@@ -1,0 +1,22 @@
+.next_button-interest {
+  padding: 10px 20px;
+  background-color: #eac28c;
+  color: #000519;
+  border: none;
+  font-size: 30px;
+  font-family: 'Archivo Narrow, sans-serif';
+  margin-top: 20px;
+  cursor: pointer;
+  margin: 50px 0 20px 0;
+  transition: background-color 1s;
+}
+
+.next_button-interest:hover {
+  background-color: #a88b64;
+}
+
+@media (max-width: 425px) {
+  .next_button-interest {
+    font-size: 20px;
+  }
+}

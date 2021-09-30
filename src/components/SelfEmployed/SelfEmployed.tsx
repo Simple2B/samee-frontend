@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import Popup from "reactjs-popup";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
+
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import "./selfEmployed.css";
 import { makeStyles } from "@material-ui/styles";
@@ -11,8 +12,8 @@ import { Slider } from "@mui/material";
 const useStyles = makeStyles({
   root: {
     color: "white !important",
-    fontSize: "30px !important",
-    fontFamily: '"Archivo Narrow, sans-serif" !important',
+    fontSize: "24px !important",
+    fontFamily: '"Archivo Narrow" !important',
     borderBottom: "1px solid white !important",
   },
   select: {
@@ -76,7 +77,7 @@ export default function SelfEmployed(): ReactElement {
       </div>
       <ul className="self-employed_list">
         <li className="self-employed_list-item">
-          épargner cette année jusqu'à{" "}
+          cotiser cette année jusqu'à{" "}
           <span className="gold_text">CHF 34'416 (CHF 2'868 par mois)</span>
         </li>
         <li className="self-employed_list-item">
@@ -155,7 +156,7 @@ export default function SelfEmployed(): ReactElement {
       <button
         disabled={salary === "" || period === "" || salary === 0}
         onClick={handleSubmit}
-        className="next_button"
+        className="next_button button_position-1"
       >
         Continuer
       </button>

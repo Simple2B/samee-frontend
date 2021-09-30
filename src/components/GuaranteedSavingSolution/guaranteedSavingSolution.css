@@ -1,6 +1,5 @@
 .video_button_next {
-  width: 400px;
-  height: 40px;
+
   background-color: #eac28c;
   color: #000519;
   border: none;
@@ -10,6 +9,7 @@
   cursor: pointer;
   transition: background-color 1s;
   margin-right: 15px;
+  padding: 10px 20px;
 }
 
 .video_button_next:hover {
@@ -17,8 +17,6 @@
 }
 
 .video_button_pass {
-  width: 400px;
-  height: 40px;
   background-color: #fff;
   color: #000519;
   border: none;
@@ -27,10 +25,11 @@
   margin-top: 20px;
   cursor: pointer;
   transition: background-color 1s;
+  padding: 10px 20px;
 }
 
 .video_button_pass:hover {
-  background-color: #a88b64;
+  background-color: rgb(184, 182, 182);
 }
 
 .guaranteed_saving_solution {
@@ -47,7 +46,7 @@
 }
 
 .guaranteed_saving_solution_title_big {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .video_img {
@@ -56,37 +55,50 @@
   margin-left: 10px;
 }
 
+
 @media (max-width: 768px) {
   .guaranteed_saving_solution {
     display: block;
   }
 
   .video_button_next {
-    width: 180px;
+
     height: auto;
     font-size: 18px;
   }
 
   .video_button_pass {
-    width: 180px;
+
     height: auto;
     font-size: 18px;
   }
 }
 
+@media (max-width: 768px) {
+  .video_img {
+    width: 500px;
+    height: auto;
+  }
+}
+
 @media (max-width: 425px) {
+  .video_img {
+    width: 300px;
+    height: auto;
+  }
+
   .guaranteed_saving_solution {
     display: block;
   }
 
   .video_button_next {
-    width: 180px;
+
     height: auto;
     font-size: 18px;
   }
 
   .video_button_pass {
-    width: 180px;
+
     height: auto;
     font-size: 18px;
   }

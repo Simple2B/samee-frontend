@@ -1,5 +1,6 @@
 import React, { ReactElement, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import NumberFormat from "react-number-format";
 import { taxCoefficient } from "../../helpers/consts";
 
 export default function SavingCalculation(): ReactElement {
@@ -49,12 +50,26 @@ export default function SavingCalculation(): ReactElement {
 
       <ul className="saving_calc_list">
         <li className="saving_calc_list-item">
-          épargné <span className="gold_text">CHF {amount}</span> sur votre
-          troisième pilier.{" "}
+          épargné{" "}
+          <NumberFormat
+            value={amount}
+            className="gold_text"
+            displayType={"text"}
+            thousandSeparator={`'`}
+            prefix={"CHF "}
+          />
+          ; sur votre troisième pilier.{" "}
         </li>
         <li className="saving_calc_list-item">
-          économisé jusqu'à <span className="gold_text">CHF {tax}</span> sur vos
-          impôts.{" "}
+          économisé jusqu'à{" "}
+          <NumberFormat
+            value={tax}
+            className="gold_text"
+            displayType={"text"}
+            thousandSeparator={`'`}
+            prefix={"CHF "}
+          />
+          ; sur vos impôts.{" "}
         </li>
       </ul>
 
@@ -76,9 +91,9 @@ export default function SavingCalculation(): ReactElement {
         </li>
       </ol>
 
-      <button onClick={handleSubmit} className="next_button">
+      <button onClick={handleSubmit} className="next_button button_position">
         Continuer
       </button>
     </div>
   );
-};
+}

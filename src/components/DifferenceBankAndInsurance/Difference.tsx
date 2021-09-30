@@ -24,7 +24,7 @@ export default function Difference(): ReactElement {
           <div className="difference_block-title">Assurance</div>
           <div className="difference_block_desc">
             <div className="difference_block_desc-img">
-              <img src="/image/doc.svg" className="desc-img" alt="Assurance" />
+              <img src="/image/insurance.png" className="desc-img" alt="Assurance" />
             </div>
             <ul className="desc-list">
               <li className="desc-list-item">Capital garanti à la retraite</li>
@@ -42,7 +42,7 @@ export default function Difference(): ReactElement {
           <div className="difference_block-title">Banque</div>
           <div className="difference_block_desc">
             <div className="difference_block_desc-img">
-              <img src="/image/bank.svg" className="desc-img" alt="Banque" />
+              <img src="/image/bank.png" className="desc-img" alt="Banque" />
             </div>
             <ul className="desc-list">
               <li className="desc-list-item">Épargne non contractuelle</li>
@@ -53,7 +53,7 @@ export default function Difference(): ReactElement {
           </div>
         </div>
       </div>
-      <div className="difference_buttons">
+      <div className="difference_buttons button_position">
         <button onClick={handleSubmit} className="button_discover">
           Découvrir les avantages
         </button>
@@ -81,12 +81,16 @@ export default function Difference(): ReactElement {
             </button>
             <div className="pop_up">
               <div className="pop_up_title">
+                Plus d'information sur la différence entre troisième pilier en
+                banque ou en assurance
+              </div>
+              <div className="pop_up_text">
                 La première question qu’il faut se poser avant de cotiser au
                 3ème pilier est : « banque ou assurance ? ». Pour y répondre, il
                 est important de bien connaître les différences.
               </div>
               <div className="pop_up_text">
-                Avec un 3ème pilier en assurance, appelé 3ème pilier lié, vous
+                Avec un 3ème pilier A en assurance, appelé 3ème pilier lié, vous
                 avez plus de garanties, en cas d’invalidité et en cas de décès.
                 En cas d’invalidité, c’est l’assurance qui prend le relais et
                 s’occupe du paiement de vos primes. Vous pouvez également
@@ -105,6 +109,7 @@ export default function Difference(): ReactElement {
                 prime si une année est plus difficile et de la rattraper l’année
                 suivante par exemple.
               </div>
+
               <div className="pop_up_text">
                 Avec un 3ème pilier en banque, vous bénéficiez de plus de
                 flexibilité, car vous n’êtes pas lié à un contrat de versement
@@ -121,10 +126,8 @@ export default function Difference(): ReactElement {
               </div>
 
               <div className="pop_up_text">
-                En conclusion, même si les deux solutions permettent une
-                économie d’impôts, les assurances sont plus rentables et
-                sécurisées et les banques plus flexibles. En cas de doute,
-                n’hésitez pas à contacter nos experts.
+                En conclusion, même si les deux solutions permettent une économie d’impôts, les assurances sont plus rentables et sécurisées et les banques plus flexibles. En cas de doute, n’hésitez pas à contacter nos experts.
+
               </div>
             </div>
           </>
@@ -132,4 +135,4 @@ export default function Difference(): ReactElement {
       </Popup>
     </div>
   );
-};
+}

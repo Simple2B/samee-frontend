@@ -62,7 +62,7 @@ export default function GuaranteedSavingSolution(): ReactElement {
         <Popup
           modal
           trigger={
-            <div className="pop_up_triger">
+            <div className="pop_up_triger-video">
               <img className="video_img" alt="video" src="/image/video1.png" />
             </div>
           }
@@ -78,8 +78,8 @@ export default function GuaranteedSavingSolution(): ReactElement {
               <button className="close" onClick={close}>
                 X
               </button>
-              <div className="pop_up">
-                <video width="700" height="auto" controls>
+              <div className="pop_up_video">
+                <video width="1000" height="auto" autoPlay controls>
                   <source
                     src="video/video.sol.epargne.mp4"
                     type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
@@ -90,7 +90,7 @@ export default function GuaranteedSavingSolution(): ReactElement {
           )}
         </Popup>
       </div>
-      <div className="buttons_set">
+      <div className="buttons_set button_position">
         <button onClick={handleSubmit} className="video_button_next">
           Voir la solution suivante
         </button>

@@ -36,7 +36,7 @@ export default function WhatIsInvestmentSolution(): ReactElement {
         de votre portefeuille pendant la durée du contrat.
       </div>
 
-      <button onClick={handleSubmit} className="next_button">
+      <button onClick={handleSubmit} className="next_button button_position">
         C'est compris
       </button>
     </div>

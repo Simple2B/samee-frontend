@@ -12,17 +12,16 @@
 
 .welcome_text_title {
   display: block;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .next_button {
-  width: 190px;
-  height: 40px;
+  /* max-width: 190px; */
+  /* max-height: 50px; */
   background-color: #eac28c;
   color: #000519;
+  padding: 10px 25px;
   border: none;
-  font-size: 30px;
-  font-family: 'Archivo Narrow, sans-serif';
   margin-top: 20px;
   cursor: pointer;
   transition: background-color 1s;
@@ -56,7 +55,7 @@
     align-items: center;
     /* padding: 25px; */
     justify-content: space-between;
-    font-size: 20px;
+
   }
 
   .welcome_image {
@@ -65,7 +64,7 @@
 
   .welcome_text_title {
     display: block;
-    font-size: 30px;
+    font-size: 20px;
   }
 
 

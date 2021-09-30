@@ -39,7 +39,7 @@ export default function Guarantees(): ReactElement {
         pas lié à un contrat de versement de primes.
       </div>
 
-      <button onClick={handleSubmit} className="next_button">
+      <button onClick={handleSubmit} className="next_button button_position">
         Passer au calculateur
       </button>
 
@@ -94,21 +94,39 @@ export default function Guarantees(): ReactElement {
                 la clause bénéficiaire prévue à cet effet.
               </div>
               <div className="pop_up_text">
-                Voici le détail de la clause bénéficiaires 3A : Le conjoint ou
-                partenaire enregistré (le concubin n’est pas considéré comme
-                conjoint) Les trois points suivants sont au même niveau Les
-                descendants directs (enfants, petits-enfants, …) ou personnes à
-                l’entretien desquelles le défunt subvenait de façon
-                prépondérante. La personne qui avait formé avec le défunt une
-                communauté de vie ininterrompue durant 5 ans minimum
-                immédiatement avant le décès La personne qui subvient à
-                l’entretien d’enfants communs. Les parents Les frères et sœurs
-                Les autres héritiers Le preneur d’assurance peut modifier
-                l’ordre des trois derniers points et définir leurs droits.
+                Voici le détail de la clause bénéficiaires 3A :
+              </div>
+
+              <div className="pop_up_text">
+                Le conjoint ou partenaire enregistré (le concubin n’est pas
+                considéré comme conjoint)
               </div>
               <div className="pop_up_text">
+                Les trois points suivants sont au même niveau
+              </div>
+              <div className="pop_up_text">
+                Les descendants directs (enfants, petits-enfants, …) ou
+                personnes à l’entretien desquelles le défunt subvenait de façon
+                prépondérante.
+              </div>
+              <div className="pop_up_text">
+                La personne qui avait formé avec le défunt une communauté de vie
+                ininterrompue durant 5 ans minimum immédiatement avant le décès
+              </div>
+              <div className="pop_up_text">
+                La personne qui subvient à l’entretien d’enfants communs.
+              </div>
+              <div className="pop_up_text">Les parents</div>
+              <div className="pop_up_text">Les frères et sœurs</div>
+              <div className="pop_up_text">Les autres héritiers</div>
+              <div className="pop_up_text">
+                Le preneur d’assurance peut modifier l’ordre des trois derniers
+                points et définir leurs droits.
+              </div>
+
+              <div className="pop_up_text">
                 Pour le point 4, toutes les compagnies ne le proposent pas, et
-                en général vous pouvez suspendre votre prime durant un ou deux
+                en général vous pouvez suspendre votre prime durant un à trois
                 ans non consécutifs.
               </div>
               <div className="pop_up_text">
@@ -123,4 +141,4 @@ export default function Guarantees(): ReactElement {
       </Popup>
     </div>
   );
-};
+}
