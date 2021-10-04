@@ -1,28 +1,34 @@
-import React, { ReactElement, useState } from "react";
-import NumberFormat from "react-number-format";
+import React, {ReactElement, useState} from 'react';
+import NumberFormat from 'react-number-format';
 
-import { useEffect } from "react";
-import "./percentCalc.css";
-import { useHistory } from "react-router-dom";
+import {useEffect} from 'react';
+import './percentCalc.css';
+import {useHistory} from 'react-router-dom';
 
-const savingYears: string | null = localStorage.getItem("age");
-const savings: any = localStorage.getItem("savings");
-const tax: string | null = localStorage.getItem("savingsTax");
+const savingYears: string | null = localStorage.getItem('age');
+const savings: any = localStorage.getItem('savings');
+const tax: string | null = localStorage.getItem('savingsTax');
+const period: string | null = localStorage.getItem('period');
 
 export default function PercentCalc(): ReactElement {
   const [amountCapital, setAmountCapital] = useState<number>();
   const [amountFonds, setAmountFonds] = useState<number>();
 
   const [savingsPercent] = useState<any>(
-    localStorage.getItem("savingsPercent")
+    localStorage.getItem('savingsPercent'),
   );
-  const [fondsPercent] = useState<any>(localStorage.getItem("fondsPercent"));
+  const [fondsPercent] = useState<any>(localStorage.getItem('fondsPercent'));
 
   const history = useHistory();
 
   const amountCapitalCalc = () => {
-    const capitalCalc = Math.floor((savings * savingsPercent) / 100);
-    setAmountCapital(capitalCalc);
+    if (period === 'annual') {
+      const capitalCalc = Math.floor((savings * savingsPercent) / 100);
+      setAmountCapital(capitalCalc);
+    } else if (period === 'mensuel') {
+      const capitalCalc = Math.floor((savings * 12 * savingsPercent) / 100);
+      setAmountCapital(capitalCalc);
+    }
   };
 
   const amountFondsCalc = () => {
@@ -36,9 +42,9 @@ export default function PercentCalc(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    localStorage.setItem("amountEpargne", JSON.stringify(amountCapital));
-    localStorage.setItem("amount Fonds", JSON.stringify(amountFonds));
-    history.push("/scenario-calculation");
+    localStorage.setItem('amountEpargne', JSON.stringify(amountCapital));
+    localStorage.setItem('amount Fonds', JSON.stringify(amountFonds));
+    history.push('/scenario-calculation');
   };
 
   return (
@@ -49,28 +55,28 @@ export default function PercentCalc(): ReactElement {
 
       <ul className="percent_calc_list">
         <li className="percent_calc_list-item">
-          épargné{" "}
+          épargné{' '}
           <span className="gold_text">
             <NumberFormat
               value={savings}
               className="gold_text"
-              displayType={"text"}
+              displayType={'text'}
               thousandSeparator={`'`}
-              prefix={"CHF "}
+              prefix={'CHF '}
             />
           </span>
         </li>
         <li className="percent_calc_list-item">
-          jusqu'à{" "}
+          jusqu'à{' '}
           <span className="gold_text">
             <NumberFormat
               value={tax}
               className="gold_text"
-              displayType={"text"}
+              displayType={'text'}
               thousandSeparator={`'`}
-              prefix={"CHF "}
+              prefix={'CHF '}
             />
-          </span>{" "}
+          </span>{' '}
           d'économie sur vos impôts
         </li>
       </ul>
@@ -90,9 +96,9 @@ export default function PercentCalc(): ReactElement {
               <NumberFormat
                 value={amountCapital}
                 className="gold_text percent_calc_amount"
-                displayType={"text"}
+                displayType={'text'}
                 thousandSeparator={`'`}
-                prefix={"CHF "}
+                prefix={'CHF '}
               />
             </div>
             <div className="percent_calc_perc">
@@ -116,9 +122,9 @@ export default function PercentCalc(): ReactElement {
               <NumberFormat
                 value={amountFonds}
                 className="gold_text percent_calc_amount"
-                displayType={"text"}
+                displayType={'text'}
                 thousandSeparator={`'`}
-                prefix={"CHF "}
+                prefix={'CHF '}
               />
             </div>
             <div className="percent_calc_perc">
