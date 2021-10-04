@@ -20,8 +20,7 @@ export default function Abroad(): ReactElement {
           </div>
           <ol className="abroad_list">
             <li className="abroad_list-item">
-              Arrivé à la retraite, vous avez le choix entre une rente à vie et
-              le retrait d'un capital unique.{" "}
+              Arrivé à la retraite, vous pouvez retirer votre capital ainsi que les intérêts et éventuels excédents (uniquement en assurance).
             </li>
             <li className="abroad_list-item">
               Vous avez la possibilité de partir en retraite anticipée dès l'âge
@@ -29,8 +28,7 @@ export default function Abroad(): ReactElement {
             </li>
             <li className="abroad_list-item">
               {" "}
-              Vous pouvez retirer votre capital afin de vous installer ailleurs
-              en Europe d'une manière définitive ou pour le travail.{" "}
+              Vous pouvez retirer votre capital afin de vous installer ailleurs en Europe d'une manière définitive ou pour le travail.
             </li>
           </ol>
         </div>

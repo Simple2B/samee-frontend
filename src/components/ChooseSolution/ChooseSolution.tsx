@@ -62,7 +62,7 @@ export default function ChooseSolution(): ReactElement {
 
     localStorage.setItem('solutionChoice', JSON.stringify(solutionChoiceObject.solutionChoice))
 
-    // history.push("/");
+    history.push("/saving-guarantee-interest");
   };
 
   return (
@@ -82,7 +82,7 @@ export default function ChooseSolution(): ReactElement {
       <div className="choose_solution_text">
         Il est bien de savoir que nous pourrons toujours trouver une solution
         sur-mesure. Ce calculateur est là pour vous aider à mieux visualiser les
-        opportunités offertes par le troisième pilier.
+        opportunités offertes par le troisième pilier. Résultats à titre indicatif.
       </div>
 
       <div className="choose_solution_blocks">

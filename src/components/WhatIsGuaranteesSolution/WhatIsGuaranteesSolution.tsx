@@ -14,19 +14,13 @@ export default function WhatIsGuaranteesSolution(): ReactElement {
       <div className="what_is_solution_title title">Qu'est-ce que c'est ?</div>
 
       <div className="what_is_solution_text">
-        Cette solution est la plus simple et sécurisée. Elle fonctionne comme
-        compte épargne traditionnel. Il faut savoir que les intérêts tournent
-        autour des 0% (entre 0 et 0.25%). Chaque mois ou année, vous pouvez
-        verser vos cotisations sur un compte en banque.
+        C'est la solution la plus populaire, car elle est simple et sécurisée. Elle fonctionne comme un compte épargne traditionnel. Il faut savoir que les intérêts techniques tournent autour des 0% (entre 0 et 0.25%). Chaque mois ou année, vous pouvez verser vos cotisations sur un compte en banque.
       </div>
       <div className="what_is_solution_text">
-        Vous pouvez aussi le faire en assurance où un taux d’intérêt est fixé
-        pour la durée du contrat et qui peut vous garantir votre capital à la
-        retraite.
+        Si vous le faites en assurance, vous pouvez choisir un intérêt et un capital fixe qui vous est garanti à la retraite.
       </div>
       <div className="what_is_solution_text">
-        Quand les assurances performent, elles redistribuent une partie du
-        résultat positif sur votre 3ème pilier.
+        De plus, quand les assurances performent, elles redistribuent une partie du résultat positif sur votre 3ème pilier ce qui augmente votre capital garanti. C'est ce qu'on appelle les excédents.
       </div>
 
       <button onClick={handleSubmit} className="next_button button_position">

@@ -23,7 +23,11 @@ export default function SavingGuaranteeInterest(): ReactElement {
       </ul>
 
       <div className="saving_interest_text">
-        Le taux d'intérêt est déterminé par les institutions. Les taux moyens sont de 0.1%, mais certains atteignent 0.25%.
+        Vous bénéficiez d'un taux d'intérêt. Les taux moyens sont de 0.1%, mais certains atteignent 0.25% (le taux est déterminé par les institutions).
+      </div>
+
+      <div className="saving_interest_text">
+        De plus, les assurances rajoutent chaque année les excédents à votre capital.
       </div>
 
       <button onClick={handleChange} className="next_button-interest button_position">
