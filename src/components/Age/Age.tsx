@@ -6,6 +6,7 @@ import "./age.css";
 export default function Age(): ReactElement {
   const [age, setAge] = useState<any>();
   const [error, setError] = useState("");
+  const [errorCheck, setErrorCheck] = useState(false);
 
   const dateFromStorage: any = localStorage.getItem("date");
   const sex: any = localStorage.getItem("sex");
@@ -32,17 +33,24 @@ export default function Age(): ReactElement {
     return age;
   };
 
+  const handleSubmitBack = () => {
+    return history.push("/user-data-birth");
+  };
+
   const handleSubmit = () => {
     if ((sex === "Femme" && age < 18) || (sex === "Femme" && age > 63)) {
+      setErrorCheck(true);
       setError(
         "Malheureusement, vous ne pouvez pas investir au troisième pilier si vous avez moins de 18 ans ou plus de 63 ans pour les femmes et 64 ans pour les hommes. "
       );
-    } else if ((sex === "Hommo" && age < 18) || (sex === "Femme" && age > 64)) {
+    } else if ((sex === "Hommo" && age < 18) || (sex === "Hommo" && age > 64)) {
+      setErrorCheck(true);
       setError(
         "Malheureusement, vous ne pouvez pas investir au troisième pilier si vous avez moins de 18 ans ou plus de 63 ans pour les femmes et 64 ans pour les hommes. "
       );
     } else {
       localStorage.setItem("age", String(age));
+      setErrorCheck(false);
       setError("");
       return history.push("/difference-bank-and-insurance");
     }
@@ -59,10 +67,23 @@ export default function Age(): ReactElement {
         Vous épargnerez donc pendant{" "}
         <span className="age_calculation"> {age} ans.</span>{" "}
       </div>
-      <div className="error">{error}</div>
-      <button onClick={handleSubmit} className="next_button">
-        Continuer
-      </button>
+
+      {errorCheck && (
+        <div className="error_block">
+          <img src="/image/error.png" className="error_img" alt="error" />
+          {error}{" "}
+        </div>
+      )}
+
+      <div className="buttons_set button_position">
+        <button onClick={handleSubmit} className="next_button ">
+          Continuer
+        </button>
+        {errorCheck && (
+          <button onClick={handleSubmitBack} className="next_button button_space">
+            Modifier mon âge
+          </button>)}
+      </div>
     </div>
   );
-};
+}

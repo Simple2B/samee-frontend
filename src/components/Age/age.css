@@ -14,6 +14,17 @@
   margin-bottom: 60px;
 }
 
-.error {
-  color: red;
+
+.button_space {
+  margin-left: 15px;
+}
+
+.error_img {
+  width: 100px;
+  height: auto;
+}
+
+.error_block {
+  display: flex;
+  align-items: center;
 }

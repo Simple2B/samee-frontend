@@ -1,0 +1,18 @@
+.half_guarantee_solution_interest {
+  margin-top: 50px;
+}
+
+.half_guarantee_solution_interest_button {
+  padding: 10px 20px;
+  border: none;
+  color: black;
+  background-color: #eac28c;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  transition: background-color 1s;
+}
+
+.half_guarantee_solution_interest_button:hover {
+  background-color: #a88b64;
+}

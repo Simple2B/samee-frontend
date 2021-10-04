@@ -39,7 +39,7 @@ export default function Welcome(): ReactElement {
             <strong>combien elles vous rapportent.</strong>{" "}
           </li>
         </ul>
-        <button onClick={handleSubmit} className="next_button">
+        <button onClick={handleSubmit} className="next_button button_position">
           Continuer
         </button>
       </div>

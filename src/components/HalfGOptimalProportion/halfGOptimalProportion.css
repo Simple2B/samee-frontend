@@ -1,0 +1,90 @@
+.half-optimal-proportion_percents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.circle_button {
+  position: relative;
+  margin: 0 70px;
+}
+
+.circle {
+  position: absolute;
+  left: 21%;
+  top: 21%;
+  width: 150px;
+  height: 150px;
+  border: 10px solid;
+  border-radius: 50%;
+}
+
+.percent {
+  font-size: 55px;
+  cursor: pointer;
+}
+
+.proportion_percent {
+  text-align: center;
+}
+
+.switch_button {
+  transition: transform 1s;
+}
+
+.rotate40 {
+  transform: rotate(80deg);
+}
+
+.rotate60 {
+  transform: rotate(-80deg);
+}
+
+@media (max-width: 425px) {
+
+  .half-optimal-proportion_percents {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .percent {
+    font-size: 30px;
+
+  }
+
+  .circle_button {
+    position: relative;
+    margin: 0 0px;
+  }
+
+
+}
+
+@media (max-width: 375px) {
+  .switch_img {
+    width: 100px;
+    height: auto;
+    margin: 0 20px;
+  }
+
+  .half-optimal-proportion_percents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+
+  .percent {
+    font-size: 30px;
+
+  }
+
+  .circle_button {
+    position: relative;
+    margin: 0 0px;
+  }
+
+
+}

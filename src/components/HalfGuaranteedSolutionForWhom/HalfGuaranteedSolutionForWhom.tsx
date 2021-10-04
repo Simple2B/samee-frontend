@@ -26,7 +26,7 @@ export default function HalfGuaranteedSolutionForWhom(): ReactElement {
         volatilité diminue.
       </div>
 
-      <button onClick={handleSubmit} className="next_button">
+      <button onClick={handleSubmit} className="next_button button_position">
         C'est compris
       </button>
     </div>

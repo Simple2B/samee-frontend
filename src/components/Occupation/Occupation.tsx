@@ -25,36 +25,42 @@ export default function Occupation(): ReactElement {
       </div>
 
       <div className="occupation_inputs">
-        <input
-          name="occupation"
-          value={occupation}
-          onChange={(e) => {
-            setOccupation("Salarié");
-          }}
-          id="input_employee"
-          type="radio"
-        />
-        <label className="occupation_label" htmlFor="input_employee">
-          Salarié
+        <div className="occupation_radio_button">
+          <input
+            name="occupation"
+            value={occupation}
+            onChange={(e) => {
+              setOccupation("Salarié");
+            }}
+            id="input_employee"
+            type="radio"
+          />
+          <label className="occupation_label" htmlFor="input_employee">
+            Salarié
         </label>
-        <input
-          name="occupation"
-          value={occupation}
-          onChange={(e) => {
-            setOccupation("Indépendant");
-          }}
-          id="input_independent"
-          type="radio"
-        />
-        <label className="occupation_label" htmlFor="input_independent">
-          Indépendant
+        </div>
+
+        <div className="occupation_radio_button">
+          <input
+            name="occupation"
+            value={occupation}
+            onChange={(e) => {
+              setOccupation("Indépendant");
+            }}
+            id="input_independent"
+            type="radio"
+          />
+          <label className="occupation_label" htmlFor="input_independent">
+            Indépendant
         </label>
+        </div>
+
       </div>
 
       <button
         disabled={occupation === ""}
         onClick={handleSubmit}
-        className="next_button"
+        className="next_button button_position"
       >
         Continuer
       </button>

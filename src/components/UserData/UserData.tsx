@@ -1,12 +1,15 @@
+import { FormControlLabel, Radio, RadioGroup, TextField } from "@mui/material";
 import React, { ReactElement, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Popup from "reactjs-popup";
 import { localStorageApi } from "../../helpers/localStorage";
 import "./userData.css";
 
+
 export default function UserData(): ReactElement {
   const [sex, setSex] = useState("");
   const [date, setDate] = useState<any>();
+  const [error, setError] = useState('');
 
   const history = useHistory();
 
@@ -15,10 +18,16 @@ export default function UserData(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    localStorage.setItem("sex", sex);
-    localStorage.setItem("date", date);
-    localStorageApi.addCompletedStep("/user-data-birth");
-    return history.push("/user-age");
+    if (sex === '' || date === '') {
+      setError('veuillez renseigner les informations')
+    } else {
+      setError('')
+      localStorage.setItem("sex", sex);
+      localStorage.setItem("date", date);
+      localStorageApi.addCompletedStep("/user-data-birth");
+      return history.push("/user-age");
+    }
+
   };
 
   return (
@@ -30,35 +39,44 @@ export default function UserData(): ReactElement {
 
       <div className="user_data_inputs_sexe">
         <p className="sexe_lebel">Sexe: </p>
-        <input
-          name="sexe"
-          value={sex}
-          onChange={(e) => {
-            setSex("Homme");
-          }}
-          id="sexe_hommo"
-          type="radio"
-        />
-        <label className="user_data_inputs_lebel" htmlFor="sexe_hommo">
-          Homme
-        </label>
-        <input
-          name="sexe"
-          value={sex}
-          onChange={(e) => {
-            setSex("Femme");
-          }}
-          id="sexe_femme"
-          type="radio"
-        />
-        <label className="user_data_inputs_lebel" htmlFor="sexe_femme">
-          Femme
-        </label>
+        <div className="sex_radio_item">
+          <input
+            className="sex_radio_button"
+            name="sexe"
+            value={sex}
+            onChange={(e) => {
+              setSex("Homme");
+            }}
+            id="sexe_hommo"
+            type="radio"
+          />
+          <label className="user_data_inputs_lebel" htmlFor="sexe_hommo">
+            Homme
+          </label>
+        </div>
+
+        <div className="sex_radio_item">
+          <input
+            className="sex_radio_button"
+            name="sexe"
+            value={sex}
+            onChange={(e) => {
+              setSex("Femme");
+            }}
+            id="sexe_femme"
+            type="radio"
+          />
+          <label className="user_data_inputs_lebel" htmlFor="sexe_femme">
+            Femme
+          </label>
+        </div>
       </div>
 
       <div className="user_data_inputs_birth">
         <p className="age_lebel">Âge: </p>
+
         <input
+          className="user_data_input"
           value={date}
           onChange={(e) => {
             setDate(e.target.value);
@@ -67,10 +85,13 @@ export default function UserData(): ReactElement {
           type="date"
         />
       </div>
+
+      <div className="text_error">
+        {error}
+      </div>
       <button
-        disabled={sex === "" || date === ""}
         onClick={handleSubmit}
-        className="next_button"
+        className="next_button button_position"
       >
         Continuer
       </button>
@@ -115,4 +136,4 @@ export default function UserData(): ReactElement {
       </Popup>
     </div>
   );
-};
+}

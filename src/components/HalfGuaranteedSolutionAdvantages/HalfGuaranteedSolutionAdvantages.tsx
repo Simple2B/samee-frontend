@@ -29,7 +29,7 @@ export default function HalfGuaranteedSolutionAdvantages(): ReactElement {
         100% de votre revenu imposable jusqu’à CHF 6'883 par an.
       </div>
 
-      <button onClick={handleSubmit} className="next_button">
+      <button onClick={handleSubmit} className="next_button button_position">
         C'est compris
       </button>
     </div>

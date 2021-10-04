@@ -2,6 +2,12 @@
   display: block;
 }
 
+.employee_salary {
+  width: 100px;
+  height: 40px;
+  font-size: 17px;
+}
+
 .employee_inputs_set {
   display: flex;
   align-items: center;
@@ -9,4 +15,16 @@
 
 .gold_text {
   color: #eac28c;
+}
+
+.button_position-1 {
+  position: absolute;
+  left: 140px;
+  bottom: 120px;
+}
+
+@media (max-width: 425px) {
+  .button_position-1 {
+    left: 20px;
+  }
 }

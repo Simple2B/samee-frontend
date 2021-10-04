@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { useHistory } from "react-router-dom";
-import { Player } from '@lottiefiles/react-lottie-player';
+import { Player } from "@lottiefiles/react-lottie-player";
 import Popup from "reactjs-popup";
 import "./abroad.css";
 
@@ -20,8 +20,7 @@ export default function Abroad(): ReactElement {
           </div>
           <ol className="abroad_list">
             <li className="abroad_list-item">
-              Arrivé à la retraite, vous avez le choix entre une rente à vie et
-              le retrait d'un capital unique.{" "}
+              Arrivé à la retraite, vous pouvez retirer votre capital ainsi que les intérêts et éventuels excédents (uniquement en assurance).
             </li>
             <li className="abroad_list-item">
               Vous avez la possibilité de partir en retraite anticipée dès l'âge
@@ -29,8 +28,7 @@ export default function Abroad(): ReactElement {
             </li>
             <li className="abroad_list-item">
               {" "}
-              Vous pouvez retirer votre capital afin de vous installer ailleurs
-              en Europe d'une manière définitive ou pour le travail.{" "}
+              Vous pouvez retirer votre capital afin de vous installer ailleurs en Europe d'une manière définitive ou pour le travail.
             </li>
           </ol>
         </div>
@@ -39,12 +37,11 @@ export default function Abroad(): ReactElement {
             autoplay
             loop
             src="/animations/13598-pensjonisten.json"
-            style={{ height: '300px', width: '300px' }}
-          >
-          </Player>
+            style={{ height: "300px", width: "300px" }}
+          ></Player>
         </div>
       </div>
-      <button onClick={handleSubmit} className="next_button">
+      <button onClick={handleSubmit} className="next_button button_position">
         Continuer
       </button>
       <Popup
@@ -80,10 +77,10 @@ export default function Abroad(): ReactElement {
                 devenez invalide et ne pouvez plus cotiser.
               </div>
               <div className="pop_up_text">
-                À l’âge de la retraite, vous avez le choix entre une rente à vie
-                ou le retrait d’un capital unique. Légalement, vous avez le
-                droit de retirer votre 3ème pilier dans une période de 5 ans
-                avant ou après cette date butoir.
+                Légalement, vous avez le droit de retirer votre 3ème pilier dans
+                une période de 5 ans avant ou après cette date butoir. Si vous
+                souscrivez un troisième pilier en assurance, vous devez inscrire
+                la date d’échéance dans le contrat.
               </div>
               <div className="pop_up_text">
                 Si vous envisagez un départ définitif à l’étranger, vous avez
@@ -98,4 +95,4 @@ export default function Abroad(): ReactElement {
       </Popup>
     </>
   );
-};
+}

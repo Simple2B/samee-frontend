@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { useHistory } from "react-router-dom";
-import { Player } from '@lottiefiles/react-lottie-player';
+import { Player } from "@lottiefiles/react-lottie-player";
 import Popup from "reactjs-popup";
 import "./housing.css";
 
@@ -37,13 +37,12 @@ export default function Housing(): ReactElement {
           <Player
             autoplay
             loop
-            src="/animations/24209-house-ou-apartment.json"
-            style={{ height: '300px', width: '300px' }}
-          >
-          </Player>
+            src="/animations/59875-home.json"
+            style={{ height: "300px", width: "300px" }}
+          ></Player>
         </div>
       </div>
-      <button onClick={handleSubmit} className="next_button">
+      <button onClick={handleSubmit} className="next_button button_position">
         Continuer
       </button>
       <Popup
@@ -82,7 +81,7 @@ export default function Housing(): ReactElement {
                 principale, tels que le revêtement de sols, le ravalement de
                 façade ou la réfection d’une cuisine par exemple. Le retrait de
                 votre 3ème pilier pour la construction d’une piscine, d’un
-                hammam ou d’un garage ne sont pas autorisés.
+                hammam ou d’un garage n’est pas autorisé.
               </div>
               <div className="pop_up_text">
                 b. Pour devenir propriétaire d’une propriété de logement à usage
@@ -94,10 +93,37 @@ export default function Housing(): ReactElement {
                 c. Vous créez votre entreprise en tant qu’indépendant ou vous
                 êtes inscrit en tant que travailleur indépendant à l’AVS.
               </div>
+
+              <div className="pop_up_text">
+                Attention : lorsque vous retirez votre troisième pilier en
+                assurance, vous devez tenir compte de la valeur de rachat de
+                votre 3ème pilier. Cette valeur de rachat sera très faible dans
+                les premières années de votre contrat. C’est-à-dire qu’un
+                retrait de votre troisième pilier n’est pas optimisé dans cette
+                situation.
+              </div>
+
+              <div className="pop_up_text">
+                Toutefois, vous pouvez mettre votre troisième pilier en
+                nantissement, c’est-à-dire qu’il vous servira de garantie pour
+                votre hypothèque. Il est plus avantageux que le retrait de
+                capital pour lequel vous êtes imposé et vous risquez de ne pas
+                récupérer l’entièreté de vos cotisations.
+              </div>
+
+              <div className="pop_up_text">
+                En choisissant cette solution et ainsi continuant de cotiser au
+                3ème pilier, vous bénéficiez toujours des prestations en cas
+                d’invalidité ou de décès. Dans ces deux cas, votre famille
+                n’aura pas à prendre en charge votre hypothèque, car l’assurance
+                s’en chargera. Le nantissement vous permet de bénéficier de tous
+                les avantages du 3ème pilier en remboursant votre crédit
+                hypothécaire. .
+              </div>
             </div>
           </>
         )}
       </Popup>
     </>
   );
-};
+}

@@ -40,6 +40,14 @@ import WhatIsInvestmentSolution from "./components/WhatIsInvestmentSolution/What
 import InvestmentSolutionAdvantages from "./components/InvestmentSolutionAdvantages/InvestmentSolutionAdvantages";
 import InvestmentSolutionForWhom from "./components/InvestmentSolutionForWhom/InvestmentSolutionForWhom";
 import ChooseSolution from "./components/ChooseSolution/ChooseSolution";
+import SavingGuaranteeInterest from "./components/SavingGuaranteeInterest/SavingGuaranteeInterest";
+import SavingGuaranteeInterestCalc from "./components/SavingGuaranteeInterestCalc/SavingGuaranteeInterestCalc";
+import HalfGuaranteeSolutionInterest from "./components/HalfGuaranteeSolutionInterest/HalfGuaranteeSolutionInterest";
+import HalfGOptimalProportion from "./components/HalfGOptimalProportion/HalfGOptimalProportion";
+import PercentCalc from "./components/PercentCalc/PercentCalc";
+import AdditionalGuaranties from "./components/AdditionalGuaranties/AdditionalGuaranties";
+import ScenarioCalc from "./components/ScenarioCalc/ScenarioCalc";
+import ModifyParameters from "./components/ModifyParameters/ModifyParameters";
 
 function App() {
   const [steps, setSteps] = useState([
@@ -101,6 +109,30 @@ function App() {
         </div>
         <Router>
           <Switch>
+            <Route path="/modify-parameters">
+              <ModifyParameters />
+            </Route>
+            <Route path="/scenario-calculation">
+              <ScenarioCalc />
+            </Route>
+            <Route path="/additional-guaranties">
+              <AdditionalGuaranties />
+            </Route>
+            <Route path="/percent-calculation">
+              <PercentCalc />
+            </Route>
+            <Route path="/half-guarantee-optimal-proportion">
+              <HalfGOptimalProportion />
+            </Route>
+            <Route path="/half-guarantee-interest">
+              <HalfGuaranteeSolutionInterest />
+            </Route>
+            <Route path="/saving-guarantee-interest-calculation">
+              <SavingGuaranteeInterestCalc />
+            </Route>
+            <Route path="/saving-guarantee-interest">
+              <SavingGuaranteeInterest />
+            </Route>
             <Route path="/choose-solution">
               <ChooseSolution />
             </Route>
@@ -178,8 +210,8 @@ function App() {
               {nextStep.includes("/user-data-birth") ? (
                 <UserData />
               ) : (
-                  <Redirect to={{ pathname: "/" }} />
-                )}
+                <Redirect to={{ pathname: "/" }} />
+              )}
             </Route>
 
             <Route exact path="/">
@@ -197,6 +229,6 @@ function App() {
       <Footer />
     </>
   );
-};
+}
 
 export default App;
