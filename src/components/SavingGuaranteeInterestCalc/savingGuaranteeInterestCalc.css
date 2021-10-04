@@ -1,0 +1,120 @@
+.saving_interest_calc {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.saving_interest_calc-final-calc {
+  min-width: 300px;
+  height: 300px;
+  border: 5px solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.countup_text {
+  color: #eac28c;
+  font-size: 40px;
+}
+
+.employee_salary {
+  width: 100px;
+  height: 40px;
+}
+
+/*
+.saving_interest_calc_list-text {
+  display: flex;
+  align-items: center;
+} */
+
+.button_recalc {
+  padding: 10px 25px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  margin-left: 30px;
+  transition: background-color 1s;
+}
+
+
+.button_recalc:hover {
+  background-color: rgb(187, 187, 187);
+}
+
+.buttons_set {
+  position: absolute;
+  bottom: 120px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .saving_interest_calc {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .saving_interest_calc_list-text {
+    display: block;
+  }
+
+  .countup_text {
+    color: #eac28c;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .saving_interest_calc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .saving_interest_calc_list-text {
+    display: block;
+  }
+}
+
+@media (max-width: 425px) {
+  .saving_interest_calc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .saving_interest_calc_list-text {
+    display: block;
+  }
+
+  .saving_interest_calc-final-calc {
+    min-width: 200px;
+    height: 200px;
+    border: 5px solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: gold; */
+    flex-direction: column;
+  }
+
+  .countup_text {
+    color: #eac28c;
+    font-size: 20px;
+  }
+}
