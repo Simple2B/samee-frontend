@@ -1,0 +1,20 @@
+.percent_calc_block {
+  display: flex;
+  align-items: center;
+}
+
+.percent_calc_blocks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.percent_calc_img {
+  width: 190px;
+  height: auto;
+}
+
+.percent_calc_amount {
+  font-size: 40px;
+}
