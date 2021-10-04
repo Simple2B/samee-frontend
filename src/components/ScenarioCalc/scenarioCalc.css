@@ -1,0 +1,23 @@
+.blue_text {
+  color: #5cbbbb;
+}
+
+.charts_blocks {
+  display: flex;
+}
+
+.modif_button {
+  padding: 10px 25px;
+  border: none;
+  transition: background-color 1s;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+.modif_button:hover {
+  background-color: rgb(187, 187, 187);
+}
+
+.charts_block {
+  margin-top: 40px;
+}
