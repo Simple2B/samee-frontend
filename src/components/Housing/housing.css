@@ -3,6 +3,10 @@
   align-items: center;
 }
 
+.housing_text {
+  margin-right: 25px;
+}
+
 .housing_animation {
   background-color: white;
   border-radius: 150px;

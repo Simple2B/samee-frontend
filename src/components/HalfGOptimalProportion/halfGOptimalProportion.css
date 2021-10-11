@@ -41,12 +41,24 @@
   transform: rotate(-80deg);
 }
 
+.error_block_position {
+  position: absolute;
+  bottom: 20%;
+  right: 5%;
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+
 @media (max-width: 425px) {
 
   .half-optimal-proportion_percents {
     display: flex;
     align-items: baseline;
     justify-content: center;
+    margin-top: 5px;
   }
 
   .percent {
@@ -59,6 +71,19 @@
     margin: 0 0px;
   }
 
+  .error_block_position {
+    position: absolute;
+    bottom: 16%;
+    right: 5%;
+    max-width: 215px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .error_img {
+    width: 50px;
+  }
 
 }
 
@@ -86,5 +111,14 @@
     margin: 0 0px;
   }
 
+  .error_block_position {
+    position: absolute;
+    bottom: 9%;
+    right: 5%;
+    max-width: 215px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
 
 }

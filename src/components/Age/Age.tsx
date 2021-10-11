@@ -1,15 +1,16 @@
-import React, { ReactElement, useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { retiredFemaleAge, retiredMaleAge } from "../../helpers/consts";
-import "./age.css";
+import React, {ReactElement, useEffect, useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import {retiredFemaleAge, retiredMaleAge} from '../../helpers/consts';
+import {IComponentProps} from '../../types';
+import './age.css';
 
 export default function Age(): ReactElement {
   const [age, setAge] = useState<any>();
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [errorCheck, setErrorCheck] = useState(false);
 
-  const dateFromStorage: any = localStorage.getItem("date");
-  const sex: any = localStorage.getItem("sex");
+  const dateFromStorage: any = localStorage.getItem('date');
+  const sex: any = localStorage.getItem('sex');
 
   const history = useHistory();
 
@@ -24,9 +25,9 @@ export default function Age(): ReactElement {
 
     let calcAge;
 
-    if (sex === "Femme") {
+    if (sex === 'Femme') {
       calcAge = retiredFemaleAge - age;
-    } else if (sex === "Homme") {
+    } else if (sex === 'Homme') {
       calcAge = retiredMaleAge - age;
     }
     setAge(calcAge);
@@ -34,25 +35,25 @@ export default function Age(): ReactElement {
   };
 
   const handleSubmitBack = () => {
-    return history.push("/user-data-birth");
+    return history.push('/user-data-birth');
   };
 
   const handleSubmit = () => {
-    if ((sex === "Femme" && age < 18) || (sex === "Femme" && age > 63)) {
+    if ((sex === 'Femme' && age < 18) || (sex === 'Femme' && age > 63)) {
       setErrorCheck(true);
       setError(
-        "Malheureusement, vous ne pouvez pas investir au troisième pilier si vous avez moins de 18 ans ou plus de 63 ans pour les femmes et 64 ans pour les hommes. "
+        'Malheureusement, vous ne pouvez pas investir au troisième pilier si vous avez moins de 18 ans ou plus de 63 ans pour les femmes et 64 ans pour les hommes. ',
       );
-    } else if ((sex === "Hommo" && age < 18) || (sex === "Hommo" && age > 64)) {
+    } else if ((sex === 'Hommo' && age < 18) || (sex === 'Hommo' && age > 64)) {
       setErrorCheck(true);
       setError(
-        "Malheureusement, vous ne pouvez pas investir au troisième pilier si vous avez moins de 18 ans ou plus de 63 ans pour les femmes et 64 ans pour les hommes. "
+        'Malheureusement, vous ne pouvez pas investir au troisième pilier si vous avez moins de 18 ans ou plus de 63 ans pour les femmes et 64 ans pour les hommes. ',
       );
     } else {
-      localStorage.setItem("age", String(age));
+      localStorage.setItem('age', String(age));
       setErrorCheck(false);
-      setError("");
-      return history.push("/difference-bank-and-insurance");
+      setError('');
+      return history.push('/difference-bank-and-insurance');
     }
   };
 
@@ -64,14 +65,14 @@ export default function Age(): ReactElement {
     <div className="age">
       <div className="age_text">Merci pour ces informations.</div>
       <div className="age_text">
-        Vous épargnerez donc pendant{" "}
-        <span className="age_calculation"> {age} ans.</span>{" "}
+        Vous épargnerez donc pendant{' '}
+        <span className="age_calculation"> {age} ans.</span>{' '}
       </div>
 
       {errorCheck && (
         <div className="error_block">
           <img src="/image/error.png" className="error_img" alt="error" />
-          {error}{" "}
+          {error}{' '}
         </div>
       )}
 
@@ -80,9 +81,12 @@ export default function Age(): ReactElement {
           Continuer
         </button>
         {errorCheck && (
-          <button onClick={handleSubmitBack} className="next_button button_space">
+          <button
+            onClick={handleSubmitBack}
+            className="next_button button_space">
             Modifier mon âge
-          </button>)}
+          </button>
+        )}
       </div>
     </div>
   );

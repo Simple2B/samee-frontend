@@ -30,7 +30,7 @@ a {
   padding: 20px 140px;
   overflow: scroll;
   padding-bottom: 80px;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .phone_img {
@@ -56,6 +56,36 @@ li {
   margin-bottom: 17px;
 }
 
+
+.page {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+}
+
+.page-enter {
+  opacity: 0;
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translate(0, 100%);
+  margin-top: 50vh;
+  transition: opacity 500ms transform 500ms margin-top 500ms;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translate(-100%);
+  transition: opacity 500ms, transform 500ms;
+}
+
+
+
 @media (min-width: 1800px) {
   body {
     font-size: 50px;
@@ -69,6 +99,18 @@ li {
 
   .title {
     font-size: 55px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .App {
+    padding: 20px 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 20px 100px;
   }
 }
 
@@ -92,7 +134,7 @@ li {
   }
 
   button {
-    font-size: 18px !important;
+    font-size: 15px !important;
     font-family: "Archivo Narrow" !important;
   }
 

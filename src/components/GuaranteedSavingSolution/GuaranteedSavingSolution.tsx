@@ -1,29 +1,31 @@
-import React, { ReactElement } from "react";
-import { useHistory } from "react-router-dom";
-import Popup from "reactjs-popup";
-import "./guaranteedSavingSolution.css";
+import React, {ReactElement} from 'react';
+import {useHistory} from 'react-router-dom';
+import Popup from 'reactjs-popup';
+import './guaranteedSavingSolution.css';
+
+const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
 
 export default function GuaranteedSavingSolution(): ReactElement {
   const history = useHistory();
 
   const handleSubmit = () => {
-    history.push("/half-guarantee-saving-solution");
-  };
-
-  const handleSubmitPass = () => {
-    history.push("/choose-solution");
+    if (solutions.includes('rendement')) {
+      history.push('/half-guarantee-saving-solution');
+    } else {
+      history.push('/saving-guarantee-interest');
+    }
   };
 
   const handleWhatIs = () => {
-    history.push("/what-is-saving-solution");
+    history.push('/what-is-saving-solution');
   };
 
   const handleAdvantages = () => {
-    history.push("/saving-solution-advantages");
+    history.push('/saving-solution-advantages');
   };
 
   const handleForWhom = () => {
-    history.push("/saving-solution-for-whom");
+    history.push('/saving-solution-for-whom');
   };
 
   return (
@@ -40,20 +42,17 @@ export default function GuaranteedSavingSolution(): ReactElement {
           <ul className="guaranteed_saving_solution_list">
             <li
               onClick={handleWhatIs}
-              className="guaranteed_saving_solution_list-item"
-            >
+              className="guaranteed_saving_solution_list-item">
               Qu'est-ce que c'est ?
             </li>
             <li
               onClick={handleAdvantages}
-              className="guaranteed_saving_solution_list-item"
-            >
+              className="guaranteed_saving_solution_list-item">
               Quels sont les avantages ?
             </li>
             <li
               onClick={handleForWhom}
-              className="guaranteed_saving_solution_list-item"
-            >
+              className="guaranteed_saving_solution_list-item">
               À qui est-elle destinée ?
             </li>
           </ul>
@@ -65,14 +64,13 @@ export default function GuaranteedSavingSolution(): ReactElement {
             <div className="pop_up_triger-video">
               <img className="video_img" alt="video" src="/image/video1.png" />
             </div>
-          }
-        >
+          }>
           {(
             close:
               | ((
-                event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-              ) => void)
-              | undefined
+                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+                ) => void)
+              | undefined,
           ) => (
             <>
               <button className="close" onClick={close}>
@@ -92,12 +90,9 @@ export default function GuaranteedSavingSolution(): ReactElement {
       </div>
       <div className="buttons_set button_position">
         <button onClick={handleSubmit} className="video_button_next">
-          Voir la solution suivante
-        </button>
-        <button onClick={handleSubmitPass} className="video_button_pass">
-          Vers le choix des solutions
+          Continuer
         </button>
       </div>
     </>
   );
-};
+}

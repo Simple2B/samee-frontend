@@ -1,23 +1,34 @@
-import React, { ReactElement, useState } from "react";
-import NumberFormat from "react-number-format";
-import Chart from "react-apexcharts";
-import "./scenarioCalc.css";
-import { useEffect } from "react";
-import Popup from "reactjs-popup";
-import { useHistory } from "react-router-dom";
+import React, {ReactElement, useState} from 'react';
+import NumberFormat from 'react-number-format';
+import classNames from 'classnames';
+import Chart from 'react-apexcharts';
+import './scenarioCalc.css';
+import {useEffect} from 'react';
+import Popup from 'reactjs-popup';
+import {useHistory} from 'react-router-dom';
+import {chownSync} from 'fs';
 
 export default function ScenarioCalc(): ReactElement {
+  const [period, setPeriod] = useState(localStorage.getItem('period'));
+  const [savings, setSevings] = useState<any>(localStorage.getItem('salary'));
   const [scenarioPessimistic, setScenarioPessimistic] = useState<number>();
   const [scenarioRealistic, setScenarioRealistic] = useState<number>();
   const [scenarioOptimistic, setScenarioOptimistic] = useState<number>();
 
+  const [savingYears] = useState<any>(localStorage.getItem('age'));
+  const [savingsPercent, setSavingsPercent] = useState<any>(
+    localStorage.getItem('savingsPercent'),
+  );
+  const [fondsPercent, setFondsPercent] = useState<any>(
+    localStorage.getItem('fondsPercent'),
+  );
+
   const [amountEpargneFromStorage] = useState<any>(
-    localStorage.getItem("amountEpargne")
+    localStorage.getItem('amountEpargne'),
   );
   const [amountFondsFromStorage] = useState<any>(
-    localStorage.getItem("amount Fonds")
+    localStorage.getItem('amount Fonds'),
   );
-  const [savingYears] = useState<any>(localStorage.getItem("age"));
 
   const [
     amountEpargneScenarioPessimistic,
@@ -37,18 +48,11 @@ export default function ScenarioCalc(): ReactElement {
 
   const history = useHistory();
 
-  console.log(amountEpargneScenarioPessimistic);
-  console.log(amountFondsScenarioPessimistic);
-  console.log(amountEpargneScenarioRealistic);
-  console.log(amountFondsScenarioRealistic);
-  console.log(amountEpargneScenarioOptimistic);
-  console.log(amountFondsScenarioOptimistic);
-
   const statePessimistic = {
     series: [amountEpargneScenarioPessimistic, amountFondsScenarioPessimistic],
     options: {
       fill: {
-        colors: ["#eac28c", "#5cbbbb"],
+        colors: ['#eac28c', '#5cbbbb'],
       },
       stroke: {
         show: false,
@@ -63,40 +67,60 @@ export default function ScenarioCalc(): ReactElement {
         enabled: false,
         fixed: {
           enabled: true,
-          position: "topRight",
+          position: 'topRight',
           offsetX: 0,
           offsetY: 0,
         },
       },
+      responsive: [
+        {
+          breakpoint: 1025,
+          options: {
+            chart: {
+              width: 350,
+            },
+            plotOptions: {},
+          },
+        },
+        {
+          breakpoint: 769,
+          options: {
+            chart: {
+              width: 300,
+            },
+            plotOptions: {},
+          },
+        },
+      ],
       plotOptions: {
         expandOnClick: false,
         pie: {
           donut: {
-            size: "90px",
+            size: '90px',
             labels: {
-              show: true,
+              show: false,
               name: {
                 show: true,
-                fontSize: "22px",
-                fontFamily: "Archivo Narrow, sans-serif",
+                fontSize: '22px',
+                fontFamily: 'Archivo Narrow, sans-serif',
                 fontWeight: 400,
-                color: "white",
+                color: 'white',
               },
               value: {
                 show: true,
-                fontSize: "40px",
-                fontFamily: "Archivo Narrow, sans-serif",
+                fontSize: '40px',
+                fontFamily: 'Archivo Narrow, sans-serif',
                 fontWeight: 400,
-                color: "#eac28c",
+                color: '#eac28c',
               },
               total: {
                 show: true,
                 showAlways: true,
-                label: "Scénario pessimiste",
-                fontSize: "24px",
-                fontFamily: "Archivo Narrow, sans-serif",
+                label: 'Scénario pessimiste',
+                fontSize: '24px',
+                fontFamily: 'Archivo Narrow, sans-serif',
                 fontWeight: 400,
-                color: "white",
+                color: 'white',
               },
             },
           },
@@ -109,7 +133,7 @@ export default function ScenarioCalc(): ReactElement {
     series: [amountEpargneScenarioRealistic, amountFondsScenarioRealistic],
     options: {
       fill: {
-        colors: ["#eac28c", "#5cbbbb"],
+        colors: ['#eac28c', '#5cbbbb'],
       },
       stroke: {
         show: false,
@@ -124,31 +148,51 @@ export default function ScenarioCalc(): ReactElement {
         enabled: false,
         fixed: {
           enabled: false,
-          position: "topRight",
+          position: 'topRight',
           offsetX: 0,
           offsetY: 0,
         },
       },
+      responsive: [
+        {
+          breakpoint: 1025,
+          options: {
+            chart: {
+              width: 350,
+            },
+            plotOptions: {},
+          },
+        },
+        {
+          breakpoint: 769,
+          options: {
+            chart: {
+              width: 300,
+            },
+            plotOptions: {},
+          },
+        },
+      ],
       plotOptions: {
         pie: {
           expandOnClick: false,
           donut: {
-            size: "90px",
+            size: '90px',
             labels: {
-              show: true,
+              show: false,
               name: {
                 show: true,
-                fontSize: "22px",
-                fontFamily: "Archivo Narrow, sans-serif",
+                fontSize: '22px',
+                fontFamily: 'Archivo Narrow, sans-serif',
                 fontWeight: 400,
-                color: "white",
+                color: 'white',
               },
               value: {
                 show: true,
-                fontSize: "40px",
-                fontFamily: "Archivo Narrow, sans-serif",
+                fontSize: '40px',
+                fontFamily: 'Archivo Narrow, sans-serif',
                 fontWeight: 400,
-                color: "#eac28c",
+                color: '#eac28c',
                 formatter: function (val: any) {
                   return `CHF ${val}`;
                 },
@@ -156,11 +200,11 @@ export default function ScenarioCalc(): ReactElement {
               total: {
                 show: true,
                 showAlways: true,
-                label: "Scénario réaliste",
-                fontSize: "24px",
-                fontFamily: "Archivo Narrow, sans-serif",
+                label: 'Scénario réaliste',
+                fontSize: '24px',
+                fontFamily: 'Archivo Narrow, sans-serif',
                 fontWeight: 400,
-                color: "white",
+                color: 'white',
               },
             },
           },
@@ -173,7 +217,7 @@ export default function ScenarioCalc(): ReactElement {
     series: [amountEpargneScenarioOptimistic, amountFondsScenarioOptimistic],
     options: {
       fill: {
-        colors: ["#eac28c", "#5cbbbb"],
+        colors: ['#eac28c', '#5cbbbb'],
       },
       stroke: {
         show: false,
@@ -188,40 +232,60 @@ export default function ScenarioCalc(): ReactElement {
         enabled: false,
         fixed: {
           enabled: true,
-          position: "topRight",
+          position: 'topRight',
           offsetX: 0,
           offsetY: 0,
         },
       },
+      responsive: [
+        {
+          breakpoint: 1025,
+          options: {
+            chart: {
+              width: 350,
+            },
+            plotOptions: {},
+          },
+        },
+        {
+          breakpoint: 769,
+          options: {
+            chart: {
+              width: 300,
+            },
+            plotOptions: {},
+          },
+        },
+      ],
       plotOptions: {
         pie: {
           expandOnClick: false,
           donut: {
-            size: "90px",
+            size: '90px',
             labels: {
-              show: true,
+              show: false,
               name: {
                 show: true,
-                fontSize: "22px",
-                fontFamily: "Archivo Narrow, sans-serif",
+                fontSize: '22px',
+                fontFamily: 'Archivo Narrow, sans-serif',
                 fontWeight: 400,
-                color: "blue",
+                color: 'blue',
               },
               value: {
                 show: true,
-                fontSize: "40px",
-                fontFamily: "Archivo Narrow, sans-serif",
+                fontSize: '40px',
+                fontFamily: 'Archivo Narrow, sans-serif',
                 fontWeight: 400,
-                color: "#eac28c",
+                color: '#eac28c',
               },
               total: {
                 show: true,
                 showAlways: true,
-                label: "Scénario optimiste",
-                fontSize: "24px",
-                fontFamily: "Archivo Narrow, sans-serif",
+                label: 'Scénario optimiste',
+                fontSize: '24px',
+                fontFamily: 'Archivo Narrow, sans-serif',
                 fontWeight: 400,
-                color: "white",
+                color: 'white',
               },
             },
           },
@@ -231,39 +295,111 @@ export default function ScenarioCalc(): ReactElement {
   };
 
   const calcPessimistic = () => {
-    const amountEpargneNew = Math.floor(
-      amountEpargneFromStorage *
-        (((1 + 0.001) ** savingYears - 1) / (0.001 / 1))
-    );
-    const amountFondsNew = Math.floor(amountFondsFromStorage * (1 + 0.02));
-    const scenario = amountEpargneNew + amountFondsNew;
-    setAmountEpargneScenarioPessimistic(amountEpargneNew);
-    setAmountFondsScenarioPessimistic(amountFondsNew);
-    setScenarioPessimistic(scenario);
+    if (period === 'mensuel') {
+      const amountEpargneNew = Math.floor(
+        savings *
+          12 *
+          (savingsPercent / 100) *
+          (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)),
+      );
+      const amountFondsNew = Math.floor(
+        (savings *
+          12 *
+          (fondsPercent / 100) *
+          ((1 + 0.02) ** savingYears - 1)) /
+          (0.02 / 1),
+      );
+      const scenario = amountEpargneNew + amountFondsNew;
+      setAmountEpargneScenarioPessimistic(amountEpargneNew);
+      setAmountFondsScenarioPessimistic(amountFondsNew);
+      setScenarioPessimistic(scenario);
+    } else if (period === 'annuel') {
+      const amountEpargneNew = Math.floor(
+        savings *
+          (savingsPercent / 100) *
+          (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)),
+      );
+      const amountFondsNew = Math.floor(
+        (savings * (fondsPercent / 100) * ((1 + 0.02) ** savingYears - 1)) /
+          (0.02 / 1),
+      );
+      const scenario = amountEpargneNew + amountFondsNew;
+      setAmountEpargneScenarioPessimistic(amountEpargneNew);
+      setAmountFondsScenarioPessimistic(amountFondsNew);
+      setScenarioPessimistic(scenario);
+    }
   };
 
   const calcRealistic = () => {
-    const amountEpargneNew = Math.floor(
-      amountEpargneFromStorage *
-        (((1 + 0.001) ** savingYears - 1) / (0.001 / 1))
-    );
-    const amountFondsNew = Math.floor(amountFondsFromStorage * (1 + 0.035));
-    const scenario = amountEpargneNew + amountFondsNew;
-    setAmountEpargneScenarioRealistic(amountEpargneNew);
-    setAmountFondsScenarioRealistic(amountFondsNew);
-    setScenarioRealistic(scenario);
+    if (period === 'mensuel') {
+      const amountEpargneNew = Math.floor(
+        savings *
+          12 *
+          (savingsPercent / 100) *
+          (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)),
+      );
+      const amountFondsNew = Math.floor(
+        (savings *
+          12 *
+          (fondsPercent / 100) *
+          ((1 + 0.035) ** savingYears - 1)) /
+          (0.035 / 1),
+      );
+      const scenario = amountEpargneNew + amountFondsNew;
+      setAmountEpargneScenarioRealistic(amountEpargneNew);
+      setAmountFondsScenarioRealistic(amountFondsNew);
+      setScenarioRealistic(scenario);
+    } else if (period === 'annuel') {
+      const amountEpargneNew = Math.floor(
+        savings *
+          (savingsPercent / 100) *
+          (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)),
+      );
+      const amountFondsNew = Math.floor(
+        (savings * (fondsPercent / 100) * ((1 + 0.035) ** savingYears - 1)) /
+          (0.035 / 1),
+      );
+      const scenario = amountEpargneNew + amountFondsNew;
+      setAmountEpargneScenarioRealistic(amountEpargneNew);
+      setAmountFondsScenarioRealistic(amountFondsNew);
+      setScenarioRealistic(scenario);
+    }
   };
 
   const calcOptimistic = () => {
-    const amountEpargneNew = Math.floor(
-      amountEpargneFromStorage *
-        (((1 + 0.001) ** savingYears - 1) / (0.001 / 1))
-    );
-    const amountFondsNew = Math.floor(amountFondsFromStorage * (1 + 0.05));
-    const scenario = amountEpargneNew + amountFondsNew;
-    setAmountEpargneScenarioOptimistic(amountEpargneNew);
-    setAmountFondsScenarioOptimistic(amountFondsNew);
-    setScenarioOptimistic(scenario);
+    if (period === 'mensuel') {
+      const amountEpargneNew = Math.floor(
+        savings *
+          12 *
+          (savingsPercent / 100) *
+          (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)),
+      );
+      const amountFondsNew = Math.floor(
+        (savings *
+          12 *
+          (fondsPercent / 100) *
+          ((1 + 0.05) ** savingYears - 1)) /
+          (0.05 / 1),
+      );
+      const scenario = amountEpargneNew + amountFondsNew;
+      setAmountEpargneScenarioOptimistic(amountEpargneNew);
+      setAmountFondsScenarioOptimistic(amountFondsNew);
+      setScenarioOptimistic(scenario);
+    } else if (period === 'annuel') {
+      const amountEpargneNew = Math.floor(
+        savings *
+          (savingsPercent / 100) *
+          (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)),
+      );
+      const amountFondsNew = Math.floor(
+        (savings * (fondsPercent / 100) * ((1 + 0.05) ** savingYears - 1)) /
+          (0.05 / 1),
+      );
+      const scenario = amountEpargneNew + amountFondsNew;
+      setAmountEpargneScenarioOptimistic(amountEpargneNew);
+      setAmountFondsScenarioOptimistic(amountFondsNew);
+      setScenarioOptimistic(scenario);
+    }
   };
 
   useEffect(() => {
@@ -274,18 +410,34 @@ export default function ScenarioCalc(): ReactElement {
 
   const handleSubmitModify = () => {
     localStorage.setItem(
-      "scenarioPessimistic",
-      JSON.stringify(scenarioPessimistic)
+      'scenarioPessimistic',
+      JSON.stringify(scenarioPessimistic),
     );
     localStorage.setItem(
-      "scenarioRealistic",
-      JSON.stringify(scenarioRealistic)
+      'scenarioRealistic',
+      JSON.stringify(scenarioRealistic),
     );
     localStorage.setItem(
-      "scenarioOptimistic",
-      JSON.stringify(scenarioOptimistic)
+      'scenarioOptimistic',
+      JSON.stringify(scenarioOptimistic),
     );
-    history.push("/modify-parameters");
+    history.push('/modify-parameters');
+  };
+
+  const handleSubmit = () => {
+    localStorage.setItem(
+      'scenarioPessimistic',
+      JSON.stringify(scenarioPessimistic),
+    );
+    localStorage.setItem(
+      'scenarioRealistic',
+      JSON.stringify(scenarioRealistic),
+    );
+    localStorage.setItem(
+      'scenarioOptimistic',
+      JSON.stringify(scenarioOptimistic),
+    );
+    history.push('./resume');
   };
 
   return (
@@ -293,54 +445,142 @@ export default function ScenarioCalc(): ReactElement {
       <div className="scenario-calc_text">
         La partie <span className="blue_text">bleue</span> correspond à la part
         en épargne et la partie <span className="gold_text">jaune</span> à la
-        partie en fonds de placement. Avec{" "}
+        partie en fonds de placement. Avec{' '}
         <NumberFormat
           value={amountEpargneFromStorage}
           className="gold_text"
-          displayType={"text"}
+          displayType={'text'}
           thousandSeparator={`'`}
-          prefix={"CHF "}
-        />{" "}
-        en épargne et{" "}
+          prefix={'CHF '}
+        />{' '}
+        en épargne et{' '}
         <NumberFormat
           value={amountFondsFromStorage}
           className="gold_text"
-          displayType={"text"}
+          displayType={'text'}
           thousandSeparator={`'`}
-          prefix={"CHF "}
-        />{" "}
+          prefix={'CHF '}
+        />{' '}
         en fonds, vous pourriez obtenir :
       </div>
 
       <div className="charts_blocks">
-        {amountEpargneScenarioPessimistic && (
-          <Chart
-            type="donut"
-            width="400"
-            options={statePessimistic.options}
-            series={statePessimistic.series}
+        <div className="chart_block">
+          <div className="gold_text chart_block_label-up">
+            <NumberFormat
+              value={amountEpargneScenarioPessimistic}
+              className="gold_text display_none"
+              displayType={'text'}
+              thousandSeparator={`'`}
+              prefix={'CHF '}
+            />
+          </div>
+          <div className="blue_text chart_block_label-down">
+            <NumberFormat
+              value={amountFondsScenarioPessimistic}
+              className="blue_text display_none"
+              displayType={'text'}
+              thousandSeparator={`'`}
+              prefix={'CHF '}
+            />
+          </div>
+          <div className="chart_block_title">Scénario pessimiste</div>
+          <NumberFormat
+            value={scenarioPessimistic}
+            className="gold_text chart_block_amount"
+            displayType={'text'}
+            thousandSeparator={`'`}
+            prefix={'CHF '}
           />
-        )}
-        {amountFondsScenarioRealistic && (
-          <Chart
-            type="donut"
-            width="400"
-            options={stateRealistic.options}
-            series={stateRealistic.series}
+          {amountEpargneScenarioPessimistic && (
+            <Chart
+              type="donut"
+              width="400"
+              options={statePessimistic.options}
+              series={statePessimistic.series}
+            />
+          )}
+        </div>
+
+        <div className="chart_block">
+          <div className="gold_text chart_block_label-up">
+            <NumberFormat
+              value={amountEpargneScenarioRealistic}
+              className="gold_text display_none"
+              displayType={'text'}
+              thousandSeparator={`'`}
+              prefix={'CHF '}
+            />
+          </div>
+          <div className="blue_text chart_block_label-down">
+            <NumberFormat
+              value={amountFondsScenarioRealistic}
+              className="blue_text display_none"
+              displayType={'text'}
+              thousandSeparator={`'`}
+              prefix={'CHF '}
+            />
+          </div>
+          <div className="chart_block_title">Scénario réaliste</div>
+          <NumberFormat
+            value={scenarioRealistic}
+            className="gold_text chart_block_amount"
+            displayType={'text'}
+            thousandSeparator={`'`}
+            prefix={'CHF '}
           />
-        )}
-        {amountEpargneScenarioOptimistic && (
-          <Chart
-            type="donut"
-            width="400"
-            options={stateOptimistic.options}
-            series={stateOptimistic.series}
+          {amountFondsScenarioRealistic && (
+            <Chart
+              type="donut"
+              width="400"
+              options={stateRealistic.options}
+              series={stateRealistic.series}
+            />
+          )}
+        </div>
+
+        <div className="chart_block">
+          <div className="gold_text chart_block_label-up ">
+            <NumberFormat
+              value={amountEpargneScenarioOptimistic}
+              className="gold_text display_none"
+              displayType={'text'}
+              thousandSeparator={`'`}
+              prefix={'CHF '}
+            />
+          </div>
+          <div className="blue_text chart_block_label-down">
+            <NumberFormat
+              value={amountFondsScenarioOptimistic}
+              className="blue_text display_none"
+              displayType={'text'}
+              thousandSeparator={`'`}
+              prefix={'CHF '}
+            />
+          </div>
+          <div className="chart_block_title">Scénario optimiste</div>
+          <NumberFormat
+            value={scenarioOptimistic}
+            className="gold_text chart_block_amount"
+            displayType={'text'}
+            thousandSeparator={`'`}
+            prefix={'CHF '}
           />
-        )}
+          {amountEpargneScenarioOptimistic && (
+            <Chart
+              type="donut"
+              width="400"
+              options={stateOptimistic.options}
+              series={stateOptimistic.series}
+            />
+          )}
+        </div>
       </div>
 
       <div className="button_set button_position">
-        <button className="next_button">Continuer</button>
+        <button onClick={handleSubmit} className="next_button">
+          Continuer
+        </button>
         <button onClick={handleSubmitModify} className="modif_button">
           Modifier les paramètres
         </button>
@@ -353,12 +593,11 @@ export default function ScenarioCalc(): ReactElement {
             Comment définissez-vous ces scénarios et les pourcentages de
             rendement ?
           </div>
-        }
-      >
+        }>
         {(
           close:
             | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
-            | undefined
+            | undefined,
         ) => (
           <>
             <button className="close" onClick={close}>

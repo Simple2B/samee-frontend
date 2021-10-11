@@ -1,25 +1,31 @@
-import React, { ReactElement } from "react";
-import { useHistory } from "react-router-dom";
-import Popup from "reactjs-popup";
-import "./halfGuaranteedSolution.css";
+import React, {ReactElement} from 'react';
+import {useHistory} from 'react-router-dom';
+import Popup from 'reactjs-popup';
+import './halfGuaranteedSolution.css';
+
+const solutions = JSON.stringify(localStorage.getItem('solutionChoice'));
 
 export default function HalfGuaranteedSolution(): ReactElement {
   const history = useHistory();
 
   const handleSubmit = () => {
-    history.push("/choose-solution");
+    if (solutions.includes('garanties')) {
+      history.push('/saving-guarantee-interest');
+    } else {
+      history.push('/half-guarantee-interest');
+    }
   };
 
   const handleWhatIs = () => {
-    history.push("/what-is-half-guaranteed-solution");
+    history.push('/what-is-half-guaranteed-solution');
   };
 
   const handleAdvantages = () => {
-    history.push("/half-guaranteed-solution-advantages");
+    history.push('/half-guaranteed-solution-advantages');
   };
 
   const handleForWhom = () => {
-    history.push("/half-guaranteed-solution-for-whom");
+    history.push('/half-guaranteed-solution-for-whom');
   };
 
   return (
@@ -36,20 +42,17 @@ export default function HalfGuaranteedSolution(): ReactElement {
           <ul className="half_guaranteed_solution_list">
             <li
               onClick={handleWhatIs}
-              className="half_guaranteed_solution_list-item"
-            >
+              className="half_guaranteed_solution_list-item">
               Qu'est-ce que c'est ?
             </li>
             <li
               onClick={handleAdvantages}
-              className="half_guaranteed_solution_list-item"
-            >
+              className="half_guaranteed_solution_list-item">
               Quels sont les avantages ?
             </li>
             <li
               onClick={handleForWhom}
-              className="half_guaranteed_solution_list-item"
-            >
+              className="half_guaranteed_solution_list-item">
               À qui est-elle destinée ?
             </li>
           </ul>
@@ -61,14 +64,13 @@ export default function HalfGuaranteedSolution(): ReactElement {
             <div className="pop_up_triger-video">
               <img className="video_img" alt="video" src="/image/video2.png" />
             </div>
-          }
-        >
+          }>
           {(
             close:
               | ((
-                event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-              ) => void)
-              | undefined
+                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+                ) => void)
+              | undefined,
           ) => (
             <>
               <button className="close" onClick={close}>
@@ -93,4 +95,4 @@ export default function HalfGuaranteedSolution(): ReactElement {
       </div>
     </>
   );
-};
+}

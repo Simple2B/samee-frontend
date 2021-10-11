@@ -1,6 +1,7 @@
 .percent_calc_block {
   display: flex;
   align-items: center;
+
 }
 
 .percent_calc_blocks {
@@ -8,6 +9,7 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 
 .percent_calc_img {
@@ -17,4 +19,26 @@
 
 .percent_calc_amount {
   font-size: 40px;
+}
+
+@media (max-width: 425px) {
+  .percent_calc_img {
+    width: 150px;
+    height: auto;
+  }
+
+  .percent_calc_amount {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  .percent_calc_img {
+    width: 120px;
+    height: auto;
+  }
+
+  .percent_calc_amount {
+    font-size: 20px;
+  }
 }

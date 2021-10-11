@@ -1,0 +1,11 @@
+.user_personal_info_block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 800px;
+  flex-wrap: wrap;
+}
+
+.user_personal_info_text {
+  margin: 45px 0 20px;
+}

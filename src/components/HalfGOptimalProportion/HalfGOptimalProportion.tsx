@@ -1,21 +1,32 @@
-import React, { ReactElement, useEffect, useState } from "react";
-import Popup from "reactjs-popup";
-import classNames from "classnames";
-import { CircleSlider } from "react-circle-slider";
-import "./halfGOptimalProportion.css";
-import { useHistory } from "react-router-dom";
+import React, {ReactElement, useEffect, useState} from 'react';
+import Popup from 'reactjs-popup';
+import classNames from 'classnames';
+import {CircleSlider} from 'react-circle-slider';
+import './halfGOptimalProportion.css';
+import {useHistory} from 'react-router-dom';
 
 export default function HalfGOptimalProportion(): ReactElement {
   const [sliderValue, setSliderValue] = useState(0);
+  const [error, setError] = useState('');
 
   const history = useHistory();
 
   const handleSubmit = () => {
-    localStorage.setItem("savingsPercent", JSON.stringify(sliderValue));
-    localStorage.setItem("fondsPercent", JSON.stringify(100 - sliderValue));
+    localStorage.setItem('savingsPercent', JSON.stringify(sliderValue));
+    localStorage.setItem('fondsPercent', JSON.stringify(100 - sliderValue));
 
-    history.push("/percent-calculation");
+    history.push('/percent-calculation');
   };
+
+  useEffect(() => {
+    if (100 - sliderValue >= 60) {
+      setError(
+        'Attention, Vous avez un pourcentage en fonds risqué. La partie en fond peut être perdue.',
+      );
+    } else {
+      setError('');
+    }
+  }, [sliderValue]);
 
   const handleSliderChange = (e: number) => {
     console.log(e);
@@ -41,7 +52,7 @@ export default function HalfGOptimalProportion(): ReactElement {
             size={260}
             progressWidth={10}
             circleWidth={10}
-            progressColor={"white"}
+            progressColor={'white'}
             stepSize={10}
             value={sliderValue}
             onChange={handleSliderChange}
@@ -56,6 +67,13 @@ export default function HalfGOptimalProportion(): ReactElement {
         </div>
       </div>
 
+      {error && (
+        <div className="error_block_position">
+          <img src="/image/error.png" className="error_img" alt="error" />
+          {error}{' '}
+        </div>
+      )}
+
       <button onClick={handleSubmit} className="next_button button_position">
         Continuer
       </button>
@@ -66,12 +84,11 @@ export default function HalfGOptimalProportion(): ReactElement {
           <div className="pop_up_triger">
             Quelle est la proportion optimale ?
           </div>
-        }
-      >
+        }>
         {(
           close:
             | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
-            | undefined
+            | undefined,
         ) => (
           <>
             <button className="close" onClick={close}>
@@ -89,11 +106,11 @@ export default function HalfGOptimalProportion(): ReactElement {
                 <li className="pop_up_list-item">
                   La partie « capital garanti » est identique à la solution
                   garantie, une épargne classique avec un taux d’intérêt très
-                  faible.{" "}
+                  faible.{' '}
                 </li>
                 <li className="pop_up_list-item">
                   La partie fonds de placement est plus risquée, mais peut avoir
-                  un retour sur investissement beaucoup plus élevé.{" "}
+                  un retour sur investissement beaucoup plus élevé.{' '}
                 </li>
               </ul>
               <div className="pop_up_text">
