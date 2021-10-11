@@ -1,0 +1,104 @@
+.resume_half_solution {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.resume_half_solution_number_block {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.resume_half_solution_main_circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.resume_half_solution_optimist {
+  margin-bottom: 25px;
+}
+
+.resume_half_solution_optimist,
+.resume_half_solution_pessimist {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.scenario_text {
+  font-size: 40px;
+}
+
+.resume_half_solution_title {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .resume_half_solution_secondary_circles {
+    display: flex;
+  }
+
+  .resume_half_solution_number_block {
+    justify-content: center;
+  }
+
+
+  .resume_half_solution_main_circle {
+    width: 260px;
+    height: 260px;
+  }
+
+  .resume_half_solution_optimist,
+  .resume_half_solution_pessimist {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 425px) {
+  .resume_half_solution_main_circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .resume_half_solution_optimist,
+  .resume_half_solution_pessimist {
+    width: 170px;
+    height: 170px;
+  }
+
+  .scenario_text {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 425px) {
+  .resume_half_solution_main_circle {
+    width: 170px;
+    height: 170px;
+  }
+
+  .resume_half_solution_optimist,
+  .resume_half_solution_pessimist {
+    width: 140px;
+    height: 140px;
+  }
+
+
+}
