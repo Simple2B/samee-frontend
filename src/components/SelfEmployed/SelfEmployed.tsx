@@ -1,69 +1,70 @@
-import React, { ReactElement, useState } from "react";
-import { useHistory } from "react-router-dom";
-import Popup from "reactjs-popup";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
+import React, {ReactElement, useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import Popup from 'reactjs-popup';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
 
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import "./selfEmployed.css";
-import { makeStyles } from "@material-ui/styles";
-import { Slider } from "@mui/material";
+import Select, {SelectChangeEvent} from '@mui/material/Select';
+import './selfEmployed.css';
+import {makeStyles} from '@material-ui/styles';
+import {Slider} from '@mui/material';
 
 const useStyles = makeStyles({
   root: {
-    color: "white !important",
-    fontSize: "24px !important",
+    color: 'white !important',
+    fontSize: '24px !important',
     fontFamily: '"Archivo Narrow" !important',
-    borderBottom: "1px solid white !important",
+    borderBottom: '1px solid white !important',
   },
   select: {
-    borderColor: "white !important",
+    borderColor: 'white !important',
   },
   nativeInput: {
-    color: "#fff !important",
+    color: '#fff !important',
   },
   icon: {
-    color: "white !important",
+    color: 'white !important',
   },
   colorPrimary: {
-    color: "#eac28c !important",
+    color: '#eac28c !important',
   },
 });
 
 export default function SelfEmployed(): ReactElement {
   const [salary, setSalary] = useState<any>(0);
-  const [period, setPeriod] = useState<any>("mensuel");
-  const [error, setError] = useState("");
+  const [period, setPeriod] = useState<any>('mensuel');
+  const [error, setError] = useState('');
 
   const history = useHistory();
 
   const classes = useStyles();
 
-  const handleSalary = (e: { target: { value: any } }) => {
+  const handleSalary = (e: {target: {value: any}}) => {
     setSalary(e.target.value);
   };
 
-  const handlePeriod = (e: { target: { value: any } }) => {
+  const handlePeriod = (e: {target: {value: any}}) => {
     setPeriod(e.target.value);
   };
 
   const handleSalaryRange = (
     event: Event,
     value: number | number[],
-    activeThumb: number
+    activeThumb: number,
   ) => {
     setSalary(value);
   };
 
   const handleSubmit = () => {
-    if (period === "mensuel" && (salary < 100 || salary > 2868)) {
-      setError("Choissisez un montant entre CHF 100 to CHF 573");
-    } else if (period === "annuel" && (salary < 1200 || salary > 34416)) {
+    if (period === 'mensuel' && (salary < 100 || salary > 2868)) {
+      setError('Choissisez un montant entre CHF 100 to CHF 2868');
+    } else if (period === 'annuel' && (salary < 1200 || salary > 34416)) {
+      setError('Choissisez un montant entre CHF 1200 to CHF 34416');
     } else {
-      setError("");
-      localStorage.setItem("salary", salary);
-      localStorage.setItem("period", period);
-      history.push("/savings-calculation");
+      setError('');
+      localStorage.setItem('salary', salary);
+      localStorage.setItem('period', period);
+      history.push('/savings-calculation');
     }
   };
 
@@ -77,7 +78,7 @@ export default function SelfEmployed(): ReactElement {
       </div>
       <ul className="self-employed_list">
         <li className="self-employed_list-item">
-          cotiser cette année jusqu'à{" "}
+          cotiser cette année jusqu'à{' '}
           <span className="gold_text">CHF 34'416 (CHF 2'868 par mois)</span>
         </li>
         <li className="self-employed_list-item">
@@ -87,7 +88,7 @@ export default function SelfEmployed(): ReactElement {
       </ul>
       <div className="self-employed_inputs_set">
         <span className="self-employed_text">Choisir le montant </span>
-        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+        <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
           <Select
             labelId="demo-simple-select-standard-label"
             id="demo-simple-select-standard"
@@ -102,14 +103,13 @@ export default function SelfEmployed(): ReactElement {
               classes: {
                 icon: classes.icon,
               },
-            }}
-          >
+            }}>
             <MenuItem value="mensuel">mensuel</MenuItem>
             <MenuItem value="annuel">annuel</MenuItem>
           </Select>
         </FormControl>
 
-        {period === "mensuel" ? (
+        {period === 'mensuel' ? (
           <input
             min="100"
             max="2868"
@@ -119,17 +119,17 @@ export default function SelfEmployed(): ReactElement {
             className="self-employed_salary"
           />
         ) : (
-            <input
-              min="1200"
-              max="34416"
-              onChange={handleSalary}
-              value={salary}
-              type="number"
-              className="self-employed_salary"
-            />
-          )}
+          <input
+            min="1200"
+            max="34416"
+            onChange={handleSalary}
+            value={salary}
+            type="number"
+            className="self-employed_salary"
+          />
+        )}
       </div>
-      {period === "mensuel" ? (
+      {period === 'mensuel' ? (
         <Slider
           defaultValue={0}
           // color="secondary"
@@ -141,23 +141,22 @@ export default function SelfEmployed(): ReactElement {
           max={2868}
         />
       ) : (
-          <Slider
-            defaultValue={0}
-            // color="secondary"
-            value={salary}
-            onChange={handleSalaryRange}
-            className={classes.colorPrimary}
-            step={1}
-            min={1200}
-            max={34416}
-          />
-        )}
+        <Slider
+          defaultValue={0}
+          // color="secondary"
+          value={salary}
+          onChange={handleSalaryRange}
+          className={classes.colorPrimary}
+          step={1}
+          min={1200}
+          max={34416}
+        />
+      )}
 
       <button
-        disabled={salary === "" || period === "" || salary === 0}
+        disabled={salary === '' || period === '' || salary === 0}
         onClick={handleSubmit}
-        className="next_button button_position-1"
-      >
+        className="next_button button_position-1">
         Continuer
       </button>
 
@@ -167,12 +166,11 @@ export default function SelfEmployed(): ReactElement {
           <div className="pop_up_triger">
             Comment fonctionne l'économie d'impôts?
           </div>
-        }
-      >
+        }>
         {(
           close:
             | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
-            | undefined
+            | undefined,
         ) => (
           <>
             <button className="close" onClick={close}>
@@ -185,7 +183,7 @@ export default function SelfEmployed(): ReactElement {
               <div className="pop_up_text">
                 Vous pouvez déduire de votre revenu imposable l’intégralité des
                 versements au 3ème pilier. Plus vous cotisez, plus vos économies
-                seront importantes.{" "}
+                seront importantes.{' '}
               </div>
               <div className="pop_up_text">
                 Le montant maximal annuel est actuellement de 6'883 CHF pour un
@@ -204,7 +202,7 @@ export default function SelfEmployed(): ReactElement {
               <div className="pop_up_text">
                 Pour éviter de subir une imposition trop lourde, vous avez la
                 possibilité de diviser votre 3e pilier en plusieurs comptes afin
-                de les retirer progressivement entre 60 et 65 ans.{" "}
+                de les retirer progressivement entre 60 et 65 ans.{' '}
               </div>
             </div>
           </>
@@ -212,4 +210,4 @@ export default function SelfEmployed(): ReactElement {
       </Popup>
     </div>
   );
-};
+}
