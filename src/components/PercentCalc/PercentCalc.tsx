@@ -22,17 +22,12 @@ export default function PercentCalc(): ReactElement {
   const history = useHistory();
 
   const amountCapitalCalc = () => {
-    if (period === 'annual') {
-      const capitalCalc = Math.floor((savings * savingsPercent) / 100);
-      setAmountCapital(capitalCalc);
-    } else if (period === 'mensuel') {
-      const capitalCalc = Math.floor((savings * 12 * savingsPercent) / 100);
-      setAmountCapital(capitalCalc);
-    }
+    const capitalCalc = Math.floor(savings * (savingsPercent / 100));
+    setAmountCapital(capitalCalc);
   };
 
   const amountFondsCalc = () => {
-    const fondsCalc = Math.floor((savings * fondsPercent) / 100);
+    const fondsCalc = Math.floor(savings * (fondsPercent / 100));
     setAmountFonds(fondsCalc);
   };
 

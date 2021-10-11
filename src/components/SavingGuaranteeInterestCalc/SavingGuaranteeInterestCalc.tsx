@@ -1,81 +1,75 @@
-import React, { ReactElement, useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { taxCoefficient } from "../../helpers/consts";
-import { makeStyles } from "@material-ui/styles";
-import { useCountUp } from "react-countup";
-import NumberFormat from "react-number-format";
-import { FormControl, Select, MenuItem } from "@mui/material";
-import Popup from "reactjs-popup";
-import "./savingGuaranteeInterestCalc.css";
+import React, {ReactElement, useEffect, useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import {taxCoefficient} from '../../helpers/consts';
+import {makeStyles} from '@material-ui/styles';
+import {useCountUp} from 'react-countup';
+import NumberFormat from 'react-number-format';
+import {FormControl, Select, MenuItem} from '@mui/material';
+import Popup from 'reactjs-popup';
+import './savingGuaranteeInterestCalc.css';
 
 const useStyles = makeStyles({
   root: {
-    color: "white !important",
-    fontSize: "24px !important",
+    color: 'white !important',
+    fontSize: '24px !important',
     fontFamily: '"Archivo Narrow" !important',
-    borderBottom: "1px solid white !important",
+    borderBottom: '1px solid white !important',
   },
   select: {
-    borderColor: "white !important",
+    borderColor: 'white !important',
   },
   nativeInput: {
-    color: "#fff !important",
+    color: '#fff !important',
   },
   icon: {
-    color: "white !important",
+    color: 'white !important',
   },
   colorPrimary: {
-    color: "#eac28c !important",
+    color: '#eac28c !important',
   },
 });
-//TODO: change any to right type
 
-// const periodFromLocalStr: any = localStorage.getItem("period");
-// const salaryFromLocalStr: any = localStorage.getItem("salary");
+const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
 
 export default function SavingGuaranteeInterestCalc(): ReactElement {
   const [interest, setInterest] = useState<any>(0);
-  const [period, setPeriod] = useState<any>("mensuel");
+  const [period, setPeriod] = useState<any>('mensuel');
   const [tax, setTax] = useState<any>();
   const [amount, setAmount] = useState<any>();
   const [finalAmount, setFinalAmount] = useState<any>();
 
   const [savingYears, setSavingYears] = useState<any>(
-    localStorage.getItem("age")
+    localStorage.getItem('age'),
   );
   const [periodFromLocal, setPeriodFromLocal] = useState<any>(
-    localStorage.getItem("period")
+    localStorage.getItem('period'),
   );
   const [salaryFromLocal, setSalaryFromLocal] = useState<any>(
-    localStorage.getItem("salary")
+    localStorage.getItem('salary'),
   );
   const [taxFromLocal, setTaxFromLocal] = useState<any>(
-    localStorage.getItem("savingsTax")
+    localStorage.getItem('savingsTax'),
   );
 
   const [recalculate, setRecalculate] = useState<boolean>(true);
 
+  const [occupation] = useState(localStorage.getItem('occupation'));
+  const [error, setError] = useState('');
+
   const countUpRef = React.useRef(null);
-  const { start, update } = useCountUp({
+  const {start, update} = useCountUp({
     ref: countUpRef,
     start: 0,
     end: finalAmount,
     duration: 1,
     separator: "'",
     decimal: "'",
-    prefix: "CHR ",
+    prefix: 'CHR ',
   });
 
   useEffect(() => {
     start();
   }, []);
-
-  // useEffect(() => {
-  //   setSavingYears(localStorage.getItem("age"));
-  //   setPeriodFromLocal(localStorage.getItem("period"));
-  //   setSalaryFromLocal(localStorage.getItem("salary"))
-  //   setTaxFromLocal(localStorage.getItem("savingsTax"))
-  // }, [])
 
   useEffect(() => {
     savingCalc();
@@ -103,16 +97,16 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
   const classes = useStyles();
 
   const savingCalc = () => {
-    console.log("savingCalc");
-    console.log("salaryFromLocal", salaryFromLocal);
-    console.log("savingYears", savingYears);
+    console.log('savingCalc');
+    console.log('salaryFromLocal', salaryFromLocal);
+    console.log('savingYears', savingYears);
 
     let amount: any;
-    if (periodFromLocal === "mensuel") {
+    if (periodFromLocal === 'mensuel') {
       amount = savingYears * (salaryFromLocal * 12);
       console.log(amount);
       setAmount(amount);
-    } else if (periodFromLocal === "annuel") {
+    } else if (periodFromLocal === 'annuel') {
       console.log(savingYears);
 
       amount = savingYears * salaryFromLocal;
@@ -122,26 +116,26 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
   };
 
   const taxCalc = () => {
-    console.log("taxCalc");
+    console.log('taxCalc');
     const tax = savingYears * taxCoefficient;
     setTax(tax);
   };
 
   const interestCalc = () => {
-    console.log("interestCalc");
+    console.log('interestCalc');
     let interest: any;
-    if (periodFromLocal === "annuel") {
+    if (periodFromLocal === 'annuel') {
       interest = Math.floor(
         salaryFromLocal * (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)) -
-          salaryFromLocal * savingYears
+          salaryFromLocal * savingYears,
       );
 
       setInterest(interest);
-    } else if (periodFromLocal === "mensuel") {
+    } else if (periodFromLocal === 'mensuel') {
       interest = Math.floor(
         salaryFromLocal *
           (((1 + 0.001 / 12) ** (savingYears * 12) - 1) / (0.001 / 12)) -
-          salaryFromLocal * 12 * savingYears
+          salaryFromLocal * 12 * savingYears,
       );
 
       setInterest(interest);
@@ -149,18 +143,18 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
   };
 
   const finalCalc = () => {
-    console.log("finalCalc");
+    console.log('finalCalc');
     let finalCalc;
-    if (periodFromLocal === "annuel") {
+    if (periodFromLocal === 'annuel') {
       finalCalc = Math.floor(
-        salaryFromLocal * (((1 + 0.001) ** savingYears - 1) / (0.001 / 1))
+        salaryFromLocal * (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)),
       );
 
       setFinalAmount(finalCalc);
-    } else if (periodFromLocal === "mensuel") {
+    } else if (periodFromLocal === 'mensuel') {
       finalCalc = Math.floor(
         salaryFromLocal *
-          (((1 + 0.001 / 12) ** (savingYears * 12) - 1) / (0.001 / 12))
+          (((1 + 0.001 / 12) ** (savingYears * 12) - 1) / (0.001 / 12)),
       );
 
       setFinalAmount(finalCalc);
@@ -168,25 +162,57 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
   };
 
   // ----------
-  const handleSalary = (e: { target: { value: any } }) => {
-    localStorage.setItem("salary", e.target.value);
+  const handleSalary = (e: {target: {value: any}}) => {
+    localStorage.setItem('salary', e.target.value);
     setSalaryFromLocal(e.target.value);
   };
 
-  const handlePeriod = (e: { target: { value: any } }) => {
-    localStorage.setItem("period", e.target.value);
+  const handlePeriod = (e: {target: {value: any}}) => {
+    localStorage.setItem('period', e.target.value);
     setPeriod(e.target.value);
   };
 
   const handleRecalculate = () => {
-    localStorage.setItem("savings", amount);
-    localStorage.setItem("savingsTax", tax);
-    localStorage.setItem("interest", interest);
-    setRecalculate((state) => !state);
+    if (
+      occupation === 'Salarié' &&
+      period === 'mensuel' &&
+      (salaryFromLocal < 100 || salaryFromLocal > 573)
+    ) {
+      setError('Choissisez un montant entre CHF 100 to CHF 573');
+    } else if (
+      occupation === 'Salarié' &&
+      period === 'annuel' &&
+      (salaryFromLocal < 1200 || salaryFromLocal > 6883)
+    ) {
+      setError('Choissisez un montant entre CHF 1200 to CHF 6883');
+    } else if (
+      occupation === 'Indépendant' &&
+      period === 'mensuel' &&
+      (salaryFromLocal < 100 || salaryFromLocal > 2868)
+    ) {
+      setError('Choissisez un montant entre CHF 100 to CHF 2868');
+    } else if (
+      occupation === 'Indépendant' &&
+      period === 'annuel' &&
+      (salaryFromLocal < 1200 || salaryFromLocal > 34416)
+    ) {
+      setError('Choissisez un montant entre CHF 1200 to CHF 34416');
+    } else {
+      setError('');
+      localStorage.setItem('savings', amount);
+      localStorage.setItem('savingsTax', tax);
+      localStorage.setItem('interest', interest);
+      setRecalculate(state => !state);
+    }
   };
 
   const handleSubmit = () => {
-    history.push("/half-guarantee-interest");
+    localStorage.setItem('finalCapital', finalAmount);
+    if (solutions.includes('rendement')) {
+      history.push('/half-guarantee-interest');
+    } else {
+      history.push('/resume');
+    }
   };
 
   return (
@@ -200,38 +226,38 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
 
           <ul className="saving_interest_calc_list">
             <li className="saving_interest_calc_list-item">
-              épargné{" "}
+              épargné{' '}
               <NumberFormat
                 value={amount}
                 className="gold_text"
-                displayType={"text"}
+                displayType={'text'}
                 thousandSeparator={`'`}
-                prefix={" CHF "}
+                prefix={' CHF '}
               />
               ;
             </li>
             <li className="saving_interest_calc_list-item">
-              gagné{" "}
+              gagné{' '}
               <NumberFormat
                 value={interest}
                 className="gold_text"
-                displayType={"text"}
+                displayType={'text'}
                 thousandSeparator={`'`}
-                prefix={"CHF "}
-              />{" "}
+                prefix={'CHF '}
+              />{' '}
               en intérêts (taux de 0.35%)
             </li>
           </ul>
 
           <div className="saving_interest_calc_list-text-1">
-            En plus, vous aurez réalisé jusqu'à{" "}
+            En plus, vous aurez réalisé jusqu'à{' '}
             <NumberFormat
               value={taxFromLocal}
               className="gold_text"
-              displayType={"text"}
+              displayType={'text'}
               thousandSeparator={`'`}
-              prefix={"CHF "}
-            />{" "}
+              prefix={'CHF '}
+            />{' '}
             d'économie sur vos impôts.
           </div>
 
@@ -239,7 +265,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
             Vous pouvez essayer avec un autre montant
             <div className="wrapper">
               d'épargne
-              <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+              <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
@@ -254,16 +280,14 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
                     classes: {
                       icon: classes.icon,
                     },
-                  }}
-                >
+                  }}>
                   <MenuItem value="mensuel">mensuel</MenuItem>
                   <MenuItem value="annuel">annuel</MenuItem>
                 </Select>
               </FormControl>
-              {period === "mensuel" ? (
+              {period === 'mensuel' ? (
                 <input
                   min="100"
-                  max="573"
                   onChange={handleSalary}
                   value={salaryFromLocal}
                   type="number"
@@ -272,7 +296,6 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
               ) : (
                 <input
                   min="1200"
-                  max="6883"
                   onChange={handleSalary}
                   value={salaryFromLocal}
                   type="number"
@@ -291,6 +314,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
         </div>
       </div>
       <div className="buttons_set button_position">
+        <div className="error">{error}</div>
         <button onClick={handleSubmit} className="next_button">
           Continuer
         </button>
@@ -305,12 +329,11 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
           <div className="pop_up_triger">
             Plus d'explications sur le résultat
           </div>
-        }
-      >
+        }>
         {(
           close:
             | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
-            | undefined
+            | undefined,
         ) => (
           <>
             <button className="close" onClick={close}>

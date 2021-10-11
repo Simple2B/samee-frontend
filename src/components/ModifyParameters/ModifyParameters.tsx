@@ -1,48 +1,61 @@
-import classes from "*.module.css";
-import { FormControl, Select, MenuItem } from "@mui/material";
-import { makeStyles } from "@material-ui/styles";
-import { CircleSlider } from "react-circle-slider";
-import React, { ReactElement, useState } from "react";
-import { useHistory } from "react-router-dom";
-import "./modifyParameters.css";
+import {FormControl, Select, MenuItem} from '@mui/material';
+import {makeStyles} from '@material-ui/styles';
+import {CircleSlider} from 'react-circle-slider';
+import React, {ReactElement, useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import './modifyParameters.css';
+import {useEffect} from 'react';
 
 const useStyles = makeStyles({
   root: {
-    color: "white !important",
-    fontSize: "24px !important",
+    color: 'white !important',
+    fontSize: '24px !important',
     fontFamily: '"Archivo Narrow" !important',
-    borderBottom: "1px solid white !important",
+    borderBottom: '1px solid white !important',
   },
   select: {
-    borderColor: "white !important",
+    borderColor: 'white !important',
   },
   nativeInput: {
-    color: "#fff !important",
+    color: '#fff !important',
   },
   icon: {
-    color: "white !important",
+    color: 'white !important',
   },
   colorPrimary: {
-    color: "#eac28c !important",
+    color: '#eac28c !important',
   },
 });
 
 export default function ModifyParameters(): ReactElement {
-  const [period, setPeriod] = useState<any>("mensuel");
+  const [period, setPeriod] = useState<any>(localStorage.getItem('period'));
   const [salaryFromLocal, setSalaryFromLocal] = useState<any>(
-    localStorage.getItem("salary")
+    localStorage.getItem('salary'),
   );
   const [sliderValue, setSliderValue] = useState(0);
+  const [error, setError] = useState('');
+  const [occupation] = useState(localStorage.getItem('occupation'));
+  const [errorAmount, setErrorAmount] = useState('');
 
   const history = useHistory();
 
   const classes = useStyles();
 
-  const handleSalary = (e: { target: { value: any } }) => {
+  useEffect(() => {
+    if (100 - sliderValue >= 60) {
+      setError(
+        'Attention, Vous avez un pourcentage en fonds risqué. La partie en fond peut être perdue.',
+      );
+    } else {
+      setError('');
+    }
+  }, [sliderValue]);
+
+  const handleSalary = (e: {target: {value: any}}) => {
     setSalaryFromLocal(e.target.value);
   };
 
-  const handlePeriod = (e: { target: { value: any } }) => {
+  const handlePeriod = (e: {target: {value: any}}) => {
     setPeriod(e.target.value);
   };
 
@@ -52,17 +65,44 @@ export default function ModifyParameters(): ReactElement {
   };
 
   const handleRecalculate = () => {
-    localStorage.setItem("savingsPercent", JSON.stringify(sliderValue));
-    localStorage.setItem("fondsPercent", JSON.stringify(100 - sliderValue));
-    localStorage.setItem("salary", salaryFromLocal);
-    localStorage.setItem("period", period);
+    if (
+      occupation === 'Salarié' &&
+      period === 'mensuel' &&
+      (salaryFromLocal < 100 || salaryFromLocal > 573)
+    ) {
+      setErrorAmount('Choissisez un montant entre CHF 100 to CHF 573');
+    } else if (
+      occupation === 'Salarié' &&
+      period === 'annuel' &&
+      (salaryFromLocal < 1200 || salaryFromLocal > 6883)
+    ) {
+      setErrorAmount('Choissisez un montant entre CHF 1200 to CHF 6883');
+    } else if (
+      occupation === 'Indépendant' &&
+      period === 'mensuel' &&
+      (salaryFromLocal < 100 || salaryFromLocal > 2868)
+    ) {
+      setErrorAmount('Choissisez un montant entre CHF 100 to CHF 2868');
+    } else if (
+      occupation === 'Indépendant' &&
+      period === 'annuel' &&
+      (salaryFromLocal < 1200 || salaryFromLocal > 34416)
+    ) {
+      setErrorAmount('Choissisez un montant entre CHF 1200 to CHF 34416');
+    } else {
+      localStorage.setItem('savingsPercent', JSON.stringify(sliderValue));
+      localStorage.setItem('fondsPercent', JSON.stringify(100 - sliderValue));
+      localStorage.setItem('salary', salaryFromLocal);
+      localStorage.setItem('period', period);
+      history.push('./scenario-calculation');
+    }
   };
 
   return (
     <div className="modify_parameters">
       <div className="modify_parameters_text">
         Vous pouvez essayer avec un autre montant d'épargne
-        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+        <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
           <Select
             labelId="demo-simple-select-standard-label"
             id="demo-simple-select-standard"
@@ -77,16 +117,14 @@ export default function ModifyParameters(): ReactElement {
               classes: {
                 icon: classes.icon,
               },
-            }}
-          >
+            }}>
             <MenuItem value="mensuel">mensuel</MenuItem>
             <MenuItem value="annuel">annuel</MenuItem>
           </Select>
         </FormControl>
-        {period === "mensuel" ? (
+        {period === 'mensuel' ? (
           <input
             min="100"
-            max="573"
             onChange={handleSalary}
             value={salaryFromLocal}
             type="number"
@@ -95,7 +133,6 @@ export default function ModifyParameters(): ReactElement {
         ) : (
           <input
             min="1200"
-            max="6883"
             onChange={handleSalary}
             value={salaryFromLocal}
             type="number"
@@ -119,7 +156,7 @@ export default function ModifyParameters(): ReactElement {
             size={260}
             progressWidth={10}
             circleWidth={10}
-            progressColor={"white"}
+            progressColor={'white'}
             stepSize={10}
             value={sliderValue}
             onChange={handleSliderChange}
@@ -134,12 +171,18 @@ export default function ModifyParameters(): ReactElement {
         </div>
       </div>
 
-      <button
-        onClick={handleRecalculate}
-        className="next_button button_position"
-      >
-        Recalculer
-      </button>
+      {error && (
+        <div className="error_block_position">
+          <img src="/image/error.png" className="error_img" alt="error" />
+          {error}{' '}
+        </div>
+      )}
+      <div className="buttons_set button_position">
+        <div className="error">{errorAmount}</div>
+        <button onClick={handleRecalculate} className="next_button ">
+          Recalculer
+        </button>
+      </div>
     </div>
   );
 }
