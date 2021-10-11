@@ -1,0 +1,48 @@
+.user_address_info_input_block {
+  display: flex;
+  justify-content: space-between;
+  max-width: 700px;
+  margin-top: 20px;
+}
+
+.input_label {
+  display: block;
+}
+
+.input_field {
+  height: 35px;
+  width: 250px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid;
+  padding-left: 15px;
+  font-size: 17px;
+  font-family: "Archivo Narrow";
+  margin-bottom: 15px;
+}
+
+.error {
+  color: rgb(131, 11, 11);
+}
+
+.error_border {
+  border: 1px solid rgb(131, 11, 11);
+}
+
+@media (max-width: 768px) {
+  .input_field {
+    width: 230px;
+  }
+}
+
+@media (max-width: 425px) {
+  .input_field {
+    width: 162px;
+  }
+}
+
+@media (max-width: 320px) {
+  .input_field {
+    width: 138px;
+  }
+}
