@@ -16,13 +16,10 @@
 }
 
 .next_button {
-  /* max-width: 190px; */
-  /* max-height: 50px; */
   background-color: #eac28c;
   color: #000519;
   padding: 10px 25px;
   border: none;
-  margin-top: 20px;
   cursor: pointer;
   transition: background-color 1s;
 }
@@ -72,4 +69,17 @@
     font-size: 20px;
   }
 
+}
+
+@media (max-width: 320px) {
+  .next_button {
+    background-color: #eac28c;
+    color: #000519;
+    padding: 10px 25px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 1s;
+    margin-right: 10px;
+  }
 }

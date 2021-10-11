@@ -39,9 +39,9 @@
 }
 
 @media (max-width: 768px) {
-  .pop_up_triger {
+  /* .pop_up_triger {
     display: none;
-  }
+  } */
 
   .choose_solution_blocks {
     display: inline;
@@ -82,9 +82,9 @@
 }
 
 @media (max-width: 425px) {
-  .pop_up_triger {
+  /* .pop_up_triger {
     display: none;
-  }
+  } */
 
   .choose_solution_blocks {
     display: inline;
@@ -106,9 +106,9 @@
 
   .choose_solution_block {
     display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    justify-content: unset;
+
+
+    justify-content: space-between;
 
   }
 

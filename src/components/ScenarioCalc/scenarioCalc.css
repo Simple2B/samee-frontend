@@ -4,6 +4,8 @@
 
 .charts_blocks {
   display: flex;
+  margin-top: 30px;
+
 }
 
 .modif_button {
@@ -14,10 +16,70 @@
   margin-left: 25px;
 }
 
-.modif_button:hover {
-  background-color: rgb(187, 187, 187);
+.display_none {
+  display: none;
 }
 
 .charts_block {
   margin-top: 40px;
+}
+
+.chart_block {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart_block:hover {
+  transform: scale(1.2);
+}
+
+.chart_block:hover .display_none {
+  display: flex;
+}
+
+.chart_block_title {
+  position: absolute;
+  top: 30%;
+
+}
+
+.chart_block_amount {
+  position: absolute;
+  font-size: 42px;
+}
+
+.chart_block_label-up {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.chart_block_label-down {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media (max-width: 1024px) {
+  .charts_blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart_block_amount {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  .modif_button {
+
+    margin-left: 0;
+  }
 }
