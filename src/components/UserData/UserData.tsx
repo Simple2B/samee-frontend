@@ -1,33 +1,33 @@
-import { FormControlLabel, Radio, RadioGroup, TextField } from "@mui/material";
-import React, { ReactElement, useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import Popup from "reactjs-popup";
-import { localStorageApi } from "../../helpers/localStorage";
-import "./userData.css";
-
+import {FormControlLabel, Radio, RadioGroup, TextField} from '@mui/material';
+import React, {ReactElement, useEffect, useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import Popup from 'reactjs-popup';
+import {localStorageApi} from '../../helpers/localStorage';
+import {IComponentProps} from '../../types';
+import './userData.css';
 
 export default function UserData(): ReactElement {
-  const [sex, setSex] = useState("");
+  const [sex, setSex] = useState('');
   const [date, setDate] = useState<any>();
   const [error, setError] = useState('');
 
   const history = useHistory();
 
   useEffect(() => {
-    localStorageApi.addCurrentStep("/user-data-birth");
+    localStorageApi.addCurrentStep('/user-data-birth');
   }, []);
 
   const handleSubmit = () => {
     if (sex === '' || date === '') {
-      setError('veuillez renseigner les informations')
+      setError('veuillez renseigner les informations');
     } else {
-      setError('')
-      localStorage.setItem("sex", sex);
-      localStorage.setItem("date", date);
-      localStorageApi.addCompletedStep("/user-data-birth");
-      return history.push("/user-age");
+      setError('');
+      localStorage.setItem('sex', sex);
+      localStorage.setItem('date', date);
+      localStorageApi.addCompletedStep('/user-data-birth');
+      localStorage.setItem('route', '3');
+      return history.push('/user-age');
     }
-
   };
 
   return (
@@ -44,8 +44,8 @@ export default function UserData(): ReactElement {
             className="sex_radio_button"
             name="sexe"
             value={sex}
-            onChange={(e) => {
-              setSex("Homme");
+            onChange={e => {
+              setSex('Homme');
             }}
             id="sexe_hommo"
             type="radio"
@@ -60,8 +60,8 @@ export default function UserData(): ReactElement {
             className="sex_radio_button"
             name="sexe"
             value={sex}
-            onChange={(e) => {
-              setSex("Femme");
+            onChange={e => {
+              setSex('Femme');
             }}
             id="sexe_femme"
             type="radio"
@@ -78,21 +78,18 @@ export default function UserData(): ReactElement {
         <input
           className="user_data_input"
           value={date}
-          onChange={(e) => {
+          onChange={e => {
             setDate(e.target.value);
           }}
           id="age"
           type="date"
+          max="2004-12-31"
+          min="1958-01-01"
         />
       </div>
 
-      <div className="text_error">
-        {error}
-      </div>
-      <button
-        onClick={handleSubmit}
-        className="next_button button_position"
-      >
+      <div className="text_error">{error}</div>
+      <button onClick={handleSubmit} className="next_button button_position">
         Continuer
       </button>
       <Popup
@@ -101,12 +98,11 @@ export default function UserData(): ReactElement {
           <div className="pop_up_triger">
             Pourquoi ces données sont-elles essentielles?
           </div>
-        }
-      >
+        }>
         {(
           close:
             | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
-            | undefined
+            | undefined,
         ) => (
           <>
             <button className="close" onClick={close}>
@@ -128,7 +124,7 @@ export default function UserData(): ReactElement {
                 Vous pouvez cotiser à un 3ème pilier à partir de 18 ans à
                 condition que vous disposiez d’un revenu soumis à l’AVS. Tout
                 individu travaillant et payant ses impôts en Suisse peut cotiser
-                au 3ème pilier, travailleurs frontaliers inclus.{" "}
+                au 3ème pilier, travailleurs frontaliers inclus.{' '}
               </div>
             </div>
           </>

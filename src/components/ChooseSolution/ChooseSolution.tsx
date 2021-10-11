@@ -1,20 +1,20 @@
-import { styled } from "@material-ui/styles";
-import { Checkbox, Radio } from "@mui/material";
-import React, { ReactElement } from "react";
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
-import Popup from "reactjs-popup";
-import { makeStyles } from "@material-ui/styles";
-import "./chooseSolution.css";
-import { JsxEmit } from "typescript";
-import { useEffect } from "react";
+import {styled} from '@material-ui/styles';
+import {Checkbox, Radio} from '@mui/material';
+import React, {ReactElement} from 'react';
+import {useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import Popup from 'reactjs-popup';
+import {makeStyles} from '@material-ui/styles';
+import './chooseSolution.css';
+import {JsxEmit} from 'typescript';
+import {useEffect} from 'react';
 
 const useStyles = makeStyles({
   root: {
-    color: "white !important",
+    color: 'white !important',
   },
   checked: {
-    color: "white",
+    color: 'white',
   },
 });
 
@@ -40,14 +40,12 @@ export default function ChooseSolution(): ReactElement {
   useEffect(() => {
     console.log(choiceFirst);
     console.log(choiceSecond);
-
-
-  }, [choiceSecond, choiceFirst])
+  }, [choiceSecond, choiceFirst]);
 
   const handleSubmit = () => {
     let solutionChoiceObject;
 
-    const solutionChoice = localStorage.getItem("solutionChoice");
+    const solutionChoice = localStorage.getItem('solutionChoice');
 
     if (solutionChoice) {
       solutionChoiceObject = JSON.parse(solutionChoice);
@@ -55,14 +53,21 @@ export default function ChooseSolution(): ReactElement {
       solutionChoiceObject = {};
     }
 
-    solutionChoiceObject["solutionChoice"] = []
+    solutionChoiceObject['solutionChoice'] = [];
 
-    choiceFirst && solutionChoiceObject["solutionChoice"].push("garanties");
-    choiceSecond && solutionChoiceObject["solutionChoice"].push("rendement");
+    choiceFirst && solutionChoiceObject['solutionChoice'].push('garanties');
+    choiceSecond && solutionChoiceObject['solutionChoice'].push('rendement');
 
-    localStorage.setItem('solutionChoice', JSON.stringify(solutionChoiceObject.solutionChoice))
+    localStorage.setItem(
+      'solutionChoice',
+      JSON.stringify(solutionChoiceObject.solutionChoice),
+    );
 
-    history.push("/saving-guarantee-interest");
+    if (choiceFirst) {
+      history.push('/guarantee-saving-solution');
+    } else if (choiceSecond) {
+      history.push('/half-guarantee-saving-solution');
+    }
   };
 
   return (
@@ -82,7 +87,8 @@ export default function ChooseSolution(): ReactElement {
       <div className="choose_solution_text">
         Il est bien de savoir que nous pourrons toujours trouver une solution
         sur-mesure. Ce calculateur est là pour vous aider à mieux visualiser les
-        opportunités offertes par le troisième pilier. Résultats à titre indicatif.
+        opportunités offertes par le troisième pilier. Résultats à titre
+        indicatif.
       </div>
 
       <div className="choose_solution_blocks">
@@ -95,8 +101,8 @@ export default function ChooseSolution(): ReactElement {
           <Checkbox
             value={choiceFirst}
             onChange={handleChangeFirst}
-            classes={{ root: classes.root, checked: classes.checked }}
-            sx={{ "& .MuiSvgIcon-root": { fontSize: 35 } }}
+            classes={{root: classes.root, checked: classes.checked}}
+            sx={{'& .MuiSvgIcon-root': {fontSize: 35}}}
           />
         </div>
 
@@ -109,8 +115,8 @@ export default function ChooseSolution(): ReactElement {
           <Checkbox
             value={choiceSecond}
             onChange={handleChangeSecond}
-            classes={{ root: classes.root, checked: classes.checked }}
-            sx={{ "& .MuiSvgIcon-root": { fontSize: 35 } }}
+            classes={{root: classes.root, checked: classes.checked}}
+            sx={{'& .MuiSvgIcon-root': {fontSize: 35}}}
           />
         </div>
       </div>
