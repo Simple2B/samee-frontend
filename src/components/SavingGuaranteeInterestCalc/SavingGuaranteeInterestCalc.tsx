@@ -139,6 +139,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
       );
 
       setInterest(interest);
+      localStorage.setItem('interest', interest);
     }
   };
 
