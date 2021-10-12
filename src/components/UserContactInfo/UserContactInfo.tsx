@@ -115,11 +115,11 @@ export default function UserContactInfo(): ReactElement {
         .post('/client/add', userData)
         .then(function (response) {
           console.log(response);
-          history.push('/confirm-code');
         })
         .catch(function (error) {
           console.log(error);
         });
+      history.push('/confirm-code');
     }
   };
 
