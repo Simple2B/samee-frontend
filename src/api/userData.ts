@@ -44,9 +44,7 @@ export const maritalStatus: string | null =
   localStorage.getItem('personalInfo') &&
   JSON.parse(localStorage.getItem('personalInfo')!).maritalStatus;
 
-export const solution: string | null =
-  localStorage.getItem('solutionChoice') &&
-  JSON.parse(localStorage.getItem('solutionChoice')!);
+export const solution: string | null = localStorage.getItem('solutionChoice');
 
 export const period: string | null = localStorage.getItem('period');
 

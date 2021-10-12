@@ -49,6 +49,7 @@ export default function UserContactInfo(): ReactElement {
   const [phone, setPhone] = useState();
   const [check, setCheck] = useState(false);
   const [error, setError] = useState('');
+  const [client, setClient] = useState<any>();
 
   const history = useHistory();
 
@@ -95,7 +96,7 @@ export default function UserContactInfo(): ReactElement {
     savings_percent: savingsPercent,
     interest: interest,
     occupation: occupation,
-    amount_of_fond: fondAmount,
+    amount_of_fonds: fondAmount,
     amount_of_savings: epagneAmount,
     tax: tax,
     scenario_optimistic: scenarioOptimistic,
@@ -112,14 +113,17 @@ export default function UserContactInfo(): ReactElement {
       setError('');
       localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
       await userDataInstance
-        .post('/client/add', userData)
+        .post('/add', userData)
         .then(function (response) {
           console.log(response);
+          const clientId = response.data;
+          setClient(clientId);
+          localStorage.setItem('clientId', JSON.stringify(clientId));
+          history.push('/confirm-code');
         })
         .catch(function (error) {
           console.log(error);
         });
-      history.push('/confirm-code');
     }
   };
 
