@@ -1,8 +1,39 @@
 import React, {ReactElement, useState} from 'react';
 import {Checkbox, Radio} from '@mui/material';
 import {makeStyles} from '@material-ui/styles';
+import {AxiosError, AxiosResponse} from 'axios';
 import './userContactInfo.css';
 import {useHistory} from 'react-router-dom';
+import {userDataInstance} from '../../api/axiosInstance';
+import {
+  birthday,
+  city,
+  epagneAmount,
+  finalCapital,
+  firstName,
+  fondAmount,
+  fondPercent,
+  interest,
+  lastName,
+  maritalStatus,
+  occupation,
+  period,
+  postcode,
+  profession,
+  savingsAmount,
+  savingsPercent,
+  savingsYears,
+  scenarioOptimistic,
+  scenarioPessimistic,
+  scenarioRealistic,
+  sex,
+  smoking,
+  solution,
+  street,
+  streetNumber,
+  tax,
+  totalSavings,
+} from '../../api/userData';
 
 const useStyles = makeStyles({
   root: {
@@ -18,6 +49,7 @@ export default function UserContactInfo(): ReactElement {
   const [phone, setPhone] = useState();
   const [check, setCheck] = useState(false);
   const [error, setError] = useState('');
+  const [client, setClient] = useState<any>();
 
   const history = useHistory();
 
@@ -41,14 +73,57 @@ export default function UserContactInfo(): ReactElement {
     console.log(check);
   };
 
-  const handleSubmit = (e: any) => {
+  const userData = {
+    first_name: firstName,
+    last_name: lastName,
+    street_number: streetNumber,
+    street: street,
+    city: city,
+    zip: postcode,
+    email: email,
+    phone_number: phone,
+    birthday: birthday,
+    profession: profession,
+    smoking: smoking,
+    marital_status: maritalStatus,
+    solution: solution,
+    type_of_save: period,
+    amount_of_money: savingsAmount,
+    sex: sex,
+    saving_years: savingsYears,
+    total_savings: totalSavings,
+    fonds_percent: fondPercent,
+    savings_percent: savingsPercent,
+    interest: interest,
+    occupation: occupation,
+    amount_of_fonds: fondAmount,
+    amount_of_savings: epagneAmount,
+    tax: tax,
+    scenario_optimistic: scenarioOptimistic,
+    scenario_pessimistic: scenarioPessimistic,
+    scenario_realistic: scenarioRealistic,
+    final_capital: finalCapital,
+  };
+
+  const handleSubmit = async (e: any) => {
     if (!email || !phone || !check) {
       e.preventDefault();
       setError('veuillez renseigner les informations');
     } else {
       setError('');
       localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
-      history.push('/confirm-code');
+      await userDataInstance
+        .post('/add', userData)
+        .then(function (response) {
+          console.log(response);
+          const clientId = response.data;
+          setClient(clientId);
+          localStorage.setItem('clientId', JSON.stringify(clientId));
+          history.push('/confirm-code');
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
   };
 

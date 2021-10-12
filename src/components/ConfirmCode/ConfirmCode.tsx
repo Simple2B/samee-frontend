@@ -1,5 +1,6 @@
 import React, {ReactElement, useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import {userDataInstance} from '../../api/axiosInstance';
 import './confirmCode.css';
 
 export default function ConfirmCode(): ReactElement {
@@ -10,6 +11,9 @@ export default function ConfirmCode(): ReactElement {
   const [code5, setCode5] = useState();
   const [code6, setCode6] = useState();
   const [error, setError] = useState('');
+  const [client, setClient] = useState<any>(
+    JSON.parse(localStorage.getItem('clientId')!),
+  );
 
   const handleChange = (e: any) => {
     const {maxLength, value, name} = e.target;
@@ -75,13 +79,26 @@ export default function ConfirmCode(): ReactElement {
   const code = '' + code1 + code2 + code3 + code4 + code5 + code6;
   console.log(code);
 
+  const contactInfo = {
+    client_id: client.Client_id,
+    phone_validation_code: code,
+  };
+
   const handleSubmit = (e: any) => {
     if (!code1 || !code2 || !code3 || !code4 || !code5 || !code6) {
       e.preventDefault();
       setError('veuillez renseigner les informations');
     } else {
-      localStorage.setItem('confirmCode', code);
-      history.push('/final-step');
+      userDataInstance
+        .post('/phone_validation', contactInfo)
+        .then(function (response) {
+          console.log(response);
+          localStorage.setItem('confirmCode', code);
+          history.push('/final-step');
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
   };
 
