@@ -28,7 +28,7 @@ a {
 
 .App {
   padding: 20px 140px;
-  overflow: scroll;
+  /* overflow: scroll; */
   /* padding-bottom: 80px; */
   /* height: 100vh; */
 }
@@ -93,7 +93,7 @@ li {
 
   .App {
     padding: 100px;
-    overflow: scroll;
+    /* overflow: scroll; */
     /* padding-bottom: 70px; */
   }
 
@@ -121,7 +121,7 @@ li {
 
   .App {
     padding: 20px;
-    overflow: scroll;
+    /* overflow: scroll; */
     /* padding-bottom: 70px; */
   }
 
