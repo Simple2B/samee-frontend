@@ -1,3 +1,9 @@
+.scenario-calc {
+  padding-top: 3%;
+  position: relative;
+  height: 86vh;
+}
+
 .blue_text {
   color: #5cbbbb;
 }

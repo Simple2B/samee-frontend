@@ -95,7 +95,7 @@ export default function UserData(): ReactElement {
       <Popup
         modal
         trigger={
-          <div className="pop_up_triger">
+          <div className="pop_up_triger triger_position">
             Pourquoi ces données sont-elles essentielles?
           </div>
         }>

@@ -1,3 +1,9 @@
+.saving_interest {
+  padding-top: 5%;
+  position: relative;
+  height: 86vh;
+}
+
 .next_button-interest {
   padding: 10px 20px;
   background-color: #eac28c;

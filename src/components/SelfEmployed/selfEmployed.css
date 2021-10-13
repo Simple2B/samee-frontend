@@ -1,3 +1,16 @@
+.self-employed {
+  position: relative;
+  height: 86vh;
+  padding-top: 3%;
+}
+
+.self-employed_salary {
+  width: 100px;
+  height: 40px;
+  font-size: 17px;
+  padding-left: 17px;
+}
+
 .self-employed_salary_range {
   display: block;
 }
@@ -7,8 +20,7 @@
   align-items: center;
 }
 
-.self-employed_salary {
-  width: 100px;
-  height: 40px;
-  font-size: 17px;
+.position-0 {
+  position: absolute;
+  left: 0;
 }

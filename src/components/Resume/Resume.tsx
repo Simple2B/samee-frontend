@@ -1,11 +1,15 @@
 import React, {ReactElement} from 'react';
+import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import './resume.css';
 
-const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
+// const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
 
 export default function Resume(): ReactElement {
   const history = useHistory();
+  const [solutions, setSolutions] = useState(
+    JSON.stringify(localStorage.getItem('solutionChoice')),
+  );
 
   const handleSubmit = () => {
     if (solutions.includes('garanties')) {

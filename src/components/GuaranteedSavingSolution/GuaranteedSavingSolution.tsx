@@ -1,12 +1,16 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useState} from 'react';
+import {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import './guaranteedSavingSolution.css';
 
-const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
+// const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
 
 export default function GuaranteedSavingSolution(): ReactElement {
   const history = useHistory();
+  const [solutions, setSolutions] = useState(
+    JSON.stringify(localStorage.getItem('solutionChoice')),
+  );
 
   const handleSubmit = () => {
     if (solutions.includes('rendement')) {
@@ -29,7 +33,7 @@ export default function GuaranteedSavingSolution(): ReactElement {
   };
 
   return (
-    <>
+    <div className="video_wrapper">
       <div className="guaranteed_saving_solution">
         <div className="guaranteed_saving-solution_text">
           <div className="guaranteed_saving_solution_title_big gold_text title">
@@ -88,11 +92,11 @@ export default function GuaranteedSavingSolution(): ReactElement {
           )}
         </Popup>
       </div>
-      <div className="buttons_set button_position">
+      <div className="button_position">
         <button onClick={handleSubmit} className="video_button_next">
           Continuer
         </button>
       </div>
-    </>
+    </div>
   );
 }

@@ -156,7 +156,7 @@ export default function SelfEmployed(): ReactElement {
       <button
         disabled={salary === '' || period === '' || salary === 0}
         onClick={handleSubmit}
-        className="next_button button_position-1">
+        className="next_button button_position position-0">
         Continuer
       </button>
 

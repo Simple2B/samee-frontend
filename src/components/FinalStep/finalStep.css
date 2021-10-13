@@ -1,5 +1,7 @@
 .final_step {
-  margin-top: 100px;
+  padding-top: 10%;
+  position: relative;
+  height: 86vh;
 }
 
 .final_step_text {

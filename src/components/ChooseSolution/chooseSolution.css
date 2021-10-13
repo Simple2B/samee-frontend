@@ -1,3 +1,9 @@
+.choose_solution {
+  position: relative;
+  height: 86vh;
+  padding-top: 5%;
+}
+
 .choose_solution_text {
   margin-bottom: 20px;
 }

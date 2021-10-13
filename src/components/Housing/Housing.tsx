@@ -1,18 +1,18 @@
-import React, { ReactElement } from "react";
-import { useHistory } from "react-router-dom";
-import { Player } from "@lottiefiles/react-lottie-player";
-import Popup from "reactjs-popup";
-import "./housing.css";
+import React, {ReactElement} from 'react';
+import {useHistory} from 'react-router-dom';
+import {Player} from '@lottiefiles/react-lottie-player';
+import Popup from 'reactjs-popup';
+import './housing.css';
 
 export default function Housing(): ReactElement {
   const history = useHistory();
 
   const handleSubmit = () => {
-    return history.push("/abroad");
+    return history.push('/abroad');
   };
 
   return (
-    <>
+    <div className="wrapper_house">
       <div className="housing">
         <div className="housing_text">
           <div className="housing_title">
@@ -21,15 +21,15 @@ export default function Housing(): ReactElement {
           <ol className="housing_list">
             <li className="housing_list-item">
               Vous pouvez utiliser le 3ème pilier pour financer les travaux de
-              rénovation de votre résidence principale.{" "}
+              rénovation de votre résidence principale.{' '}
             </li>
             <li className="housing_list-item">
               Vous pouvez également l'utiliser pour acquérir votre logement à
-              usage personnel.{" "}
+              usage personnel.{' '}
             </li>
             <li className="housing_list-item">
               Vous avez la possibilité de le retirer pour créer votre entreprise
-              en tant qu'indépendant.{" "}
+              en tant qu'indépendant.{' '}
             </li>
           </ol>
         </div>
@@ -38,8 +38,7 @@ export default function Housing(): ReactElement {
             autoplay
             loop
             src="/animations/59875-home.json"
-            style={{ height: "300px", width: "300px" }}
-          ></Player>
+            style={{height: '300px', width: '300px'}}></Player>
         </div>
       </div>
       <button onClick={handleSubmit} className="next_button button_position">
@@ -49,12 +48,11 @@ export default function Housing(): ReactElement {
         modal
         trigger={
           <div className="pop_up_triger">En savoir plus sur cet avantage</div>
-        }
-      >
+        }>
         {(
           close:
             | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
-            | undefined
+            | undefined,
         ) => (
           <>
             <button className="close" onClick={close}>
@@ -124,6 +122,6 @@ export default function Housing(): ReactElement {
           </>
         )}
       </Popup>
-    </>
+    </div>
   );
 }

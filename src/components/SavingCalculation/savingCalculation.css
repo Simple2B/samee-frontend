@@ -1,3 +1,5 @@
 .saving_calc {
-  margin-top: 7%;
+  position: relative;
+  height: 86vh;
+  padding-top: 7%;
 }

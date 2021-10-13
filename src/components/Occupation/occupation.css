@@ -1,3 +1,9 @@
+.occupation {
+  position: relative;
+  height: 86vh;
+  padding-top: 12%;
+}
+
 .occupation_title {
   margin-bottom: 50px;
 }

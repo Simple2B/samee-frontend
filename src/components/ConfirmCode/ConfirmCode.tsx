@@ -104,7 +104,7 @@ export default function ConfirmCode(): ReactElement {
   };
 
   return (
-    <>
+    <div className="code_wrapper">
       <div className="confirm_code">
         <div className="confirm_code_text">
           Entrez le code à 6 chiffres reçu par sms
@@ -162,6 +162,6 @@ export default function ConfirmCode(): ReactElement {
           Recevoir le comparatif
         </button>
       </div>
-    </>
+    </div>
   );
 }

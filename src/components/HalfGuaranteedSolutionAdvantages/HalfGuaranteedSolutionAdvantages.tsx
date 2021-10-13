@@ -1,12 +1,12 @@
-import React, { ReactElement } from "react";
-import { useHistory } from "react-router-dom";
-import "./halfGuaranteedSolutionAdvantages.css";
+import React, {ReactElement} from 'react';
+import {useHistory} from 'react-router-dom';
+import './halfGuaranteedSolutionAdvantages.css';
 
 export default function HalfGuaranteedSolutionAdvantages(): ReactElement {
   const history = useHistory();
 
   const handleSubmit = () => {
-    history.push("/half-guarantee-saving-solution");
+    history.push('/half-guarantee-saving-solution');
   };
 
   return (
@@ -34,4 +34,4 @@ export default function HalfGuaranteedSolutionAdvantages(): ReactElement {
       </button>
     </div>
   );
-};
+}

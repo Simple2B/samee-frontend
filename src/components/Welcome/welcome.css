@@ -37,12 +37,13 @@
 }
 
 @media (max-width: 768px) {
-
-
   .welcome_image {
     display: none;
   }
 
+  .welcome {
+    padding-top: 20%;
+  }
 
 }
 
@@ -81,5 +82,11 @@
     cursor: pointer;
     transition: background-color 1s;
     margin-right: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .welcome {
+    padding-top: 10%;
   }
 }

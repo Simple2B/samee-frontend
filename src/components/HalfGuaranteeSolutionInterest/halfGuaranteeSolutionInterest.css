@@ -1,6 +1,9 @@
 .half_guarantee_solution_interest {
-  margin-top: 50px;
+  padding-top: 8%;
+  position: relative;
+  height: 86vh;
 }
+
 
 .half_guarantee_solution_interest_button {
   padding: 10px 20px;

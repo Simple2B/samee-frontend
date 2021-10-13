@@ -1,3 +1,9 @@
+.user_address_info {
+  position: relative;
+  height: 86vh;
+  padding-top: 3%;
+}
+
 .user_address_info_input_block {
   display: flex;
   justify-content: space-between;

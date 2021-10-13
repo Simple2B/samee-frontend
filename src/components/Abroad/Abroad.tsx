@@ -1,18 +1,18 @@
-import React, { ReactElement } from "react";
-import { useHistory } from "react-router-dom";
-import { Player } from "@lottiefiles/react-lottie-player";
-import Popup from "reactjs-popup";
-import "./abroad.css";
+import React, {ReactElement} from 'react';
+import {useHistory} from 'react-router-dom';
+import {Player} from '@lottiefiles/react-lottie-player';
+import Popup from 'reactjs-popup';
+import './abroad.css';
 
 export default function Abroad(): ReactElement {
   const history = useHistory();
 
   const handleSubmit = () => {
-    return history.push("/guarantees");
+    return history.push('/guarantees');
   };
 
   return (
-    <>
+    <div className="wrapper_abroad">
       <div className="abroad">
         <div className="abroad_text">
           <div className="abroad_title">
@@ -20,15 +20,17 @@ export default function Abroad(): ReactElement {
           </div>
           <ol className="abroad_list">
             <li className="abroad_list-item">
-              Arrivé à la retraite, vous pouvez retirer votre capital ainsi que les intérêts et éventuels excédents (uniquement en assurance).
+              Arrivé à la retraite, vous pouvez retirer votre capital ainsi que
+              les intérêts et éventuels excédents (uniquement en assurance).
             </li>
             <li className="abroad_list-item">
               Vous avez la possibilité de partir en retraite anticipée dès l'âge
-              de 60 ans pour un homme et de 59 ans pour une femme.{" "}
+              de 60 ans pour un homme et de 59 ans pour une femme.{' '}
             </li>
             <li className="abroad_list-item">
-              {" "}
-              Vous pouvez retirer votre capital afin de vous installer ailleurs en Europe d'une manière définitive ou pour le travail.
+              {' '}
+              Vous pouvez retirer votre capital afin de vous installer ailleurs
+              en Europe d'une manière définitive ou pour le travail.
             </li>
           </ol>
         </div>
@@ -37,8 +39,7 @@ export default function Abroad(): ReactElement {
             autoplay
             loop
             src="/animations/13598-pensjonisten.json"
-            style={{ height: "300px", width: "300px" }}
-          ></Player>
+            style={{height: '300px', width: '300px'}}></Player>
         </div>
       </div>
       <button onClick={handleSubmit} className="next_button button_position">
@@ -48,12 +49,11 @@ export default function Abroad(): ReactElement {
         modal
         trigger={
           <div className="pop_up_triger">En savoir plus sur cet avantage</div>
-        }
-      >
+        }>
         {(
           close:
             | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
-            | undefined
+            | undefined,
         ) => (
           <>
             <button className="close" onClick={close}>
@@ -93,6 +93,6 @@ export default function Abroad(): ReactElement {
           </>
         )}
       </Popup>
-    </>
+    </div>
   );
 }

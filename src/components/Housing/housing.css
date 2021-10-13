@@ -1,3 +1,9 @@
+.wrapper_house {
+  position: relative;
+  height: 86vh;
+  padding-top: 5%;
+}
+
 .housing {
   display: flex;
   align-items: center;

@@ -29,7 +29,7 @@ const useStyles = makeStyles({
   },
 });
 
-const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
+// const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
 
 export default function SavingGuaranteeInterestCalc(): ReactElement {
   const [interest, setInterest] = useState<any>(0);
@@ -56,6 +56,10 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
   const [occupation] = useState(localStorage.getItem('occupation'));
   const [error, setError] = useState('');
 
+  const [solutions, setSolutions] = useState(
+    JSON.stringify(localStorage.getItem('solutionChoice')),
+  );
+
   const countUpRef = React.useRef(null);
   const {start, update} = useCountUp({
     ref: countUpRef,
@@ -64,7 +68,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
     duration: 1,
     separator: "'",
     decimal: "'",
-    prefix: 'CHR ',
+    prefix: 'CHF ',
   });
 
   useEffect(() => {
@@ -217,7 +221,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
   };
 
   return (
-    <>
+    <div className="interest_wrapper">
       <div className="saving_interest_calc">
         <div className="saving_interest_calc-text-block">
           <div className="saving_interest_calc_title">
@@ -370,6 +374,6 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
           </>
         )}
       </Popup>
-    </>
+    </div>
   );
 }

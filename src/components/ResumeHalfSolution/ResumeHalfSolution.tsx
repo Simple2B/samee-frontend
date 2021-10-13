@@ -39,7 +39,7 @@ export default function ResumeHalfSolution(): ReactElement {
   };
 
   return (
-    <>
+    <div className="resume_wrapper">
       <div className="resume_half_solution">
         <div className="resume_half_solution_text_block">
           <div className="resume_half_solution_title title">
@@ -124,6 +124,6 @@ export default function ResumeHalfSolution(): ReactElement {
           Modifier les paramètres
         </button>
       </div>
-    </>
+    </div>
   );
 }

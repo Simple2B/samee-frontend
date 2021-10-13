@@ -1,12 +1,16 @@
 import React, {ReactElement} from 'react';
+import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import './halfGuaranteedSolution.css';
 
-const solutions = JSON.stringify(localStorage.getItem('solutionChoice'));
+// const solutions = JSON.stringify(localStorage.getItem('solutionChoice'));
 
 export default function HalfGuaranteedSolution(): ReactElement {
   const history = useHistory();
+  const [solutions, setSolutions] = useState(
+    JSON.stringify(localStorage.getItem('solutionChoice')),
+  );
 
   const handleSubmit = () => {
     if (solutions.includes('garanties')) {
@@ -29,7 +33,7 @@ export default function HalfGuaranteedSolution(): ReactElement {
   };
 
   return (
-    <>
+    <div className="video_wrapper">
       <div className="half_guaranteed_solution">
         <div className="half_guaranteed_solution_text">
           <div className="half_guaranteed_solution_title_big gold_text title">
@@ -88,11 +92,11 @@ export default function HalfGuaranteedSolution(): ReactElement {
           )}
         </Popup>
       </div>
-      <div className="buttons_set button_position">
+      <div className="button_position">
         <button onClick={handleSubmit} className="next_button">
           Continuer
         </button>
       </div>
-    </>
+    </div>
   );
 }

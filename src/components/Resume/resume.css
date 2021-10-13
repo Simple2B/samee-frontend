@@ -1,5 +1,7 @@
 .resume {
-  margin-top: 100px;
+  position: relative;
+  height: 86vh;
+  padding-top: 10%;
 }
 
 .resume_text {

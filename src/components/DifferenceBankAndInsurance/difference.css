@@ -1,5 +1,11 @@
+.difference {
+  position: relative;
+  height: 86vh;
+  padding-top: 2%;
+}
+
 .difference_title {
-  margin-bottom: 40px;
+  margin-bottom: 70px;
 }
 
 .difference_text {
@@ -25,9 +31,6 @@
   border-right: 1px solid #fff;
 }
 
-.difference_buttons {
-  margin-top: 30px;
-}
 
 .button_discover {
   /* width: 400px;

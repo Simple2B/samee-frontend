@@ -1,17 +1,17 @@
-import React, { ReactElement } from "react";
-import { useHistory } from "react-router-dom";
-import { Player } from '@lottiefiles/react-lottie-player';
-import Popup from "reactjs-popup";
-import "./tax.css";
+import React, {ReactElement} from 'react';
+import {useHistory} from 'react-router-dom';
+import {Player} from '@lottiefiles/react-lottie-player';
+import Popup from 'reactjs-popup';
+import './tax.css';
 
 export default function Tax(): ReactElement {
   const history = useHistory();
 
   const handleSubmit = () => {
-    return history.push("/housing-and-business");
+    return history.push('/housing-and-business');
   };
   return (
-    <>
+    <div className="wrapper_tax">
       <div className="tax">
         <div className="tax_text">
           <div className="tax_title">Économie fiscale chaque année</div>
@@ -19,7 +19,7 @@ export default function Tax(): ReactElement {
             <li className="tax_list-item">
               Vous déduisez l'intégralité des versements au 3ème pilier de votre
               revenu AVS. Et économisez jusqu'à 2500 CHF par an sur vos impôts
-              avec un revenu de 84'000 CHF.{" "}
+              avec un revenu de 84'000 CHF.{' '}
             </li>
             <li className="tax_list-item">
               Le montant du troisième pilier est exclu de votre fortune
@@ -27,7 +27,7 @@ export default function Tax(): ReactElement {
             </li>
             <li className="tax_list-item">
               Vous récupérez entre 20% et 40% des montants investis sous forme
-              de réduction fiscale.{" "}
+              de réduction fiscale.{' '}
             </li>
           </ol>
         </div>
@@ -36,9 +36,7 @@ export default function Tax(): ReactElement {
             autoplay
             loop
             src="/animations/24811-saving-money.json"
-            style={{ height: '300px', width: '300px' }}
-          >
-          </Player>
+            style={{height: '300px', width: '300px'}}></Player>
         </div>
       </div>
       <button onClick={handleSubmit} className="next_button button_position">
@@ -48,12 +46,11 @@ export default function Tax(): ReactElement {
         modal
         trigger={
           <div className="pop_up_triger">En savoir plus sur cet avantage</div>
-        }
-      >
+        }>
         {(
           close:
             | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
-            | undefined
+            | undefined,
         ) => (
           <>
             <button className="close" onClick={close}>
@@ -105,6 +102,6 @@ export default function Tax(): ReactElement {
           </>
         )}
       </Popup>
-    </>
+    </div>
   );
-};
+}

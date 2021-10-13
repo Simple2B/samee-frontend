@@ -1,4 +1,5 @@
 import React, {ReactElement} from 'react';
+import {useState} from 'react';
 import {useEffect} from 'react';
 import NumberFormat from 'react-number-format';
 import {useHistory} from 'react-router-dom';
@@ -10,7 +11,7 @@ const savings: string | null = localStorage.getItem('salary');
 const finalCapital: string | null = localStorage.getItem('finalCapital');
 const interest: string | null = localStorage.getItem('interest');
 
-const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
+// const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
 
 export default function ResumeSavingSolution(): ReactElement {
   useEffect(() => {
@@ -21,6 +22,9 @@ export default function ResumeSavingSolution(): ReactElement {
     const interest: string | null = localStorage.getItem('interest');
   });
   const history = useHistory();
+  const [solutions, setSolutions] = useState(
+    JSON.stringify(localStorage.getItem('solutionChoice')),
+  );
 
   const handleSubmit = () => {
     if (solutions.includes('rendement')) {
@@ -35,7 +39,7 @@ export default function ResumeSavingSolution(): ReactElement {
   };
 
   return (
-    <>
+    <div className="resume_wrapper">
       <div className="resume_saving_solution">
         <div className="resume_saving_solution_text_block">
           <div className="resume_saving_solution_title">
@@ -106,6 +110,6 @@ export default function ResumeSavingSolution(): ReactElement {
           Modifier les paramètres
         </button>
       </div>
-    </>
+    </div>
   );
 }

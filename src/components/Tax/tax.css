@@ -1,6 +1,13 @@
+.wrapper_tax {
+  position: relative;
+  height: 86vh;
+  padding-top: 5%;
+}
+
 .tax {
   display: flex;
   align-items: center;
+
 }
 
 .tax_title {

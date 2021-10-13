@@ -1,3 +1,9 @@
+.solution_for_whom {
+  position: relative;
+  height: 86vh;
+  padding-top: 2%;
+}
+
 .solution_for_whom_title {
   font-size: 30px;
   margin-bottom: 20px;

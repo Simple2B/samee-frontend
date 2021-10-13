@@ -219,7 +219,7 @@ export default function ResumeSavingSolutionModify(): ReactElement {
     history.push('resume-saving-solution');
   };
   return (
-    <>
+    <div className="resume_wrapper">
       <div className="resume_saving_solution_modify">
         <div className="resume_saving_solution_modify_text_block">
           <div className="resume_saving_solution_modify_title">
@@ -331,6 +331,6 @@ export default function ResumeSavingSolutionModify(): ReactElement {
           Recalculer
         </button>
       </div>
-    </>
+    </div>
   );
 }

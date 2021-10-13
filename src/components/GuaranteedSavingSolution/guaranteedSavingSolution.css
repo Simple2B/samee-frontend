@@ -1,5 +1,10 @@
-.video_button_next {
+.video_wrapper {
+  padding-top: 8%;
+  position: relative;
+  height: 86vh;
+}
 
+.video_button_next {
   background-color: #eac28c;
   color: #000519;
   border: none;

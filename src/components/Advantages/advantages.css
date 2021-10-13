@@ -1,3 +1,5 @@
-.advantages_list {
-  margin-bottom: 100px;
+.advantages {
+  position: relative;
+  height: 86vh;
+  padding-top: 10%;
 }
