@@ -98,6 +98,7 @@ export default function ConfirmCode(): ReactElement {
         })
         .catch(function (error) {
           console.log(error);
+          setError('Something goes wrong. Please try again.');
         });
     }
   };
