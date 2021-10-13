@@ -123,6 +123,7 @@ export default function UserContactInfo(): ReactElement {
         })
         .catch(function (error) {
           console.log(error);
+          setError('Number already exist');
         });
     }
   };
