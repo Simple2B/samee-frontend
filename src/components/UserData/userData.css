@@ -28,6 +28,7 @@
   cursor: pointer;
   margin-top: 50px;
   display: flex;
+  font-size: 20px;
 }
 
 .user_data_input {
@@ -47,7 +48,7 @@
   content: url(/src/image/arrow-down.svg);
   background-size: contain;
   padding-left: 7px;
-  margin-top: 7px;
+  margin-top: 2px;
 }
 
 .pop_up {
@@ -62,10 +63,12 @@
 .pop_up_title {
   margin-bottom: 20px;
   font-weight: bold;
+  font-size: 24px;
 }
 
 .pop_up_text {
   margin-bottom: 20px;
+  font-size: 20px;
 }
 
 .text_error {
