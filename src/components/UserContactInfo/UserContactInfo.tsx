@@ -34,6 +34,10 @@ import {
   tax,
   totalSavings,
 } from '../../api/userData';
+import {phone} from 'phone';
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input/input';
+import * as EmailValidator from 'email-validator';
 
 const useStyles = makeStyles({
   root: {
@@ -45,10 +49,11 @@ const useStyles = makeStyles({
 });
 
 export default function UserContactInfo(): ReactElement {
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState<string>('');
   const [check, setCheck] = useState(false);
   const [error, setError] = useState('');
+  const [emailValidError, setEmailValidError] = useState('');
   const [client, setClient] = useState<any>();
 
   const history = useHistory();
@@ -62,10 +67,15 @@ export default function UserContactInfo(): ReactElement {
 
   const handleEmail = (e: any) => {
     setEmail(e.target.value);
+    if (EmailValidator.validate(e.target.value)) {
+      setEmailValidError('');
+    } else {
+      setEmailValidError('email is not valid');
+    }
   };
 
   const handlePhone = (e: any) => {
-    setPhone(e.target.value);
+    setPhone(e);
   };
 
   const handleCheck = () => {
@@ -112,19 +122,20 @@ export default function UserContactInfo(): ReactElement {
     } else {
       setError('');
       localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
-      await userDataInstance
-        .post('/add', userData)
-        .then(function (response) {
-          console.log(response);
-          const clientId = response.data;
-          setClient(clientId);
-          localStorage.setItem('clientId', JSON.stringify(clientId));
-          history.push('/confirm-code');
-        })
-        .catch(function (error) {
-          console.log(error);
-          setError('Number already exist');
-        });
+      // await userDataInstance
+      //   .post('/add', userData)
+      //   .then(function (response) {
+      //     console.log(response);
+      //     const clientId = response.data;
+      //     setClient(clientId);
+      //     localStorage.setItem('clientId', JSON.stringify(clientId));
+
+      //   })
+      //   .catch(function (error) {
+      //     console.log(error);
+      //     setError('Number already exist');
+      //   });
+      history.push('/confirm-code');
     }
   };
 
@@ -154,18 +165,30 @@ export default function UserContactInfo(): ReactElement {
             name="email"
             className="input_field"
           />
+          <span className="error_valid">{emailValidError}</span>
         </div>
 
         <div className="user_contact_info_input-set">
           <label htmlFor="phone" className="input_label">
             Numéro de téléphone:
           </label>
-          <input
+          {/* <input
             value={phone}
             onChange={handlePhone}
-            type="phone"
+            type="tel"
+            pattern="/^+91(7\d|8\d|9\d)\d{9}$/"
             name="phone"
             className="input_field"
+          /> */}
+
+          <PhoneInput
+            className="input_field"
+            international={true}
+            withCountryCallingCode={true}
+            country="CH"
+            value={phone}
+            maxLength={16}
+            onChange={handlePhone}
           />
         </div>
       </div>

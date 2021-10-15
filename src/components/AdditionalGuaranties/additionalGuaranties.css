@@ -12,3 +12,7 @@
   margin-bottom: 20px;
   white-space: pre-line;
 }
+
+.bold_title {
+  font-weight: bold;
+}

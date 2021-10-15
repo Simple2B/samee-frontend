@@ -22,7 +22,8 @@ export default function AdditionalGuaranties(): ReactElement {
       </div>
 
       <div className="additional-guaranties_text">
-        1. Une rente supplémentaire en cas d'invalidité{`\n`}
+        <strong>1. Une rente supplémentaire en cas d'invalidité</strong>
+        {`\n`}
         En cas d'invalidité maladie, vous perdez jusqu'à 40% de votre salaire.
         En cotisant seulement 100 CHF par mois sur votre troisième pilier, vous
         pouvez vous assurer une rente supplémentaire de 1'000 franc par mois en
@@ -31,7 +32,8 @@ export default function AdditionalGuaranties(): ReactElement {
       </div>
 
       <div className="additional-guaranties_text">
-        2. Un capital garanti{`\n`}
+        <strong>2. Un capital garanti</strong>
+        {`\n`}
         En cas d'invalidité suite à une maladie ou à un accident, votre
         assurance prendra le relais du paiement de vos primes de troisième
         pilier. Vous avez ainsi la garantie de recevoir, à votre retraite, le

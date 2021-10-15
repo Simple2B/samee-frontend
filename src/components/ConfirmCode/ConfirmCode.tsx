@@ -47,32 +47,38 @@ export default function ConfirmCode(): ReactElement {
   };
 
   const handleCode1 = (e: any) => {
-    setCode1(e.target.value);
+    const clearedValue = e.target.value.replace(/\D/g, '');
+    setCode1(clearedValue);
     handleChange(e);
   };
 
   const handleCode2 = (e: any) => {
-    setCode2(e.target.value);
+    const clearedValue = e.target.value.replace(/\D/g, '');
+    setCode2(clearedValue);
     handleChange(e);
   };
 
   const handleCode3 = (e: any) => {
-    setCode3(e.target.value);
+    const clearedValue = e.target.value.replace(/\D/g, '');
+    setCode3(clearedValue);
     handleChange(e);
   };
 
   const handleCode4 = (e: any) => {
-    setCode4(e.target.value);
+    const clearedValue = e.target.value.replace(/\D/g, '');
+    setCode4(clearedValue);
     handleChange(e);
   };
 
   const handleCode5 = (e: any) => {
-    setCode5(e.target.value);
+    const clearedValue = e.target.value.replace(/\D/g, '');
+    setCode5(clearedValue);
     handleChange(e);
   };
 
   const handleCode6 = (e: any) => {
-    setCode6(e.target.value);
+    const clearedValue = e.target.value.replace(/\D/g, '');
+    setCode6(clearedValue);
     handleChange(e);
   };
 

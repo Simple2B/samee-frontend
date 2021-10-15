@@ -26,27 +26,33 @@ export default function UserAddressInfo(): ReactElement {
   };
 
   const handleName = (e: any) => {
-    setName(e.target.value);
+    const clearedValue = e.target.value.replace(/[0-9]/g, '');
+    setName(clearedValue);
   };
 
   const handleLastName = (e: any) => {
-    setLastName(e.target.value);
+    const clearedValue = e.target.value.replace(/[0-9]/g, '');
+    setLastName(clearedValue);
   };
 
   const handleStreet = (e: any) => {
-    setStreet(e.target.value);
+    const clearedValue = e.target.value.replace(/[0-9]/g, '');
+    setStreet(clearedValue);
   };
 
   const handleNumber = (e: any) => {
-    setNumber(e.target.value);
+    const clearedValue = e.target.value.replace(/\D/g, '');
+    setNumber(clearedValue);
   };
 
   const handlePostcode = (e: any) => {
-    setPostcode(e.target.value);
+    const clearedValue = e.target.value.replace(/\D/g, '');
+    setPostcode(clearedValue);
   };
 
   const handleCity = (e: any) => {
-    setCity(e.target.value);
+    const clearedValue = e.target.value.replace(/[0-9]/g, '');
+    setCity(clearedValue);
   };
 
   const handleSubmit = (e: {preventDefault: () => void}) => {
@@ -77,7 +83,6 @@ export default function UserAddressInfo(): ReactElement {
             <input
               value={name}
               onChange={handleName}
-              type="text"
               name="name"
               className="input_field"
             />
@@ -89,7 +94,6 @@ export default function UserAddressInfo(): ReactElement {
             <input
               value={street}
               onChange={handleStreet}
-              type="text"
               name="street"
               className="input_field"
             />
@@ -99,9 +103,9 @@ export default function UserAddressInfo(): ReactElement {
               NPA
             </label>
             <input
+              maxLength={4}
               value={postcode}
               onChange={handlePostcode}
-              type="number"
               name="postcode"
               className="input_field"
             />
@@ -115,7 +119,6 @@ export default function UserAddressInfo(): ReactElement {
             <input
               value={lastName}
               onChange={handleLastName}
-              type="text"
               name="lastname"
               className="input_field"
             />
@@ -127,7 +130,6 @@ export default function UserAddressInfo(): ReactElement {
             <input
               value={number}
               onChange={handleNumber}
-              type="number"
               name="number"
               className="input_field"
             />
@@ -139,7 +141,6 @@ export default function UserAddressInfo(): ReactElement {
             <input
               value={city}
               onChange={handleCity}
-              type="text"
               name="city"
               className="input_field"
             />

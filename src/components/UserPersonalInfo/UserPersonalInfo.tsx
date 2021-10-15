@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     fontFamily: '"Archivo Narrow" !important',
     color: 'white !important',
     paddingLeft: '15px',
-    fontSize: '19px !important',
+    fontSize: '17px !important',
   },
   nativeInput: {
     color: '#fff !important',
@@ -46,7 +46,8 @@ export default function UserPersonalInfo(): ReactElement {
   };
 
   const handleProfession = (e: any) => {
-    setProfession(e.target.value);
+    const clearedValue = e.target.value.replace(/[0-9]/g, '');
+    setProfession(clearedValue);
   };
 
   const handleSmoking = (e: any) => {

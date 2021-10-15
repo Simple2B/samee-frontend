@@ -6,7 +6,7 @@ import './halfGOptimalProportion.css';
 import {useHistory} from 'react-router-dom';
 
 export default function HalfGOptimalProportion(): ReactElement {
-  const [sliderValue, setSliderValue] = useState(0);
+  const [sliderValue, setSliderValue] = useState(10);
   const [error, setError] = useState('');
 
   const history = useHistory();
@@ -50,6 +50,8 @@ export default function HalfGOptimalProportion(): ReactElement {
         <div className="circle_button">
           <CircleSlider
             size={260}
+            min={10}
+            max={90}
             progressWidth={10}
             circleWidth={10}
             progressColor={'white'}
