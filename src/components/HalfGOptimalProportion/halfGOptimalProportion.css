@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+.pop_up_list-item {
+  font-size: 20px;
+}
+
 .half-optimal-proportion_percents {
   display: flex;
   align-items: center;

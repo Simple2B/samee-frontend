@@ -251,7 +251,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
                   thousandSeparator={`'`}
                   prefix={'CHF '}
                 />{' '}
-                en intérêts (taux de 0.35%)
+                en intérêts (taux de 0.1%)
               </li>
             </ul>
 

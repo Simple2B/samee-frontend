@@ -3,6 +3,7 @@
   height: 82vh;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
 }
 
 .housing {
@@ -36,5 +37,16 @@
 @media (max-width: 425px) {
   .housing {
     display: block;
+  }
+
+  .housing_title {
+    font-size: 20px;
+  }
+
+  .housing_animation {
+
+    width: 150px;
+    height: 150px;
+
   }
 }

@@ -37,4 +37,13 @@
   .abroad {
     display: block;
   }
+
+  .abroad_title {
+    font-size: 20px;
+  }
+
+  .abroad_animation {
+    width: 150px;
+    height: 150px;
+  }
 }

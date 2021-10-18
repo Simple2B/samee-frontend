@@ -45,24 +45,10 @@
     display: none;
   }
 
-  .welcome {
-    padding-top: 20%;
-  }
-
 }
 
 @media (max-width: 425px) {
-  .welcome {
-    display: flex;
-    align-items: center;
-    /* padding: 25px; */
-    justify-content: space-between;
 
-  }
-
-  .welcome_image {
-    display: none;
-  }
 
   .welcome_text_title {
     display: block;
@@ -74,23 +60,4 @@
     font-size: 20px;
   }
 
-}
-
-@media (max-width: 320px) {
-  .next_button {
-    background-color: #eac28c;
-    color: #000519;
-    padding: 10px 25px;
-    border: none;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: background-color 1s;
-    margin-right: 10px;
-  }
-}
-
-@media (max-width: 320px) {
-  .welcome {
-    padding-top: 10%;
-  }
 }

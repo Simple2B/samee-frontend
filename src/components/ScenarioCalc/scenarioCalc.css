@@ -3,6 +3,7 @@
   height: 82vh;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
 }
 
 .blue_text {
