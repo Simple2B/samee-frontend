@@ -36,7 +36,7 @@ export default function UserAddressInfo(): ReactElement {
   };
 
   const handleStreet = (e: any) => {
-    const clearedValue = e.target.value.replace(/[0-9]/g, '');
+    const clearedValue = e.replace(/[0-9]/g, '');
     setStreet(clearedValue);
   };
 
@@ -51,7 +51,7 @@ export default function UserAddressInfo(): ReactElement {
   };
 
   const handleCity = (e: any) => {
-    const clearedValue = e.target.value.replace(/[0-9]/g, '');
+    const clearedValue = e.replace(/[0-9]/g, '');
     setCity(clearedValue);
   };
 
@@ -91,11 +91,14 @@ export default function UserAddressInfo(): ReactElement {
             <label htmlFor="street" className="input_label">
               Rue
             </label>
-            <input
+            <Geosuggest
               value={street}
               onChange={handleStreet}
-              name="street"
-              className="input_field"
+              inputClassName="input_field"
+              placeholder=""
+              country="CH"
+              suggestsHiddenClassName="hidden"
+              types={['geocode']}
             />
           </div>
           <div className="user_address_info_input-set">
@@ -138,11 +141,14 @@ export default function UserAddressInfo(): ReactElement {
             <label htmlFor="city" className="input_label">
               Ville
             </label>
-            <input
+            <Geosuggest
               value={city}
               onChange={handleCity}
-              name="city"
-              className="input_field"
+              inputClassName="input_field"
+              placeholder=""
+              country="CH"
+              suggestsHiddenClassName="hidden"
+              types={['(cities)']}
             />
           </div>
         </div>
