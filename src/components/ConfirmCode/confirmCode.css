@@ -1,7 +1,8 @@
 .code_wrapper {
-  padding-top: 22%;
   position: relative;
-  height: 86vh;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .confirm_code {

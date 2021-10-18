@@ -1,7 +1,9 @@
 .saving_interest {
-  padding-top: 5%;
+
   position: relative;
-  height: 86vh;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .next_button-interest {

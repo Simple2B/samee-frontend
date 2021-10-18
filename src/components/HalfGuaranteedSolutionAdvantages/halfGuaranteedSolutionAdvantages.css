@@ -1,7 +1,8 @@
 .half_guaranteed_advantages {
   position: relative;
-  height: 86vh;
-  padding-top: 1%;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .half_guaranteed_advantages_title {

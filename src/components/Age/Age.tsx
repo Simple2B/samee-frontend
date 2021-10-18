@@ -63,30 +63,34 @@ export default function Age(): ReactElement {
 
   return (
     <div className="age">
-      <div className="age_text">Merci pour ces informations.</div>
-      <div className="age_text">
-        Vous épargnerez donc pendant{' '}
-        <span className="age_calculation"> {age} ans.</span>{' '}
+      <div className="main_content">
+        <div className="age_text">Merci pour ces informations.</div>
+        <div className="age_text">
+          Vous épargnerez donc pendant{' '}
+          <span className="age_calculation"> {age} ans.</span>{' '}
+        </div>
+
+        {errorCheck && (
+          <div className="error_block">
+            <img src="/image/error.png" className="error_img" alt="error" />
+            {error}{' '}
+          </div>
+        )}
       </div>
 
-      {errorCheck && (
-        <div className="error_block">
-          <img src="/image/error.png" className="error_img" alt="error" />
-          {error}{' '}
-        </div>
-      )}
-
-      <div className="buttons_set button_position">
-        <button onClick={handleSubmit} className="next_button ">
-          Continuer
-        </button>
-        {errorCheck && (
-          <button
-            onClick={handleSubmitBack}
-            className="next_button button_space">
-            Modifier mon âge
+      <div className="footer_content">
+        <div className="buttons_set button_position">
+          <button onClick={handleSubmit} className="next_button ">
+            Continuer
           </button>
-        )}
+          {errorCheck && (
+            <button
+              onClick={handleSubmitBack}
+              className="next_button button_space">
+              Modifier mon âge
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,8 @@
 .occupation {
   position: relative;
-  height: 86vh;
-  padding-top: 12%;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .occupation_title {

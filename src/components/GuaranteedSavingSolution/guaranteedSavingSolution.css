@@ -1,7 +1,8 @@
 .video_wrapper {
-  padding-top: 8%;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  height: 86vh;
+  height: 82vh;
 }
 
 .video_button_next {

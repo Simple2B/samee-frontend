@@ -1,5 +1,6 @@
 .saving_calc {
   position: relative;
-  height: 86vh;
-  padding-top: 7%;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }

@@ -220,116 +220,120 @@ export default function ResumeSavingSolutionModify(): ReactElement {
   };
   return (
     <div className="resume_wrapper">
-      <div className="resume_saving_solution_modify">
-        <div className="resume_saving_solution_modify_text_block">
-          <div className="resume_saving_solution_modify_title">
-            Résumé: solution épargne
-          </div>
+      <div className="main_content">
+        <div className="resume_saving_solution_modify">
+          <div className="resume_saving_solution_modify_text_block">
+            <div className="resume_saving_solution_modify_title">
+              Résumé: solution épargne
+            </div>
 
-          <div className="resume_saving_solution_modify_text">
-            Vous cotiserez pendant{' '}
-            <span className="gold_text">{savingYears} ans.</span>
-          </div>
+            <div className="resume_saving_solution_modify_text">
+              Vous cotiserez pendant{' '}
+              <span className="gold_text">{savingYears} ans.</span>
+            </div>
 
-          <div className="resume_saving_solution_modify_text">
-            Avec un montant <span className="gold_text">{period}</span> de{' '}
-            <NumberFormat
-              value={salaryFromLocal}
-              className="gold_text"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />
-          </div>
+            <div className="resume_saving_solution_modify_text">
+              Avec un montant <span className="gold_text">{period}</span> de{' '}
+              <NumberFormat
+                value={salaryFromLocal}
+                className="gold_text"
+                displayType={'text'}
+                thousandSeparator={`'`}
+                prefix={'CHF '}
+              />
+            </div>
 
-          <div className="resume_saving_solution_modify_text">
-            Vous auriez donc un capital de{' '}
-            <NumberFormat
-              value={finalAmount}
-              className="gold_text"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />
-          </div>
+            <div className="resume_saving_solution_modify_text">
+              Vous auriez donc un capital de{' '}
+              <NumberFormat
+                value={finalAmount}
+                className="gold_text"
+                displayType={'text'}
+                thousandSeparator={`'`}
+                prefix={'CHF '}
+              />
+            </div>
 
-          <div className="resume_saving_solution_modify_text">
-            Avec un gain de{' '}
-            <NumberFormat
-              value={interest}
-              className="gold_text"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />
-          </div>
+            <div className="resume_saving_solution_modify_text">
+              Avec un gain de{' '}
+              <NumberFormat
+                value={interest}
+                className="gold_text"
+                displayType={'text'}
+                thousandSeparator={`'`}
+                prefix={'CHF '}
+              />
+            </div>
 
-          <div className="resume_saving_solution_modify_text">
-            Vous pouvez essayer avec un autre montant
-            <div className="wrapper">
-              d'épargne
-              <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
-                <Select
-                  labelId="demo-simple-select-standard-label"
-                  id="demo-simple-select-standard"
-                  value={period}
-                  onChange={handlePeriod}
-                  label="salary"
-                  className={classes.root}
-                  classes={{
-                    nativeInput: classes.nativeInput,
-                  }}
-                  inputProps={{
-                    classes: {
-                      icon: classes.icon,
-                    },
-                  }}>
-                  <MenuItem value="mensuel">mensuel</MenuItem>
-                  <MenuItem value="annuel">annuel</MenuItem>
-                </Select>
-              </FormControl>
-              {period === 'mensuel' ? (
-                <input
-                  min="100"
-                  max="573"
-                  onChange={handleSalary}
-                  value={salaryFromLocal}
-                  type="number"
-                  className="employee_salary"
-                />
-              ) : (
-                <input
-                  min="1200"
-                  max="6883"
-                  onChange={handleSalary}
-                  value={salaryFromLocal}
-                  type="number"
-                  className="employee_salary"
-                />
-              )}
+            <div className="resume_saving_solution_modify_text">
+              Vous pouvez essayer avec un autre montant
+              <div className="wrapper">
+                d'épargne
+                <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
+                  <Select
+                    labelId="demo-simple-select-standard-label"
+                    id="demo-simple-select-standard"
+                    value={period}
+                    onChange={handlePeriod}
+                    label="salary"
+                    className={classes.root}
+                    classes={{
+                      nativeInput: classes.nativeInput,
+                    }}
+                    inputProps={{
+                      classes: {
+                        icon: classes.icon,
+                      },
+                    }}>
+                    <MenuItem value="mensuel">mensuel</MenuItem>
+                    <MenuItem value="annuel">annuel</MenuItem>
+                  </Select>
+                </FormControl>
+                {period === 'mensuel' ? (
+                  <input
+                    min="100"
+                    max="573"
+                    onChange={handleSalary}
+                    value={salaryFromLocal}
+                    type="number"
+                    className="employee_salary"
+                  />
+                ) : (
+                  <input
+                    min="1200"
+                    max="6883"
+                    onChange={handleSalary}
+                    value={salaryFromLocal}
+                    type="number"
+                    className="employee_salary"
+                  />
+                )}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="resume_saving_solution_modify_number_block">
-          <div className="resume_saving_solution_modify_final_text">
-            Votre capital final
-          </div>
-          <div className="resume_saving_solution_modify_final_amount">
-            <div className="countup_text" ref={countUpRef} />
+          <div className="resume_saving_solution_modify_number_block">
+            <div className="resume_saving_solution_modify_final_text">
+              Votre capital final
+            </div>
+            <div className="resume_saving_solution_modify_final_amount">
+              <div className="countup_text" ref={countUpRef} />
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="buttons_set button_position">
-        <div className="error">{errorAmount}</div>
-        <button onClick={handleSubmit} className="next_button">
-          Continuer
-        </button>
+      <div className="footer_content">
+        <div className="buttons_set button_position">
+          <div className="error">{errorAmount}</div>
+          <button onClick={handleSubmit} className="next_button">
+            Continuer
+          </button>
 
-        <button onClick={handleRecalculate} className="button_modify">
-          Recalculer
-        </button>
+          <button onClick={handleRecalculate} className="button_modify">
+            Recalculer
+          </button>
+        </div>
       </div>
     </div>
   );

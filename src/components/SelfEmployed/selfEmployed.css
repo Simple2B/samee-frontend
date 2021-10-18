@@ -1,7 +1,8 @@
 .self-employed {
   position: relative;
-  height: 86vh;
-  padding-top: 3%;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .self-employed_salary {
@@ -18,9 +19,4 @@
 .self-employed_inputs_set {
   display: flex;
   align-items: center;
-}
-
-.position-0 {
-  position: absolute;
-  left: 0;
 }

@@ -1,7 +1,8 @@
 .modify_parameters {
-  padding-top: 3%;
   position: relative;
-  height: 86vh;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .modify_parameters_text {

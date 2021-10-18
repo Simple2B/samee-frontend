@@ -1,8 +1,17 @@
 .user_data {
-  padding-top: 8%;
+  /* padding-top: 8%; */
   position: relative;
-  height: 86vh;
+  height: 82vh;
   /* overflow: scroll; */
+  display: flex;
+  flex-direction: column;
+}
+
+.main_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .sexe_lebel {
@@ -23,10 +32,10 @@
 }
 
 .pop_up_triger {
-  position: absolute;
-  bottom: 6%;
+  /* position: absolute;
+  bottom: 6%; */
   cursor: pointer;
-  margin-top: 50px;
+  margin: 0 0 15px;
   display: flex;
   font-size: 20px;
 }
@@ -73,8 +82,8 @@
 
 .text_error {
   color: rgb(109, 0, 0);
-  position: absolute;
-  bottom: 24%;
+  /* position: absolute; */
+  margin-bottom: 2px;
 }
 
 
@@ -163,7 +172,7 @@
 
   .pop_up_triger {
     font-size: 15px !important;
-    bottom: 5%;
+    /* bottom: 5%; */
   }
 
   .pop_up_triger::after {
@@ -179,8 +188,8 @@
 
 @media (max-width: 375px) {
   .triger_position {
-    position: absolute;
-    bottom: 2%;
+    /* position: absolute;
+    bottom: 2%; */
   }
 
   .pop_up_triger::after {
@@ -189,12 +198,12 @@
     content: url(/src/image/arrow-down.svg);
     background-size: contain;
     padding-left: 1px;
-    margin-top: 3px;
+    margin-top: 1px;
 
 
   }
 
   .pop_up_triger {
-    display: inline;
+    display: inline-block;
   }
 }

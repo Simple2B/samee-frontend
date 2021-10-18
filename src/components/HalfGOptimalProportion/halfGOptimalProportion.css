@@ -1,7 +1,8 @@
 .half-optimal-proportion {
-  padding-top: 3%;
   position: relative;
-  height: 86vh;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .half-optimal-proportion_percents {

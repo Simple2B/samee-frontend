@@ -1,7 +1,8 @@
 .wrapper_tax {
   position: relative;
-  height: 86vh;
-  padding-top: 5%;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .tax {
@@ -35,6 +36,8 @@
   .tax {
     display: block;
   }
+
+
 }
 
 @media (max-width: 425px) {

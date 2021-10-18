@@ -1,7 +1,8 @@
 .scenario-calc {
-  padding-top: 3%;
   position: relative;
-  height: 86vh;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .blue_text {

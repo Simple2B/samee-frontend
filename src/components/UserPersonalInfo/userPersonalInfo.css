@@ -1,7 +1,8 @@
 .user_personal_info {
   position: relative;
-  height: 86vh;
-  padding-top: 3%;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .user_personal_info_block {

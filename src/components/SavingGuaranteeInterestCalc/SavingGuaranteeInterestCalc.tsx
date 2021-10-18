@@ -222,158 +222,165 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
 
   return (
     <div className="interest_wrapper">
-      <div className="saving_interest_calc">
-        <div className="saving_interest_calc-text-block">
-          <div className="saving_interest_calc_title">
-            Dans <span className="gold_text">{savingYears} ans</span>, vous
-            aurez:
-          </div>
+      <div className="main_content">
+        <div className="saving_interest_calc">
+          <div className="saving_interest_calc-text-block">
+            <div className="saving_interest_calc_title">
+              Dans <span className="gold_text">{savingYears} ans</span>, vous
+              aurez:
+            </div>
 
-          <ul className="saving_interest_calc_list">
-            <li className="saving_interest_calc_list-item">
-              épargné{' '}
+            <ul className="saving_interest_calc_list">
+              <li className="saving_interest_calc_list-item">
+                épargné{' '}
+                <NumberFormat
+                  value={amount}
+                  className="gold_text"
+                  displayType={'text'}
+                  thousandSeparator={`'`}
+                  prefix={' CHF '}
+                />
+                ;
+              </li>
+              <li className="saving_interest_calc_list-item">
+                gagné{' '}
+                <NumberFormat
+                  value={interest}
+                  className="gold_text"
+                  displayType={'text'}
+                  thousandSeparator={`'`}
+                  prefix={'CHF '}
+                />{' '}
+                en intérêts (taux de 0.35%)
+              </li>
+            </ul>
+
+            <div className="saving_interest_calc_list-text-1">
+              En plus, vous aurez réalisé jusqu'à{' '}
               <NumberFormat
-                value={amount}
-                className="gold_text"
-                displayType={'text'}
-                thousandSeparator={`'`}
-                prefix={' CHF '}
-              />
-              ;
-            </li>
-            <li className="saving_interest_calc_list-item">
-              gagné{' '}
-              <NumberFormat
-                value={interest}
+                value={taxFromLocal}
                 className="gold_text"
                 displayType={'text'}
                 thousandSeparator={`'`}
                 prefix={'CHF '}
               />{' '}
-              en intérêts (taux de 0.35%)
-            </li>
-          </ul>
+              d'économie sur vos impôts.
+            </div>
 
-          <div className="saving_interest_calc_list-text-1">
-            En plus, vous aurez réalisé jusqu'à{' '}
-            <NumberFormat
-              value={taxFromLocal}
-              className="gold_text"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />{' '}
-            d'économie sur vos impôts.
-          </div>
-
-          <div className="saving_interest_calc_list-text">
-            Vous pouvez essayer avec un autre montant
-            <div className="wrapper">
-              d'épargne
-              <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
-                <Select
-                  labelId="demo-simple-select-standard-label"
-                  id="demo-simple-select-standard"
-                  value={period}
-                  onChange={handlePeriod}
-                  label="salary"
-                  className={classes.root}
-                  classes={{
-                    nativeInput: classes.nativeInput,
-                  }}
-                  inputProps={{
-                    classes: {
-                      icon: classes.icon,
-                    },
-                  }}>
-                  <MenuItem value="mensuel">mensuel</MenuItem>
-                  <MenuItem value="annuel">annuel</MenuItem>
-                </Select>
-              </FormControl>
-              {period === 'mensuel' ? (
-                <input
-                  min="100"
-                  onChange={handleSalary}
-                  value={salaryFromLocal}
-                  type="number"
-                  className="employee_salary"
-                />
-              ) : (
-                <input
-                  min="1200"
-                  onChange={handleSalary}
-                  value={salaryFromLocal}
-                  type="number"
-                  className="employee_salary"
-                />
-              )}
+            <div className="saving_interest_calc_list-text">
+              Vous pouvez essayer avec un autre montant
+              <div className="wrapper">
+                d'épargne
+                <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
+                  <Select
+                    labelId="demo-simple-select-standard-label"
+                    id="demo-simple-select-standard"
+                    value={period}
+                    onChange={handlePeriod}
+                    label="salary"
+                    className={classes.root}
+                    classes={{
+                      nativeInput: classes.nativeInput,
+                    }}
+                    inputProps={{
+                      classes: {
+                        icon: classes.icon,
+                      },
+                    }}>
+                    <MenuItem value="mensuel">mensuel</MenuItem>
+                    <MenuItem value="annuel">annuel</MenuItem>
+                  </Select>
+                </FormControl>
+                {period === 'mensuel' ? (
+                  <input
+                    min="100"
+                    onChange={handleSalary}
+                    value={salaryFromLocal}
+                    type="number"
+                    className="employee_salary"
+                  />
+                ) : (
+                  <input
+                    min="1200"
+                    onChange={handleSalary}
+                    value={salaryFromLocal}
+                    type="number"
+                    className="employee_salary"
+                  />
+                )}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="saving_interest_calc-final-calc">
-          <div className="saving_interest_calc-final-calc-text">
-            Votre capital final
-          </div>
-          <div className="countup_text" ref={countUpRef} />
-        </div>
-      </div>
-      <div className="buttons_set button_position">
-        <div className="error">{error}</div>
-        <button onClick={handleSubmit} className="next_button">
-          Continuer
-        </button>
-        <button onClick={handleRecalculate} className="button_recalc">
-          Recalculer
-        </button>
-      </div>
-
-      <Popup
-        modal
-        trigger={
-          <div className="pop_up_triger">
-            Plus d'explications sur le résultat
-          </div>
-        }>
-        {(
-          close:
-            | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
-            | undefined,
-        ) => (
-          <>
-            <button className="close" onClick={close}>
-              X
-            </button>
-            <div className="pop_up">
-              <div className="pop_up_title">
-                Comment obtenons-nous ce résultat ?
-              </div>
-              <div className="pop_up_text">
-                Le montant entouré correspond au capital total épargné à l’âge
-                de la retraite en fonction de votre investissement mensuel ou
-                annuel et de la durée mentionnée. Il comprend les montants
-                cotisés chaque année et les intérêts obtenus grâce à votre
-                épargne. Le taux de 0.1% est indicatif et dépend du type de
-                produit, de la compagnie d'assurance ou de la banque et des
-                conditions de marché.
-              </div>
-              <div className="pop_up_text">
-                Si vous avez choisi un 3ème pilier en assurance, le taux
-                d’intérêt minimum sera fixé dans votre contrat et si la
-                compagnie performe bien, vous recevrez des excédents.
-              </div>
-
-              <div className="pop_up_text">
-                Si vous optez pour un 3ème pilier en banque, le taux d’intérêt
-                ne sera que légèrement supérieur à celui d’un compte épargne et
-                aucun montant ne pourra être garanti à l’échéance. Si vous avez
-                un objectif précis en tête, il peut être intéressant de
-                recalculer avec un montant d’épargne mensuel différent.
-              </div>
+          <div className="saving_interest_calc-final-calc">
+            <div className="saving_interest_calc-final-calc-text">
+              Votre capital final
             </div>
-          </>
-        )}
-      </Popup>
+            <div className="countup_text" ref={countUpRef} />
+          </div>
+        </div>
+      </div>
+
+      <div className="footer_content">
+        <div className="buttons_set button_position">
+          <div className="error">{error}</div>
+          <button onClick={handleSubmit} className="next_button">
+            Continuer
+          </button>
+          <button onClick={handleRecalculate} className="button_recalc">
+            Recalculer
+          </button>
+        </div>
+
+        <Popup
+          modal
+          trigger={
+            <div className="pop_up_triger">
+              Plus d'explications sur le résultat
+            </div>
+          }>
+          {(
+            close:
+              | ((
+                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+                ) => void)
+              | undefined,
+          ) => (
+            <>
+              <button className="close" onClick={close}>
+                X
+              </button>
+              <div className="pop_up">
+                <div className="pop_up_title">
+                  Comment obtenons-nous ce résultat ?
+                </div>
+                <div className="pop_up_text">
+                  Le montant entouré correspond au capital total épargné à l’âge
+                  de la retraite en fonction de votre investissement mensuel ou
+                  annuel et de la durée mentionnée. Il comprend les montants
+                  cotisés chaque année et les intérêts obtenus grâce à votre
+                  épargne. Le taux de 0.1% est indicatif et dépend du type de
+                  produit, de la compagnie d'assurance ou de la banque et des
+                  conditions de marché.
+                </div>
+                <div className="pop_up_text">
+                  Si vous avez choisi un 3ème pilier en assurance, le taux
+                  d’intérêt minimum sera fixé dans votre contrat et si la
+                  compagnie performe bien, vous recevrez des excédents.
+                </div>
+
+                <div className="pop_up_text">
+                  Si vous optez pour un 3ème pilier en banque, le taux d’intérêt
+                  ne sera que légèrement supérieur à celui d’un compte épargne
+                  et aucun montant ne pourra être garanti à l’échéance. Si vous
+                  avez un objectif précis en tête, il peut être intéressant de
+                  recalculer avec un montant d’épargne mensuel différent.
+                </div>
+              </div>
+            </>
+          )}
+        </Popup>
+      </div>
     </div>
   );
 }

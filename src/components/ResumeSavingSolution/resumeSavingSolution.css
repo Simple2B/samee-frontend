@@ -1,7 +1,8 @@
 .resume_wrapper {
   position: relative;
-  height: 86vh;
-  padding-top: 1%;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .resume_saving_solution {

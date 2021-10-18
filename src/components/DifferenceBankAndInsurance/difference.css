@@ -1,7 +1,8 @@
 .difference {
   position: relative;
-  height: 86vh;
-  padding-top: 2%;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .difference_title {
@@ -80,9 +81,9 @@
   }
 
   .difference_block_desc {
-
-    height: none;
+    height: 205px;
   }
+
 }
 
 @media (max-width: 425px) {
@@ -109,6 +110,14 @@
   .difference_block:first-child {
     padding-right: 30px;
     border: none;
+  }
+
+  .difference_title {
+    margin-bottom: 27px;
+  }
+
+  .difference_block_desc {
+    height: 140px;
   }
 }
 

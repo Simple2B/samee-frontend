@@ -1,7 +1,8 @@
 .half_guarantee_solution_interest {
-  padding-top: 8%;
   position: relative;
-  height: 86vh;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 

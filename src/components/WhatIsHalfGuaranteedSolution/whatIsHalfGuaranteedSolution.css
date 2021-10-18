@@ -1,7 +1,8 @@
 .what_is_half-guaranteed-solution {
   position: relative;
-  height: 86vh;
-  /* padding-top: 1%; */
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .what_is_half-guaranteed-solution_title {

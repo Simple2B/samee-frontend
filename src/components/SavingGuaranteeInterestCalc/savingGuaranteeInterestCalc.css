@@ -1,7 +1,8 @@
 .interest_wrapper {
   position: relative;
-  height: 86vh;
-  padding-top: 5%;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .saving_interest_calc {
@@ -51,10 +52,10 @@
   background-color: rgb(187, 187, 187);
 }
 
-.buttons_set {
+/* .buttons_set {
   position: absolute;
   bottom: 120px;
-}
+} */
 
 .wrapper {
   display: flex;

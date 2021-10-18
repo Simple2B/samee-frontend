@@ -1,7 +1,8 @@
 .final_step {
-  padding-top: 10%;
   position: relative;
-  height: 86vh;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .final_step_text {

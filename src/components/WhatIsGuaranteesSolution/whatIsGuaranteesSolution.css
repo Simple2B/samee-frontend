@@ -1,7 +1,8 @@
 .what_is_solution {
   position: relative;
-  height: 86vh;
-  padding-top: 2%;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .what_is_solution_title {

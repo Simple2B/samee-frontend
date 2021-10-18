@@ -1,5 +1,6 @@
 .advantages {
   position: relative;
-  height: 86vh;
-  padding-top: 10%;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }

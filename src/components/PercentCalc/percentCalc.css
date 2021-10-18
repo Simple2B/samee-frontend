@@ -1,7 +1,8 @@
 .percent_calc {
-  padding-top: 1%;
   position: relative;
-  height: 86vh;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .percent_calc_block {

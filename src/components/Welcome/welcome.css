@@ -1,7 +1,11 @@
 .welcome {
   display: flex;
-  align-items: center;
-  /* padding: 20px 140px; */
+  flex-direction: column;
+  height: 82vh;
+}
+
+.welcome_wrapper {
+  display: flex;
   justify-content: space-between;
 }
 

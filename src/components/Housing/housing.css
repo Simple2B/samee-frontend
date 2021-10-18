@@ -1,7 +1,8 @@
 .wrapper_house {
   position: relative;
-  height: 86vh;
-  padding-top: 5%;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .housing {
