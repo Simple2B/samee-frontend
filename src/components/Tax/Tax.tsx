@@ -63,7 +63,7 @@ export default function Tax(): ReactElement {
                 X
               </button>
               <div className="pop_up">
-                <div className="housing_title">
+                <div className="pop_up_title">
                   En savoir plus sur l'économie fiscale
                 </div>
                 <div className="pop_up_text">

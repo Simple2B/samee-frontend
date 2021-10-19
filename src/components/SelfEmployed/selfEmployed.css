@@ -9,7 +9,8 @@
   width: 100px;
   height: 40px;
   font-size: 17px;
-  padding-left: 17px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .self-employed_salary_range {

@@ -73,7 +73,7 @@ export default function ChooseSolution(): ReactElement {
   return (
     <div className="choose_solution">
       <div className="main_content">
-        <div className="choose_solution_title">
+        <div className="choose_solution_title gold_text">
           Choisir son profil d'investisseur
         </div>
         <div className="choose_solution_text">

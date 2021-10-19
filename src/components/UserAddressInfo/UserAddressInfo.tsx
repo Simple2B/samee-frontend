@@ -36,8 +36,11 @@ export default function UserAddressInfo(): ReactElement {
   };
 
   const handleStreet = (e: any) => {
-    const clearedValue = e.replace(/[0-9]/g, '');
-    setStreet(clearedValue);
+    console.log(e);
+    if (e) {
+      const clearedValue = e.description;
+      setStreet(clearedValue);
+    }
   };
 
   const handleNumber = (e: any) => {
@@ -51,8 +54,22 @@ export default function UserAddressInfo(): ReactElement {
   };
 
   const handleCity = (e: any) => {
-    const clearedValue = e.replace(/[0-9]/g, '');
-    setCity(clearedValue);
+    if (e) {
+      const clearedValue = e.description;
+      setCity(clearedValue);
+    }
+  };
+
+  const onKeyPress = (event: any) => {
+    console.log(event);
+    if (
+      (event.charCode >= 65 && event.charCode <= 90) ||
+      (event.charCode >= 97 && event.charCode <= 122)
+    ) {
+      return;
+    } else {
+      event.preventDefault();
+    }
   };
 
   const handleSubmit = (e: {preventDefault: () => void}) => {
@@ -98,6 +115,7 @@ export default function UserAddressInfo(): ReactElement {
                 inputClassName="input_field"
                 placeholder=""
                 country="CH"
+                onSuggestSelect={handleStreet}
                 suggestsHiddenClassName="hidden"
                 types={['geocode']}
               />
@@ -144,11 +162,12 @@ export default function UserAddressInfo(): ReactElement {
               </label>
               <Geosuggest
                 value={city}
-                onChange={handleCity}
                 inputClassName="input_field"
                 placeholder=""
                 country="CH"
+                onSuggestSelect={handleCity}
                 suggestsHiddenClassName="hidden"
+                onKeyPress={event => onKeyPress(event)}
                 types={['(cities)']}
               />
             </div>

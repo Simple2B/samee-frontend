@@ -3,7 +3,7 @@
   height: 82vh;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+
 }
 
 .blue_text {
@@ -51,7 +51,8 @@
 .chart_block_title {
   position: absolute;
   top: 30%;
-
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
 .chart_block_amount {
@@ -80,6 +81,10 @@
 }
 
 @media (max-width: 768px) {
+  .scenario-calc {
+    overflow: scroll;
+  }
+
   .chart_block_amount {
     font-size: 30px;
   }

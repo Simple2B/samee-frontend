@@ -70,7 +70,7 @@ export default function UserContactInfo(): ReactElement {
     if (EmailValidator.validate(e.target.value)) {
       setEmailValidError('');
     } else {
-      setEmailValidError('email is not valid');
+      setEmailValidError('Adresse email non valide');
     }
   };
 

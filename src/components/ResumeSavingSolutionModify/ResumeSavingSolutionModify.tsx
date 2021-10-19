@@ -70,7 +70,7 @@ export default function ResumeSavingSolutionModify(): ReactElement {
     duration: 1,
     separator: "'",
     decimal: "'",
-    prefix: 'CHR ',
+    prefix: 'CHF ',
   });
 
   useEffect(() => {

@@ -12,7 +12,7 @@
 }
 
 .housing_text {
-  margin-right: 25px;
+  margin-right: 150px;
 }
 
 .housing_animation {
@@ -32,6 +32,11 @@
   .housing {
     display: block;
   }
+
+  .housing_text {
+    margin-right: 0;
+  }
+
 }
 
 @media (max-width: 425px) {

@@ -16,7 +16,7 @@
 }
 
 .tax_text {
-  margin-right: 25px;
+  margin-right: 150px;
 }
 
 .pop_up_triger {
@@ -35,6 +35,10 @@
 @media (max-width: 768px) {
   .tax {
     display: block;
+  }
+
+  .tax_text {
+    margin-right: 0;
   }
 }
 

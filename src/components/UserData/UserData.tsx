@@ -20,8 +20,11 @@ export default function UserData(): ReactElement {
   const handleSubmit = () => {
     if (sex === '') {
       setError('veuillez renseigner les informations');
-    } else if (date > new Date(2004, 12) || date < new Date(1958, 1)) {
-      setError('date of birth is not correct');
+    } else if (
+      new Date(date) > new Date(2004, 12) ||
+      new Date(date) < new Date(1958, 1)
+    ) {
+      setError(`la date de naissance n'est pas correcte`);
     } else {
       setError('');
       localStorage.setItem('sex', sex);
@@ -82,9 +85,11 @@ export default function UserData(): ReactElement {
             className="user_data_input"
             value={date}
             onChange={e => {
+              console.log(e.target.value);
+
               setDate(e.target.value);
             }}
-            onKeyDown={e => e.preventDefault()}
+            // onKeyDown={e => e.preventDefault()}
             id="age"
             type="date"
             max="2004-12-31"

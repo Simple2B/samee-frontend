@@ -15,7 +15,7 @@
 }
 
 .abroad_text {
-  margin-right: 25px;
+  margin-right: 150px;
 }
 
 .abroad_animation {
@@ -30,6 +30,10 @@
 @media (max-width: 768px) {
   .abroad {
     display: block;
+  }
+
+  .abroad_text {
+    margin-right: 0;
   }
 }
 
