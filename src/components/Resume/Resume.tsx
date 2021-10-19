@@ -1,6 +1,7 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext} from 'react';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import {ProgressContext} from '../../context/progressContext';
 import './resume.css';
 
 // const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
@@ -11,7 +12,10 @@ export default function Resume(): ReactElement {
     JSON.stringify(localStorage.getItem('solutionChoice')),
   );
 
+  const {setProgress} = useContext(ProgressContext);
+
   const handleSubmit = () => {
+    setProgress(23);
     if (solutions.includes('garanties')) {
       history.push('/resume-saving-solution');
     } else if (solutions.includes('rendement')) {

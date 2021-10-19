@@ -1,9 +1,10 @@
-import React, {ReactElement, useState} from 'react';
+import React, {ReactElement, useContext, useState} from 'react';
 import {FormControl, Select, MenuItem} from '@mui/material';
 import {makeStyles} from '@material-ui/styles';
 import Popup from 'reactjs-popup';
 import './userPersonalInfo.css';
 import {useHistory} from 'react-router-dom';
+import {ProgressContext} from '../../context/progressContext';
 
 const useStyles = makeStyles({
   root: {
@@ -20,7 +21,6 @@ const useStyles = makeStyles({
     borderColor: 'white !important',
     fontFamily: '"Archivo Narrow" !important',
     color: 'white !important',
-    paddingLeft: '15px',
     fontSize: '17px !important',
   },
   nativeInput: {
@@ -40,6 +40,8 @@ export default function UserPersonalInfo(): ReactElement {
   const [profession, setProfession] = useState();
   const [smoking, setSmoking] = useState();
   const [error, setError] = useState('');
+
+  const {setProgress} = useContext(ProgressContext);
 
   const handleStatus = (e: any) => {
     setMaritalStatus(e.target.value);
@@ -70,6 +72,7 @@ export default function UserPersonalInfo(): ReactElement {
       setError('veuillez renseigner les informations');
     } else {
       setError('');
+      setProgress(27);
       localStorage.setItem('personalInfo', JSON.stringify(personalInfo));
       history.push('/user-contact-info');
     }

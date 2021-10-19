@@ -1,4 +1,4 @@
-import React, {ReactElement, useState} from 'react';
+import React, {ReactElement, useContext, useState} from 'react';
 import NumberFormat from 'react-number-format';
 import classNames from 'classnames';
 import Chart from 'react-apexcharts';
@@ -7,6 +7,7 @@ import {useEffect} from 'react';
 import Popup from 'reactjs-popup';
 import {useHistory} from 'react-router-dom';
 import {chownSync} from 'fs';
+import {ProgressContext} from '../../context/progressContext';
 
 export default function ScenarioCalc(): ReactElement {
   const [period, setPeriod] = useState(localStorage.getItem('period'));
@@ -47,6 +48,8 @@ export default function ScenarioCalc(): ReactElement {
     useState<number | undefined>();
 
   const history = useHistory();
+
+  const {setProgress} = useContext(ProgressContext);
 
   const statePessimistic = {
     series: [amountEpargneScenarioPessimistic, amountFondsScenarioPessimistic],
@@ -425,6 +428,7 @@ export default function ScenarioCalc(): ReactElement {
   };
 
   const handleSubmit = () => {
+    setProgress(22);
     localStorage.setItem(
       'scenarioPessimistic',
       JSON.stringify(scenarioPessimistic),

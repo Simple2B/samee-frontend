@@ -1,15 +1,18 @@
-import React, {ReactElement, useState} from 'react';
+import React, {ReactElement, useContext, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import {ProgressContext} from '../../context/progressContext';
 import './occupation.css';
 
 export default function Occupation(): ReactElement {
   const [occupation, setOccupation] = useState('');
+  const {setProgress} = useContext(ProgressContext);
 
   const history = useHistory();
 
   const handleSubmit = () => {
     localStorage.setItem('occupation', occupation);
+    setProgress(10);
     if (occupation === 'Salarié') {
       return history.push('/employee');
     } else if (occupation === 'Indépendant') {

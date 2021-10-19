@@ -1,7 +1,8 @@
 import {FormControlLabel, Radio, RadioGroup, TextField} from '@mui/material';
-import React, {ReactElement, useEffect, useState} from 'react';
+import React, {ReactElement, useContext, useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import {ProgressContext} from '../../context/progressContext';
 import {localStorageApi} from '../../helpers/localStorage';
 import {IComponentProps} from '../../types';
 import './userData.css';
@@ -10,6 +11,8 @@ export default function UserData(): ReactElement {
   const [sex, setSex] = useState('');
   const [date, setDate] = useState<any>();
   const [error, setError] = useState('');
+
+  const {setProgress} = useContext(ProgressContext);
 
   const history = useHistory();
 
@@ -29,8 +32,7 @@ export default function UserData(): ReactElement {
       setError('');
       localStorage.setItem('sex', sex);
       localStorage.setItem('date', JSON.stringify(date));
-      localStorageApi.addCompletedStep('/user-data-birth');
-      localStorage.setItem('route', '3');
+      setProgress(2);
       return history.push('/user-age');
     }
   };

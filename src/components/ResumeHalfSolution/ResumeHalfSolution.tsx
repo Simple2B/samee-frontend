@@ -1,8 +1,9 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext} from 'react';
 import NumberFormat from 'react-number-format';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import './resumeHalfSolution.css';
+import {ProgressContext} from '../../context/progressContext';
 
 export default function ResumeHalfSolution(): ReactElement {
   const [savingYears, setSavingYears] = useState(localStorage.getItem('age'));
@@ -30,7 +31,10 @@ export default function ResumeHalfSolution(): ReactElement {
 
   const history = useHistory();
 
+  const {setProgress} = useContext(ProgressContext);
+
   const handleSubmit = () => {
+    setProgress(25);
     history.push('/user-address-info');
   };
 

@@ -1,13 +1,17 @@
 import zIndex from '@mui/material/styles/zIndex';
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import {ProgressContext} from '../../context/progressContext';
 import './additionalGuaranties.css';
 
 export default function AdditionalGuaranties(): ReactElement {
   const history = useHistory();
 
+  const {setProgress} = useContext(ProgressContext);
+
   const handleSubmit = () => {
+    setProgress(13);
     return history.push('/choose-solution');
   };
 

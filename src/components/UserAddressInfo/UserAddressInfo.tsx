@@ -1,8 +1,9 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext} from 'react';
 import {useState} from 'react';
 import Geosuggest from 'react-geosuggest';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import {ProgressContext} from '../../context/progressContext';
 import './userAddressInfo.css';
 
 export default function UserAddressInfo(): ReactElement {
@@ -15,6 +16,8 @@ export default function UserAddressInfo(): ReactElement {
   const [error, setError] = useState('');
 
   const history = useHistory();
+
+  const {setProgress} = useContext(ProgressContext);
 
   const addressData = {
     name: name,
@@ -78,6 +81,7 @@ export default function UserAddressInfo(): ReactElement {
       setError('veuillez renseigner les informations');
     } else {
       setError('');
+      setProgress(26);
       localStorage.setItem('userAddressData', JSON.stringify(addressData));
       history.push('/user-personal-info');
     }

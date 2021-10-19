@@ -1,7 +1,8 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext} from 'react';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import {ProgressContext} from '../../context/progressContext';
 import './halfGuaranteedSolution.css';
 
 // const solutions = JSON.stringify(localStorage.getItem('solutionChoice'));
@@ -12,7 +13,10 @@ export default function HalfGuaranteedSolution(): ReactElement {
     JSON.stringify(localStorage.getItem('solutionChoice')),
   );
 
+  const {setProgress} = useContext(ProgressContext);
+
   const handleSubmit = () => {
+    setProgress(16);
     if (solutions.includes('garanties')) {
       history.push('/saving-guarantee-interest');
     } else {

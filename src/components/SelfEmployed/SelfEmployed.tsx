@@ -1,4 +1,4 @@
-import React, {ReactElement, useState} from 'react';
+import React, {ReactElement, useContext, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import MenuItem from '@mui/material/MenuItem';
@@ -8,6 +8,7 @@ import Select, {SelectChangeEvent} from '@mui/material/Select';
 import './selfEmployed.css';
 import {makeStyles} from '@material-ui/styles';
 import {Slider} from '@mui/material';
+import {ProgressContext} from '../../context/progressContext';
 
 const useStyles = makeStyles({
   root: {
@@ -34,6 +35,8 @@ export default function SelfEmployed(): ReactElement {
   const [salary, setSalary] = useState<any>(0);
   const [period, setPeriod] = useState<any>('mensuel');
   const [error, setError] = useState('');
+
+  const {setProgress} = useContext(ProgressContext);
 
   const history = useHistory();
 
@@ -64,6 +67,7 @@ export default function SelfEmployed(): ReactElement {
       setError('');
       localStorage.setItem('salary', salary);
       localStorage.setItem('period', period);
+      setProgress(11);
       history.push('/savings-calculation');
     }
   };

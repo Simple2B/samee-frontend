@@ -1,6 +1,6 @@
 import {styled} from '@material-ui/styles';
 import {Checkbox, Radio} from '@mui/material';
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext} from 'react';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
@@ -8,6 +8,7 @@ import {makeStyles} from '@material-ui/styles';
 import './chooseSolution.css';
 import {JsxEmit} from 'typescript';
 import {useEffect} from 'react';
+import {ProgressContext} from '../../context/progressContext';
 
 const useStyles = makeStyles({
   root: {
@@ -21,6 +22,8 @@ const useStyles = makeStyles({
 export default function ChooseSolution(): ReactElement {
   const [choiceFirst, setChoiceFirst] = useState(false);
   const [choiceSecond, setChoiceSecond] = useState(false);
+
+  const {setProgress} = useContext(ProgressContext);
 
   const history = useHistory();
 
@@ -43,6 +46,7 @@ export default function ChooseSolution(): ReactElement {
   }, [choiceSecond, choiceFirst]);
 
   const handleSubmit = () => {
+    setProgress(14);
     let solutionChoiceObject;
 
     const solutionChoice = localStorage.getItem('solutionChoice');

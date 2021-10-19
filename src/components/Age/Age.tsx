@@ -1,5 +1,6 @@
-import React, {ReactElement, useEffect, useState} from 'react';
+import React, {ReactElement, useContext, useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import {ProgressContext} from '../../context/progressContext';
 import {retiredFemaleAge, retiredMaleAge} from '../../helpers/consts';
 import {IComponentProps} from '../../types';
 import './age.css';
@@ -13,6 +14,8 @@ export default function Age(): ReactElement {
   const sex: any = localStorage.getItem('sex');
 
   const history = useHistory();
+
+  const {setProgress} = useContext(ProgressContext);
 
   const ageCalculation = () => {
     const today = new Date();
@@ -53,6 +56,7 @@ export default function Age(): ReactElement {
       localStorage.setItem('age', String(age));
       setErrorCheck(false);
       setError('');
+      setProgress(3);
       return history.push('/difference-bank-and-insurance');
     }
   };

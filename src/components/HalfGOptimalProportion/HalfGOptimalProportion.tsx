@@ -1,17 +1,21 @@
-import React, {ReactElement, useEffect, useState} from 'react';
+import React, {ReactElement, useContext, useEffect, useState} from 'react';
 import Popup from 'reactjs-popup';
 import classNames from 'classnames';
 import {CircleSlider} from 'react-circle-slider';
 import './halfGOptimalProportion.css';
 import {useHistory} from 'react-router-dom';
+import {ProgressContext} from '../../context/progressContext';
 
 export default function HalfGOptimalProportion(): ReactElement {
   const [sliderValue, setSliderValue] = useState(10);
   const [error, setError] = useState('');
 
+  const {setProgress} = useContext(ProgressContext);
+
   const history = useHistory();
 
   const handleSubmit = () => {
+    setProgress(20);
     localStorage.setItem('savingsPercent', JSON.stringify(sliderValue));
     localStorage.setItem('fondsPercent', JSON.stringify(100 - sliderValue));
 

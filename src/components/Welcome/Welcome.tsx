@@ -1,23 +1,20 @@
-import {Stats} from 'fs';
 import React, {ReactElement, useEffect} from 'react';
+import {useContext} from 'react';
+import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import {ProgressContext} from '../../context/progressContext';
 import {localStorageApi} from '../../helpers/localStorage';
 import {IComponentProps} from '../../types';
 import './welcome.css';
 
 export default function Welcome(): ReactElement {
+  const {setProgress} = useContext(ProgressContext);
+
   const history = useHistory();
 
-  useEffect(() => {
-    localStorageApi.addCurrentStep('/');
-    localStorageApi.addNextStep('/user-data-birth');
-    localStorage.setItem('route', '1');
-  }, []);
-
   const handleSubmit = () => {
-    localStorageApi.addCompletedStep('/');
+    setProgress(1);
     history.push('/user-data-birth');
-    localStorage.setItem('route', '2');
   };
 
   return (

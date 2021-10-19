@@ -1,11 +1,15 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
+import {ProgressContext} from '../../context/progressContext';
 import './finalStep.css';
 
 export default function FinalStep(): ReactElement {
   const history = useHistory();
 
+  const {setProgress} = useContext(ProgressContext);
+
   const handleSubmit = () => {
+    setProgress(0);
     history.push('/');
   };
   return (

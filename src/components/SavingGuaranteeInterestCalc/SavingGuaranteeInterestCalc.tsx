@@ -1,4 +1,4 @@
-import React, {ReactElement, useEffect, useState} from 'react';
+import React, {ReactElement, useContext, useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {taxCoefficient} from '../../helpers/consts';
 import {makeStyles} from '@material-ui/styles';
@@ -7,6 +7,7 @@ import NumberFormat from 'react-number-format';
 import {FormControl, Select, MenuItem} from '@mui/material';
 import Popup from 'reactjs-popup';
 import './savingGuaranteeInterestCalc.css';
+import {ProgressContext} from '../../context/progressContext';
 
 const useStyles = makeStyles({
   root: {
@@ -59,6 +60,8 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
   const [solutions, setSolutions] = useState(
     JSON.stringify(localStorage.getItem('solutionChoice')),
   );
+
+  const {setProgress} = useContext(ProgressContext);
 
   const countUpRef = React.useRef(null);
   const {start, update} = useCountUp({
@@ -212,6 +215,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
   };
 
   const handleSubmit = () => {
+    setProgress(18);
     localStorage.setItem('finalCapital', finalAmount);
     if (solutions.includes('rendement')) {
       history.push('/half-guarantee-interest');

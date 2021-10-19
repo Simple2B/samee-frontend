@@ -1,12 +1,16 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import {ProgressContext} from '../../context/progressContext';
 import './savingGuaranteeInterest.css';
 
 export default function SavingGuaranteeInterest(): ReactElement {
   const history = useHistory();
 
+  const {setProgress} = useContext(ProgressContext);
+
   const handleChange = () => {
+    setProgress(17);
     history.push('/saving-guarantee-interest-calculation');
   };
   return (

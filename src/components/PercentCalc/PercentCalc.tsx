@@ -1,9 +1,10 @@
-import React, {ReactElement, useState} from 'react';
+import React, {ReactElement, useContext, useState} from 'react';
 import NumberFormat from 'react-number-format';
 
 import {useEffect} from 'react';
 import './percentCalc.css';
 import {useHistory} from 'react-router-dom';
+import {ProgressContext} from '../../context/progressContext';
 
 const savingYears: string | null = localStorage.getItem('age');
 const savings: any = localStorage.getItem('savings');
@@ -21,6 +22,8 @@ export default function PercentCalc(): ReactElement {
 
   const history = useHistory();
 
+  const {setProgress} = useContext(ProgressContext);
+
   const amountCapitalCalc = () => {
     const capitalCalc = Math.floor(savings * (savingsPercent / 100));
     setAmountCapital(capitalCalc);
@@ -37,6 +40,7 @@ export default function PercentCalc(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
+    setProgress(21);
     localStorage.setItem('amountEpargne', JSON.stringify(amountCapital));
     localStorage.setItem('amount Fonds', JSON.stringify(amountFonds));
     history.push('/scenario-calculation');

@@ -1,12 +1,15 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import {ProgressContext} from '../../context/progressContext';
 import './halfGuaranteeSolutionInterest.css';
 
 export default function HalfGuaranteeSolutionInterest(): ReactElement {
   const history = useHistory();
+  const {setProgress} = useContext(ProgressContext);
 
   const handleSubmit = () => {
+    setProgress(19);
     history.push('/half-guarantee-optimal-proportion');
   };
   return (

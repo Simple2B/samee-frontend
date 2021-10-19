@@ -1,8 +1,9 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext} from 'react';
 import {useState} from 'react';
 import {useEffect} from 'react';
 import NumberFormat from 'react-number-format';
 import {useHistory} from 'react-router-dom';
+import {ProgressContext} from '../../context/progressContext';
 import './resumeSavingSolution.css';
 
 const savingsYears: string | null = localStorage.getItem('age');
@@ -26,7 +27,10 @@ export default function ResumeSavingSolution(): ReactElement {
     JSON.stringify(localStorage.getItem('solutionChoice')),
   );
 
+  const {setProgress} = useContext(ProgressContext);
+
   const handleSubmit = () => {
+    setProgress(24);
     if (solutions.includes('rendement')) {
       history.push('/resume-half-guarantee-solution');
     } else {
