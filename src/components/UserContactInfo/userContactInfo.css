@@ -1,3 +1,16 @@
+.user_contact_info {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.error_valid {
+  padding-left: 10px;
+  color: rgb(109, 0, 0);
+  font-size: 19px;
+}
+
 .user_contact_info_inputs_block {
   display: flex;
   justify-content: space-between;

@@ -1,3 +1,10 @@
+.employee {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .employee_salary_range {
   display: block;
 }
@@ -6,7 +13,8 @@
   width: 100px;
   height: 40px;
   font-size: 17px;
-  padding-left: 17px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .employee_inputs_set {
@@ -16,12 +24,6 @@
 
 .gold_text {
   color: #eac28c;
-}
-
-.button_position-1 {
-  position: absolute;
-  left: 140px;
-  bottom: 120px;
 }
 
 @media (max-width: 425px) {

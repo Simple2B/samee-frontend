@@ -1,3 +1,10 @@
+.user_personal_info {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .user_personal_info_block {
   display: flex;
   align-items: center;

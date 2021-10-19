@@ -1,3 +1,10 @@
+.what_is_half-guaranteed-solution {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .what_is_half-guaranteed-solution_title {
   font-size: 30px;
   margin-bottom: 20px;

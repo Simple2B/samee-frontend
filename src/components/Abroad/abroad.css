@@ -1,3 +1,10 @@
+.wrapper_abroad {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .abroad {
   display: flex;
   align-items: center;
@@ -8,7 +15,7 @@
 }
 
 .abroad_text {
-  margin-right: 25px;
+  margin-right: 150px;
 }
 
 .abroad_animation {
@@ -24,10 +31,23 @@
   .abroad {
     display: block;
   }
+
+  .abroad_text {
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 425px) {
   .abroad {
     display: block;
+  }
+
+  .abroad_title {
+    font-size: 20px;
+  }
+
+  .abroad_animation {
+    width: 150px;
+    height: 150px;
   }
 }

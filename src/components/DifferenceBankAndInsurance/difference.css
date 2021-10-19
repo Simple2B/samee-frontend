@@ -1,5 +1,12 @@
+.difference {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .difference_title {
-  margin-bottom: 40px;
+  margin-bottom: 70px;
 }
 
 .difference_text {
@@ -25,9 +32,6 @@
   border-right: 1px solid #fff;
 }
 
-.difference_buttons {
-  margin-top: 30px;
-}
 
 .button_discover {
   /* width: 400px;
@@ -77,9 +81,9 @@
   }
 
   .difference_block_desc {
-
-    height: none;
+    height: 205px;
   }
+
 }
 
 @media (max-width: 425px) {
@@ -106,6 +110,14 @@
   .difference_block:first-child {
     padding-right: 30px;
     border: none;
+  }
+
+  .difference_title {
+    margin-bottom: 27px;
+  }
+
+  .difference_block_desc {
+    height: 140px;
   }
 }
 

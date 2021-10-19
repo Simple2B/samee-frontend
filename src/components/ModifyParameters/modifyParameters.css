@@ -1,3 +1,10 @@
+.modify_parameters {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .modify_parameters_text {
   display: flex;
   align-items: center;

@@ -1,4 +1,5 @@
 import React, {ReactElement} from 'react';
+import {useState} from 'react';
 import {useEffect} from 'react';
 import NumberFormat from 'react-number-format';
 import {useHistory} from 'react-router-dom';
@@ -10,7 +11,7 @@ const savings: string | null = localStorage.getItem('salary');
 const finalCapital: string | null = localStorage.getItem('finalCapital');
 const interest: string | null = localStorage.getItem('interest');
 
-const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
+// const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
 
 export default function ResumeSavingSolution(): ReactElement {
   useEffect(() => {
@@ -21,6 +22,9 @@ export default function ResumeSavingSolution(): ReactElement {
     const interest: string | null = localStorage.getItem('interest');
   });
   const history = useHistory();
+  const [solutions, setSolutions] = useState(
+    JSON.stringify(localStorage.getItem('solutionChoice')),
+  );
 
   const handleSubmit = () => {
     if (solutions.includes('rendement')) {
@@ -35,77 +39,81 @@ export default function ResumeSavingSolution(): ReactElement {
   };
 
   return (
-    <>
-      <div className="resume_saving_solution">
-        <div className="resume_saving_solution_text_block">
-          <div className="resume_saving_solution_title">
-            Résumé: solution épargne
+    <div className="resume_wrapper">
+      <div className="main_content">
+        <div className="resume_saving_solution">
+          <div className="resume_saving_solution_text_block">
+            <div className="resume_saving_solution_title">
+              Résumé: solution épargne
+            </div>
+
+            <div className="resume_saving_solution_text">
+              Vous cotiserez pendant{' '}
+              <span className="gold_text">{savingsYears} ans.</span>
+            </div>
+
+            <div className="resume_saving_solution_text">
+              Avec un montant <span className="gold_text">{period}</span> de{' '}
+              <NumberFormat
+                value={savings}
+                className="gold_text"
+                displayType={'text'}
+                thousandSeparator={`'`}
+                prefix={'CHF '}
+              />
+            </div>
+
+            <div className="resume_saving_solution_text">
+              Vous auriez donc un capital de{' '}
+              <NumberFormat
+                value={finalCapital}
+                className="gold_text"
+                displayType={'text'}
+                thousandSeparator={`'`}
+                prefix={'CHF '}
+              />
+            </div>
+
+            <div className="resume_saving_solution_text">
+              Avec un gain de{' '}
+              <NumberFormat
+                value={interest}
+                className="gold_text"
+                displayType={'text'}
+                thousandSeparator={`'`}
+                prefix={'CHF '}
+              />
+            </div>
           </div>
 
-          <div className="resume_saving_solution_text">
-            Vous cotiserez pendant{' '}
-            <span className="gold_text">{savingsYears} ans.</span>
-          </div>
-
-          <div className="resume_saving_solution_text">
-            Avec un montant <span className="gold_text">{period}</span> de{' '}
-            <NumberFormat
-              value={savings}
-              className="gold_text"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />
-          </div>
-
-          <div className="resume_saving_solution_text">
-            Vous auriez donc un capital de{' '}
-            <NumberFormat
-              value={finalCapital}
-              className="gold_text"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />
-          </div>
-
-          <div className="resume_saving_solution_text">
-            Avec un gain de{' '}
-            <NumberFormat
-              value={interest}
-              className="gold_text"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />
-          </div>
-        </div>
-
-        <div className="resume_saving_solution_number_block">
-          <div className="resume_saving_solution_final_text">
-            Votre capital final
-          </div>
-          <div className="resume_saving_solution_final_amount">
-            <NumberFormat
-              value={finalCapital}
-              className="gold_text"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />
+          <div className="resume_saving_solution_number_block">
+            <div className="resume_saving_solution_final_text">
+              Votre capital final
+            </div>
+            <div className="resume_saving_solution_final_amount">
+              <NumberFormat
+                value={finalCapital}
+                className="gold_text"
+                displayType={'text'}
+                thousandSeparator={`'`}
+                prefix={'CHF '}
+              />
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="buttons_set button_position">
-        <button onClick={handleSubmit} className="next_button">
-          Continuer
-        </button>
+      <div className="footer_content">
+        <div className="buttons_set button_position">
+          <button onClick={handleSubmit} className="next_button">
+            Continuer
+          </button>
 
-        <button onClick={handleSubmitModify} className="button_modify">
-          Modifier les paramètres
-        </button>
+          <button onClick={handleSubmitModify} className="button_modify">
+            Modifier les paramètres
+          </button>
+        </div>
       </div>
-    </>
+    </div>
   );
 }

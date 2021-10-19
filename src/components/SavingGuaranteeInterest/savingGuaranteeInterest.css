@@ -1,3 +1,11 @@
+.saving_interest {
+
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .next_button-interest {
   padding: 10px 20px;
   background-color: #eac28c;

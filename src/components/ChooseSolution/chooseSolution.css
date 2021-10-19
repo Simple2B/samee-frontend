@@ -1,3 +1,10 @@
+.choose_solution {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .choose_solution_text {
   margin-bottom: 20px;
 }

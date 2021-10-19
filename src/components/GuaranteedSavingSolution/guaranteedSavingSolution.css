@@ -1,5 +1,11 @@
-.video_button_next {
+.video_wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 82vh;
+}
 
+.video_button_next {
   background-color: #eac28c;
   color: #000519;
   border: none;

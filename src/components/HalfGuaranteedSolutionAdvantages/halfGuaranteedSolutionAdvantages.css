@@ -1,5 +1,12 @@
+.half_guaranteed_advantages {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .half_guaranteed_advantages_title {
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: 20px;
 }
 

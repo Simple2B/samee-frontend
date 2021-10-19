@@ -1,7 +1,19 @@
+.interest_wrapper {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .saving_interest_calc {
   display: flex;
   margin-top: 10px;
   justify-content: space-between;
+}
+
+.saving_interest_calc-final-calc-text {
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
 .saving_interest_calc-final-calc {
@@ -45,10 +57,10 @@
   background-color: rgb(187, 187, 187);
 }
 
-.buttons_set {
+/* .buttons_set {
   position: absolute;
   bottom: 120px;
-}
+} */
 
 .wrapper {
   display: flex;

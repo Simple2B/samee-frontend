@@ -1,3 +1,10 @@
+.user_address_info {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .user_address_info_input_block {
   display: flex;
   justify-content: space-between;
@@ -21,6 +28,10 @@
   margin-bottom: 15px;
 }
 
+.hidden {
+  display: none;
+}
+
 .error {
   color: rgb(131, 11, 11);
 }
@@ -29,8 +40,35 @@
   border: 1px solid rgb(131, 11, 11);
 }
 
+.geosuggest__suggests-wrapper {
+  position: relative;
+}
+
+.geosuggest__suggests {
+  width: 250px;
+  font-size: 13px;
+  list-style: none;
+  padding: 0;
+  /* border: 1px solid; */
+  margin: 0;
+  max-height: 120px;
+  overflow: scroll;
+  position: absolute;
+  background-color: #000519;
+}
+
+.geosuggest__item {
+  border-bottom: 1px solid;
+  padding: 5px;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .input_field {
+    width: 230px;
+  }
+
+  .geosuggest__suggests {
     width: 230px;
   }
 }
@@ -39,10 +77,18 @@
   .input_field {
     width: 162px;
   }
+
+  .geosuggest__suggests {
+    width: 162px;
+  }
 }
 
 @media (max-width: 320px) {
   .input_field {
+    width: 138px;
+  }
+
+  .geosuggest__suggests {
     width: 138px;
   }
 }

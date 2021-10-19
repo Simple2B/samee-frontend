@@ -1,5 +1,8 @@
 .final_step {
-  margin-top: 100px;
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .final_step_text {

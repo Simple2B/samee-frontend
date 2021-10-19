@@ -1,3 +1,11 @@
+.wrapper_tax {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
 .tax {
   display: flex;
   align-items: center;
@@ -8,7 +16,7 @@
 }
 
 .tax_text {
-  margin-right: 25px;
+  margin-right: 150px;
 }
 
 .pop_up_triger {
@@ -28,10 +36,28 @@
   .tax {
     display: block;
   }
+
+  .tax_text {
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 425px) {
   .tax {
     display: block;
+  }
+
+  .tax_title {
+    font-size: 20px;
+  }
+
+  .tax_animation {
+    width: 150px;
+    height: 150px;
+  }
+
+  #lottie {
+    height: 150px !important;
+    width: 150px !important;
   }
 }

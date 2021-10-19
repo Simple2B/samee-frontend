@@ -1,3 +1,10 @@
+.occupation {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .occupation_title {
   margin-bottom: 50px;
 }

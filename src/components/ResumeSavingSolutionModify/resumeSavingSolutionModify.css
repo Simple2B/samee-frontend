@@ -39,6 +39,11 @@
   margin-bottom: 15px;
 }
 
+.resume_saving_solution_modify_final_text {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .resume_saving_solution_modify_number_block {
 

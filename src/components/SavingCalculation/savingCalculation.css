@@ -1,3 +1,6 @@
 .saving_calc {
-  margin-top: 7%;
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }

@@ -1,3 +1,14 @@
+.half-optimal-proportion {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pop_up_list-item {
+  font-size: 20px;
+}
+
 .half-optimal-proportion_percents {
   display: flex;
   align-items: center;

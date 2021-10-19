@@ -1,3 +1,10 @@
+.code_wrapper {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .confirm_code {
   display: flex;
 }
@@ -9,11 +16,6 @@
   margin: 0 5px;
   font-size: 24px;
   padding-left: 7px;
-}
-
-.confirm_code {
-  position: absolute;
-  top: 40%
 }
 
 .confirm_code_text {

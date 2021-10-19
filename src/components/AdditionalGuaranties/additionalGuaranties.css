@@ -1,3 +1,10 @@
+.additional-guaranties {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .additional-guaranties_title {
   font-size: 30px;
 }
@@ -5,4 +12,8 @@
 .additional-guaranties_text {
   margin-bottom: 20px;
   white-space: pre-line;
+}
+
+.bold_title {
+  font-weight: bold;
 }

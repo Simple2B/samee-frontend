@@ -1,10 +1,18 @@
+.wrapper_house {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
 .housing {
   display: flex;
   align-items: center;
 }
 
 .housing_text {
-  margin-right: 25px;
+  margin-right: 150px;
 }
 
 .housing_animation {
@@ -24,10 +32,26 @@
   .housing {
     display: block;
   }
+
+  .housing_text {
+    margin-right: 0;
+  }
+
 }
 
 @media (max-width: 425px) {
   .housing {
     display: block;
+  }
+
+  .housing_title {
+    font-size: 20px;
+  }
+
+  .housing_animation {
+
+    width: 150px;
+    height: 150px;
+
   }
 }

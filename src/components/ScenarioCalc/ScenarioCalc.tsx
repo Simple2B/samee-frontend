@@ -442,205 +442,211 @@ export default function ScenarioCalc(): ReactElement {
 
   return (
     <div className="scenario-calc">
-      <div className="scenario-calc_text">
-        La partie <span className="blue_text">bleue</span> correspond à la part
-        en épargne et la partie <span className="gold_text">jaune</span> à la
-        partie en fonds de placement. Avec{' '}
-        <NumberFormat
-          value={amountEpargneFromStorage}
-          className="gold_text"
-          displayType={'text'}
-          thousandSeparator={`'`}
-          prefix={'CHF '}
-        />{' '}
-        en épargne et{' '}
-        <NumberFormat
-          value={amountFondsFromStorage}
-          className="gold_text"
-          displayType={'text'}
-          thousandSeparator={`'`}
-          prefix={'CHF '}
-        />{' '}
-        en fonds, vous pourriez obtenir :
-      </div>
-
-      <div className="charts_blocks">
-        <div className="chart_block">
-          <div className="gold_text chart_block_label-up">
-            <NumberFormat
-              value={amountEpargneScenarioPessimistic}
-              className="gold_text display_none"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />
-          </div>
-          <div className="blue_text chart_block_label-down">
-            <NumberFormat
-              value={amountFondsScenarioPessimistic}
-              className="blue_text display_none"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />
-          </div>
-          <div className="chart_block_title">Scénario pessimiste</div>
+      <div className="main_content">
+        <div className="scenario-calc_text">
+          La partie <span className="blue_text">bleue</span> correspond à la
+          part en épargne et la partie <span className="gold_text">jaune</span>{' '}
+          à la partie en fonds de placement. Avec{' '}
           <NumberFormat
-            value={scenarioPessimistic}
-            className="gold_text chart_block_amount"
+            value={amountEpargneFromStorage}
+            className="gold_text"
             displayType={'text'}
             thousandSeparator={`'`}
             prefix={'CHF '}
-          />
-          {amountEpargneScenarioPessimistic && (
-            <Chart
-              type="donut"
-              width="400"
-              options={statePessimistic.options}
-              series={statePessimistic.series}
-            />
-          )}
-        </div>
-
-        <div className="chart_block">
-          <div className="gold_text chart_block_label-up">
-            <NumberFormat
-              value={amountEpargneScenarioRealistic}
-              className="gold_text display_none"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />
-          </div>
-          <div className="blue_text chart_block_label-down">
-            <NumberFormat
-              value={amountFondsScenarioRealistic}
-              className="blue_text display_none"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />
-          </div>
-          <div className="chart_block_title">Scénario réaliste</div>
+          />{' '}
+          en épargne et{' '}
           <NumberFormat
-            value={scenarioRealistic}
-            className="gold_text chart_block_amount"
+            value={amountFondsFromStorage}
+            className="gold_text"
             displayType={'text'}
             thousandSeparator={`'`}
             prefix={'CHF '}
-          />
-          {amountFondsScenarioRealistic && (
-            <Chart
-              type="donut"
-              width="400"
-              options={stateRealistic.options}
-              series={stateRealistic.series}
-            />
-          )}
+          />{' '}
+          en fonds, vous pourriez obtenir :
         </div>
 
-        <div className="chart_block">
-          <div className="gold_text chart_block_label-up ">
-            <NumberFormat
-              value={amountEpargneScenarioOptimistic}
-              className="gold_text display_none"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />
-          </div>
-          <div className="blue_text chart_block_label-down">
-            <NumberFormat
-              value={amountFondsScenarioOptimistic}
-              className="blue_text display_none"
-              displayType={'text'}
-              thousandSeparator={`'`}
-              prefix={'CHF '}
-            />
-          </div>
-          <div className="chart_block_title">Scénario optimiste</div>
-          <NumberFormat
-            value={scenarioOptimistic}
-            className="gold_text chart_block_amount"
-            displayType={'text'}
-            thousandSeparator={`'`}
-            prefix={'CHF '}
-          />
-          {amountEpargneScenarioOptimistic && (
-            <Chart
-              type="donut"
-              width="400"
-              options={stateOptimistic.options}
-              series={stateOptimistic.series}
-            />
-          )}
-        </div>
-      </div>
-
-      <div className="button_set button_position">
-        <button onClick={handleSubmit} className="next_button">
-          Continuer
-        </button>
-        <button onClick={handleSubmitModify} className="modif_button">
-          Modifier les paramètres
-        </button>
-      </div>
-
-      <Popup
-        modal
-        trigger={
-          <div className="pop_up_triger">
-            Comment définissez-vous ces scénarios et les pourcentages de
-            rendement ?
-          </div>
-        }>
-        {(
-          close:
-            | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
-            | undefined,
-        ) => (
-          <>
-            <button className="close" onClick={close}>
-              X
-            </button>
-            <div className="pop_up">
-              <div className="pop_up_title">
-                Comment définissez-vous ces scénarios et les pourcentages de
-                rendement ?
-              </div>
-              <div className="pop_up_text">
-                La part épargne, en bleu sur la page, reste identique dans les
-                trois scénarios. C'est uniquement la partie en fonds de
-                placement qui varie selon les performances du marché.
-              </div>
-              <div className="pop_up_text">
-                En règle générale, la partie en fond a un meilleur rendement que
-                la partie épargne, c'est pourquoi elle représente une plus
-                grande partie de votre capital total que votre choix initial.
-              </div>
-
-              <div className="pop_up_text">
-                Par exemple, vous choisissez une solution 50% épargne et 50% en
-                fonds de placement. D'après les performances historiques, à
-                votre retraite, la partie en fonds de placement représentera
-                plus de 50% de votre épargne totale.
-              </div>
-
-              <div className="pop_up_text">
-                Pour définir les 3 scénarios, nous nous basons sur la moyenne
-                historique des performances de différents produits de plusieurs
-                compagnies d'assurances et de banques.
-              </div>
-
-              <div className="pop_up_text">
-                Attention, les résultats sont à titre indicatif et spécifiques à
-                chaque institution. Ce sont des estimations pour mieux vous
-                aider à visualiser votre épargne.
-              </div>
+        <div className="charts_blocks">
+          <div className="chart_block">
+            <div className="gold_text chart_block_label-up">
+              <NumberFormat
+                value={amountEpargneScenarioPessimistic}
+                className="gold_text display_none"
+                displayType={'text'}
+                thousandSeparator={`'`}
+                prefix={'CHF '}
+              />
             </div>
-          </>
-        )}
-      </Popup>
+            <div className="blue_text chart_block_label-down">
+              <NumberFormat
+                value={amountFondsScenarioPessimistic}
+                className="blue_text display_none"
+                displayType={'text'}
+                thousandSeparator={`'`}
+                prefix={'CHF '}
+              />
+            </div>
+            <div className="chart_block_title">Scénario pessimiste</div>
+            <NumberFormat
+              value={scenarioPessimistic}
+              className="gold_text chart_block_amount"
+              displayType={'text'}
+              thousandSeparator={`'`}
+              prefix={'CHF '}
+            />
+            {amountEpargneScenarioPessimistic && (
+              <Chart
+                type="donut"
+                width="400"
+                options={statePessimistic.options}
+                series={statePessimistic.series}
+              />
+            )}
+          </div>
+
+          <div className="chart_block">
+            <div className="gold_text chart_block_label-up">
+              <NumberFormat
+                value={amountEpargneScenarioRealistic}
+                className="gold_text display_none"
+                displayType={'text'}
+                thousandSeparator={`'`}
+                prefix={'CHF '}
+              />
+            </div>
+            <div className="blue_text chart_block_label-down">
+              <NumberFormat
+                value={amountFondsScenarioRealistic}
+                className="blue_text display_none"
+                displayType={'text'}
+                thousandSeparator={`'`}
+                prefix={'CHF '}
+              />
+            </div>
+            <div className="chart_block_title">Scénario réaliste</div>
+            <NumberFormat
+              value={scenarioRealistic}
+              className="gold_text chart_block_amount"
+              displayType={'text'}
+              thousandSeparator={`'`}
+              prefix={'CHF '}
+            />
+            {amountFondsScenarioRealistic && (
+              <Chart
+                type="donut"
+                width="400"
+                options={stateRealistic.options}
+                series={stateRealistic.series}
+              />
+            )}
+          </div>
+
+          <div className="chart_block">
+            <div className="gold_text chart_block_label-up ">
+              <NumberFormat
+                value={amountEpargneScenarioOptimistic}
+                className="gold_text display_none"
+                displayType={'text'}
+                thousandSeparator={`'`}
+                prefix={'CHF '}
+              />
+            </div>
+            <div className="blue_text chart_block_label-down">
+              <NumberFormat
+                value={amountFondsScenarioOptimistic}
+                className="blue_text display_none"
+                displayType={'text'}
+                thousandSeparator={`'`}
+                prefix={'CHF '}
+              />
+            </div>
+            <div className="chart_block_title">Scénario optimiste</div>
+            <NumberFormat
+              value={scenarioOptimistic}
+              className="gold_text chart_block_amount"
+              displayType={'text'}
+              thousandSeparator={`'`}
+              prefix={'CHF '}
+            />
+            {amountEpargneScenarioOptimistic && (
+              <Chart
+                type="donut"
+                width="400"
+                options={stateOptimistic.options}
+                series={stateOptimistic.series}
+              />
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="footer_content">
+        <div className="button_set button_position">
+          <button onClick={handleSubmit} className="next_button">
+            Continuer
+          </button>
+          <button onClick={handleSubmitModify} className="modif_button">
+            Modifier les paramètres
+          </button>
+        </div>
+
+        <Popup
+          modal
+          trigger={
+            <div className="pop_up_triger">
+              Comment définissez-vous ces scénarios et les pourcentages de
+              rendement ?
+            </div>
+          }>
+          {(
+            close:
+              | ((
+                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+                ) => void)
+              | undefined,
+          ) => (
+            <>
+              <button className="close" onClick={close}>
+                X
+              </button>
+              <div className="pop_up">
+                <div className="pop_up_title">
+                  Comment définissez-vous ces scénarios et les pourcentages de
+                  rendement ?
+                </div>
+                <div className="pop_up_text">
+                  La part épargne, en bleu sur la page, reste identique dans les
+                  trois scénarios. C'est uniquement la partie en fonds de
+                  placement qui varie selon les performances du marché.
+                </div>
+                <div className="pop_up_text">
+                  En règle générale, la partie en fond a un meilleur rendement
+                  que la partie épargne, c'est pourquoi elle représente une plus
+                  grande partie de votre capital total que votre choix initial.
+                </div>
+
+                <div className="pop_up_text">
+                  Par exemple, vous choisissez une solution 50% épargne et 50%
+                  en fonds de placement. D'après les performances historiques, à
+                  votre retraite, la partie en fonds de placement représentera
+                  plus de 50% de votre épargne totale.
+                </div>
+
+                <div className="pop_up_text">
+                  Pour définir les 3 scénarios, nous nous basons sur la moyenne
+                  historique des performances de différents produits de
+                  plusieurs compagnies d'assurances et de banques.
+                </div>
+
+                <div className="pop_up_text">
+                  Attention, les résultats sont à titre indicatif et spécifiques
+                  à chaque institution. Ce sont des estimations pour mieux vous
+                  aider à visualiser votre épargne.
+                </div>
+              </div>
+            </>
+          )}
+        </Popup>
+      </div>
     </div>
   );
 }

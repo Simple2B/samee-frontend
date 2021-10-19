@@ -11,6 +11,23 @@
   flex-wrap: wrap;
 }
 
+.scenario {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.scenario-opt {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.scenario-pess {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
 .resume_half_solution_main_circle {
   width: 300px;
   height: 300px;

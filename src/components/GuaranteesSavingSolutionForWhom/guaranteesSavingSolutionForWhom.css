@@ -1,3 +1,10 @@
+.solution_for_whom {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .solution_for_whom_title {
   font-size: 30px;
   margin-bottom: 20px;

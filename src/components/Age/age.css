@@ -1,5 +1,8 @@
 .age {
-  margin-top: 100px;
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .age_text {

@@ -31,7 +31,7 @@ export default function ResumeHalfSolutionModify(): ReactElement {
   const [salaryFromLocal, setSalaryFromLocal] = useState<any>(
     localStorage.getItem('salary'),
   );
-  const [sliderValue, setSliderValue] = useState(0);
+  const [sliderValue, setSliderValue] = useState(10);
   const [error, setError] = useState('');
   const [occupation] = useState(localStorage.getItem('occupation'));
   const [errorAmount, setErrorAmount] = useState('');
@@ -155,6 +155,8 @@ export default function ResumeHalfSolutionModify(): ReactElement {
         <div className="circle_button">
           <CircleSlider
             size={260}
+            min={10}
+            max={90}
             progressWidth={10}
             circleWidth={10}
             progressColor={'white'}
