@@ -133,7 +133,7 @@ export default function ProgressBarWrapper(): ReactElement {
         variant="determinate"
         value={percent}
       />
-      {hovered ? (
+      {hovered && (
         <div className="stepper">
           <ThemeProvider theme={theme}>
             <Stepper activeStep={activeStep} alternativeLabel>
@@ -156,8 +156,6 @@ export default function ProgressBarWrapper(): ReactElement {
             </Stepper>
           </ThemeProvider>
         </div>
-      ) : (
-        <div></div>
       )}
     </div>
   );
