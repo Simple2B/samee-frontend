@@ -1,5 +1,6 @@
-import React, { ReactElement } from "react";
-import "./bar.css";
+import React, {ReactElement} from 'react';
+import ProgressBarWrapper from '../ProgressBarWrapper/ProgressBarWrapper';
+import './bar.css';
 
 export default function Bar(): ReactElement {
   return (
@@ -18,4 +19,4 @@ export default function Bar(): ReactElement {
       </div>
     </div>
   );
-};
+}

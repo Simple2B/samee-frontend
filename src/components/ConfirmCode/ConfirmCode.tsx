@@ -1,4 +1,5 @@
 import React, {ReactElement, useContext, useState} from 'react';
+import {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {userDataInstance} from '../../api/axiosInstance';
 import {ProgressContext} from '../../context/progressContext';
@@ -17,6 +18,10 @@ export default function ConfirmCode(): ReactElement {
   );
 
   const {setProgress} = useContext(ProgressContext);
+
+  useEffect(() => {
+    setProgress(29);
+  }, []);
 
   const handleChange = (e: any) => {
     const {maxLength, value, name} = e.target;
@@ -109,7 +114,6 @@ export default function ConfirmCode(): ReactElement {
       //     console.log(error);
       //     setError('Something goes wrong. Please try again.');
       //   });
-      setProgress(29);
       history.push('/final-step');
     }
   };

@@ -1,4 +1,4 @@
-import React, {ReactElement, useContext, useState} from 'react';
+import React, {ReactElement, useContext, useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import MenuItem from '@mui/material/MenuItem';
@@ -41,6 +41,10 @@ export default function Employee(): ReactElement {
 
   const classes = useStyles();
 
+  useEffect(() => {
+    setProgress(11);
+  }, []);
+
   const handleSalary = (e: {target: {value: any}}) => {
     setSalary(e.target.value);
   };
@@ -66,7 +70,6 @@ export default function Employee(): ReactElement {
       setError('');
       localStorage.setItem('salary', salary);
       localStorage.setItem('period', period);
-      setProgress(11);
       history.push('/savings-calculation');
     }
   };

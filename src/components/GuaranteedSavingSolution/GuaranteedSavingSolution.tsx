@@ -15,8 +15,11 @@ export default function GuaranteedSavingSolution(): ReactElement {
 
   const {setProgress} = useContext(ProgressContext);
 
-  const handleSubmit = () => {
+  useEffect(() => {
     setProgress(15);
+  }, []);
+
+  const handleSubmit = () => {
     if (solutions.includes('rendement')) {
       history.push('/half-guarantee-saving-solution');
     } else {

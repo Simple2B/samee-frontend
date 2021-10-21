@@ -12,8 +12,11 @@ export default function Welcome(): ReactElement {
 
   const history = useHistory();
 
-  const handleSubmit = () => {
+  useEffect(() => {
     setProgress(1);
+  }, []);
+
+  const handleSubmit = () => {
     history.push('/user-data-birth');
   };
 

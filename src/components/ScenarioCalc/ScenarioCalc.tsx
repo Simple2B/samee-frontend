@@ -51,6 +51,10 @@ export default function ScenarioCalc(): ReactElement {
 
   const {setProgress} = useContext(ProgressContext);
 
+  useEffect(() => {
+    setProgress(22);
+  }, []);
+
   const statePessimistic = {
     series: [amountEpargneScenarioPessimistic, amountFondsScenarioPessimistic],
     options: {
@@ -428,7 +432,6 @@ export default function ScenarioCalc(): ReactElement {
   };
 
   const handleSubmit = () => {
-    setProgress(22);
     localStorage.setItem(
       'scenarioPessimistic',
       JSON.stringify(scenarioPessimistic),

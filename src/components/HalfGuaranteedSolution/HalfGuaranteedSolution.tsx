@@ -1,4 +1,5 @@
 import React, {ReactElement, useContext} from 'react';
+import {useEffect} from 'react';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
@@ -15,8 +16,11 @@ export default function HalfGuaranteedSolution(): ReactElement {
 
   const {setProgress} = useContext(ProgressContext);
 
-  const handleSubmit = () => {
+  useEffect(() => {
     setProgress(16);
+  }, []);
+
+  const handleSubmit = () => {
     if (solutions.includes('garanties')) {
       history.push('/saving-guarantee-interest');
     } else {

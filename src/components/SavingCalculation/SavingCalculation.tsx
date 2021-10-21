@@ -13,6 +13,10 @@ export default function SavingCalculation(): ReactElement {
 
   const history = useHistory();
 
+  useEffect(() => {
+    setProgress(12);
+  }, []);
+
   const savingYears: any = localStorage.getItem('age');
   const period: any = localStorage.getItem('period');
   const salary: any = localStorage.getItem('salary');
@@ -42,7 +46,6 @@ export default function SavingCalculation(): ReactElement {
   const handleSubmit = () => {
     localStorage.setItem('savings', amount);
     localStorage.setItem('savingsTax', tax);
-    setProgress(12);
     history.push('/additional-guaranties');
   };
 

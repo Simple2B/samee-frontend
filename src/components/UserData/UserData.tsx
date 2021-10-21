@@ -18,6 +18,7 @@ export default function UserData(): ReactElement {
 
   useEffect(() => {
     localStorageApi.addCurrentStep('/user-data-birth');
+    setProgress(2);
   }, []);
 
   const handleSubmit = () => {
@@ -32,7 +33,6 @@ export default function UserData(): ReactElement {
       setError('');
       localStorage.setItem('sex', sex);
       localStorage.setItem('date', JSON.stringify(date));
-      setProgress(2);
       return history.push('/user-age');
     }
   };

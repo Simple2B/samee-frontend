@@ -25,6 +25,10 @@ export default function ChooseSolution(): ReactElement {
 
   const {setProgress} = useContext(ProgressContext);
 
+  useEffect(() => {
+    setProgress(14);
+  }, []);
+
   const history = useHistory();
 
   const classes = useStyles();
@@ -46,7 +50,6 @@ export default function ChooseSolution(): ReactElement {
   }, [choiceSecond, choiceFirst]);
 
   const handleSubmit = () => {
-    setProgress(14);
     let solutionChoiceObject;
 
     const solutionChoice = localStorage.getItem('solutionChoice');

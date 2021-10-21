@@ -67,18 +67,18 @@ function App() {
   };
 
   const routes = [
-    {path: '/', name: 'Welcome', Component: Welcome},
-    {path: '/user-data-birth', name: 'BirthData', Component: UserData},
-    {path: '/user-age', name: 'SavingsYears', Component: Age},
+    {path: '/', name: '', Component: Welcome},
+    {path: '/user-data-birth', name: 'Âge', Component: UserData},
+    {path: '/user-age', name: '', Component: Age},
     {path: '/difference-bank-and-insurance', name: '', Component: Difference},
-    {path: '/advantages', name: '', Component: Advantages},
+    {path: '/advantages', name: 'Avantages', Component: Advantages},
     {path: '/tax', name: '', Component: Tax},
     {path: '/housing-and-business', name: '', Component: Housing},
     {path: '/abroad', name: '', Component: Abroad},
     {path: '/guarantees', name: '', Component: Guarantees},
-    {path: '/occupation', name: '', Component: Occupation},
+    {path: '/occupation', name: 'Emploi', Component: Occupation},
     {path: '/employee', name: '', Component: Employee},
-    {path: '/self-employed', name: 'SavingsYears', Component: SelfEmployed},
+    {path: '/self-employed', name: '', Component: SelfEmployed},
     {path: '/savings-calculation', name: '', Component: SavingCalculation},
     {
       path: '/guarantee-saving-solution',
@@ -120,7 +120,11 @@ function App() {
       name: '',
       Component: HalfGuaranteedSolutionForWhom,
     },
-    {path: '/choose-solution', name: '', Component: ChooseSolution},
+    {
+      path: '/choose-solution',
+      name: 'Choix des solutions',
+      Component: ChooseSolution,
+    },
     {
       path: '/saving-guarantee-interest',
       name: '',
@@ -145,7 +149,7 @@ function App() {
     {path: '/additional-guaranties', name: '', Component: AdditionalGuaranties},
     {path: '/scenario-calculation', name: '', Component: ScenarioCalc},
     {path: '/modify-parameters', name: '', Component: ModifyParameters},
-    {path: '/resume', name: '', Component: Resume},
+    {path: '/resume', name: 'Résumé', Component: Resume},
     {
       path: '/resume-saving-solution',
       name: '',
@@ -166,7 +170,11 @@ function App() {
       name: '',
       Component: ResumeHalfSolutionModify,
     },
-    {path: '/user-address-info', name: '', Component: UserAddressInfo},
+    {
+      path: '/user-address-info',
+      name: 'Informations personnelles',
+      Component: UserAddressInfo,
+    },
     {path: '/user-personal-info', name: '', Component: UserPersonalInfo},
     {path: '/user-contact-info', name: '', Component: UserContactInfo},
     {path: '/confirm-code', name: '', Component: ConfirmCode},
@@ -185,10 +193,10 @@ function App() {
           progress: steps,
           setProgress: handleStepChange,
         }}>
-        <ProgressBarWrapper />
-        <div className="App">
-          <Bar />
-          <Router>
+        <Router>
+          <ProgressBarWrapper />
+          <div className="App">
+            <Bar />
             {routes.map(({path, Component}) => (
               <Route key={path} exact path={path}>
                 {({match}) => (
@@ -202,9 +210,9 @@ function App() {
                 )}
               </Route>
             ))}
-          </Router>
-          <Footer />
-        </div>
+            <Footer />
+          </div>
+        </Router>
       </ProgressContext.Provider>
     </>
   );

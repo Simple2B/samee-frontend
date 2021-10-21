@@ -9,6 +9,7 @@ import './selfEmployed.css';
 import {makeStyles} from '@material-ui/styles';
 import {Slider} from '@mui/material';
 import {ProgressContext} from '../../context/progressContext';
+import {useEffect} from 'react';
 
 const useStyles = makeStyles({
   root: {
@@ -42,6 +43,10 @@ export default function SelfEmployed(): ReactElement {
 
   const classes = useStyles();
 
+  useEffect(() => {
+    setProgress(11);
+  }, []);
+
   const handleSalary = (e: {target: {value: any}}) => {
     setSalary(e.target.value);
   };
@@ -67,7 +72,6 @@ export default function SelfEmployed(): ReactElement {
       setError('');
       localStorage.setItem('salary', salary);
       localStorage.setItem('period', period);
-      setProgress(11);
       history.push('/savings-calculation');
     }
   };

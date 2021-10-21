@@ -29,8 +29,11 @@ export default function ResumeSavingSolution(): ReactElement {
 
   const {setProgress} = useContext(ProgressContext);
 
-  const handleSubmit = () => {
+  useEffect(() => {
     setProgress(24);
+  }, []);
+
+  const handleSubmit = () => {
     if (solutions.includes('rendement')) {
       history.push('/resume-half-guarantee-solution');
     } else {

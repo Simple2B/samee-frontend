@@ -1,4 +1,4 @@
-import React, {ReactElement, useContext, useState} from 'react';
+import React, {ReactElement, useContext, useEffect, useState} from 'react';
 import {Checkbox, Radio} from '@mui/material';
 import {makeStyles} from '@material-ui/styles';
 import {AxiosError, AxiosResponse} from 'axios';
@@ -60,6 +60,10 @@ export default function UserContactInfo(): ReactElement {
   const history = useHistory();
 
   const {setProgress} = useContext(ProgressContext);
+
+  useEffect(() => {
+    setProgress(28);
+  }, []);
 
   const classes = useStyles();
 
@@ -124,7 +128,6 @@ export default function UserContactInfo(): ReactElement {
       setError('veuillez renseigner les informations');
     } else {
       setError('');
-      setProgress(28);
       localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
       // await userDataInstance
       //   .post('/add', userData)

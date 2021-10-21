@@ -1,4 +1,4 @@
-import React, {ReactElement, useContext} from 'react';
+import React, {ReactElement, useContext, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {Player} from '@lottiefiles/react-lottie-player';
 import Popup from 'reactjs-popup';
@@ -9,8 +9,11 @@ export default function Abroad(): ReactElement {
   const history = useHistory();
   const {setProgress} = useContext(ProgressContext);
 
-  const handleSubmit = () => {
+  useEffect(() => {
     setProgress(8);
+  }, []);
+
+  const handleSubmit = () => {
     return history.push('/guarantees');
   };
 

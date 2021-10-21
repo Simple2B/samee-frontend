@@ -4,6 +4,7 @@
 
 body {
   background-color: #000519;
+
   color: #fff;
   font-size: 24px !important;
   font-family: "Archivo Narrow" !important;
@@ -26,11 +27,15 @@ a {
   padding: 0 140px;
 }
 
+.progress_change {
+  cursor: pointer;
+}
+
 .App {
   padding: 20px 140px 55px;
   /* overflow: scroll; */
   /* padding-bottom: 80px; */
-  height: 100vh;
+  height: 99vh;
 }
 
 .phone_img {
@@ -84,6 +89,45 @@ li {
   transition: opacity 500ms, transform 500ms;
 }
 
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
+  color: #eac28c !important;
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+  color: #eac28c !important;
+}
+
+.css-117w1su-MuiStepIcon-text {
+  fill: #eac28c !important;
+}
+
+.css-z7uhs0-MuiStepConnector-line {
+  border-color: #eac28c !important;
+}
+
+.Mui-disabled {
+  display: none;
+}
+
+.css-qivjh0-MuiStepLabel-label.Mui-active {
+  color: white !important;
+  font-family: "Archivo Narrow" !important;
+  font-size: 15px;
+}
+
+.css-qivjh0-MuiStepLabel-label.Mui-completed {
+  color: white !important;
+  font-family: "Archivo Narrow" !important;
+  font-size: 15px;
+}
+
+.stepper {
+  position: fixed;
+  top: 0;
+  background: #000519;
+  width: 100%;
+  padding-top: 20px;
+}
 
 
 @media (min-width: 1800px) {

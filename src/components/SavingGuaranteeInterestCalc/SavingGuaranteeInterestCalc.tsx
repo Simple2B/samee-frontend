@@ -63,6 +63,10 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
 
   const {setProgress} = useContext(ProgressContext);
 
+  useEffect(() => {
+    setProgress(18);
+  }, []);
+
   const countUpRef = React.useRef(null);
   const {start, update} = useCountUp({
     ref: countUpRef,
@@ -215,7 +219,6 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
   };
 
   const handleSubmit = () => {
-    setProgress(18);
     localStorage.setItem('finalCapital', finalAmount);
     if (solutions.includes('rendement')) {
       history.push('/half-guarantee-interest');

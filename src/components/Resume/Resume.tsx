@@ -1,4 +1,4 @@
-import React, {ReactElement, useContext} from 'react';
+import React, {ReactElement, useContext, useEffect} from 'react';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {ProgressContext} from '../../context/progressContext';
@@ -14,8 +14,11 @@ export default function Resume(): ReactElement {
 
   const {setProgress} = useContext(ProgressContext);
 
-  const handleSubmit = () => {
+  useEffect(() => {
     setProgress(23);
+  }, []);
+
+  const handleSubmit = () => {
     if (solutions.includes('garanties')) {
       history.push('/resume-saving-solution');
     } else if (solutions.includes('rendement')) {

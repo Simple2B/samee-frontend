@@ -1,4 +1,4 @@
-import React, {ReactElement, useContext} from 'react';
+import React, {ReactElement, useContext, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {ProgressContext} from '../../context/progressContext';
 import './advantages.css';
@@ -7,8 +7,11 @@ export default function Advantages(): ReactElement {
   const history = useHistory();
   const {setProgress} = useContext(ProgressContext);
 
-  const handleSubmit = () => {
+  useEffect(() => {
     setProgress(5);
+  }, []);
+
+  const handleSubmit = () => {
     return history.push('/tax');
   };
   return (

@@ -15,6 +15,10 @@ export default function Age(): ReactElement {
 
   const history = useHistory();
 
+  useEffect(() => {
+    setProgress(3);
+  }, []);
+
   const {setProgress} = useContext(ProgressContext);
 
   const ageCalculation = () => {
@@ -56,7 +60,6 @@ export default function Age(): ReactElement {
       localStorage.setItem('age', String(age));
       setErrorCheck(false);
       setError('');
-      setProgress(3);
       return history.push('/difference-bank-and-insurance');
     }
   };

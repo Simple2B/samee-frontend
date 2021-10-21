@@ -1,4 +1,4 @@
-import React, {ReactElement, useContext} from 'react';
+import React, {ReactElement, useContext, useEffect} from 'react';
 import NumberFormat from 'react-number-format';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
@@ -33,8 +33,11 @@ export default function ResumeHalfSolution(): ReactElement {
 
   const {setProgress} = useContext(ProgressContext);
 
-  const handleSubmit = () => {
+  useEffect(() => {
     setProgress(25);
+  }, []);
+
+  const handleSubmit = () => {
     history.push('/user-address-info');
   };
 

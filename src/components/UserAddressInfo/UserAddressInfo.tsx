@@ -1,4 +1,4 @@
-import React, {ReactElement, useContext} from 'react';
+import React, {ReactElement, useContext, useEffect} from 'react';
 import {useState} from 'react';
 import Geosuggest from 'react-geosuggest';
 import {useHistory} from 'react-router-dom';
@@ -18,6 +18,10 @@ export default function UserAddressInfo(): ReactElement {
   const history = useHistory();
 
   const {setProgress} = useContext(ProgressContext);
+
+  useEffect(() => {
+    setProgress(26);
+  }, []);
 
   const addressData = {
     name: name,
@@ -81,7 +85,6 @@ export default function UserAddressInfo(): ReactElement {
       setError('veuillez renseigner les informations');
     } else {
       setError('');
-      setProgress(26);
       localStorage.setItem('userAddressData', JSON.stringify(addressData));
       history.push('/user-personal-info');
     }

@@ -1,4 +1,4 @@
-import React, {ReactElement, useContext, useState} from 'react';
+import React, {ReactElement, useContext, useEffect, useState} from 'react';
 import {FormControl, Select, MenuItem} from '@mui/material';
 import {makeStyles} from '@material-ui/styles';
 import Popup from 'reactjs-popup';
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     fontSize: '24px !important',
     fontFamily: '"Archivo Narrow" !important',
     border: '1px solid white !important',
-    paddingLeft: '15px',
+    // paddingLeft: '15px',
     paddingBottom: 0,
     paddingTop: 0,
     margin: 0,
@@ -22,6 +22,7 @@ const useStyles = makeStyles({
     fontFamily: '"Archivo Narrow" !important',
     color: 'white !important',
     fontSize: '17px !important',
+    paddingLeft: '15px',
   },
   nativeInput: {
     color: '#fff !important',
@@ -42,6 +43,10 @@ export default function UserPersonalInfo(): ReactElement {
   const [error, setError] = useState('');
 
   const {setProgress} = useContext(ProgressContext);
+
+  useEffect(() => {
+    setProgress(27);
+  }, []);
 
   const handleStatus = (e: any) => {
     setMaritalStatus(e.target.value);
@@ -72,7 +77,6 @@ export default function UserPersonalInfo(): ReactElement {
       setError('veuillez renseigner les informations');
     } else {
       setError('');
-      setProgress(27);
       localStorage.setItem('personalInfo', JSON.stringify(personalInfo));
       history.push('/user-contact-info');
     }

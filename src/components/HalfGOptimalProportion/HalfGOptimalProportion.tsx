@@ -14,8 +14,11 @@ export default function HalfGOptimalProportion(): ReactElement {
 
   const history = useHistory();
 
-  const handleSubmit = () => {
+  useEffect(() => {
     setProgress(20);
+  }, []);
+
+  const handleSubmit = () => {
     localStorage.setItem('savingsPercent', JSON.stringify(sliderValue));
     localStorage.setItem('fondsPercent', JSON.stringify(100 - sliderValue));
 

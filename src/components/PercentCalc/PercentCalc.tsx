@@ -24,6 +24,10 @@ export default function PercentCalc(): ReactElement {
 
   const {setProgress} = useContext(ProgressContext);
 
+  useEffect(() => {
+    setProgress(21);
+  }, []);
+
   const amountCapitalCalc = () => {
     const capitalCalc = Math.floor(savings * (savingsPercent / 100));
     setAmountCapital(capitalCalc);
@@ -40,7 +44,6 @@ export default function PercentCalc(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    setProgress(21);
     localStorage.setItem('amountEpargne', JSON.stringify(amountCapital));
     localStorage.setItem('amount Fonds', JSON.stringify(amountFonds));
     history.push('/scenario-calculation');
