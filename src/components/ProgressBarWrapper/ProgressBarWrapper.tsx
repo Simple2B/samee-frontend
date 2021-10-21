@@ -2,7 +2,14 @@ import React, {ReactElement, useContext, useEffect, useState} from 'react';
 import LinearProgress from '@mui/material/LinearProgress';
 import {makeStyles} from '@material-ui/styles';
 import {ProgressContext} from '../../context/progressContext';
-import {Stepper, Step, StepLabel, StepButton} from '@mui/material';
+import {
+  Stepper,
+  Step,
+  StepLabel,
+  StepButton,
+  createTheme,
+  ThemeProvider,
+} from '@mui/material';
 import {Link, useHistory, useLocation} from 'react-router-dom';
 
 const useStyles = makeStyles({
@@ -23,6 +30,50 @@ const useStylesStepper = makeStyles({
   },
   completed: {
     color: '#eac28c !important',
+  },
+});
+
+const theme = createTheme({
+  components: {
+    // Name of the component
+    MuiSvgIcon: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          color: '#eac28c !important',
+        },
+      },
+    },
+    MuiStepLabel: {
+      styleOverrides: {
+        // Name of the slot
+        label: {
+          // Some CSS
+          color: 'white !important',
+          fontFamily: 'Archivo Narrow !important',
+          fontSize: '15px',
+        },
+      },
+    },
+    MuiStepConnector: {
+      styleOverrides: {
+        // Name of the slot
+        line: {
+          // Some CSS
+          borderColor: '#eac28c !important',
+        },
+      },
+    },
+    MuiStepIcon: {
+      styleOverrides: {
+        // Name of the slot
+        text: {
+          // Some CSS
+          fill: '#eac28c !important',
+        },
+      },
+    },
   },
 });
 
@@ -84,24 +135,26 @@ export default function ProgressBarWrapper(): ReactElement {
       />
       {hovered ? (
         <div className="stepper">
-          <Stepper activeStep={activeStep} alternativeLabel>
-            {stepsNames.map((label, idx) => (
-              <Step
-                classes={{
-                  completed: classesStepper.completed,
-                }}
-                key={label.stepTitle}>
-                {idx <= activeStep && (
-                  <StepButton
-                    onClick={() => {
-                      handleStep(label.location);
-                    }}>
-                    {label.stepTitle}
-                  </StepButton>
-                )}
-              </Step>
-            ))}
-          </Stepper>
+          <ThemeProvider theme={theme}>
+            <Stepper activeStep={activeStep} alternativeLabel>
+              {stepsNames.map((label, idx) => (
+                <Step
+                  classes={{
+                    completed: classesStepper.completed,
+                  }}
+                  key={label.stepTitle}>
+                  {idx <= activeStep && (
+                    <StepButton
+                      onClick={() => {
+                        handleStep(label.location);
+                      }}>
+                      {label.stepTitle}
+                    </StepButton>
+                  )}
+                </Step>
+              ))}
+            </Stepper>
+          </ThemeProvider>
         </div>
       ) : (
         <div></div>

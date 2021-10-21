@@ -89,59 +89,10 @@ li {
   transition: opacity 500ms, transform 500ms;
 }
 
-/* .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
-  color: #eac28c !important;
-}
-
-.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
-  color: #eac28c !important;
-}
-
-.css-117w1su-MuiStepIcon-text {
-  fill: #eac28c !important;
-}
-
-.css-z7uhs0-MuiStepConnector-line {
-  border-color: #eac28c !important;
-} */
-
 .Mui-disabled {
   display: none;
 }
 
-.Mui-completed {
-  color: #eac28c !important;
-}
-
-.MuiStepIcon-text {
-  fill: #eac28c !important;
-}
-
-.Mui-active {
-  color: #eac28c !important;
-}
-
-.MuiStepLabel-label {
-  color: white !important;
-  font-family: "Archivo Narrow" !important;
-  font-size: 15px;
-}
-
-.MuiStepConnector-line {
-  border-color: #eac28c !important;
-}
-
-/* .css-qivjh0-MuiStepLabel-label.Mui-active {
-  color: white !important;
-  font-family: "Archivo Narrow" !important;
-  font-size: 15px;
-}
-
-.css-qivjh0-MuiStepLabel-label.Mui-completed {
-  color: white !important;
-  font-family: "Archivo Narrow" !important;
-  font-size: 15px;
-} */
 
 .stepper {
   position: fixed;
