@@ -1,10 +1,17 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext} from 'react';
+import {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import {ProgressContext} from '../../context/progressContext';
 import './guarantees.css';
 
 export default function Guarantees(): ReactElement {
   const history = useHistory();
+  const {setProgress} = useContext(ProgressContext);
+
+  useEffect(() => {
+    setProgress(9);
+  }, []);
 
   const handleSubmit = () => {
     return history.push('/occupation');

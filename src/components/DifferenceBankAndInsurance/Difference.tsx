@@ -1,16 +1,24 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import {ProgressContext} from '../../context/progressContext';
 import './difference.css';
 
 export default function Difference(): ReactElement {
   const history = useHistory();
+
+  const {setProgress} = useContext(ProgressContext);
+
+  useEffect(() => {
+    setProgress(4);
+  }, []);
 
   const handleSubmit = () => {
     return history.push('/advantages');
   };
 
   const handleSubmitCalc = () => {
+    setProgress(9);
     return history.push('/occupation');
   };
   return (

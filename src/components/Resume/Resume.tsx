@@ -1,6 +1,7 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext, useEffect} from 'react';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import {ProgressContext} from '../../context/progressContext';
 import './resume.css';
 
 // const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
@@ -10,6 +11,12 @@ export default function Resume(): ReactElement {
   const [solutions, setSolutions] = useState(
     JSON.stringify(localStorage.getItem('solutionChoice')),
   );
+
+  const {setProgress} = useContext(ProgressContext);
+
+  useEffect(() => {
+    setProgress(23);
+  }, []);
 
   const handleSubmit = () => {
     if (solutions.includes('garanties')) {

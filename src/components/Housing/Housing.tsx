@@ -1,11 +1,18 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 import {Player} from '@lottiefiles/react-lottie-player';
 import Popup from 'reactjs-popup';
 import './housing.css';
+import {ProgressContext} from '../../context/progressContext';
+import {useEffect} from 'react';
 
 export default function Housing(): ReactElement {
   const history = useHistory();
+  const {setProgress} = useContext(ProgressContext);
+
+  useEffect(() => {
+    setProgress(7);
+  }, []);
 
   const handleSubmit = () => {
     return history.push('/abroad');

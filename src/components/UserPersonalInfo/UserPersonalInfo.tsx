@@ -1,9 +1,10 @@
-import React, {ReactElement, useState} from 'react';
+import React, {ReactElement, useContext, useEffect, useState} from 'react';
 import {FormControl, Select, MenuItem} from '@mui/material';
 import {makeStyles} from '@material-ui/styles';
 import Popup from 'reactjs-popup';
 import './userPersonalInfo.css';
 import {useHistory} from 'react-router-dom';
+import {ProgressContext} from '../../context/progressContext';
 
 const useStyles = makeStyles({
   root: {
@@ -11,7 +12,7 @@ const useStyles = makeStyles({
     fontSize: '24px !important',
     fontFamily: '"Archivo Narrow" !important',
     border: '1px solid white !important',
-    paddingLeft: '15px',
+    // paddingLeft: '15px',
     paddingBottom: 0,
     paddingTop: 0,
     margin: 0,
@@ -20,8 +21,8 @@ const useStyles = makeStyles({
     borderColor: 'white !important',
     fontFamily: '"Archivo Narrow" !important',
     color: 'white !important',
-    paddingLeft: '15px',
     fontSize: '17px !important',
+    paddingLeft: '15px',
   },
   nativeInput: {
     color: '#fff !important',
@@ -40,6 +41,12 @@ export default function UserPersonalInfo(): ReactElement {
   const [profession, setProfession] = useState();
   const [smoking, setSmoking] = useState();
   const [error, setError] = useState('');
+
+  const {setProgress} = useContext(ProgressContext);
+
+  useEffect(() => {
+    setProgress(27);
+  }, []);
 
   const handleStatus = (e: any) => {
     setMaritalStatus(e.target.value);

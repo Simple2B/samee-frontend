@@ -1,11 +1,17 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useContext, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {Player} from '@lottiefiles/react-lottie-player';
 import Popup from 'reactjs-popup';
 import './tax.css';
+import {ProgressContext} from '../../context/progressContext';
 
 export default function Tax(): ReactElement {
   const history = useHistory();
+  const {setProgress} = useContext(ProgressContext);
+
+  useEffect(() => {
+    setProgress(6);
+  }, []);
 
   const handleSubmit = () => {
     return history.push('/housing-and-business');

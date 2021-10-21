@@ -1,6 +1,8 @@
-import React, {ReactElement, useState} from 'react';
+import React, {ReactElement, useContext, useState} from 'react';
+import {useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import {userDataInstance} from '../../api/axiosInstance';
+import {ProgressContext} from '../../context/progressContext';
 import './confirmCode.css';
 
 export default function ConfirmCode(): ReactElement {
@@ -14,6 +16,12 @@ export default function ConfirmCode(): ReactElement {
   const [client, setClient] = useState<any>(
     JSON.parse(localStorage.getItem('clientId')!),
   );
+
+  const {setProgress} = useContext(ProgressContext);
+
+  useEffect(() => {
+    setProgress(29);
+  }, []);
 
   const handleChange = (e: any) => {
     const {maxLength, value, name} = e.target;

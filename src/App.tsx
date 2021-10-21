@@ -57,38 +57,28 @@ import UserContactInfo from './components/UserContactInfo/UserContactInfo';
 import ConfirmCode from './components/ConfirmCode/ConfirmCode';
 import FinalStep from './components/FinalStep/FinalStep';
 import ProgressBarWrapper from './components/ProgressBarWrapper/ProgressBarWrapper';
+import {ProgressContext} from './context/progressContext';
 
 function App() {
-  const [steps, setSteps] = useState([
-    {
-      id: 1,
-      key: 'Welcome',
-      label: 'Welcome',
-      isDone: true,
-      component: Welcome,
-    },
-    {
-      id: 2,
-      key: 'UserData',
-      label: 'User Data',
-      isDone: false,
-      component: UserData,
-    },
-  ]);
+  const [steps, setSteps] = useState<number>(0);
+
+  const handleStepChange = (value: number) => {
+    setSteps(value);
+  };
 
   const routes = [
-    {path: '/', name: 'Welcome', Component: Welcome},
-    {path: '/user-data-birth', name: 'BirthData', Component: UserData},
-    {path: '/user-age', name: 'SavingsYears', Component: Age},
+    {path: '/', name: '', Component: Welcome},
+    {path: '/user-data-birth', name: 'Âge', Component: UserData},
+    {path: '/user-age', name: '', Component: Age},
     {path: '/difference-bank-and-insurance', name: '', Component: Difference},
-    {path: '/advantages', name: '', Component: Advantages},
+    {path: '/advantages', name: 'Avantages', Component: Advantages},
     {path: '/tax', name: '', Component: Tax},
     {path: '/housing-and-business', name: '', Component: Housing},
     {path: '/abroad', name: '', Component: Abroad},
     {path: '/guarantees', name: '', Component: Guarantees},
-    {path: '/occupation', name: '', Component: Occupation},
+    {path: '/occupation', name: 'Emploi', Component: Occupation},
     {path: '/employee', name: '', Component: Employee},
-    {path: '/self-employed', name: 'SavingsYears', Component: SelfEmployed},
+    {path: '/self-employed', name: '', Component: SelfEmployed},
     {path: '/savings-calculation', name: '', Component: SavingCalculation},
     {
       path: '/guarantee-saving-solution',
@@ -130,7 +120,11 @@ function App() {
       name: '',
       Component: HalfGuaranteedSolutionForWhom,
     },
-    {path: '/choose-solution', name: '', Component: ChooseSolution},
+    {
+      path: '/choose-solution',
+      name: 'Choix des solutions',
+      Component: ChooseSolution,
+    },
     {
       path: '/saving-guarantee-interest',
       name: '',
@@ -155,7 +149,7 @@ function App() {
     {path: '/additional-guaranties', name: '', Component: AdditionalGuaranties},
     {path: '/scenario-calculation', name: '', Component: ScenarioCalc},
     {path: '/modify-parameters', name: '', Component: ModifyParameters},
-    {path: '/resume', name: '', Component: Resume},
+    {path: '/resume', name: 'Résumé', Component: Resume},
     {
       path: '/resume-saving-solution',
       name: '',
@@ -176,504 +170,50 @@ function App() {
       name: '',
       Component: ResumeHalfSolutionModify,
     },
-    {path: '/user-address-info', name: '', Component: UserAddressInfo},
+    {
+      path: '/user-address-info',
+      name: 'Informations personnelles',
+      Component: UserAddressInfo,
+    },
     {path: '/user-personal-info', name: '', Component: UserPersonalInfo},
     {path: '/user-contact-info', name: '', Component: UserContactInfo},
     {path: '/confirm-code', name: '', Component: ConfirmCode},
     {path: '/final-step', name: '', Component: FinalStep},
   ];
-  const [currentRoute, setCurrentRoute] = useState(1);
-
-  const [nextStep, setNextStep] = useState<string[]>([]);
-  const [activeStep, setActiveStep] = useState(steps[0]);
-
-  const handleNext = () => {
-    if (steps[steps.length - 1].key === activeStep.key) {
-      alert('You have completed all steps.');
-      return;
-    }
-
-    const index = steps.findIndex(x => x.key === activeStep.key);
-    setSteps(prevStep =>
-      prevStep.map(x => {
-        if (x.key === activeStep.key) x.isDone = true;
-        return x;
-      }),
-    );
-    setActiveStep(steps[index + 1]);
-  };
-
-  const handleRouteNumberChange = (number: number) => {
-    setCurrentRoute(number);
-  };
 
   useEffect(() => {
     const nextStep: any = localStorageApi.getNextStep();
-    setNextStep(nextStep);
+    // setNextStep(nextStep);
   }, []);
 
   return (
     <>
-      {/* <ProgressBarWrapper /> */}
-      <div className="App">
-        <Bar />
+      <ProgressContext.Provider
+        value={{
+          progress: steps,
+          setProgress: handleStepChange,
+        }}>
         <Router>
-          {/* <Route exact path="/final-step">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <FinalStep />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/confirm-code">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <ConfirmCode />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/user-contact-info">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <UserContactInfo />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/user-personal-info">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <UserPersonalInfo />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/user-address-info">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <UserAddressInfo />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/resume-half-guarantee-solution-modify">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <ResumeHalfSolutionModify />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/resume-half-guarantee-solution">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <ResumeHalfSolution />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/resume-saving-solution-modify">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <ResumeSavingSolutionModify />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/resume-saving-solution">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <ResumeSavingSolution />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/resume">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <Resume />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/modify-parameters">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <ModifyParameters />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/scenario-calculation">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <ScenarioCalc />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/additional-guaranties">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <AdditionalGuaranties />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/percent-calculation">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <PercentCalc />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/half-guarantee-optimal-proportion">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <HalfGOptimalProportion />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/half-guarantee-interest">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <HalfGuaranteeSolutionInterest />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/saving-guarantee-interest-calculation">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <SavingGuaranteeInterestCalc />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/saving-guarantee-interest">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <SavingGuaranteeInterest />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/choose-solution">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <ChooseSolution />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/half-guaranteed-solution-for-whom">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <HalfGuaranteedSolutionForWhom />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/half-guaranteed-solution-advantages">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <HalfGuaranteedSolutionAdvantages />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/what-is-half-guaranteed-solution">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <WhatIsHalfGuaranteedSolution />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/half-guarantee-saving-solution">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <HalfGuaranteedSolution />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/saving-solution-for-whom">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <GuaranteesSavingSolutionForWhom />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/saving-solution-advantages">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <GuaranteesSolutionAdvantages />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/what-is-saving-solution">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <WhatIsGuaranteesSolution />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/guarantee-saving-solution">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <GuaranteedSavingSolution />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/savings-calculation">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <SavingCalculation />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/self-employed">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <SelfEmployed />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/employee">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <Employee />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/occupation">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <Occupation />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/guarantees">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <Guarantees />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/abroad">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <Abroad />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/housing-and-business">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <Housing />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/tax">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <Tax />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/advantages">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <Advantages />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/difference-bank-and-insurance">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <Difference />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/user-age">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <Age />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/user-data-birth">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <UserData />
-              </CSSTransition>
-            )}
-          </Route>
-          <Route exact path="/">
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit>
-                <Welcome />
-              </CSSTransition>
-            )}
-          </Route> */}
-          {routes.map(({path, Component}) => (
-            <Route key={path} exact path={path}>
-              {({match}) => (
-                <CSSTransition
-                  in={match != null}
-                  timeout={300}
-                  classNames="page"
-                  unmountOnExit>
-                  <Component />
-                </CSSTransition>
-              )}
-            </Route>
-          ))}
+          <ProgressBarWrapper />
+          <div className="App">
+            <Bar />
+            {routes.map(({path, Component}) => (
+              <Route key={path} exact path={path}>
+                {({match}) => (
+                  <CSSTransition
+                    in={match != null}
+                    timeout={300}
+                    classNames="page"
+                    unmountOnExit>
+                    <Component />
+                  </CSSTransition>
+                )}
+              </Route>
+            ))}
+            <Footer />
+          </div>
         </Router>
-        <Footer />
-      </div>
+      </ProgressContext.Provider>
     </>
   );
 }

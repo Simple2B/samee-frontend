@@ -1,14 +1,21 @@
-import React, {ReactElement, useState, useEffect} from 'react';
+import React, {ReactElement, useState, useEffect, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 import NumberFormat from 'react-number-format';
 import {taxCoefficient} from '../../helpers/consts';
 import './savingCalculation.css';
+import {ProgressContext} from '../../context/progressContext';
 
 export default function SavingCalculation(): ReactElement {
   const [amount, setAmount] = useState<any>();
   const [tax, setTax] = useState<any>();
 
+  const {setProgress} = useContext(ProgressContext);
+
   const history = useHistory();
+
+  useEffect(() => {
+    setProgress(12);
+  }, []);
 
   const savingYears: any = localStorage.getItem('age');
   const period: any = localStorage.getItem('period');

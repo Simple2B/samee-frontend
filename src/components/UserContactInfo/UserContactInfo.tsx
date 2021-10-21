@@ -1,4 +1,4 @@
-import React, {ReactElement, useState} from 'react';
+import React, {ReactElement, useContext, useEffect, useState} from 'react';
 import {Checkbox, Radio} from '@mui/material';
 import {makeStyles} from '@material-ui/styles';
 import {AxiosError, AxiosResponse} from 'axios';
@@ -38,6 +38,7 @@ import {phone} from 'phone';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input/input';
 import * as EmailValidator from 'email-validator';
+import {ProgressContext} from '../../context/progressContext';
 
 const useStyles = makeStyles({
   root: {
@@ -57,6 +58,12 @@ export default function UserContactInfo(): ReactElement {
   const [client, setClient] = useState<any>();
 
   const history = useHistory();
+
+  const {setProgress} = useContext(ProgressContext);
+
+  useEffect(() => {
+    setProgress(28);
+  }, []);
 
   const classes = useStyles();
 
