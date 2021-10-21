@@ -89,7 +89,7 @@ li {
   transition: opacity 500ms, transform 500ms;
 }
 
-.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
+/* .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
   color: #eac28c !important;
 }
 
@@ -103,13 +103,35 @@ li {
 
 .css-z7uhs0-MuiStepConnector-line {
   border-color: #eac28c !important;
-}
+} */
 
 .Mui-disabled {
   display: none;
 }
 
-.css-qivjh0-MuiStepLabel-label.Mui-active {
+.Mui-completed {
+  color: #eac28c !important;
+}
+
+.MuiStepIcon-text {
+  fill: #eac28c !important;
+}
+
+.Mui-active {
+  color: #eac28c !important;
+}
+
+.MuiStepLabel-label {
+  color: white !important;
+  font-family: "Archivo Narrow" !important;
+  font-size: 15px;
+}
+
+.MuiStepConnector-line {
+  border-color: #eac28c !important;
+}
+
+/* .css-qivjh0-MuiStepLabel-label.Mui-active {
   color: white !important;
   font-family: "Archivo Narrow" !important;
   font-size: 15px;
@@ -119,7 +141,7 @@ li {
   color: white !important;
   font-family: "Archivo Narrow" !important;
   font-size: 15px;
-}
+} */
 
 .stepper {
   position: fixed;
