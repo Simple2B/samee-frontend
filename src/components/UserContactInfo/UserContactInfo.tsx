@@ -129,20 +129,19 @@ export default function UserContactInfo(): ReactElement {
     } else {
       setError('');
       localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
-      // await userDataInstance
-      //   .post('/add', userData)
-      //   .then(function (response) {
-      //     console.log(response);
-      //     const clientId = response.data;
-      //     setClient(clientId);
-      //     localStorage.setItem('clientId', JSON.stringify(clientId));
-
-      //   })
-      //   .catch(function (error) {
-      //     console.log(error);
-      //     setError('Number already exist');
-      //   });
-      history.push('/confirm-code');
+      await userDataInstance
+        .post('/add', userData)
+        .then(function (response) {
+          console.log(response);
+          const clientId = response.data;
+          setClient(clientId);
+          localStorage.setItem('clientId', JSON.stringify(clientId));
+          history.push('/confirm-code');
+        })
+        .catch(function (error) {
+          console.log(error);
+          setError('Number already exist');
+        });
     }
   };
 

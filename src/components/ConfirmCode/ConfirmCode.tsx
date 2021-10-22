@@ -103,18 +103,17 @@ export default function ConfirmCode(): ReactElement {
       e.preventDefault();
       setError('veuillez renseigner les informations');
     } else {
-      // userDataInstance
-      //   .post('/phone_validation', contactInfo)
-      //   .then(function (response) {
-      //     console.log(response);
-      //     localStorage.setItem('confirmCode', code);
-      //     history.push('/final-step');
-      //   })
-      //   .catch(function (error) {
-      //     console.log(error);
-      //     setError('Something goes wrong. Please try again.');
-      //   });
-      history.push('/final-step');
+      userDataInstance
+        .post('/phone_validation', contactInfo)
+        .then(function (response) {
+          console.log(response);
+          localStorage.setItem('confirmCode', code);
+          history.push('/final-step');
+        })
+        .catch(function (error) {
+          console.log(error);
+          setError('Something goes wrong. Please try again.');
+        });
     }
   };
 
