@@ -30,11 +30,9 @@ const useStyles = makeStyles({
   },
 });
 
-// const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
-
 export default function SavingGuaranteeInterestCalc(): ReactElement {
   const [interest, setInterest] = useState<any>(0);
-  const [period, setPeriod] = useState<any>('mensuel');
+  const [period, setPeriod] = useState<any>(localStorage.getItem('period'));
   const [tax, setTax] = useState<any>();
   const [amount, setAmount] = useState<any>();
   const [finalAmount, setFinalAmount] = useState<any>();

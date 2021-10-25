@@ -140,7 +140,7 @@ export default function UserContactInfo(): ReactElement {
         })
         .catch(function (error) {
           console.log(error);
-          setError('Number already exist');
+          setError('Ce numéro existe déjà');
         });
     }
   };
@@ -179,14 +179,6 @@ export default function UserContactInfo(): ReactElement {
             <label htmlFor="phone" className="input_label">
               Numéro de téléphone:
             </label>
-            {/* <input
-            value={phone}
-            onChange={handlePhone}
-            type="tel"
-            pattern="/^+91(7\d|8\d|9\d)\d{9}$/"
-            name="phone"
-            className="input_field"
-          /> */}
 
             <PhoneInput
               className="input_field"

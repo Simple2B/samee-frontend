@@ -112,7 +112,9 @@ export default function ConfirmCode(): ReactElement {
         })
         .catch(function (error) {
           console.log(error);
-          setError('Something goes wrong. Please try again.');
+          setError(
+            `Quelque chose s'est mal passé avec le serveur. Veuillez réessayer plus tard.`,
+          );
         });
     }
   };
