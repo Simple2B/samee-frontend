@@ -51,13 +51,12 @@ export default function Employee(): ReactElement {
 
   const handlePeriod = (e: {target: {value: any}}) => {
     setPeriod(e.target.value);
-    if (period === 'annuel') {
-      setSalary(salary / 12);
-    }
+    const newSalary =
+      e.target.value === 'annuel'
+        ? Math.floor(salary * 12)
+        : Math.floor(salary / 12);
 
-    if (period === 'mensuel') {
-      setSalary(salary * 12);
-    }
+    setSalary(newSalary);
   };
 
   const handleSalaryRange = (

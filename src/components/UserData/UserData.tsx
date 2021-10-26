@@ -96,6 +96,7 @@ export default function UserData(): ReactElement {
             type="date"
             max="2004-12-31"
             min="1958-01-01"
+            placeholder="yyyy-mm-dd"
           />
         </div>
       </div>

@@ -55,16 +55,15 @@ export default function ResumeHalfSolutionModify(): ReactElement {
   };
 
   const handlePeriod = (e: {target: {value: any}}) => {
+    localStorage.setItem('period', e.target.value);
     setPeriod(e.target.value);
-    if (period === 'annuel') {
-      setSalaryFromLocal(Math.floor(salaryFromLocal / 12));
-      localStorage.setItem('salary', salaryFromLocal);
-    }
+    const newSalary =
+      e.target.value === 'annuel'
+        ? Math.floor(salaryFromLocal * 12)
+        : Math.floor(salaryFromLocal / 12);
 
-    if (period === 'mensuel') {
-      setSalaryFromLocal(Math.floor(salaryFromLocal * 12));
-      localStorage.setItem('salary', salaryFromLocal);
-    }
+    setSalaryFromLocal(newSalary);
+    localStorage.setItem('salary', newSalary.toString());
   };
 
   const handleSliderChange = (e: number) => {

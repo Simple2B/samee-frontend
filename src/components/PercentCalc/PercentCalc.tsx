@@ -6,14 +6,18 @@ import './percentCalc.css';
 import {useHistory} from 'react-router-dom';
 import {ProgressContext} from '../../context/progressContext';
 
-const savingYears: string | null = localStorage.getItem('age');
-const savings: any = localStorage.getItem('savings');
-const tax: string | null = localStorage.getItem('savingsTax');
-const period: string | null = localStorage.getItem('period');
+// const savingYears: string | null = localStorage.getItem('age');
+// const savings: any = localStorage.getItem('savings');
+// const tax: string | null = localStorage.getItem('savingsTax');
+// const period: string | null = localStorage.getItem('period');
 
 export default function PercentCalc(): ReactElement {
   const [amountCapital, setAmountCapital] = useState<number>();
   const [amountFonds, setAmountFonds] = useState<number>();
+
+  const [savingYears] = useState(localStorage.getItem('age'));
+  const [savings] = useState<any>(localStorage.getItem('savings'));
+  const [tax] = useState(localStorage.getItem('savingsTax'));
 
   const [savingsPercent] = useState<any>(
     localStorage.getItem('savingsPercent'),

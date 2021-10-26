@@ -32,7 +32,7 @@ const useStyles = makeStyles({
 
 export default function SavingGuaranteeInterestCalc(): ReactElement {
   const [interest, setInterest] = useState<any>(0);
-  const [period, setPeriod] = useState<any>(localStorage.getItem('period'));
+  // const [period, setPeriod] = useState<any>(localStorage.getItem('period'));
   const [tax, setTax] = useState<any>();
   const [amount, setAmount] = useState<any>();
   const [finalAmount, setFinalAmount] = useState<any>();
@@ -179,40 +179,38 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
 
   const handlePeriod = (e: {target: {value: any}}) => {
     localStorage.setItem('period', e.target.value);
-    setPeriod(e.target.value);
-    if (period === 'annuel') {
-      setSalaryFromLocal(Math.floor(salaryFromLocal / 12));
-      localStorage.setItem('salary', salaryFromLocal);
-    }
+    setPeriodFromLocal(e.target.value);
+    const newSalary =
+      e.target.value === 'annuel'
+        ? Math.floor(salaryFromLocal * 12)
+        : Math.floor(salaryFromLocal / 12);
 
-    if (period === 'mensuel') {
-      setSalaryFromLocal(Math.floor(salaryFromLocal * 12));
-      localStorage.setItem('salary', salaryFromLocal);
-    }
+    setSalaryFromLocal(newSalary);
+    localStorage.setItem('salary', newSalary.toString());
   };
 
   const handleRecalculate = () => {
     if (
       occupation === 'Salarié' &&
-      period === 'mensuel' &&
+      periodFromLocal === 'mensuel' &&
       (salaryFromLocal < 100 || salaryFromLocal > 573)
     ) {
       setError('Choissisez un montant entre CHF 100 to CHF 573');
     } else if (
       occupation === 'Salarié' &&
-      period === 'annuel' &&
+      periodFromLocal === 'annuel' &&
       (salaryFromLocal < 1200 || salaryFromLocal > 6883)
     ) {
       setError('Choissisez un montant entre CHF 1200 to CHF 6883');
     } else if (
       occupation === 'Indépendant' &&
-      period === 'mensuel' &&
+      periodFromLocal === 'mensuel' &&
       (salaryFromLocal < 100 || salaryFromLocal > 2868)
     ) {
       setError('Choissisez un montant entre CHF 100 to CHF 2868');
     } else if (
       occupation === 'Indépendant' &&
-      period === 'annuel' &&
+      periodFromLocal === 'annuel' &&
       (salaryFromLocal < 1200 || salaryFromLocal > 34416)
     ) {
       setError('Choissisez un montant entre CHF 1200 to CHF 34416');
@@ -290,7 +288,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
                   <Select
                     labelId="demo-simple-select-standard-label"
                     id="demo-simple-select-standard"
-                    value={period}
+                    value={periodFromLocal}
                     onChange={handlePeriod}
                     label="salary"
                     className={classes.root}
@@ -306,7 +304,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
                     <MenuItem value="annuel">annuel</MenuItem>
                   </Select>
                 </FormControl>
-                {period === 'mensuel' ? (
+                {periodFromLocal === 'mensuel' ? (
                   <input
                     min="100"
                     onChange={handleSalary}
