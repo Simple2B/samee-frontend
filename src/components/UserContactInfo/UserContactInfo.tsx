@@ -134,6 +134,8 @@ export default function UserContactInfo(): ReactElement {
         .then(function (response) {
           console.log(response);
           if (response.status === 404) {
+            setError(`Impossible d'envoyer des SMS`);
+          } else if (response.status !== 200) {
             setError('Ce numéro existe déjà');
           } else {
             const clientId = response.data;
@@ -144,7 +146,6 @@ export default function UserContactInfo(): ReactElement {
         })
         .catch(function (error) {
           console.log(error);
-          setError('Ce numéro existe déjà');
         });
     }
   };
