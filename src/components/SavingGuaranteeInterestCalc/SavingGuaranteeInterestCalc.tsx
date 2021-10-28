@@ -12,7 +12,7 @@ import {ProgressContext} from '../../context/progressContext';
 const useStyles = makeStyles({
   root: {
     color: 'white !important',
-    fontSize: '24px !important',
+    fontSize: '1em !important',
     fontFamily: '"Archivo Narrow" !important',
     borderBottom: '1px solid white !important',
   },
@@ -284,7 +284,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
               Vous pouvez essayer avec un autre montant
               <div className="wrapper">
                 d'épargne
-                <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
+                <FormControl variant="standard" sx={{m: 1, minWidth: 80}}>
                   <Select
                     labelId="demo-simple-select-standard-label"
                     id="demo-simple-select-standard"

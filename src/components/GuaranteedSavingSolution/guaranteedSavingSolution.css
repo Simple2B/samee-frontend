@@ -13,10 +13,9 @@
   width: 40px;
   border-radius: 20px;
   background-color: transparent;
-  border: 1 px solid #eac28c;
+  border: 1px solid #eac28c;
   color: #eac28c;
   z-index: 1000;
-  border: 1px solid;
 }
 
 .video_content {
@@ -87,13 +86,11 @@
   }
 
   .video_button_next {
-
     height: auto;
     font-size: 18px;
   }
 
   .video_button_pass {
-
     height: auto;
     font-size: 18px;
   }

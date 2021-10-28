@@ -133,10 +133,14 @@ export default function UserContactInfo(): ReactElement {
         .post('/add', userData)
         .then(function (response) {
           console.log(response);
-          const clientId = response.data;
-          setClient(clientId);
-          localStorage.setItem('clientId', JSON.stringify(clientId));
-          history.push('/confirm-code');
+          if (response.status === 404) {
+            setError('Ce numéro existe déjà');
+          } else {
+            const clientId = response.data;
+            setClient(clientId);
+            localStorage.setItem('clientId', JSON.stringify(clientId));
+            history.push('/confirm-code');
+          }
         })
         .catch(function (error) {
           console.log(error);
@@ -184,7 +188,7 @@ export default function UserContactInfo(): ReactElement {
               className="input_field"
               international={true}
               withCountryCallingCode={true}
-              country="CH"
+              country="UA"
               value={phone}
               maxLength={16}
               onChange={handlePhone}

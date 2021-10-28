@@ -28,7 +28,35 @@
 }
 
 @media (max-width: 425px) {
+  .video_img {
+    width: 300px;
+    height: auto;
+  }
+
   .half_guaranteed_solution {
     display: block;
+  }
+
+  .half_guaranteed_solution_list-item::after {
+    height: 10px;
+    width: 10px;
+    content: url(/src/image/arrow-down-l.svg);
+    background-size: contain;
+    padding-left: 6px;
+    margin-top: 1px;
+  }
+
+  .half_guaranteed_solution_list {
+    margin: 50px 0;
+  }
+
+  .close-video {
+    height: 30px;
+    width: 30px;
+  }
+
+  .video_content {
+    width: 340px;
+    height: auto;
   }
 }

@@ -91,11 +91,11 @@ export default function HalfGuaranteedSolution(): ReactElement {
                 | undefined,
             ) => (
               <>
-                <button className="close" onClick={close}>
+                <button className="close-video" onClick={close}>
                   X
                 </button>
                 <div className="pop_up_video">
-                  <video width="1000" height="auto" autoPlay controls>
+                  <video className="video_content" autoPlay controls>
                     <source
                       src="video/video2.mp4"
                       type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
