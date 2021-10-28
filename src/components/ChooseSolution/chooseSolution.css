@@ -89,9 +89,10 @@
 }
 
 @media (max-width: 425px) {
-  /* .pop_up_triger {
-    display: none;
-  } */
+
+  .choose_solution_title {
+    font-size: 20px;
+  }
 
   .choose_solution_blocks {
     display: inline;
@@ -109,6 +110,11 @@
     justify-content: space-between;
     align-items: baseline;
     width: 100%;
+  }
+
+
+  .choose_solution_list {
+    font-size: 14px;
   }
 
   .choose_solution_block {

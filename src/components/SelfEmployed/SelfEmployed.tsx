@@ -14,7 +14,7 @@ import {useEffect} from 'react';
 const useStyles = makeStyles({
   root: {
     color: 'white !important',
-    fontSize: '24px !important',
+    fontSize: '1em !important',
     fontFamily: '"Archivo Narrow" !important',
     borderBottom: '1px solid white !important',
   },
@@ -103,7 +103,7 @@ export default function SelfEmployed(): ReactElement {
         </ul>
         <div className="self-employed_inputs_set">
           <span className="self-employed_text">Choisir le montant </span>
-          <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
+          <FormControl variant="standard" sx={{m: 1, minWidth: 80}}>
             <Select
               labelId="demo-simple-select-standard-label"
               id="demo-simple-select-standard"

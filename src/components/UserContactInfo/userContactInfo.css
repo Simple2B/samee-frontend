@@ -20,9 +20,6 @@
   flex-wrap: wrap;
 }
 
-.choose_solution_list {
-  font-size: 20px;
-}
 
 .user_contact_info_text {
   margin-bottom: 15px;
@@ -31,10 +28,5 @@
 @media (max-width: 425px) {
   .user_contact_info_inputs_block {
     flex-wrap: wrap;
-  }
-
-
-  .choose_solution_list {
-    font-size: 13px;
   }
 }

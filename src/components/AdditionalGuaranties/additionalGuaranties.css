@@ -17,3 +17,9 @@
 .bold_title {
   font-weight: bold;
 }
+
+@media (max-width: 425px) {
+  .additional-guaranties_title {
+    font-size: 20px;
+  }
+}

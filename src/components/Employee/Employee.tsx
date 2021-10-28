@@ -12,9 +12,10 @@ import {ProgressContext} from '../../context/progressContext';
 const useStyles = makeStyles({
   root: {
     color: 'white !important',
-    fontSize: '24px !important',
+    fontSize: '1em !important',
     fontFamily: '"Archivo Narrow" !important',
     borderBottom: '1px solid white !important',
+    minWidth: '80px',
   },
   select: {
     borderColor: 'white !important',
@@ -101,7 +102,7 @@ export default function Employee(): ReactElement {
         </ul>
         <div className="employee_inputs_set">
           <span className="employee_text">Choisir le montant </span>
-          <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
+          <FormControl variant="standard" sx={{m: 1, minWidth: 80}}>
             <Select
               labelId="demo-simple-select-standard-label"
               id="demo-simple-select-standard"

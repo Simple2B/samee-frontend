@@ -133,27 +133,30 @@
   background: #eac28c;
 }
 
-@media (max-width: 768px) {
-  .user_data {
-    padding-top: 25%;
-    font-size: 20px;
-  }
-}
+
+
 
 @media (max-width: 425px) {
-  .user_data {
-    /* padding: 25px; */
-    font-size: 20px;
-  }
 
   .sex_radio_item input[type=radio]:checked+label:after {
-    top: 10px;
+    top: 9px;
     left: 14px;
   }
 
   .pop_up {
-    font-size: 20px;
     margin: 20px;
+    overflow: scroll;
+    padding: 25px;
+  }
+
+  .pop_up_text {
+    font-size: 14px;
+    overflow: scroll;
+  }
+
+
+  .pop_up_title {
+    font-size: 18px;
     overflow: scroll;
   }
 
@@ -195,7 +198,4 @@
 
   }
 
-  /* .pop_up_triger {
-    display: inline-block;
-  } */
 }
