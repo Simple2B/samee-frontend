@@ -122,14 +122,14 @@ export default function UserContactInfo(): ReactElement {
     final_capital: finalCapital,
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = (e: any) => {
     if (!email || !phone || !check) {
       e.preventDefault();
       setError('veuillez renseigner les informations');
     } else {
       setError('');
       localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
-      await userDataInstance
+      userDataInstance
         .post('/add', userData)
         .then(function (response) {
           console.log(response);
@@ -139,13 +139,13 @@ export default function UserContactInfo(): ReactElement {
           history.push('/confirm-code');
         })
         .catch(function (error) {
-          console.log(error);
-          if (error.status === 404 || error.status === 500) {
-            setError(`Impossible d'envoyer des SMS`);
+          console.log(error.status);
+          if (error.status === 400) {
+            console.log(error.status);
+            setError('Ce numéro ou e-mail existe déjà');
           } else {
             console.log(error.status);
-
-            setError('Ce numéro existe déjà');
+            setError(`Impossible d'envoyer des SMS`);
           }
         });
     }
