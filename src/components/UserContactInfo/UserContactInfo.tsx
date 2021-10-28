@@ -184,7 +184,7 @@ export default function UserContactInfo(): ReactElement {
               className="input_field"
               international={true}
               withCountryCallingCode={true}
-              country="UA"
+              country="CH"
               value={phone}
               maxLength={16}
               onChange={handlePhone}
