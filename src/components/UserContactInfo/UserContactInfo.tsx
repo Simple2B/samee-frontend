@@ -133,19 +133,20 @@ export default function UserContactInfo(): ReactElement {
         .post('/add', userData)
         .then(function (response) {
           console.log(response);
-          if (response.status === 404) {
-            setError(`Impossible d'envoyer des SMS`);
-          } else if (response.status !== 200) {
-            setError('Ce numéro existe déjà');
-          } else {
-            const clientId = response.data;
-            setClient(clientId);
-            localStorage.setItem('clientId', JSON.stringify(clientId));
-            history.push('/confirm-code');
-          }
+          const clientId = response.data;
+          setClient(clientId);
+          localStorage.setItem('clientId', JSON.stringify(clientId));
+          history.push('/confirm-code');
         })
         .catch(function (error) {
           console.log(error);
+          if (error.status === 404 || error.status === 500) {
+            setError(`Impossible d'envoyer des SMS`);
+          } else {
+            console.log(error.status);
+
+            setError('Ce numéro existe déjà');
+          }
         });
     }
   };
