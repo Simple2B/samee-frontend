@@ -139,14 +139,8 @@ export default function UserContactInfo(): ReactElement {
           history.push('/confirm-code');
         })
         .catch(function (error) {
-          console.log(error.status);
-          if (error.status === 400) {
-            console.log(error.status);
-            setError('Ce numéro ou e-mail existe déjà');
-          } else {
-            console.log(error.status);
-            setError(`Impossible d'envoyer des SMS`);
-          }
+          console.log(error.response);
+          setError(`Impossible d'envoyer des SMS`);
         });
     }
   };

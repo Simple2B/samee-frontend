@@ -10,7 +10,7 @@ import {FormControl, Select, MenuItem} from '@mui/material';
 const useStyles = makeStyles({
   root: {
     color: 'white !important',
-    fontSize: '24px !important',
+    fontSize: '1em !important',
     fontFamily: '"Archivo Narrow" !important',
     borderBottom: '1px solid white !important',
   },
@@ -272,7 +272,7 @@ export default function ResumeSavingSolutionModify(): ReactElement {
               Vous pouvez essayer avec un autre montant
               <div className="wrapper">
                 d'épargne
-                <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
+                <FormControl variant="standard" sx={{m: 1, minWidth: 80}}>
                   <Select
                     labelId="demo-simple-select-standard-label"
                     id="demo-simple-select-standard"
@@ -320,7 +320,7 @@ export default function ResumeSavingSolutionModify(): ReactElement {
               Votre capital final
             </div>
             <div className="resume_saving_solution_modify_final_amount">
-              <div className="countup_text" ref={countUpRef} />
+              <div className="gold_text" ref={countUpRef} />
             </div>
           </div>
         </div>

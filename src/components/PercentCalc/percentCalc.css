@@ -28,6 +28,14 @@
   font-size: 40px;
 }
 
+@media (max-width: 768px) {
+
+  .reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+
 @media (max-width: 425px) {
   .percent_calc_img {
     width: 150px;

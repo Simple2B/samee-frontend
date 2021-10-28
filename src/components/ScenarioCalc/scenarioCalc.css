@@ -12,8 +12,9 @@
 
 .charts_blocks {
   display: flex;
-  margin-top: 30px;
-
+  margin: 30px 0 40px;
+  justify-content: center;
+  align-items: center;
 }
 
 .modif_button {
@@ -60,6 +61,8 @@
   font-size: 42px;
 }
 
+
+
 .chart_block_label-up {
   position: absolute;
   top: 0;
@@ -75,7 +78,7 @@
 @media (max-width: 1024px) {
   .charts_blocks {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
   }
 }
@@ -85,8 +88,82 @@
     overflow: scroll;
   }
 
+  .charts_blocks {
+    margin: 18px 0 126px;
+  }
+
   .chart_block_amount {
     font-size: 30px;
+  }
+
+  .optimistic {
+    top: 220px;
+    right: 170px;
+  }
+
+  .chart_block_title {
+    font-size: 15px;
+  }
+
+  .chart_block_amount {
+    font-size: 24px;
+  }
+
+  .pessimistic {
+    top: 220px;
+    left: 170px;
+  }
+
+  .real-text {
+    font-size: 20px;
+  }
+
+  .real-amount {
+    font-size: 30px;
+  }
+
+  .chart_block_label-down,
+  .chart_block_label-up {
+    font-size: 17px;
+    right: -15px;
+  }
+}
+
+@media (max-width: 425px) {
+  .charts_blocks {
+    margin: 30px 0 40px;
+  }
+
+  .optimistic {
+    top: 150px;
+    right: 132px;
+  }
+
+  .chart_block_title {
+    font-size: 11px;
+  }
+
+  .chart_block_amount {
+    font-size: 16px;
+  }
+
+  .pessimistic {
+    top: 150px;
+    left: 132px;
+  }
+
+  .real-text {
+    font-size: 15px;
+  }
+
+  .real-amount {
+    font-size: 20px;
+  }
+
+  .chart_block_label-down,
+  .chart_block_label-up {
+    font-size: 10px;
+    right: 10px;
   }
 }
 
@@ -94,5 +171,9 @@
   .modif_button {
 
     margin-left: 0;
+  }
+
+  .charts_blocks {
+    margin: 30px 0 140px;
   }
 }

@@ -104,7 +104,7 @@ export default function ResumeHalfSolution(): ReactElement {
                 <div className="scenario-opt">Scénario optimiste</div>
                 <NumberFormat
                   value={scenarioOptimistic}
-                  className="gold_text"
+                  className="scenario_num-opt gold_text"
                   displayType={'text'}
                   thousandSeparator={`'`}
                   prefix={'CHF '}
@@ -114,7 +114,7 @@ export default function ResumeHalfSolution(): ReactElement {
                 <div className="scenario-pess">Scénario pessimiste</div>
                 <NumberFormat
                   value={scenarioPessimistic}
-                  className="gold_text"
+                  className="scenario_num-pess gold_text"
                   displayType={'text'}
                   thousandSeparator={`'`}
                   prefix={'CHF '}

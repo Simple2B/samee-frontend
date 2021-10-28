@@ -133,7 +133,11 @@
   background: #eac28c;
 }
 
-
+@media (max-width: 768px) {
+  .triger_inline {
+    display: inline;
+  }
+}
 
 
 @media (max-width: 425px) {
@@ -141,6 +145,10 @@
   .sex_radio_item input[type=radio]:checked+label:after {
     top: 9px;
     left: 14px;
+  }
+
+  .triger_inline {
+    display: inline;
   }
 
   .pop_up {

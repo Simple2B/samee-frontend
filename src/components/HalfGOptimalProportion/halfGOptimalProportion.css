@@ -77,6 +77,16 @@
 
   }
 
+  .right {
+    position: relative;
+    right: 25px;
+  }
+
+  .left {
+    position: relative;
+    left: 25px;
+  }
+
   .circle_button {
     position: relative;
     margin: 0 0px;
@@ -84,8 +94,8 @@
 
   .error_block_position {
     position: absolute;
-    bottom: 16%;
-    right: 5%;
+    bottom: 10%;
+    right: 0;
     max-width: 215px;
     display: flex;
     align-items: center;
@@ -107,9 +117,9 @@
 
   .half-optimal-proportion_percents {
     display: flex;
-    align-items: center;
+
     justify-content: center;
-    flex-direction: column-reverse;
+
   }
 
   .percent {
@@ -123,13 +133,13 @@
   }
 
   .error_block_position {
-    position: absolute;
+    /* position: absolute;
     bottom: 9%;
     right: 5%;
     max-width: 215px;
     display: flex;
     align-items: center;
-    font-size: 12px;
+    font-size: 12px; */
   }
 
 }

@@ -93,7 +93,16 @@ export default function ScenarioCalc(): ReactElement {
           breakpoint: 769,
           options: {
             chart: {
-              width: 300,
+              width: 250,
+            },
+            plotOptions: {},
+          },
+        },
+        {
+          breakpoint: 426,
+          options: {
+            chart: {
+              width: 180,
             },
             plotOptions: {},
           },
@@ -179,6 +188,15 @@ export default function ScenarioCalc(): ReactElement {
             plotOptions: {},
           },
         },
+        {
+          breakpoint: 426,
+          options: {
+            chart: {
+              width: 210,
+            },
+            plotOptions: {},
+          },
+        },
       ],
       plotOptions: {
         pie: {
@@ -258,7 +276,16 @@ export default function ScenarioCalc(): ReactElement {
           breakpoint: 769,
           options: {
             chart: {
-              width: 300,
+              width: 250,
+            },
+            plotOptions: {},
+          },
+        },
+        {
+          breakpoint: 426,
+          options: {
+            chart: {
+              width: 180,
             },
             plotOptions: {},
           },
@@ -473,7 +500,7 @@ export default function ScenarioCalc(): ReactElement {
         </div>
 
         <div className="charts_blocks">
-          <div className="chart_block">
+          <div className="chart_block pessimistic">
             <div className="gold_text chart_block_label-up">
               <NumberFormat
                 value={amountEpargneScenarioPessimistic}
@@ -492,10 +519,10 @@ export default function ScenarioCalc(): ReactElement {
                 prefix={'CHF '}
               />
             </div>
-            <div className="chart_block_title">Scénario pessimiste</div>
+            <div className="chart_block_title ">Scénario pessimiste</div>
             <NumberFormat
               value={scenarioPessimistic}
-              className="gold_text chart_block_amount"
+              className="gold_text chart_block_amount "
               displayType={'text'}
               thousandSeparator={`'`}
               prefix={'CHF '}
@@ -529,10 +556,10 @@ export default function ScenarioCalc(): ReactElement {
                 prefix={'CHF '}
               />
             </div>
-            <div className="chart_block_title">Scénario réaliste</div>
+            <div className="chart_block_title real-text">Scénario réaliste</div>
             <NumberFormat
               value={scenarioRealistic}
-              className="gold_text chart_block_amount"
+              className="gold_text chart_block_amount real-amount"
               displayType={'text'}
               thousandSeparator={`'`}
               prefix={'CHF '}
@@ -547,7 +574,7 @@ export default function ScenarioCalc(): ReactElement {
             )}
           </div>
 
-          <div className="chart_block">
+          <div className="chart_block optimistic">
             <div className="gold_text chart_block_label-up ">
               <NumberFormat
                 value={amountEpargneScenarioOptimistic}
@@ -599,7 +626,7 @@ export default function ScenarioCalc(): ReactElement {
         <Popup
           modal
           trigger={
-            <div className="pop_up_triger">
+            <div className="pop_up_triger triger_inline">
               Comment définissez-vous ces scénarios et les pourcentages de
               rendement ?
             </div>

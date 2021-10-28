@@ -50,7 +50,7 @@ export default function HalfGOptimalProportion(): ReactElement {
         </div>
 
         <div className="half-optimal-proportion_percents">
-          <div className="proportion_percent">
+          <div className="proportion_percent left">
             <div className="percent gold_text">{`${sliderValue}%`}</div>
             <div className="percent-desc">Epargne</div>
           </div>
@@ -71,7 +71,7 @@ export default function HalfGOptimalProportion(): ReactElement {
             <div className="circle"></div>
           </div>
 
-          <div className="proportion_percent">
+          <div className="proportion_percent right">
             <div className="percent gold_text">{`${100 - sliderValue}%`}</div>
             <div className="percent-desc">Fonds</div>
           </div>

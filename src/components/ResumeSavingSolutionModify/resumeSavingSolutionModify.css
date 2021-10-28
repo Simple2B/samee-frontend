@@ -7,7 +7,7 @@
 }
 
 .resume_saving_solution_modify_number_block {
-  min-width: 350px;
+  width: 350px;
   height: 350px;
   border: 5px solid;
   border-radius: 50%;
@@ -46,16 +46,33 @@
 
 @media (max-width: 768px) {
   .resume_saving_solution_modify_number_block {
+    margin: 15px auto;
+  }
 
-
-    margin: 10px auto;
+  .resume_saving_solution_final_amount {
+    font-size: 35px;
   }
 }
 
 @media (max-width: 425px) {
+
   .resume_saving_solution_modify_number_block {
-    min-width: 250px;
-    height: 250px;
-    margin: 10px auto;
+    width: 230px;
+    height: 230px;
+  }
+
+  .resume_saving_solution_modify_title {
+    font-size: 20px;
+  }
+
+  .resume_saving_solution_modify_final_amount {
+    font-size: 35px !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .resume_saving_solution_modify_number_block {
+    width: 200px;
+    height: 200px;
   }
 }

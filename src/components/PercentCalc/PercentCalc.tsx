@@ -115,7 +115,7 @@ export default function PercentCalc(): ReactElement {
             </div>
           </div>
 
-          <div className="percent_calc_block">
+          <div className="percent_calc_block reverse">
             <div className="percent_calc_image">
               <img
                 src="image/lock.png"
