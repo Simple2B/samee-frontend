@@ -22,20 +22,12 @@ export default function Age(): ReactElement {
   const {setProgress} = useContext(ProgressContext);
 
   const ageCalculation = () => {
-    const today = new Date();
-    const birthDate = new Date(dateFromStorage);
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-
     let calcAge;
 
     if (sex === 'Femme') {
-      calcAge = retiredFemaleAge - age;
+      calcAge = retiredFemaleAge - dateFromStorage;
     } else if (sex === 'Homme') {
-      calcAge = retiredMaleAge - age;
+      calcAge = retiredMaleAge - dateFromStorage;
     }
     setAge(calcAge);
     return age;

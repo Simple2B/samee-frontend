@@ -62,7 +62,8 @@
   max-width: 1080px;
   height: 500px;
   padding: 50px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .pop_up_title {
@@ -94,6 +95,7 @@
   border: 1px solid #eac28c;
   color: #eac28c;
   z-index: 1000;
+  cursor: pointer;
 }
 
 .sex_radio_item {
@@ -101,6 +103,7 @@
   position: relative;
   padding: 0 10px;
   margin: 10px 0 0;
+  cursor: pointer;
 }
 
 .sex_radio_item input[type='radio'] {
@@ -119,6 +122,10 @@
   border-radius: 50%;
   border: 2px solid white;
   background-color: transparent;
+}
+
+.user_data_inputs_lebel {
+  cursor: pointer;
 }
 
 .sex_radio_item input[type=radio]:checked+label:after {
@@ -153,19 +160,18 @@
 
   .pop_up {
     margin: 20px;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     padding: 25px;
   }
 
   .pop_up_text {
     font-size: 14px;
-    overflow: scroll;
   }
 
 
   .pop_up_title {
     font-size: 18px;
-    overflow: scroll;
   }
 
   .close {

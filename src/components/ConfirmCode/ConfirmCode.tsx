@@ -101,7 +101,7 @@ export default function ConfirmCode(): ReactElement {
   const handleSubmit = (e: any) => {
     if (!code1 || !code2 || !code3 || !code4 || !code5 || !code6) {
       e.preventDefault();
-      setError('veuillez renseigner les informations');
+      setError('veuillez renseigner toutes les informations');
     } else {
       userDataInstance
         .post('/phone_validation', contactInfo)

@@ -16,6 +16,8 @@
   display: block;
 }
 
+
+
 .input_field {
   height: 35px;
   width: 250px;
@@ -26,6 +28,10 @@
   font-size: 17px;
   font-family: "Archivo Narrow";
   margin-bottom: 15px;
+}
+
+.error_input {
+  border-color: rgb(131, 11, 11);
 }
 
 .hidden {
@@ -52,7 +58,8 @@
   /* border: 1px solid; */
   margin: 0;
   max-height: 120px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   position: absolute;
   background-color: #000519;
 }

@@ -1,4 +1,5 @@
 import React, {ReactElement, useContext, useEffect} from 'react';
+import classNames from 'classnames';
 import {useState} from 'react';
 import Geosuggest from 'react-geosuggest';
 import {useHistory} from 'react-router-dom';
@@ -14,6 +15,7 @@ export default function UserAddressInfo(): ReactElement {
   const [city, setCity] = useState();
   const [street, setStreet] = useState();
   const [error, setError] = useState('');
+  const [inputError, setInputError] = useState(false);
 
   const history = useHistory();
 
@@ -35,6 +37,7 @@ export default function UserAddressInfo(): ReactElement {
   const handleName = (e: any) => {
     const clearedValue = e.target.value.replace(/[0-9]/g, '');
     setName(clearedValue);
+    setInputError(false);
   };
 
   const handleLastName = (e: any) => {
@@ -82,9 +85,11 @@ export default function UserAddressInfo(): ReactElement {
   const handleSubmit = (e: {preventDefault: () => void}) => {
     if (!name || !lastName || !number || !postcode || !city || !street) {
       e.preventDefault();
-      setError('veuillez renseigner les informations');
+      setError('veuillez renseigner toutes les informations');
+      setInputError(true);
     } else {
       setError('');
+      setInputError(false);
       localStorage.setItem('userAddressData', JSON.stringify(addressData));
       history.push('/user-personal-info');
     }
@@ -109,7 +114,10 @@ export default function UserAddressInfo(): ReactElement {
                 value={name}
                 onChange={handleName}
                 name="name"
-                className="input_field"
+                className={classNames('input_field', {
+                  'input_field error_input': inputError,
+                  input_field: name,
+                })}
               />
             </div>
             <div className="user_address_info_input-set">
@@ -119,7 +127,9 @@ export default function UserAddressInfo(): ReactElement {
               <Geosuggest
                 value={street}
                 onChange={handleStreet}
-                inputClassName="input_field"
+                inputClassName={classNames('input_field', {
+                  'input_field error_input': inputError,
+                })}
                 placeholder=""
                 country="CH"
                 onSuggestSelect={handleStreet}
@@ -136,7 +146,9 @@ export default function UserAddressInfo(): ReactElement {
                 value={postcode}
                 onChange={handlePostcode}
                 name="postcode"
-                className="input_field"
+                className={classNames('input_field', {
+                  'input_field error_input': inputError,
+                })}
               />
             </div>
           </div>
@@ -149,7 +161,9 @@ export default function UserAddressInfo(): ReactElement {
                 value={lastName}
                 onChange={handleLastName}
                 name="lastname"
-                className="input_field"
+                className={classNames('input_field', {
+                  'input_field error_input': inputError,
+                })}
               />
             </div>
             <div className="user_address_info_input-set">
@@ -160,7 +174,9 @@ export default function UserAddressInfo(): ReactElement {
                 value={number}
                 onChange={handleNumber}
                 name="number"
-                className="input_field"
+                className={classNames('input_field', {
+                  'input_field error_input': inputError,
+                })}
               />
             </div>
             <div className="user_address_info_input-set">
@@ -169,7 +185,9 @@ export default function UserAddressInfo(): ReactElement {
               </label>
               <Geosuggest
                 value={city}
-                inputClassName="input_field"
+                inputClassName={classNames('input_field', {
+                  'input_field error_input': inputError,
+                })}
                 placeholder=""
                 country="CH"
                 onSuggestSelect={handleCity}

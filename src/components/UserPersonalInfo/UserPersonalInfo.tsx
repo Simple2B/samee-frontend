@@ -1,4 +1,5 @@
 import React, {ReactElement, useContext, useEffect, useState} from 'react';
+import classNames from 'classnames';
 import {FormControl, Select, MenuItem} from '@mui/material';
 import {makeStyles} from '@material-ui/styles';
 import Popup from 'reactjs-popup';
@@ -74,7 +75,7 @@ export default function UserPersonalInfo(): ReactElement {
   const handleSubmit = (e: any) => {
     if (!maritalStatus || !profession || !smoking) {
       e.preventDefault();
-      setError('veuillez renseigner les informations');
+      setError('veuillez renseigner toutes les informations');
     } else {
       setError('');
       localStorage.setItem('personalInfo', JSON.stringify(personalInfo));

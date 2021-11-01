@@ -125,7 +125,7 @@ export default function UserContactInfo(): ReactElement {
   const handleSubmit = (e: any) => {
     if (!email || !phone || !check) {
       e.preventDefault();
-      setError('veuillez renseigner les informations');
+      setError('veuillez renseigner toutes les informations');
     } else {
       setError('');
       localStorage.setItem('contactInfo', JSON.stringify(contactInfo));

@@ -7,7 +7,7 @@ import {useHistory} from 'react-router-dom';
 import {ProgressContext} from '../../context/progressContext';
 
 export default function HalfGOptimalProportion(): ReactElement {
-  const [sliderValue, setSliderValue] = useState(10);
+  const [sliderValue, setSliderValue] = useState(90);
   const [error, setError] = useState('');
 
   const {setProgress} = useContext(ProgressContext);

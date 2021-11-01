@@ -16,6 +16,7 @@
   border: 1px solid #eac28c;
   color: #eac28c;
   z-index: 1000;
+  cursor: pointer;
 }
 
 .video_content {
@@ -77,6 +78,10 @@
   width: 500px;
   height: auto;
   margin-left: 10px;
+}
+
+.pop_up_triger-video {
+  cursor: pointer;
 }
 
 
