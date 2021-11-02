@@ -1,11 +1,17 @@
 import React, {ReactElement} from 'react';
+import {useHistory} from 'react-router-dom';
 import ProgressBarWrapper from '../ProgressBarWrapper/ProgressBarWrapper';
 import './bar.css';
 
 export default function Bar(): ReactElement {
+  const history = useHistory();
+  const handleHome = () => {
+    localStorage.setItem('currentPath', '/');
+    history.push('/');
+  };
   return (
     <div className="bar">
-      <div className="bar_logo">
+      <div onClick={handleHome} className="bar_logo">
         <img src="/image/logo.png" className="logo_img" alt="logo" />
       </div>
       <div className="bar_contacts">

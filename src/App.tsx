@@ -1,18 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './App.css';
-// import StepWizard from "react-step-wizard";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
   Redirect,
+  useLocation,
+  useHistory,
 } from 'react-router-dom';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import LinearProgress from '@mui/material/LinearProgress';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
 import Bar from './components/Bar/Bar';
 import Footer from './components/Footer/Footer';
 import Welcome from './components/Welcome/Welcome';
@@ -58,13 +55,41 @@ import ConfirmCode from './components/ConfirmCode/ConfirmCode';
 import FinalStep from './components/FinalStep/FinalStep';
 import ProgressBarWrapper from './components/ProgressBarWrapper/ProgressBarWrapper';
 import {ProgressContext} from './context/progressContext';
+import {useCookies} from 'react-cookie';
+import PathCache from './components/pathCache';
 
 function App() {
   const [steps, setSteps] = useState<number>(0);
 
+  const location = useLocation();
+  const history = useHistory();
+  const [path, setPath] = useState(location.pathname);
+
   const handleStepChange = (value: number) => {
     setSteps(value);
   };
+
+  const handlePath = () => {
+    const currentPath = localStorage.getItem('currentPath');
+    console.log(currentPath);
+    if (currentPath) {
+      history.push(currentPath);
+    }
+  };
+
+  const saveLastPath = useCallback(() => {
+    const currentPath = location.pathname;
+    console.log('saveLastPath', currentPath);
+    localStorage.setItem('currentPath', currentPath);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    handlePath();
+  }, []);
+
+  useEffect(() => {
+    saveLastPath();
+  }, [saveLastPath]);
 
   const routes = [
     {path: '/', name: '', Component: Welcome},
@@ -193,26 +218,32 @@ function App() {
           progress: steps,
           setProgress: handleStepChange,
         }}>
-        <Router>
-          <ProgressBarWrapper />
-          <div className="App">
-            <Bar />
-            {routes.map(({path, Component}) => (
-              <Route key={path} exact path={path}>
-                {({match}) => (
-                  <CSSTransition
-                    in={match != null}
-                    timeout={300}
-                    classNames="page"
-                    unmountOnExit>
-                    <Component />
-                  </CSSTransition>
-                )}
-              </Route>
-            ))}
-            <Footer />
-          </div>
-        </Router>
+        {/* <Router> */}
+        <ProgressBarWrapper />
+        <div className="App">
+          <Bar />
+          {routes.map(({path, Component}) => (
+            <Route key={path} exact path={path}>
+              {({match}) => (
+                <CSSTransition
+                  in={match != null}
+                  timeout={300}
+                  classNames="page"
+                  unmountOnExit>
+                  <PathCache path={path}>
+                    <div className="page">
+                      <div className="page2">
+                        <Component />
+                      </div>
+                    </div>
+                  </PathCache>
+                </CSSTransition>
+              )}
+            </Route>
+          ))}
+          <Footer />
+        </div>
+        {/* </Router> */}
       </ProgressContext.Provider>
     </>
   );
