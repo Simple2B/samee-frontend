@@ -17,6 +17,7 @@ import {
   lastName,
   maritalStatus,
   occupation,
+  percent,
   period,
   postcode,
   profession,
@@ -120,6 +121,7 @@ export default function UserContactInfo(): ReactElement {
     scenario_pessimistic: scenarioPessimistic,
     scenario_realistic: scenarioRealistic,
     final_capital: finalCapital,
+    percent: percent,
   };
 
   const handleSubmit = (e: any) => {

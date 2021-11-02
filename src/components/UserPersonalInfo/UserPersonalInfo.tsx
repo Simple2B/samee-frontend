@@ -40,6 +40,7 @@ const useStyles = makeStyles({
 export default function UserPersonalInfo(): ReactElement {
   const [maritalStatus, setMaritalStatus] = useState();
   const [profession, setProfession] = useState();
+  const [percent, setPercent] = useState();
   const [smoking, setSmoking] = useState();
   const [error, setError] = useState('');
 
@@ -58,6 +59,11 @@ export default function UserPersonalInfo(): ReactElement {
     setProfession(clearedValue);
   };
 
+  const handlePercent = (e: any) => {
+    const clearedValue = e.target.value.replace(/\D/g, '');
+    setPercent(clearedValue);
+  };
+
   const handleSmoking = (e: any) => {
     setSmoking(e.target.value);
   };
@@ -70,6 +76,7 @@ export default function UserPersonalInfo(): ReactElement {
     maritalStatus: maritalStatus,
     profession: profession,
     smoking: smoking,
+    percent: percent,
   };
 
   const handleSubmit = (e: any) => {
@@ -126,17 +133,31 @@ export default function UserPersonalInfo(): ReactElement {
         </div>
 
         <div className="user_personal_info_block">
-          <div className="user_address_info_input-set">
-            <label htmlFor="profession" className="input_label">
-              Profession
-            </label>
-            <input
-              value={profession}
-              onChange={handleProfession}
-              type="text"
-              name="profession"
-              className="input_field"
-            />
+          <div className="user_personal_info_profession-set">
+            <div className="profession_block">
+              <label htmlFor="profession" className="input_label">
+                Profession
+              </label>
+              <input
+                value={profession}
+                onChange={handleProfession}
+                type="text"
+                name="profession"
+                className="input_field"
+              />
+            </div>
+            <div className="percent_block">
+              <label htmlFor="percent" className="input_label">
+                %
+              </label>
+              <input
+                value={percent}
+                onChange={handlePercent}
+                type="text"
+                name="percent"
+                className="input_field-percent"
+              />
+            </div>
           </div>
 
           <div className="user_data_inputs_sexe">
