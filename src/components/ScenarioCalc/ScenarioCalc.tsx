@@ -12,6 +12,9 @@ import {ProgressContext} from '../../context/progressContext';
 export default function ScenarioCalc(): ReactElement {
   const [period, setPeriod] = useState(localStorage.getItem('period'));
   const [savings, setSevings] = useState<any>(localStorage.getItem('salary'));
+  const [savingsAmount, setSevingsAmount] = useState<any>(
+    localStorage.getItem('savings'),
+  );
   const [scenarioPessimistic, setScenarioPessimistic] = useState<number>();
   const [scenarioRealistic, setScenarioRealistic] = useState<number>();
   const [scenarioOptimistic, setScenarioOptimistic] = useState<number>();
@@ -24,10 +27,10 @@ export default function ScenarioCalc(): ReactElement {
     localStorage.getItem('fondsPercent'),
   );
 
-  const [amountEpargneFromStorage] = useState<any>(
+  const [amountEpargneFromStorage, setAmountEpargneFromStorage] = useState<any>(
     localStorage.getItem('amountEpargne'),
   );
-  const [amountFondsFromStorage] = useState<any>(
+  const [amountFondsFromStorage, setAmountFondsFromStorage] = useState<any>(
     localStorage.getItem('amount Fonds'),
   );
 
@@ -54,6 +57,16 @@ export default function ScenarioCalc(): ReactElement {
   useEffect(() => {
     setProgress(22);
   }, []);
+
+  const amountCapitalCalc = () => {
+    const capitalCalc = Math.floor(savingsAmount * (savingsPercent / 100));
+    setAmountEpargneFromStorage(capitalCalc);
+  };
+
+  const amountFondsCalc = () => {
+    const fondsCalc = Math.floor(savingsAmount * (fondsPercent / 100));
+    setAmountFondsFromStorage(fondsCalc);
+  };
 
   const statePessimistic = {
     series: [amountEpargneScenarioPessimistic, amountFondsScenarioPessimistic],
@@ -84,7 +97,7 @@ export default function ScenarioCalc(): ReactElement {
           breakpoint: 1025,
           options: {
             chart: {
-              width: 350,
+              width: 300,
             },
             plotOptions: {},
           },
@@ -267,7 +280,7 @@ export default function ScenarioCalc(): ReactElement {
           breakpoint: 1025,
           options: {
             chart: {
-              width: 350,
+              width: 300,
             },
             plotOptions: {},
           },
@@ -330,13 +343,13 @@ export default function ScenarioCalc(): ReactElement {
 
   const calcPessimistic = () => {
     if (period === 'mensuel') {
-      const amountEpargneNew = Math.floor(
+      const amountFondsNew = Math.floor(
         savings *
           12 *
           (savingsPercent / 100) *
           (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)),
       );
-      const amountFondsNew = Math.floor(
+      const amountEpargneNew = Math.floor(
         (savings *
           12 *
           (fondsPercent / 100) *
@@ -348,12 +361,12 @@ export default function ScenarioCalc(): ReactElement {
       setAmountFondsScenarioPessimistic(amountFondsNew);
       setScenarioPessimistic(scenario);
     } else if (period === 'annuel') {
-      const amountEpargneNew = Math.floor(
+      const amountFondsNew = Math.floor(
         savings *
           (savingsPercent / 100) *
           (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)),
       );
-      const amountFondsNew = Math.floor(
+      const amountEpargneNew = Math.floor(
         (savings * (fondsPercent / 100) * ((1 + 0.02) ** savingYears - 1)) /
           (0.02 / 1),
       );
@@ -366,13 +379,13 @@ export default function ScenarioCalc(): ReactElement {
 
   const calcRealistic = () => {
     if (period === 'mensuel') {
-      const amountEpargneNew = Math.floor(
+      const amountFondsNew = Math.floor(
         savings *
           12 *
           (savingsPercent / 100) *
           (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)),
       );
-      const amountFondsNew = Math.floor(
+      const amountEpargneNew = Math.floor(
         (savings *
           12 *
           (fondsPercent / 100) *
@@ -384,12 +397,12 @@ export default function ScenarioCalc(): ReactElement {
       setAmountFondsScenarioRealistic(amountFondsNew);
       setScenarioRealistic(scenario);
     } else if (period === 'annuel') {
-      const amountEpargneNew = Math.floor(
+      const amountFondsNew = Math.floor(
         savings *
           (savingsPercent / 100) *
           (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)),
       );
-      const amountFondsNew = Math.floor(
+      const amountEpargneNew = Math.floor(
         (savings * (fondsPercent / 100) * ((1 + 0.035) ** savingYears - 1)) /
           (0.035 / 1),
       );
@@ -402,13 +415,13 @@ export default function ScenarioCalc(): ReactElement {
 
   const calcOptimistic = () => {
     if (period === 'mensuel') {
-      const amountEpargneNew = Math.floor(
+      const amountFondsNew = Math.floor(
         savings *
           12 *
           (savingsPercent / 100) *
           (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)),
       );
-      const amountFondsNew = Math.floor(
+      const amountEpargneNew = Math.floor(
         (savings *
           12 *
           (fondsPercent / 100) *
@@ -420,12 +433,12 @@ export default function ScenarioCalc(): ReactElement {
       setAmountFondsScenarioOptimistic(amountFondsNew);
       setScenarioOptimistic(scenario);
     } else if (period === 'annuel') {
-      const amountEpargneNew = Math.floor(
+      const amountFondsNew = Math.floor(
         savings *
           (savingsPercent / 100) *
           (((1 + 0.001) ** savingYears - 1) / (0.001 / 1)),
       );
-      const amountFondsNew = Math.floor(
+      const amountEpargneNew = Math.floor(
         (savings * (fondsPercent / 100) * ((1 + 0.05) ** savingYears - 1)) /
           (0.05 / 1),
       );
@@ -437,6 +450,8 @@ export default function ScenarioCalc(): ReactElement {
   };
 
   useEffect(() => {
+    amountCapitalCalc();
+    amountFondsCalc();
     calcPessimistic();
     calcRealistic();
     calcOptimistic();
@@ -479,11 +494,12 @@ export default function ScenarioCalc(): ReactElement {
       <div className="main_content">
         <div className="scenario-calc_text">
           La partie <span className="blue_text">bleue</span> correspond à la
-          part en épargne et la partie <span className="gold_text">jaune</span>{' '}
-          à la partie en fonds de placement. Avec{' '}
+          part en <span className="blue_text">épargne</span> et la partie{' '}
+          <span className="gold_text">jaune</span> à la partie en{' '}
+          <span className="gold_text">fonds de placement</span>. Avec{' '}
           <NumberFormat
             value={amountEpargneFromStorage}
-            className="gold_text"
+            className="blue_text"
             displayType={'text'}
             thousandSeparator={`'`}
             prefix={'CHF '}
@@ -519,10 +535,12 @@ export default function ScenarioCalc(): ReactElement {
                 prefix={'CHF '}
               />
             </div>
-            <div className="chart_block_title ">Scénario pessimiste</div>
+            <div className="chart_block_title title-little">
+              Scénario pessimiste
+            </div>
             <NumberFormat
               value={scenarioPessimistic}
-              className="gold_text chart_block_amount "
+              className="gold_text chart_block_amount amount-little"
               displayType={'text'}
               thousandSeparator={`'`}
               prefix={'CHF '}
@@ -530,7 +548,7 @@ export default function ScenarioCalc(): ReactElement {
             {amountEpargneScenarioPessimistic && (
               <Chart
                 type="donut"
-                width="400"
+                width="320"
                 options={statePessimistic.options}
                 series={statePessimistic.series}
               />
@@ -593,10 +611,12 @@ export default function ScenarioCalc(): ReactElement {
                 prefix={'CHF '}
               />
             </div>
-            <div className="chart_block_title">Scénario optimiste</div>
+            <div className="chart_block_title title-little">
+              Scénario optimiste
+            </div>
             <NumberFormat
               value={scenarioOptimistic}
-              className="gold_text chart_block_amount"
+              className="gold_text chart_block_amount amount-little"
               displayType={'text'}
               thousandSeparator={`'`}
               prefix={'CHF '}
@@ -604,7 +624,7 @@ export default function ScenarioCalc(): ReactElement {
             {amountEpargneScenarioOptimistic && (
               <Chart
                 type="donut"
-                width="400"
+                width="320"
                 options={stateOptimistic.options}
                 series={stateOptimistic.series}
               />

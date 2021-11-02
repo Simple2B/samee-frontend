@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+.half-optimal-proportion_text {
+  margin-bottom: 25px;
+}
+
 .pop_up_list-item {
   font-size: 20px;
 }
@@ -13,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 
 .circle_button {

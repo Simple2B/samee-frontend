@@ -35,6 +35,7 @@ export default function PercentCalc(): ReactElement {
   const amountCapitalCalc = () => {
     const capitalCalc = Math.floor(savings * (savingsPercent / 100));
     setAmountCapital(capitalCalc);
+    console.log(capitalCalc);
   };
 
   const amountFondsCalc = () => {

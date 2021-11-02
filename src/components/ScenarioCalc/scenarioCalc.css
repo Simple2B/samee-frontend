@@ -10,6 +10,12 @@
   color: #5cbbbb;
 }
 
+.title-little {
+  font-size: 20px;
+}
+
+
+
 .charts_blocks {
   display: flex;
   margin: 30px 0 40px;
@@ -66,13 +72,17 @@
 .chart_block_label-up {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -16px;
 }
 
 .chart_block_label-down {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: -16px;
+}
+
+.amount-little {
+  font-size: 36px;
 }
 
 @media (max-width: 1024px) {

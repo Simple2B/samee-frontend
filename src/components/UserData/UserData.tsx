@@ -117,29 +117,15 @@ export default function UserData(): ReactElement {
             id="demo-simple-select"
             value={date}
             onChange={e => {
-              console.log(e.target.value);
               setDate(e.target.value);
             }}>
             {ageRange?.map(number => (
-              <MenuItem value={number}>{number}</MenuItem>
+              <MenuItem key={number} value={number}>
+                {number}
+              </MenuItem>
             ))}
           </Select>{' '}
           ans
-          {/* <input
-            className="user_data_input"
-            value={date}
-            onChange={e => {
-              console.log(e.target.value);
-
-              setDate(e.target.value);
-            }}
-            // onKeyDown={e => e.preventDefault()}
-            id="age"
-            type="date"
-            max="2004-12-31"
-            min="1958-01-01"
-            placeholder="yyyy-mm-dd"
-          /> */}
         </div>
       </div>
 

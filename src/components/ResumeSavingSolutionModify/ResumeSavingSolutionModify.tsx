@@ -38,6 +38,9 @@ export default function ResumeSavingSolutionModify(): ReactElement {
   const [finalAmount, setFinalAmount] = useState<any>(
     localStorage.getItem('finalCapital'),
   );
+  const [solutions, setSolutions] = useState(
+    JSON.stringify(localStorage.getItem('solutionChoice')),
+  );
 
   const [savingYears, setSavingYears] = useState<any>(
     localStorage.getItem('age'),
@@ -218,7 +221,11 @@ export default function ResumeSavingSolutionModify(): ReactElement {
 
   const handleSubmit = () => {
     localStorage.setItem('salary', salaryFromLocal);
-    history.push('resume-saving-solution');
+    if (solutions.includes('rendement')) {
+      history.push('/resume-half-guarantee-solution');
+    } else {
+      history.push('/user-address-info');
+    }
   };
   return (
     <div className="resume_wrapper">
@@ -268,7 +275,7 @@ export default function ResumeSavingSolutionModify(): ReactElement {
               />
             </div>
 
-            <div className="resume_saving_solution_modify_text">
+            <div className="resume_saving_solution_modify_text margins">
               Vous pouvez essayer avec un autre montant
               <div className="wrapper">
                 d'épargne

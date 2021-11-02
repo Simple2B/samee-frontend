@@ -32,7 +32,7 @@ export default function ModifyParameters(): ReactElement {
   const [salaryFromLocal, setSalaryFromLocal] = useState<any>(
     localStorage.getItem('salary'),
   );
-  const [sliderValue, setSliderValue] = useState(10);
+  const [sliderValue, setSliderValue] = useState(90);
   const [error, setError] = useState('');
   const [occupation] = useState(localStorage.getItem('occupation'));
   const [errorAmount, setErrorAmount] = useState('');

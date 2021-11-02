@@ -17,6 +17,10 @@
   flex-direction: column;
 }
 
+.margins {
+  margin-top: 20px;
+}
+
 .button_modify {
   padding: 10px 25px;
   border: none;

@@ -4,7 +4,6 @@
 
 body {
   background-color: #000519;
-
   color: #fff;
   font-size: 24px !important;
   font-family: "Archivo Narrow" !important;
@@ -59,12 +58,10 @@ li {
   margin-bottom: 17px;
 }
 
-
 .page {
-  position: absolute;
-  left: 15px;
-  right: 15px;
+  position: relative;
 }
+
 
 .page-enter {
   opacity: 0;
