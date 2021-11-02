@@ -69,9 +69,7 @@ export default function AdditionalGuaranties(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
                   Mieux comprendre les garanties possibles

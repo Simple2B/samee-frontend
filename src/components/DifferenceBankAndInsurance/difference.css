@@ -1,3 +1,11 @@
+.pop_up_list-upper {
+  list-style-type: lower-alpha;
+}
+
+.pop_up_list-down {
+  list-style-type: lower-roman;
+}
+
 .difference {
   position: relative;
   height: 82vh;

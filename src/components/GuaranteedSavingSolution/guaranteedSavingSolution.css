@@ -5,18 +5,23 @@
   height: 82vh;
 }
 
+
+.close::after {
+  content: url(/src/image/cross.svg);
+}
+
 .close-video {
   position: absolute;
-  right: 15px;
-  top: 15px;
-  height: 40px;
-  width: 40px;
-  border-radius: 20px;
+  right: 20px;
+  top: 20px;
   background-color: transparent;
-  border: 1px solid #eac28c;
-  color: #eac28c;
+  border: none;
   z-index: 1000;
   cursor: pointer;
+}
+
+.close-video::after {
+  content: url(/src/image/cross.svg);
 }
 
 .video_content {

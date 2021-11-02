@@ -137,5 +137,3 @@ export const userData = {
   scenario_realistic: scenarioRealistic,
   final_capital: finalCapital,
 };
-
-console.log(userData);

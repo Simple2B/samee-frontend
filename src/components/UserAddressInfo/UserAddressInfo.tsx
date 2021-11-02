@@ -19,28 +19,11 @@ interface IAddressInfo {
   street: string;
 }
 
-const initialValues = {
-  name: '',
-  lastName: '',
-  number: '',
-  postcode: '',
-  city: '',
-  street: '',
-};
-
 export default function UserAddressInfo(): ReactElement {
-  // const [name, setName] = useState();
-  // const [lastName, setLastName] = useState();
-  // const [number, setNumber] = useState();
-  // const [postcode, setPostcode] = useState();
-  // const [city, setCity] = useState();
-  // const [street, setStreet] = useState();
-
   const [error, setError] = useState('');
-  // const [inputError, setInputError] = useState(false);
-  const [formValues, setFormValues] = useState<IAddressInfo>(initialValues);
-  const [formErrors, setFormErrors] = useState<Nullable<IAddressInfo>>();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [postcode, setPostcode] = useState('');
+  const [city, setCity] = useState('');
+  const [street, setStreet] = useState('');
 
   const history = useHistory();
 
@@ -49,6 +32,15 @@ export default function UserAddressInfo(): ReactElement {
   useEffect(() => {
     setProgress(26);
   }, []);
+
+  const initialValues = {
+    name: '',
+    lastName: '',
+    number: '',
+    postcode: '',
+    city: '',
+    street: '',
+  };
 
   const submitForm = (values: IAddressInfo) => {
     setError('');
@@ -70,10 +62,10 @@ export default function UserAddressInfo(): ReactElement {
       errors.number = 'required';
     }
 
-    if (!values.postcode) {
+    if (!postcode) {
       errors.postcode = 'required';
     }
-    if (!values.city) {
+    if (!city) {
       errors.city = 'required';
     }
     if (!values.street) {
@@ -83,59 +75,19 @@ export default function UserAddressInfo(): ReactElement {
       !values.name ||
       !values.lastName ||
       !values.number ||
-      !values.postcode ||
-      !values.city ||
+      !postcode ||
+      !city ||
       !values.street
     ) {
       setError('Veuillez renseigner toutes les informations');
+    } else {
+      setError('');
+      values.city = city;
+      values.postcode = postcode;
     }
 
     return errors;
   };
-
-  // const addressData = {
-  //   name: name,
-  //   lastName: lastName,
-  //   number: number,
-  //   postcode: postcode,
-  //   city: city,
-  //   street: street,
-  // };
-
-  // const handleName = (e: any) => {
-  //   const clearedValue = e.target.value.replace(/[0-9]/g, '');
-  //   setName(clearedValue);
-  // };
-
-  // const handleLastName = (e: any) => {
-  //   const clearedValue = e.target.value.replace(/[0-9]/g, '');
-  //   setLastName(clearedValue);
-  // };
-
-  // const handleStreet = (e: any) => {
-  //   console.log(e);
-  //   if (e) {
-  //     const clearedValue = e.description;
-  //     setStreet(clearedValue);
-  //   }
-  // };
-
-  // const handleNumber = (e: any) => {
-  //   const clearedValue = e.target.value.replace(/\D/g, '');
-  //   setNumber(clearedValue);
-  // };
-
-  // const handlePostcode = (e: any) => {
-  //   const clearedValue = e.target.value.replace(/\D/g, '');
-  //   setPostcode(clearedValue);
-  // };
-
-  // const handleCity = (e: any) => {
-  //   if (e) {
-  //     const clearedValue = e.description;
-  //     setCity(clearedValue);
-  //   }
-  // };
 
   const onKeyPress = (event: any) => {
     console.log(event);
@@ -149,18 +101,26 @@ export default function UserAddressInfo(): ReactElement {
     }
   };
 
-  // const handleSubmit = (e: {preventDefault: () => void}) => {
-  //   if (!name || !lastName || !number || !postcode || !city || !street) {
-  //     e.preventDefault();
-  //     setError('veuillez renseigner toutes les informations');
-  //     setInputError(true);
-  //   } else {
-  //     setError('');
-  //     setInputError(false);
-  //     localStorage.setItem('userAddressData', JSON.stringify(addressData));
-  //     history.push('/user-personal-info');
-  //   }
-  // };
+  const onKeyPressPostCode = (event: any) => {
+    console.log(event);
+    if (event.charCode >= 48 && event.charCode <= 67) {
+      return;
+    } else {
+      event.preventDefault();
+    }
+  };
+
+  const handleChangeCity = (e: any) => {
+    console.log('city', e.target.value);
+    setCity(e.target.value);
+  };
+
+  const handleChangePostCode = (e: any) => {
+    if (e) {
+      console.log('postCode', e.target.value);
+      setPostcode(e.target.value);
+    }
+  };
 
   return (
     <div className="user_address_info">
@@ -212,7 +172,7 @@ export default function UserAddressInfo(): ReactElement {
                       Rue
                     </label>
                     <Geosuggest
-                      value={values.street}
+                      value={values.street || street}
                       onChange={handleChange}
                       name="street"
                       inputClassName={
@@ -224,11 +184,37 @@ export default function UserAddressInfo(): ReactElement {
                       country="CH"
                       onSuggestSelect={(e: any) => {
                         if (e) {
+                          const postcode = e.gmaps.address_components.filter(
+                            (item: any) => item.types[0] === 'postal_code',
+                          );
+
+                          if (postcode.length > 0) {
+                            setPostcode(postcode[0].long_name);
+                            console.log(postcode);
+                          } else {
+                            setPostcode('');
+                          }
+
+                          const city = e.gmaps.address_components.filter(
+                            (item: any) => item.types[0] === 'locality',
+                          );
+
+                          if (city) {
+                            setCity(city[0].long_name);
+                            console.log(city[0].long_name);
+                          }
+
+                          const street = e.gmaps.address_components.filter(
+                            (item: any) => item.types[0] === 'route',
+                          );
+                          console.log(street[0].long_name);
+
+                          setStreet(street[0].long_name);
                           values.street = e.description;
                         }
                       }}
                       suggestsHiddenClassName="hidden"
-                      types={['geocode']}
+                      types={['address']}
                     />
                   </div>
                   <div className="user_address_info_input-set">
@@ -237,14 +223,15 @@ export default function UserAddressInfo(): ReactElement {
                     </label>
                     <input
                       maxLength={4}
-                      value={values.postcode.replace(/\D/g, '')}
-                      onChange={handleChange}
+                      value={postcode}
+                      onChange={handleChangePostCode}
                       name="postcode"
                       className={
                         errors.postcode && touched.postcode
                           ? 'input_field error_input'
                           : 'input_field'
                       }
+                      onKeyPress={onKeyPressPostCode}
                     />
                   </div>
                 </div>
@@ -283,25 +270,16 @@ export default function UserAddressInfo(): ReactElement {
                     <label htmlFor="city" className="input_label">
                       Ville
                     </label>
-                    <Geosuggest
-                      value={values.city.replace(/[0-9]/g, '')}
-                      onChange={handleChange}
+                    <input
+                      value={city}
+                      onChange={handleChangeCity}
                       name="city"
-                      inputClassName={
+                      className={
                         errors.city && touched.city
                           ? 'input_field error_input'
                           : 'input_field'
                       }
-                      placeholder=""
-                      country="CH"
-                      onSuggestSelect={(e: any) => {
-                        if (e) {
-                          values.city = e.description;
-                        }
-                      }}
-                      suggestsHiddenClassName="hidden"
                       onKeyPress={event => onKeyPress(event)}
-                      types={['(cities)']}
                     />
                   </div>
                 </div>
@@ -338,9 +316,7 @@ export default function UserAddressInfo(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
                   Pourquoi avez-vous besoin de ces informations ?

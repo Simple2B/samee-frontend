@@ -360,12 +360,10 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
-                  Comment obtenons-nous ce résultat ?
+                  Plus d'explications sur le résultat
                 </div>
                 <div className="pop_up_text">
                   Le montant entouré correspond au capital total épargné à l’âge

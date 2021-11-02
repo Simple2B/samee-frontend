@@ -182,7 +182,7 @@ export default function Employee(): ReactElement {
           modal
           trigger={
             <div className="pop_up_triger">
-              Comment fonctionne l'économie d'impôts?
+              Comment fonctionne l'économie d'impôts ?
             </div>
           }>
           {(
@@ -193,9 +193,7 @@ export default function Employee(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
                   Comment fonctionne l'économie d'impôts ?
@@ -203,13 +201,14 @@ export default function Employee(): ReactElement {
                 <div className="pop_up_text">
                   Vous pouvez déduire de votre revenu imposable l’intégralité
                   des versements au 3ème pilier. Plus vous cotisez, plus vos
-                  économies seront importantes.{' '}
+                  économies seront importantes.
                 </div>
                 <div className="pop_up_text">
                   Le montant maximal annuel est actuellement de 6'883 CHF pour
                   un salarié et de 34'416 CHF ou de maximum 20% de son salaire
                   AVS pour un indépendant. De plus, votre épargne au 3ème pilier
-                  est exonérée d'impôts jusqu'à la retraite.
+                  est exonérée d'impôts jusqu'à la retraite. Le montant minimum
+                  que vous pouvez investir est de 1200 CHF par an.
                 </div>
                 <div className="pop_up_text">
                   Il est important de savoir que lors du retrait de votre 3ème
@@ -222,7 +221,7 @@ export default function Employee(): ReactElement {
                 <div className="pop_up_text">
                   Pour éviter de subir une imposition trop lourde, vous avez la
                   possibilité de diviser votre 3e pilier en plusieurs comptes
-                  afin de les retirer progressivement entre 60 et 65 ans.{' '}
+                  afin de les retirer progressivement entre 60 et 65 ans.
                 </div>
               </div>
             </>

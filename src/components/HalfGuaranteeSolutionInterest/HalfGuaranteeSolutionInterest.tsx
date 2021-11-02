@@ -54,7 +54,7 @@ export default function HalfGuaranteeSolutionInterest(): ReactElement {
           modal
           trigger={
             <div className="pop_up_triger">
-              Avec quelles institutions travaillez vous ?
+              Avec quelles institutions travaillez-vous ?
             </div>
           }>
           {(
@@ -65,26 +65,19 @@ export default function HalfGuaranteeSolutionInterest(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
-                  Avec quelles institutions travaillez vous ?
+                  Avec quelles institutions travaillez-vous ?
                 </div>
                 <div className="pop_up_text">
-                  Nous travaillons avec la majorité des compagnies d'assurances
-                  et les principales banques afin de vous proposer la solution
-                  qui vous convient le mieux.
+                  Les principales institutions avec lesquelles nous travaillons
+                  sont :
                 </div>
                 <div className="pop_up_text">
-                  Quelques exemples de compagnies et de banques avec lesquelles
-                  nous travaillons:
-                </div>
-                <div className="pop_up_text">
-                  - Swiss Life, Bâloise Assurance, Vaudoise Assurance, AXA
-                  Winthertur, Zürich Assurance, Credit Suisse, VIAC,
-                  PostFinance, Retraites populaires, UBS, etc.
+                  Allianz, Axa Winterthur, Bâloise, Generali, Helvetia,
+                  Mobilière, Rentes genevoises, Retraites populaires, Swisslife,
+                  Vaudoise, Zugerberg, Zürich.
                 </div>
               </div>
             </>

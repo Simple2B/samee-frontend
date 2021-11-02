@@ -31,7 +31,7 @@
 }
 
 .error_input {
-  border-color: rgb(131, 11, 11);
+  border-color: rgb(131, 11, 11) !important;
 }
 
 .hidden {

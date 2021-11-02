@@ -68,13 +68,10 @@ export default function Housing(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
-                  Utiliser son 3ème pilier pour son logement principal ou pour
-                  créer une entreprise
+                  En savoir plus sur cet avantage
                 </div>
                 <div className="pop_up_text">
                   Hormis vous assurer une retraite plus confortable et vous
@@ -130,7 +127,7 @@ export default function Housing(): ReactElement {
                   n’aura pas à prendre en charge votre hypothèque, car
                   l’assurance s’en chargera. Le nantissement vous permet de
                   bénéficier de tous les avantages du 3ème pilier en remboursant
-                  votre crédit hypothécaire. .
+                  votre crédit hypothécaire.
                 </div>
               </div>
             </>

@@ -89,9 +89,7 @@ export default function GuaranteedSavingSolution(): ReactElement {
                 | undefined,
             ) => (
               <>
-                <button className="close-video" onClick={close}>
-                  X
-                </button>
+                <button className="close-video" onClick={close}></button>
                 <div className="pop_up_video">
                   <video className="video_content" autoPlay controls>
                     <source

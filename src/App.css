@@ -33,6 +33,8 @@ a {
 .App {
   padding: 20px 140px 55px;
   height: 99vh;
+  width: 100%;
+  position: relative;
 }
 
 .phone_img {
@@ -59,9 +61,12 @@ li {
 }
 
 .page {
-  position: relative;
+  position: absolute;
+  top: 88px;
+  bottom: 55px;
+  right: 140px;
+  left: 140px;
 }
-
 
 .page-enter {
   opacity: 0;
@@ -95,6 +100,7 @@ li {
   background: #000519;
   width: 100%;
   padding-top: 20px;
+  z-index: 100;
 }
 
 
@@ -122,6 +128,14 @@ li {
   .App {
     padding: 20px 100px 55px;
   }
+
+  .page {
+    position: absolute;
+    top: 88px;
+    bottom: 55px;
+    right: 100px;
+    left: 100px;
+  }
 }
 
 @media (max-width: 425px) {
@@ -131,6 +145,14 @@ li {
 
   .App {
     padding: 20px 20px 55px;
+  }
+
+  .page {
+    position: absolute;
+    top: 88px;
+    bottom: 55px;
+    right: 20px;
+    left: 20px;
   }
 
   .title {
@@ -145,15 +167,4 @@ li {
     font-size: 15px !important;
     font-family: "Archivo Narrow" !important;
   }
-
-  /* .button_position {
-    position: absolute;
-    bottom: 10px;
-  } */
-}
-
-@media (max-width: 375px) {
-  /* .button_position {
-    bottom: 7%;
-  } */
 }

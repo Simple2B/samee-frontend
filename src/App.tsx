@@ -218,7 +218,6 @@ function App() {
           progress: steps,
           setProgress: handleStepChange,
         }}>
-        {/* <Router> */}
         <ProgressBarWrapper />
         <div className="App">
           <Bar />
@@ -232,9 +231,7 @@ function App() {
                   unmountOnExit>
                   <PathCache path={path}>
                     <div className="page">
-                      <div className="page2">
-                        <Component />
-                      </div>
+                      <Component />
                     </div>
                   </PathCache>
                 </CSSTransition>
@@ -243,7 +240,6 @@ function App() {
           ))}
           <Footer />
         </div>
-        {/* </Router> */}
       </ProgressContext.Provider>
     </>
   );
