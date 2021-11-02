@@ -6,7 +6,7 @@ export default function GuaranteesSolutionAdvantages(): ReactElement {
   const history = useHistory();
 
   const handleSubmit = () => {
-    history.push('/guarantee-saving-solution');
+    history.push('/solution-epargne');
   };
 
   return (

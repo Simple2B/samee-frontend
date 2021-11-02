@@ -14,7 +14,7 @@ export default function Abroad(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    return history.push('/guarantees');
+    return history.push('/garanties');
   };
 
   return (

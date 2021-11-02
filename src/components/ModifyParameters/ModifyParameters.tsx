@@ -103,7 +103,7 @@ export default function ModifyParameters(): ReactElement {
       localStorage.setItem('fondsPercent', JSON.stringify(100 - sliderValue));
       localStorage.setItem('salary', salaryFromLocal);
       localStorage.setItem('period', period);
-      history.push('./scenario-calculation');
+      history.push('./mi-garantie-mi-rendement-scenario');
     }
   };
 

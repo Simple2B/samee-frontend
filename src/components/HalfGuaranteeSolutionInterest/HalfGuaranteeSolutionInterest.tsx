@@ -13,7 +13,7 @@ export default function HalfGuaranteeSolutionInterest(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    history.push('/half-guarantee-optimal-proportion');
+    history.push('/mi-garantie-mi-rendement-proportion');
   };
   return (
     <div className="half_guarantee_solution_interest">

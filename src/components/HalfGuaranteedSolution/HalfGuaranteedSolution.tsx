@@ -22,22 +22,22 @@ export default function HalfGuaranteedSolution(): ReactElement {
 
   const handleSubmit = () => {
     if (solutions.includes('garanties')) {
-      history.push('/saving-guarantee-interest');
+      history.push('/epargne-taux');
     } else {
-      history.push('/half-guarantee-interest');
+      history.push('/mi-garantie-mi-rendement-taux');
     }
   };
 
   const handleWhatIs = () => {
-    history.push('/what-is-half-guaranteed-solution');
+    history.push('/definition-solution-mi-garantie-mi-rendement');
   };
 
   const handleAdvantages = () => {
-    history.push('/half-guaranteed-solution-advantages');
+    history.push('/avantages-solution-mi-garantie-mi-rendement');
   };
 
   const handleForWhom = () => {
-    history.push('/half-guaranteed-solution-for-whom');
+    history.push('/qui-solution-mi-garantie-mi-rendement');
   };
 
   return (

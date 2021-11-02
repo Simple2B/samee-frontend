@@ -14,12 +14,12 @@ export default function Difference(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    return history.push('/advantages');
+    return history.push('/avantages-3p');
   };
 
   const handleSubmitCalc = () => {
     setProgress(9);
-    return history.push('/occupation');
+    return history.push('/statut');
   };
   return (
     <div className="difference">

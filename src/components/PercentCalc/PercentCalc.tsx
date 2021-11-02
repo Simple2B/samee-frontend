@@ -51,7 +51,7 @@ export default function PercentCalc(): ReactElement {
   const handleSubmit = () => {
     localStorage.setItem('amountEpargne', JSON.stringify(amountCapital));
     localStorage.setItem('amount Fonds', JSON.stringify(amountFonds));
-    history.push('/scenario-calculation');
+    history.push('/mi-garantie-mi-rendement-scenario');
   };
 
   return (

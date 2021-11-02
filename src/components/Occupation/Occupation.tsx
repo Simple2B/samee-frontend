@@ -17,9 +17,9 @@ export default function Occupation(): ReactElement {
   const handleSubmit = () => {
     localStorage.setItem('occupation', occupation);
     if (occupation === 'Salarié') {
-      return history.push('/employee');
+      return history.push('/salarie');
     } else if (occupation === 'Indépendant') {
-      return history.push('/self-employed');
+      return history.push('/independant');
     }
   };
 

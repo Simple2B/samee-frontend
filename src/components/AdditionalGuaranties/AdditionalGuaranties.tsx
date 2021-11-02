@@ -15,7 +15,7 @@ export default function AdditionalGuaranties(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    return history.push('/choose-solution');
+    return history.push('/choix-solution');
   };
 
   return (

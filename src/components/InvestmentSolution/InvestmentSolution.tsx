@@ -1,25 +1,25 @@
-import React, { ReactElement } from "react";
-import { useHistory } from "react-router-dom";
-import Popup from "reactjs-popup";
-import "./investmentSolution.css";
+import React, {ReactElement} from 'react';
+import {useHistory} from 'react-router-dom';
+import Popup from 'reactjs-popup';
+import './investmentSolution.css';
 
 export default function InvestmentSolution(): ReactElement {
   const history = useHistory();
 
   const handleSubmit = () => {
-    history.push("/choose-solution");
+    history.push('/choix-solution');
   };
 
   const handleWhatIs = () => {
-    history.push("/what-is-investment-solution");
+    history.push('/what-is-investment-solution');
   };
 
   const handleAdvantages = () => {
-    history.push("/investment-solution-advantages");
+    history.push('/investment-solution-advantages');
   };
 
   const handleForWhom = () => {
-    history.push("/investment-solution-for-whom");
+    history.push('/investment-solution-for-whom');
   };
 
   return (
@@ -37,20 +37,17 @@ export default function InvestmentSolution(): ReactElement {
           <ul className="investment_solution_list">
             <li
               onClick={handleWhatIs}
-              className="investment_solution_list-item"
-            >
+              className="investment_solution_list-item">
               Qu'est-ce que c'est ?
             </li>
             <li
               onClick={handleAdvantages}
-              className="investment_solution_list-item"
-            >
+              className="investment_solution_list-item">
               Quels sont les avantages ?
             </li>
             <li
               onClick={handleForWhom}
-              className="investment_solution_list-item"
-            >
+              className="investment_solution_list-item">
               À qui est-elle destinée ?
             </li>
           </ul>
@@ -62,14 +59,13 @@ export default function InvestmentSolution(): ReactElement {
             <div className="pop_up_triger-video">
               <img className="video_img" alt="video" src="/image/video2.png" />
             </div>
-          }
-        >
+          }>
           {(
             close:
               | ((
-                event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-              ) => void)
-              | undefined
+                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+                ) => void)
+              | undefined,
           ) => (
             <>
               <button className="close" onClick={close}>
@@ -94,4 +90,4 @@ export default function InvestmentSolution(): ReactElement {
       </div>
     </>
   );
-};
+}

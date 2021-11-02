@@ -470,7 +470,7 @@ export default function ScenarioCalc(): ReactElement {
       'scenarioOptimistic',
       JSON.stringify(scenarioOptimistic),
     );
-    history.push('/modify-parameters');
+    history.push('/mi-garantie-mi-rendement-recalcul');
   };
 
   const handleSubmit = () => {

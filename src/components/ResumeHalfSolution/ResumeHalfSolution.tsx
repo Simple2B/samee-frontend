@@ -38,11 +38,11 @@ export default function ResumeHalfSolution(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    history.push('/user-address-info');
+    history.push('/informations-adresse');
   };
 
   const handleSubmitModify = () => {
-    history.push('/resume-half-guarantee-solution-modify');
+    history.push('/resume-mi-garantie-mi-rendement-recalcul');
   };
 
   return (

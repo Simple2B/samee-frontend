@@ -129,7 +129,7 @@ export default function UserContactInfo(): ReactElement {
         const clientId = response.data;
         setClient(clientId);
         localStorage.setItem('clientId', JSON.stringify(clientId));
-        history.push('/confirm-code');
+        history.push('/confirmation-code');
       })
       .catch(function (error) {
         console.log(error.response);
@@ -221,7 +221,7 @@ export default function UserContactInfo(): ReactElement {
   //         const clientId = response.data;
   //         setClient(clientId);
   //         localStorage.setItem('clientId', JSON.stringify(clientId));
-  //         history.push('/confirm-code');
+  //         history.push('/confirmation-code');
   //       })
   //       .catch(function (error) {
   //         console.log(error.response);

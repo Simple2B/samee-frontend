@@ -101,7 +101,7 @@ export default function ResumeHalfSolutionModify(): ReactElement {
       localStorage.setItem('fondsPercent', JSON.stringify(100 - sliderValue));
       localStorage.setItem('salary', salaryFromLocal);
       localStorage.setItem('period', period);
-      history.push('/resume-half-guarantee-solution');
+      history.push('/resume-mi-garantie-mi-rendement');
     }
   };
 

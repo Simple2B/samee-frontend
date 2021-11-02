@@ -46,7 +46,7 @@ export default function SavingCalculation(): ReactElement {
   const handleSubmit = () => {
     localStorage.setItem('savings', amount);
     localStorage.setItem('savingsTax', tax);
-    history.push('/additional-guaranties');
+    history.push('/garanties-supplementaires');
   };
 
   return (

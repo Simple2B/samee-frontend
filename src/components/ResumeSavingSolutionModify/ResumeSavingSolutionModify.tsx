@@ -222,9 +222,9 @@ export default function ResumeSavingSolutionModify(): ReactElement {
   const handleSubmit = () => {
     localStorage.setItem('salary', salaryFromLocal);
     if (solutions.includes('rendement')) {
-      history.push('/resume-half-guarantee-solution');
+      history.push('/resume-mi-garantie-mi-rendement');
     } else {
-      history.push('/user-address-info');
+      history.push('/informations-adresse');
     }
   };
   return (

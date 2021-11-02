@@ -33,14 +33,14 @@ export default function ResumeSavingSolution(): ReactElement {
 
   const handleSubmit = () => {
     if (solutions.includes('rendement')) {
-      history.push('/resume-half-guarantee-solution');
+      history.push('/resume-mi-garantie-mi-rendement');
     } else {
-      history.push('/user-address-info');
+      history.push('/informations-adresse');
     }
   };
 
   const handleSubmitModify = () => {
-    history.push('/resume-saving-solution-modify');
+    history.push('/resume-epargne-recalcul');
   };
 
   return (

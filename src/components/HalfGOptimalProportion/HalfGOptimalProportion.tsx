@@ -22,7 +22,7 @@ export default function HalfGOptimalProportion(): ReactElement {
     localStorage.setItem('savingsPercent', JSON.stringify(sliderValue));
     localStorage.setItem('fondsPercent', JSON.stringify(100 - sliderValue));
 
-    history.push('/percent-calculation');
+    history.push('/mi-garantie-mi-rendement-calcul');
   };
 
   useEffect(() => {

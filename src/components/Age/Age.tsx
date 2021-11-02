@@ -34,7 +34,7 @@ export default function Age(): ReactElement {
   };
 
   const handleSubmitBack = () => {
-    return history.push('/user-data-birth');
+    return history.push('/age');
   };
 
   const handleSubmit = () => {
@@ -52,7 +52,7 @@ export default function Age(): ReactElement {
       localStorage.setItem('age', String(age));
       setErrorCheck(false);
       setError('');
-      return history.push('/difference-bank-and-insurance');
+      return history.push('/differences-assurance-banque');
     }
   };
 

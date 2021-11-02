@@ -70,7 +70,7 @@ export default function UserPersonalInfo(): ReactElement {
   const submitForm = (values: IPersonalInfo) => {
     setError('');
     localStorage.setItem('personalInfo', JSON.stringify(values));
-    history.push('/user-contact-info');
+    history.push('/informations-contact');
   };
 
   const validate = (values: IPersonalInfo) => {
@@ -135,7 +135,7 @@ export default function UserPersonalInfo(): ReactElement {
   //   } else {
   //     setError('');
   //     localStorage.setItem('personalInfo', JSON.stringify(personalInfo));
-  //     history.push('/user-contact-info');
+  //     history.push('/informations-contact');
   //   }
   // };
 

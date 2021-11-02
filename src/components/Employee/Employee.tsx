@@ -77,7 +77,7 @@ export default function Employee(): ReactElement {
       setError('');
       localStorage.setItem('salary', salary);
       localStorage.setItem('period', period);
-      history.push('/savings-calculation');
+      history.push('/economies');
     }
   };
 

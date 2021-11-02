@@ -14,7 +14,7 @@ export default function Guarantees(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    return history.push('/occupation');
+    return history.push('/statut');
   };
   return (
     <div className="guarantees">

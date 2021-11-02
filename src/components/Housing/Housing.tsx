@@ -15,7 +15,7 @@ export default function Housing(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    return history.push('/abroad');
+    return history.push('/retraite-et-depart');
   };
 
   return (

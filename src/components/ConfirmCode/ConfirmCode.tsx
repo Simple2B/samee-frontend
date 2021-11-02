@@ -108,7 +108,7 @@ export default function ConfirmCode(): ReactElement {
         .then(function (response) {
           console.log(response);
           localStorage.setItem('confirmCode', code);
-          history.push('/final-step');
+          history.push('/etape-finale');
         })
         .catch(function (error) {
           console.log(error);

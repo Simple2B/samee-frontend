@@ -14,7 +14,7 @@ export default function SavingGuaranteeInterest(): ReactElement {
   }, []);
 
   const handleChange = () => {
-    history.push('/saving-guarantee-interest-calculation');
+    history.push('/epargne-calcul');
   };
   return (
     <div className="saving_interest">

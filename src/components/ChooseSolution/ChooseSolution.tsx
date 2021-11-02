@@ -71,9 +71,9 @@ export default function ChooseSolution(): ReactElement {
     );
 
     if (choiceFirst) {
-      history.push('/guarantee-saving-solution');
+      history.push('/solution-epargne');
     } else if (choiceSecond) {
-      history.push('/half-guarantee-saving-solution');
+      history.push('/solution-mi-garantie-mi-rendement');
     }
   };
 

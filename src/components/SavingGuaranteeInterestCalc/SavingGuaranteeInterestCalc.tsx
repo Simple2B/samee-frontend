@@ -227,7 +227,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
   const handleSubmit = () => {
     localStorage.setItem('finalCapital', finalAmount);
     if (solutions.includes('rendement')) {
-      history.push('/half-guarantee-interest');
+      history.push('/mi-garantie-mi-rendement-taux');
     } else {
       history.push('/resume');
     }

@@ -21,22 +21,22 @@ export default function GuaranteedSavingSolution(): ReactElement {
 
   const handleSubmit = () => {
     if (solutions.includes('rendement')) {
-      history.push('/half-guarantee-saving-solution');
+      history.push('/solution-mi-garantie-mi-rendement');
     } else {
-      history.push('/saving-guarantee-interest');
+      history.push('/epargne-taux');
     }
   };
 
   const handleWhatIs = () => {
-    history.push('/what-is-saving-solution');
+    history.push('/definition-solution-epargne');
   };
 
   const handleAdvantages = () => {
-    history.push('/saving-solution-advantages');
+    history.push('/avantages-solution-epargne');
   };
 
   const handleForWhom = () => {
-    history.push('/saving-solution-for-whom');
+    history.push('/qui-solution-epargne');
   };
 
   return (

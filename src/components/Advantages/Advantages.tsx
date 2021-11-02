@@ -12,7 +12,7 @@ export default function Advantages(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    return history.push('/tax');
+    return history.push('/impots');
   };
   return (
     <div className="advantages">

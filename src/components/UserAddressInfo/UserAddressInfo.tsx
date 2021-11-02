@@ -45,7 +45,7 @@ export default function UserAddressInfo(): ReactElement {
   const submitForm = (values: IAddressInfo) => {
     setError('');
     localStorage.setItem('userAddressData', JSON.stringify(values));
-    history.push('/user-personal-info');
+    history.push('/informations-profession');
   };
 
   const validate = (values: IAddressInfo) => {

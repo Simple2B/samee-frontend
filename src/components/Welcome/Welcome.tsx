@@ -17,7 +17,7 @@ export default function Welcome(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    history.push('/user-data-birth');
+    history.push('/age');
   };
 
   return (

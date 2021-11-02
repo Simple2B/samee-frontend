@@ -26,7 +26,7 @@ export default function UserData(): ReactElement {
   const history = useHistory();
 
   useEffect(() => {
-    localStorageApi.addCurrentStep('/user-data-birth');
+    localStorageApi.addCurrentStep('/age');
     setProgress(2);
     getAgeRange();
   }, []);
@@ -53,7 +53,7 @@ export default function UserData(): ReactElement {
       setError('');
       localStorage.setItem('sex', sex);
       localStorage.setItem('date', JSON.stringify(date));
-      return history.push('/user-age');
+      return history.push('/duree');
     }
   };
 

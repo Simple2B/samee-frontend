@@ -14,7 +14,7 @@ export default function Tax(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    return history.push('/housing-and-business');
+    return history.push('/logement-et-entreprise');
   };
   return (
     <div className="wrapper_tax">

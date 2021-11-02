@@ -6,7 +6,7 @@ export default function WhatIsHalfGuaranteedSolution(): ReactElement {
   const history = useHistory();
 
   const handleSubmit = () => {
-    history.push('/half-guarantee-saving-solution');
+    history.push('/solution-mi-garantie-mi-rendement');
   };
 
   return (
