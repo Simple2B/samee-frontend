@@ -272,7 +272,8 @@ export default function ResumeSavingSolutionModify(): ReactElement {
                 displayType={'text'}
                 thousandSeparator={`'`}
                 prefix={'CHF '}
-              />
+              />{' '}
+              grâce aux intérêts
             </div>
 
             <div className="resume_saving_solution_modify_text margins">

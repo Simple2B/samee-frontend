@@ -157,6 +157,7 @@ export default function UserAddressInfo(): ReactElement {
                       Nom
                     </label>
                     <input
+                      tabIndex={1}
                       value={values.name.replace(/[0-9]/g, '')}
                       onChange={handleChange}
                       name="name"
@@ -172,6 +173,7 @@ export default function UserAddressInfo(): ReactElement {
                       Rue
                     </label>
                     <Geosuggest
+                      tabIndex={3}
                       value={values.street || street}
                       onChange={handleChange}
                       name="street"
@@ -222,6 +224,7 @@ export default function UserAddressInfo(): ReactElement {
                       NPA
                     </label>
                     <input
+                      tabIndex={5}
                       maxLength={4}
                       value={postcode}
                       onChange={handleChangePostCode}
@@ -241,6 +244,7 @@ export default function UserAddressInfo(): ReactElement {
                       Prénom
                     </label>
                     <input
+                      tabIndex={2}
                       value={values.lastName.replace(/[0-9]/g, '')}
                       onChange={handleChange}
                       name="lastName"
@@ -256,6 +260,7 @@ export default function UserAddressInfo(): ReactElement {
                       Numéro
                     </label>
                     <input
+                      tabIndex={4}
                       value={values.number.replace(/\D/g, '')}
                       onChange={handleChange}
                       name="number"
@@ -271,6 +276,7 @@ export default function UserAddressInfo(): ReactElement {
                       Ville
                     </label>
                     <input
+                      tabIndex={6}
                       value={city}
                       onChange={handleChangeCity}
                       name="city"

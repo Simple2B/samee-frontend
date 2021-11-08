@@ -556,7 +556,7 @@ export default function ScenarioCalc(): ReactElement {
           </div>
 
           <div className="chart_block">
-            <div className="gold_text chart_block_label-up">
+            <div className="gold_text chart_block_label-up-big">
               <NumberFormat
                 value={amountEpargneScenarioRealistic}
                 className="gold_text display_none"
@@ -565,7 +565,7 @@ export default function ScenarioCalc(): ReactElement {
                 prefix={'CHF '}
               />
             </div>
-            <div className="blue_text chart_block_label-down">
+            <div className="blue_text chart_block_label-down-big">
               <NumberFormat
                 value={amountFondsScenarioRealistic}
                 className="blue_text display_none"

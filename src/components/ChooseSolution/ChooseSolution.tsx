@@ -41,9 +41,6 @@ export default function ChooseSolution(): ReactElement {
     setChoiceSecond(state => !state);
   };
 
-  // console.log(choiceFirst);
-  // console.log(choiceSecond);
-
   useEffect(() => {
     console.log(choiceFirst);
     console.log(choiceSecond);
@@ -103,11 +100,14 @@ export default function ChooseSolution(): ReactElement {
           <div className="choose_solution_block">
             <ul className="choose_solution_list">
               <li className="choose_solution_list-item">
-                Les garanties m'intéressent
+                <label className="choice-label" htmlFor="first-choice">
+                  Les garanties m'intéressent
+                </label>
               </li>
             </ul>
             <Checkbox
               value={choiceFirst}
+              id="first-choice"
               onChange={handleChangeFirst}
               classes={{root: classes.root, checked: classes.checked}}
               sx={{'& .MuiSvgIcon-root': {fontSize: 35}}}
@@ -117,11 +117,14 @@ export default function ChooseSolution(): ReactElement {
           <div className="choose_solution_block">
             <ul className="choose_solution_list">
               <li className="choose_solution_list-item">
-                Le rendement m'intéresse
+                <label className="choice-label" htmlFor="second-choice">
+                  Le rendement m'intéresse
+                </label>
               </li>
             </ul>
             <Checkbox
               value={choiceSecond}
+              id="second-choice"
               onChange={handleChangeSecond}
               classes={{root: classes.root, checked: classes.checked}}
               sx={{'& .MuiSvgIcon-root': {fontSize: 35}}}

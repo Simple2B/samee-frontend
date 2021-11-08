@@ -64,11 +64,7 @@ const initialValues = {
 };
 
 export default function UserContactInfo(): ReactElement {
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState<string>('');
-  const [check, setCheck] = useState(false);
   const [error, setError] = useState('');
-  const [emailValidError, setEmailValidError] = useState('');
   const [client, setClient] = useState<any>();
 
   const history = useHistory();
@@ -80,29 +76,6 @@ export default function UserContactInfo(): ReactElement {
   }, []);
 
   const classes = useStyles();
-
-  // const contactInfo = {
-  //   email: email,
-  //   phone: phone,
-  // };
-
-  // const handleEmail = (e: any) => {
-  //   setEmail(e.target.value);
-  //   if (EmailValidator.validate(e.target.value)) {
-  //     setEmailValidError('');
-  //   } else {
-  //     setEmailValidError('Adresse email non valide');
-  //   }
-  // };
-
-  // const handlePhone = (e: any) => {
-  //   setPhone(e);
-  // };
-
-  // const handleCheck = () => {
-  //   setCheck(!check);
-  //   console.log(check);
-  // };
 
   const submitForm = (values: IContactlInfo) => {
     setError('');
@@ -196,40 +169,6 @@ export default function UserContactInfo(): ReactElement {
     percent: percent,
   };
 
-  // const handleSubmit = (e: any) => {
-  //   if (!email || !phone || !check) {
-  //     e.preventDefault();
-  //     setError('Veuillez renseigner toutes les informations');
-  //   } else {
-  //     setError('');
-  //     localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
-
-  //     userData.phone_number =
-  //       localStorage.getItem('contactInfo') &&
-  //       JSON.parse(localStorage.getItem('contactInfo')!).phone;
-
-  //     userData.email =
-  //       localStorage.getItem('contactInfo') &&
-  //       JSON.parse(localStorage.getItem('contactInfo')!).email;
-
-  //     console.log(userData);
-
-  //     userDataInstance
-  //       .post('/add', userData)
-  //       .then(function (response) {
-  //         console.log(response);
-  //         const clientId = response.data;
-  //         setClient(clientId);
-  //         localStorage.setItem('clientId', JSON.stringify(clientId));
-  //         history.push('/confirmation-code');
-  //       })
-  //       .catch(function (error) {
-  //         console.log(error.response);
-  //         setError(`Impossible d'envoyer des SMS`);
-  //       });
-  //   }
-  // };
-
   return (
     <div className="user_contact_info">
       <Formik
@@ -290,7 +229,7 @@ export default function UserContactInfo(): ReactElement {
 
                 <div className="user_contact_info_input-set">
                   <label htmlFor="phone" className="input_label">
-                    Numéro de téléphone:
+                    Votre numéro de téléphone
                   </label>
 
                   <PhoneInput

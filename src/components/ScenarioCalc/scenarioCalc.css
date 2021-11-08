@@ -72,13 +72,29 @@
 .chart_block_label-up {
   position: absolute;
   top: 0;
-  right: -16px;
+  left: 250px;
+  white-space: nowrap;
 }
 
 .chart_block_label-down {
   position: absolute;
   bottom: 0;
-  right: -16px;
+  left: 250px;
+  white-space: nowrap;
+}
+
+.chart_block_label-up-big {
+  position: absolute;
+  top: 0;
+  left: 310px;
+  white-space: nowrap;
+}
+
+.chart_block_label-down-big {
+  position: absolute;
+  bottom: 0;
+  left: 310px;
+  white-space: nowrap;
 }
 
 .amount-little {
@@ -136,7 +152,13 @@
   .chart_block_label-down,
   .chart_block_label-up {
     font-size: 17px;
-    right: -15px;
+    left: 190px;
+  }
+
+  .chart_block_label-down-big,
+  .chart_block_label-up-big {
+    font-size: 17px;
+    left: 210px;
   }
 }
 
@@ -173,8 +195,14 @@
 
   .chart_block_label-down,
   .chart_block_label-up {
-    font-size: 10px;
-    right: 10px;
+    font-size: 12px;
+    left: 120px;
+  }
+
+  .chart_block_label-down-big,
+  .chart_block_label-up-big {
+    font-size: 14px;
+    left: 150px;
   }
 }
 

@@ -55,10 +55,6 @@ const initialValues = {
 };
 
 export default function UserPersonalInfo(): ReactElement {
-  // const [maritalStatus, setMaritalStatus] = useState();
-  // const [profession, setProfession] = useState();
-  // const [percent, setPercent] = useState();
-  // const [smoking, setSmoking] = useState();
   const [error, setError] = useState('');
 
   const {setProgress} = useContext(ProgressContext);
@@ -96,48 +92,17 @@ export default function UserPersonalInfo(): ReactElement {
       setError('');
     }
 
+    if (+values.percent > 100 || +values.percent < 10) {
+      setError('Choissisez un % entre 10 to 100');
+      errors.percent = 'required';
+    }
+
     return errors;
   };
-
-  // const handleStatus = (e: any) => {
-  //   setMaritalStatus(e.target.value);
-  // };
-
-  // const handleProfession = (e: any) => {
-  //   const clearedValue = e.target.value.replace(/[0-9]/g, '');
-  //   setProfession(clearedValue);
-  // };
-
-  // const handlePercent = (e: any) => {
-  //   const clearedValue = e.target.value.replace(/\D/g, '');
-  //   setPercent(clearedValue);
-  // };
-
-  // const handleSmoking = (e: any) => {
-  //   setSmoking(e.target.value);
-  // };
 
   const history = useHistory();
 
   const classes = useStyles();
-
-  // const personalInfo = {
-  //   maritalStatus: maritalStatus,
-  //   profession: profession,
-  //   smoking: smoking,
-  //   percent: percent,
-  // };
-
-  // const handleSubmit = (e: any) => {
-  //   if (!maritalStatus || !profession || !smoking) {
-  //     e.preventDefault();
-  //     setError('Veuillez renseigner toutes les informations');
-  //   } else {
-  //     setError('');
-  //     localStorage.setItem('personalInfo', JSON.stringify(personalInfo));
-  //     history.push('/informations-contact');
-  //   }
-  // };
 
   return (
     <div className="user_personal_info">
@@ -226,7 +191,8 @@ export default function UserPersonalInfo(): ReactElement {
                       %
                     </label>
                     <input
-                      value={values.percent.replace(/\D/g, '')}
+                      maxLength={3}
+                      value={values.percent}
                       onChange={handleChange}
                       type="text"
                       name="percent"
