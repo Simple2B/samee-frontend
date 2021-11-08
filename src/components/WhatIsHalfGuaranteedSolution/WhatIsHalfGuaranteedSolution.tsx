@@ -44,6 +44,7 @@ export default function WhatIsHalfGuaranteedSolution(): ReactElement {
         <button onClick={handleSubmit} className="next_button button_position">
           C'est compris
         </button>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

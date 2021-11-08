@@ -197,6 +197,7 @@ export default function ModifyParameters(): ReactElement {
           <button onClick={handleRecalculate} className="next_button ">
             Recalculer
           </button>
+          <div className="empty_space"></div>
         </div>
       </div>
     </div>

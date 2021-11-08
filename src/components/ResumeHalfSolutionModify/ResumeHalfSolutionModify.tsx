@@ -198,6 +198,7 @@ export default function ResumeHalfSolutionModify(): ReactElement {
             Recalculer
           </button>
         </div>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

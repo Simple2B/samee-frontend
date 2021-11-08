@@ -90,6 +90,7 @@ export default function Age(): ReactElement {
             </button>
           )}
         </div>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

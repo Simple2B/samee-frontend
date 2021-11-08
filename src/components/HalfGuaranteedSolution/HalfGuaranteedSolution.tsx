@@ -113,6 +113,7 @@ export default function HalfGuaranteedSolution(): ReactElement {
           <button onClick={handleSubmit} className="next_button">
             Continuer
           </button>
+          <div className="empty_space"></div>
         </div>
       </div>
     </div>

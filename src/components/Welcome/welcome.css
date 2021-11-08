@@ -4,6 +4,11 @@
   height: 82vh;
 }
 
+.empty_space {
+  height: 30px;
+  margin: 0 0 15px;
+}
+
 .welcome_wrapper {
   display: flex;
   justify-content: space-between;

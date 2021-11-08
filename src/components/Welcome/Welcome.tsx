@@ -55,6 +55,7 @@ export default function Welcome(): ReactElement {
           Continuer
         </button>
       </div>
+      <div className="empty_space"></div>
     </div>
   );
 }

@@ -281,6 +281,7 @@ export default function UserContactInfo(): ReactElement {
             Continuer
           </button>
         </div>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

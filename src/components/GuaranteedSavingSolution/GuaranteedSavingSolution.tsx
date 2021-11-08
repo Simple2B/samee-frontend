@@ -109,6 +109,7 @@ export default function GuaranteedSavingSolution(): ReactElement {
           <button onClick={handleSubmit} className="video_button_next">
             Continuer
           </button>
+          <div className="empty_space"></div>
         </div>
       </div>
     </div>

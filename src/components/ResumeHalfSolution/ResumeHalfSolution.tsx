@@ -135,6 +135,7 @@ export default function ResumeHalfSolution(): ReactElement {
             Modifier les paramètres
           </button>
         </div>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

@@ -179,6 +179,7 @@ export default function ConfirmCode(): ReactElement {
             Recevoir le comparatif
           </button>
         </div>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

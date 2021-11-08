@@ -47,6 +47,7 @@ export default function FinalStep(): ReactElement {
         <button onClick={handleSubmit} className="next_button button_position">
           Quitter
         </button>
+        <div className="empty_space"></div>
       </div>
     </div>
   );
