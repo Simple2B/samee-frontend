@@ -51,8 +51,7 @@
   }
 
   .tax_animation {
-    width: 150px;
-    height: 150px;
+    display: none;
   }
 
   #lottie {

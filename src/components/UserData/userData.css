@@ -154,6 +154,10 @@
     left: 14px;
   }
 
+  .close::after {
+    content: url(/src/image/cross-little.svg);
+  }
+
   .triger_inline {
     display: inline;
   }
@@ -162,7 +166,7 @@
     margin: 20px;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding: 25px;
+    padding: 32px;
   }
 
   .pop_up_text {
@@ -175,8 +179,8 @@
   }
 
   .close {
-    right: 45px;
-    top: 35px;
+    right: 35px;
+    top: 30px;
     height: 20px;
     width: 20px;
     border-radius: 20px;

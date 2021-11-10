@@ -6,9 +6,9 @@
 }
 
 
-.close::after {
+/* .close::after {
   content: url(/src/image/cross.svg);
-}
+} */
 
 .close-video {
   position: absolute;

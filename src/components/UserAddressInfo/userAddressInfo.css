@@ -81,13 +81,27 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .input_field {
-    width: 162px;
+    width: 195px;
   }
 
   .geosuggest__suggests {
-    width: 162px;
+    width: 195px;
+  }
+}
+
+@media (max-width: 425px) {
+  .input_field {
+    max-width: 162px;
+  }
+
+  .geosuggest__suggests {
+    max-width: 162px;
+  }
+
+  .user_address_info_input-left {
+    margin-right: 10px;
   }
 }
 

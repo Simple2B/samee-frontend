@@ -206,6 +206,25 @@
   }
 }
 
+@media (max-width: 360px) {
+  .charts_blocks {
+    margin: 1px 0 150px;
+  }
+
+  .chart_block_label-down,
+  .chart_block_label-up {
+    font-size: 10px;
+    left: 120px;
+  }
+
+  .chart_block_label-down-big,
+  .chart_block_label-up-big {
+    font-size: 12px;
+    left: 150px;
+  }
+
+}
+
 @media (max-width: 320px) {
   .modif_button {
 
