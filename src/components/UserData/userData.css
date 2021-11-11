@@ -217,3 +217,9 @@
   }
 
 }
+
+@media (max-width: 360px) {
+  .pop_up_triger {
+    font-size: 13ypx !important;
+  }
+}

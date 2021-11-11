@@ -24,3 +24,13 @@
     font-size: 20px;
   }
 }
+
+@media (max-width: 360px) {
+  .footer {
+    height: 22px;
+  }
+
+  .footer_link {
+    font-size: 11px;
+  }
+}

@@ -93,11 +93,11 @@
 
 @media (max-width: 425px) {
   .input_field {
-    max-width: 162px;
+    max-width: 150px;
   }
 
   .geosuggest__suggests {
-    max-width: 162px;
+    max-width: 150px;
   }
 
   .user_address_info_input-left {

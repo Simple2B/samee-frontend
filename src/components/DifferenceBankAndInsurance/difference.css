@@ -154,6 +154,25 @@
   }
 }
 
+@media (max-width: 360px) {
+  .difference_title {
+    margin-bottom: 20px;
+  }
+
+  .difference {
+    overflow-y: scroll;
+  }
+
+  .desc-img {
+    width: 60px;
+  }
+
+  .difference_block:first-child {
+
+    margin-bottom: 5px;
+  }
+}
+
 @media (max-width: 320px) {
   .desc-img {
     width: 60px;

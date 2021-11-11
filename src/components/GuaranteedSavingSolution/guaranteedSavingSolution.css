@@ -167,3 +167,9 @@
     font-size: 18px;
   }
 }
+
+@media (max-width: 360px) {
+  .guaranteed_saving_solution_list {
+    margin: 20px 0;
+  }
+}

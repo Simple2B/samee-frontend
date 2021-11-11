@@ -62,10 +62,10 @@ export default function UserAddressInfo(): ReactElement {
       errors.number = 'required';
     }
 
-    if (!postcode) {
+    if (!values.postcode) {
       errors.postcode = 'required';
     }
-    if (!city) {
+    if (!values.city) {
       errors.city = 'required';
     }
     if (!values.street) {
@@ -82,8 +82,6 @@ export default function UserAddressInfo(): ReactElement {
       setError('Veuillez renseigner toutes les informations');
     } else {
       setError('');
-      values.city = city;
-      values.postcode = postcode;
     }
 
     return errors;
@@ -172,7 +170,18 @@ export default function UserAddressInfo(): ReactElement {
                     <label htmlFor="street" className="input_label">
                       Rue
                     </label>
-                    <Geosuggest
+                    <input
+                      tabIndex={3}
+                      value={values.street.replace(/[0-9]/g, '')}
+                      onChange={handleChange}
+                      name="street"
+                      className={
+                        errors.street && touched.street
+                          ? 'input_field error_input'
+                          : 'input_field'
+                      }
+                    />
+                    {/* <Geosuggest
                       tabIndex={3}
                       value={values.street || street}
                       onChange={handleChange}
@@ -217,7 +226,7 @@ export default function UserAddressInfo(): ReactElement {
                       }}
                       suggestsHiddenClassName="hidden"
                       types={['address']}
-                    />
+                    /> */}
                   </div>
                   <div className="user_address_info_input-set">
                     <label htmlFor="postcode" className="input_label">
@@ -226,8 +235,8 @@ export default function UserAddressInfo(): ReactElement {
                     <input
                       tabIndex={5}
                       maxLength={4}
-                      value={postcode}
-                      onChange={handleChangePostCode}
+                      value={values.postcode}
+                      onChange={handleChange}
                       name="postcode"
                       className={
                         errors.postcode && touched.postcode
@@ -277,8 +286,8 @@ export default function UserAddressInfo(): ReactElement {
                     </label>
                     <input
                       tabIndex={6}
-                      value={city}
-                      onChange={handleChangeCity}
+                      value={values.city}
+                      onChange={handleChange}
                       name="city"
                       className={
                         errors.city && touched.city

@@ -60,3 +60,9 @@
     height: auto;
   }
 }
+
+@media (max-width: 360px) {
+  .half_guaranteed_solution_list {
+    margin: 20px 0;
+  }
+}
