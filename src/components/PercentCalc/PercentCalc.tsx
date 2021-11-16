@@ -138,8 +138,9 @@ export default function PercentCalc(): ReactElement {
         </div>
 
         <div className="percent_calc_text">
-          Selon les conditions du marché, votre partie en fonds ramènera un taux
-          d'intérêts plus ou moins grand.
+          Selon les conditions du marché,
+          votre partie en fonds vous rapportera un taux d'intérêt
+          plus ou moins grand.
         </div>
       </div>
       <div className="footer_content">
