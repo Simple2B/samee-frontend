@@ -47,7 +47,7 @@ export default function HalfGuaranteeSolutionInterest(): ReactElement {
         <button
           onClick={handleSubmit}
           className="button_position half_guarantee_solution_interest_button">
-          Découvir le montant que je pourrais obtenir
+          Découvrir le montant que je pourrais obtenir
         </button>
 
         <Popup
