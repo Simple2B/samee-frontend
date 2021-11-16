@@ -29,7 +29,8 @@ export default function InvestmentSolutionAdvantages(): ReactElement {
       </div>
       <div className="investment-solution_advantages_text">
         Finalement, comme pour les autres solutions, vos primes sont déductibles
-        à 100% de votre revenu imposable jusqu’à CHF 6'883 par an.
+        à 100% de votre revenu imposable jusqu’à CHF 6'883 par an
+        ou jusqu’à CHF 34'416 pour un indépendant .
       </div>
 
       <button onClick={handleSubmit} className="next_button button_position">
