@@ -29,8 +29,7 @@ export default function Tax(): ReactElement {
                 impôts avec un revenu de 84'000 CHF.{' '}
               </li>
               <li className="tax_list-item">
-                Le montant du troisième pilier est exclu de votre fortune
-                imposable, vous ne paierez donc pas d'impôts sur la fortune.
+                Le montant du troisième pilier est exclu de votre fortune imposable.
               </li>
               <li className="tax_list-item">
                 Vous récupérez entre 20% et 40% des montants investis sous forme

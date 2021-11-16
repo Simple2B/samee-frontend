@@ -27,7 +27,7 @@ export default function Abroad(): ReactElement {
             </div>
             <ol className="abroad_list">
               <li className="abroad_list-item">
-                Arrivé à la retraite, vous pouvez retirer votre capital ainsi
+                Arrivé à la retraite, vous devez retirer votre capital ainsi
                 que les intérêts et éventuels excédents (uniquement en
                 assurance).
               </li>
@@ -37,8 +37,9 @@ export default function Abroad(): ReactElement {
               </li>
               <li className="abroad_list-item">
                 {' '}
-                Vous pouvez retirer votre capital afin de vous installer
-                ailleurs en Europe d'une manière définitive ou pour le travail.
+                Vous pouvez, en tout temps, retirer votre capital afin de vous installer
+                ailleurs en Europe d'une manière définitive ou pour votre emploi.
+
               </li>
             </ol>
           </div>
