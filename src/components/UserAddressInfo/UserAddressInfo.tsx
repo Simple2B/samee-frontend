@@ -96,7 +96,7 @@ export default function UserAddressInfo(): ReactElement {
         <div className="user_address_info_text">
           Afin de pouvoir vous envoyer par e-mail des offres adaptées et vous
           donner tous les outils pour prévoir au mieux votre avenir, nous avons
-          besoins de quelques informations supplémentaires.
+          besoin de quelques informations supplémentaires.
         </div>
 
         <div className="user_address_info_input_block">
