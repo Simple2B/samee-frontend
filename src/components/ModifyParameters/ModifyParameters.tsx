@@ -76,7 +76,7 @@ export default function ModifyParameters(): ReactElement {
       period === 'annuel' &&
       (salaryFromLocal < 1200 || salaryFromLocal > 6883)
     ) {
-      setErrorAmount('Choissisez un montant entre CHF 1200 to CHF 6883');
+      setErrorAmount("Choissisez un montant entre CHF 1'200 to CHF 6883");
     } else if (
       occupation === 'Indépendant' &&
       period === 'mensuel' &&
@@ -88,7 +88,7 @@ export default function ModifyParameters(): ReactElement {
       period === 'annuel' &&
       (salaryFromLocal < 1200 || salaryFromLocal > 34416)
     ) {
-      setErrorAmount('Choissisez un montant entre CHF 1200 to CHF 34416');
+      setErrorAmount("Choissisez un montant entre CHF 1'200 to CHF 34416");
     } else {
       localStorage.setItem('savingsPercent', JSON.stringify(sliderValue));
       localStorage.setItem('fondsPercent', JSON.stringify(100 - sliderValue));

@@ -67,7 +67,7 @@ export default function SelfEmployed(): ReactElement {
     if (period === 'mensuel' && (salary < 100 || salary > 2868)) {
       setError('Choissisez un montant entre CHF 100 to CHF 2868');
     } else if (period === 'annuel' && (salary < 1200 || salary > 34416)) {
-      setError('Choissisez un montant entre CHF 1200 to CHF 34416');
+      setError("Choissisez un montant entre CHF 1'200 to CHF 34416");
     } else {
       setError('');
       localStorage.setItem('salary', salary);
