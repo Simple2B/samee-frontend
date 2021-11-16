@@ -97,7 +97,7 @@ export default function Occupation(): ReactElement {
                   indépendant car la cotisation au 3ème pilier est différente.{' '}
                 </div>
                 <div className="pop_up_text">
-                  Dans le cas d’un salarié, vous pouvez économiser jusqu’à 6883
+                  Dans le cas d’un salarié, vous pouvez économiser jusqu’à 6’883
                   CHF par an.
                 </div>
                 <div className="pop_up_text">
@@ -105,7 +105,7 @@ export default function Occupation(): ReactElement {
                   obligatoire, s’il décide de ne pas y souscrire, il a la
                   possibilité de verser 34’416 CHF ou jusqu’à 20% de son salaire
                   AVS dans un 3ème pilier. Si un indépendant est affilié au 2ème
-                  pilier, la cotisatin maximale de son 3ème pilier sera la même
+                  pilier, la cotisation maximale de son 3ème pilier sera la même
                   que celle d’un salarié.
                 </div>
               </div>
