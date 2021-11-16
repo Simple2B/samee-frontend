@@ -21,7 +21,7 @@ export default function Guarantees(): ReactElement {
       <div className="main_content">
         <div className="guarantees_title">
           Contrairement à une banque, une assurance peut vous proposer plus de
-          garantie:{' '}
+          garanties:{' '}
         </div>
         <ol className="guarantees_list">
           <li className="guarantees_list-item">
@@ -32,7 +32,7 @@ export default function Guarantees(): ReactElement {
             d'invalidité
           </li>
           <li className="guarantees_list-item">
-            garantit la totalité du 3ème pilier que vous aurez touché à la
+            garantit la totalité du 3ème pilier que vous auriez touché à la
             retraite pour vos proches en cas de décès.{' '}
           </li>
           <li className="guarantees_list-item">

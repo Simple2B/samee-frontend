@@ -119,7 +119,7 @@ export default function Difference(): ReactElement {
                   retraite.
                 </div>
                 <div className="pop_up_text">
-                  Aussi, avec un 3ème pilier en assurance, vous avez la garantie
+                  Aussi, avec un 3ème pilier en assurance, vous avez la garanties
                   d’obtenir 100% du montant inscrit dans votre contrat, à votre
                   retraite. Au contraire du troisième pilier en banque, celui en
                   assurance est une épargne forcée, ce qui peut représenter un
@@ -135,14 +135,17 @@ export default function Difference(): ReactElement {
                   flexibilité, car vous n’êtes pas lié à un contrat de versement
                   de primes. Ainsi, si durant une année vous ne souhaitez pas
                   verser de primes, vous êtes libre de le faire. Si vous ne
-                  savez pas bien gérer vos finances, ce peut être problématique.
+                  savez pas bien gérer vos finances, cela peut être problématique.
                   Contrairement aux assurances, en cas de décès prématuré, vos
                   proches toucheront uniquement ce qui a été versé. De même, en
                   cas d’invalidité, avec un 3ème pilier en banque, vous ne
                   bénéficiez pas d’une exonération des primes et vous vous
                   retrouvez dans l’incapacité de continuer à cotiser.
-                  Finalement, en cas de faillite de la banque, seul 100'000 CHF
-                  seraient garantis.
+                  En conclusion, même si les deux solutions permettent une économie d’impôts,
+                  les assurances sont plus rentables et sécurisées et les banques plus flexibles.
+                  Vous avez également la possibilité de placer une partie de votre 3ème 
+                  pilier en banque et une autre en assurance. En cas de doute ou de question,
+                  n’hésitez pas à contacter nos experts.
                 </div>
 
                 <div className="pop_up_text">
