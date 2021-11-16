@@ -25,7 +25,7 @@ export default function Tax(): ReactElement {
             <ol className="tax_list">
               <li className="tax_list-item">
                 Vous déduisez l'intégralité des versements au 3ème pilier de
-                votre revenu AVS. Et économisez jusqu'à 2500 CHF par an sur vos
+                votre revenu imposable. Et économisez jusqu'à 2500 CHF par an sur vos
                 impôts avec un revenu de 84'000 CHF.{' '}
               </li>
               <li className="tax_list-item">
