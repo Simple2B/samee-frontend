@@ -23,7 +23,8 @@ export default function GuaranteesSolutionAdvantages(): ReactElement {
 
         <div className="solution_advantages_text">
           Comme pour les autres solutions, la prime est déductible à 100% de
-          votre revenu imposable jusqu’à CHF 6'883 par an.
+          votre revenu imposable jusqu’à CHF 6'883 par an ou jusqu’à CHF 34'416
+          pour un indépendant.
         </div>
       </div>
 

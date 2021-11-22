@@ -27,7 +27,8 @@ export default function HalfGuaranteedSolutionAdvantages(): ReactElement {
         </div>
         <div className="half_guaranteed_advantages_text">
           Finalement, comme pour les autres solutions, la prime est déductible à
-          100% de votre revenu imposable jusqu’à CHF 6'883 par an.
+          100% de votre revenu imposable jusqu’à CHF 6'883 par an ou jusqu’à CHF
+          34'416 pour un indépendant.
         </div>
       </div>
       <div className="footer_content">
