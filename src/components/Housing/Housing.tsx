@@ -28,8 +28,8 @@ export default function Housing(): ReactElement {
             </div>
             <ol className="housing_list">
               <li className="housing_list-item">
-                Vous pouvez utiliser le 3ème pilier pour financer les travaux de
-                rénovation de votre résidence principale.{' '}
+                Vous pouvez utiliser le 3<sup>ème</sup> pilier pour financer les
+                travaux de rénovation de votre résidence principale.{' '}
               </li>
               <li className="housing_list-item">
                 Vous pouvez également l'utiliser pour acquérir votre logement à

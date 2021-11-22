@@ -24,9 +24,9 @@ export default function Tax(): ReactElement {
             <div className="tax_title">Économie fiscale chaque année</div>
             <ol className="tax_list">
               <li className="tax_list-item">
-                Vous déduisez l'intégralité des versements au 3ème pilier de
-                votre  revenu imposable. Et économisez jusqu'à 2500 CHF par an
-                sur vos impôts avec un revenu de 84'000 CHF.{' '}
+                Vous déduisez l'intégralité des versements au 3<sup>ème</sup>{' '}
+                pilier de votre  revenu imposable. Et économisez jusqu'à 2500
+                CHF par an sur vos impôts avec un revenu de 84'000 CHF.{' '}
               </li>
               <li className="tax_list-item">
                 {/* Le montant du troisième pilier est exclu de votre fortune
