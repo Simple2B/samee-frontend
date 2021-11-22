@@ -107,7 +107,7 @@ export default function Difference(): ReactElement {
                   de ces deux solutions.
                 </div>
                 <div className="pop_up_text">
-                  En choisissant un 3<sup>ème</sup> pilier en assurance, vous
+                  {/* En choisissant un 3<sup>ème</sup> pilier en assurance, vous
                   avez la possibilité, mais pas l’obligation, de bénéficier de
                   ces avantages. Vous pouvez choisir uniquement certains
                   avantages ou tous les avantages. Des frais seront déduits de
@@ -116,7 +116,18 @@ export default function Difference(): ReactElement {
                   d’invalidité, la personne peut choisir les délais d’attente
                   entre 3,6 ou 12 mois d’attente. Si vous n’êtes plus en mesure
                   de travailler suite à une maladie ou un accident, la compagnie
-                  d’assurance paiera vos primes jusqu’à l’âge de votre retraite.
+                  d’assurance paiera vos primes jusqu’à l’âge de votre retraite. */}
+                  En choisissant un 3<sup>ème</sup> pilier en assurance, vous
+                  avez la possibilité, mais pas l’obligation, de bénéficier de
+                  ces avantages. Vous pouvez choisir uniquement certains
+                  avantages ou tous les avantages. Des frais seront déduits de
+                  votre rendement pour assurer ces prestations. Concernant le
+                  point 1, la libération du paiement des primes en cas
+                  d’invalidité, la personne peut choisir les délais d’attente
+                  entre 3,6 ou 12 mois. Si vous n’êtes plus en mesure de
+                  travailler suite à une maladie ou un accident, la compagnie
+                  d’assurance paiera vos primes jusqu’à l’âge de votre
+                  retraite. 
                 </div>
                 <div className="pop_up_text">
                   Pour le point 2 , selon votre contrat, vous vous assurez un
@@ -170,12 +181,18 @@ export default function Difference(): ReactElement {
                 </div>
 
                 <div className="pop_up_text">
-                  Pour le point 4, toutes les compagnies ne le proposent pas, et
+                  {/* Pour le point 4, toutes les compagnies ne le proposent pas, et
                   en général vous pouvez suspendre votre prime durant un ou deux
                   ans non consécutifs. Avec un contrat d’assurance, vous êtes
                   obligé de verser une prime chaque année, ce qui peut être un
                   désavantage comme un avantage, car vous épargnerez pour votre
-                  futur et éviterez certaines dépenses plus futiles.
+                  futur et éviterez certaines dépenses plus futiles. */}
+                  Pour le point 4, toutes les compagnies ne le proposent pas,
+                  et, en général, vous pouvez suspendre votre prime durant un ou
+                  deux ans non consécutifs. Avec un contrat d’assurance, vous
+                  êtes obligé de verser une prime chaque année, ce qui peut être
+                  un désavantage comme un avantage, car vous épargnerez pour
+                  votre futur et éviterez certaines dépenses plus futiles.
                 </div>
               </div>
             </>
