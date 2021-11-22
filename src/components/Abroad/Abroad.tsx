@@ -27,9 +27,8 @@ export default function Abroad(): ReactElement {
             </div>
             <ol className="abroad_list">
               <li className="abroad_list-item">
-                Arrivé à la retraite, vous pouvez retirer votre capital ainsi
-                que les intérêts et éventuels excédents (uniquement en
-                assurance).
+                Arrivé à la retraite, vous devez retirer votre capital ainsi que
+                les intérêts et éventuels excédents (uniquement en assurance).
               </li>
               <li className="abroad_list-item">
                 Vous avez la possibilité de partir en retraite anticipée dès
@@ -37,8 +36,11 @@ export default function Abroad(): ReactElement {
               </li>
               <li className="abroad_list-item">
                 {' '}
-                Vous pouvez retirer votre capital afin de vous installer
-                ailleurs en Europe d'une manière définitive ou pour le travail.
+                {/* Vous devez retirer votre capital afin de vous installer ailleurs
+                en Europe d'une manière définitive ou pour le travail. */}
+                Vous pouvez, en tout temps, retirer votre capital afin de vous
+                installer ailleurs en Europe d'une manière définitive ou pour
+                votre emploi.
               </li>
             </ol>
           </div>
@@ -84,7 +86,7 @@ export default function Abroad(): ReactElement {
                   En contractant un troisième pilier en assurance, le montant
                   que vous souhaitez obtenir à la retraite peut être garanti
                   lors de la conclusion du contrat dès la signature. Et ce, même
-                  si vous devenez invalide et ne pouvez plus cotiser.
+                  si vous devenez invalide et ne devez plus cotiser.
                 </div>
                 <div className="pop_up_text">
                   Légalement, vous avez le droit de retirer votre 3ème pilier
