@@ -666,9 +666,11 @@ export default function ScenarioCalc(): ReactElement {
                   rendement ?
                 </div>
                 <div className="pop_up_text">
-                  La part épargne, en bleu sur la page, reste identique dans les
+                  {/* La part épargne, en bleu sur la page, reste identique dans les
                   trois scénarios. C'est uniquement la partie en fonds de
-                  placement qui varie selon les performances du marché.
+                  placement qui varie selon les performances du marché. */}
+                  La partie bleue correspond à la part en épargne et la
+                  partie jaune à la part en fonds de placement.
                 </div>
                 <div className="pop_up_text">
                   En règle générale, la partie en fond a un meilleur rendement
