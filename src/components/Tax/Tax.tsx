@@ -25,12 +25,14 @@ export default function Tax(): ReactElement {
             <ol className="tax_list">
               <li className="tax_list-item">
                 Vous déduisez l'intégralité des versements au 3ème pilier de
-                votre revenu AVS. Et économisez jusqu'à 2500 CHF par an sur vos
-                impôts avec un revenu de 84'000 CHF.{' '}
+                votre  revenu imposable. Et économisez jusqu'à 2500 CHF par an
+                sur vos impôts avec un revenu de 84'000 CHF.{' '}
               </li>
               <li className="tax_list-item">
+                {/* Le montant du troisième pilier est exclu de votre fortune
+                imposable, vous ne paierez donc pas d'impôts sur la fortune. */}
                 Le montant du troisième pilier est exclu de votre fortune
-                imposable, vous ne paierez donc pas d'impôts sur la fortune.
+                imposable.
               </li>
               <li className="tax_list-item">
                 Vous récupérez entre 20% et 40% des montants investis sous forme
