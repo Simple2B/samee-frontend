@@ -21,7 +21,7 @@ export default function Guarantees(): ReactElement {
       <div className="main_content">
         <div className="guarantees_title">
           Contrairement à une banque, une assurance peut vous proposer plus de
-          garantie:{' '}
+          garanties:{' '}
         </div>
         <ol className="guarantees_list">
           <li className="guarantees_list-item">
@@ -32,7 +32,7 @@ export default function Guarantees(): ReactElement {
             d'invalidité
           </li>
           <li className="guarantees_list-item">
-            garantit la totalité du 3ème pilier que vous aurez touché à la
+            garantit la totalité du 3ème pilier que vous auriez touché à la
             retraite pour vos proches en cas de décès.{' '}
           </li>
           <li className="guarantees_list-item">
@@ -103,9 +103,9 @@ export default function Guarantees(): ReactElement {
                   de plus de flexibilité, car vous n’êtes pas lié à un contrat
                   de versement de primes. Ainsi, si durant une année vous ne
                   souhaitez pas verser de primes, vous êtes libre de le faire.
-                  Si vous ne savez pas bien gérer vos finances, ce peut être
+                  Si vous ne savez pas bien gérer vos finances, cela peut être
                   problématique. Contrairement aux assurances, en cas de décès
-                  prématuré, vos proches toucheront uniquement ce qui a été
+                  prématuré, vos proches toucheront uniquement cela qui a été
                   versé. De même, en cas d’invalidité, avec un 3<sup>ème</sup>{' '}
                   pilier en banque, vous ne bénéficiez pas d’une exonération des
                   primes et vous vous retrouvez dans l’incapacité de continuer à
@@ -113,12 +113,18 @@ export default function Guarantees(): ReactElement {
                   100'000 CHF seraient garantis.
                 </div>
                 <div className="pop_up_text">
-                  En conclusion, même si les deux solutions permettent une
+                  {/* En conclusion, même si les deux solutions permettent une
                   économie d’impôts, les assurances sont plus rentables et
                   sécurisées et les banques plus flexibles. En cas de doute,
                   n’hésitez pas à contacter nos experts. Vous avez également la
                   possibilité de placer une partie de votre 3<sup>ème</sup>{' '}
-                  pilier en banque et une autre en assurance.
+                  pilier en banque et une autre en assurance. */}
+                  En conclusion, même si les deux solutions permettent une
+                  économie d’impôts, les assurances sont plus rentables et
+                  sécurisées et les banques plus flexibles. Vous avez également
+                  la possibilité de placer une partie de votre 3<sup>ème</sup>
+                   pilier en banque et une autre en assurance. En cas de doute
+                  ou de question, n’hésitez pas à contacter nos experts.
                 </div>
               </div>
             </>
