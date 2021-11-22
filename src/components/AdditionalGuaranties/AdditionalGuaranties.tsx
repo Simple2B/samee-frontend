@@ -35,8 +35,8 @@ export default function AdditionalGuaranties(): ReactElement {
           En cas d'invalidité maladie, vous perdez jusqu'à 40% de votre salaire.
           En cotisant seulement 100 CHF par mois sur votre troisième pilier,
           vous pouvez vous assurer une rente supplémentaire de 1'000 franc par
-          mois en cas d'incident tout en économisant sur vos impôts et épargnant
-          pour votre retraite.
+          mois en cas d'incident tout en économisant sur vos impôts et
+          en épargnant pour votre retraite.
         </div>
 
         <div className="additional-guaranties_text">
