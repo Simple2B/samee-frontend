@@ -17,9 +17,12 @@ export default function HalfGuaranteedSolutionForWhom(): ReactElement {
         </div>
 
         <div className="half_guaranteed_for_whom_text">
-          Cette solution s’adresse à des personnes à risque contrôlé, désireuse
+          {/* Cette solution s’adresse à des personnes à risque contrôlé, désireuse
           d’obtenir un rendement supérieur à un compte épargne, mais sans
-          toutefois prendre trop de risque.
+          toutefois prendre trop de risque. */}
+          Cette solution s’adresse à des personnes à risque contrôlé, désireuses
+          d’obtenir un rendement supérieur à un compte épargne, mais sans
+          toutefois prendre trop de risques.
         </div>
         <div className="half_guaranteed_for_whom_text">
           Cette formule est idéale sur le moyen – long terme, mais plus la durée
