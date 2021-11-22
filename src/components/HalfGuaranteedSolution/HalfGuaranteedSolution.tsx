@@ -21,7 +21,8 @@ export default function HalfGuaranteedSolution(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    if (solutions.includes('garanties')) {
+    // garanties -> differences-assurance-banque
+    if (solutions.includes('differences-assurance-banque')) {
       history.push('/epargne-taux');
     } else {
       history.push('/mi-garantie-mi-rendement-taux');

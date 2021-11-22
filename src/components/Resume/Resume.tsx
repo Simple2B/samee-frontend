@@ -19,7 +19,8 @@ export default function Resume(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    if (solutions.includes('garanties')) {
+    // garanties -> differences-assurance-banque
+    if (solutions.includes('differences-assurance-banque')) {
       history.push('/resume-epargne');
     } else if (solutions.includes('rendement')) {
       history.push('/resume-mi-garantie-mi-rendement');

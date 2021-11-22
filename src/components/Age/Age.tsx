@@ -52,7 +52,8 @@ export default function Age(): ReactElement {
       localStorage.setItem('age', String(age));
       setErrorCheck(false);
       setError('');
-      return history.push('/differences-assurance-banque');
+      //  differences-assurance-banque -> garanties
+      return history.push('/garanties');
     }
   };
 

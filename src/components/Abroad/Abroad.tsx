@@ -14,7 +14,8 @@ export default function Abroad(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    return history.push('/garanties');
+    //  garanties -> differences-assurance-banque
+    return history.push('/differences-assurance-banque');
   };
 
   return (

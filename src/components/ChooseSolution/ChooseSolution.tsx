@@ -59,7 +59,11 @@ export default function ChooseSolution(): ReactElement {
 
     solutionChoiceObject['solutionChoice'] = [];
 
-    choiceFirst && solutionChoiceObject['solutionChoice'].push('garanties');
+    // garanties ->  differences-assurance-banque
+    choiceFirst &&
+      solutionChoiceObject['solutionChoice'].push(
+        'differences-assurance-banque',
+      );
     choiceSecond && solutionChoiceObject['solutionChoice'].push('rendement');
 
     localStorage.setItem(

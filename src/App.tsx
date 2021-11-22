@@ -95,12 +95,14 @@ function App() {
     {path: '/', name: '', Component: Welcome},
     {path: '/age', name: 'Âge', Component: UserData},
     {path: '/duree', name: '', Component: Age},
-    {path: '/differences-assurance-banque', name: '', Component: Difference},
+    //  differences-assurance-banque -> garanties
+    {path: '/garanties', name: '', Component: Difference},
     {path: '/avantages-3p', name: 'Avantages', Component: Advantages},
     {path: '/impots', name: '', Component: Tax},
     {path: '/logement-et-entreprise', name: '', Component: Housing},
     {path: '/retraite-et-depart', name: '', Component: Abroad},
-    {path: '/garanties', name: '', Component: Guarantees},
+    //  garanties -> differences-assurance-banque
+    {path: '/differences-assurance-banque', name: '', Component: Guarantees},
     {path: '/statut', name: 'Emploi', Component: Occupation},
     {path: '/salarie', name: '', Component: Employee},
     {path: '/independant', name: '', Component: SelfEmployed},
