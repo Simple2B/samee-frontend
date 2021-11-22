@@ -46,7 +46,7 @@ export default function SavingGuaranteeInterest(): ReactElement {
         <button
           onClick={handleChange}
           className="next_button-interest button_position">
-          Découvir le montant que je pourrais obtenir
+          Découvrir le montant que je pourrais obtenir
         </button>
 
         <Popup
