@@ -73,7 +73,7 @@ export default function SelfEmployed(): ReactElement {
     if (period === 'mensuel' && (salary < 100 || salary > 2868)) {
       setError('Choissisez un montant entre CHF 100 to CHF 2868');
     } else if (period === 'annuel' && (salary < 1200 || salary > 34416)) {
-      setError('Choissisez un montant entre CHF 1200 to CHF 34416');
+      setError("Choissisez un montant entre CHF 1'200  to CHF 34416");
     } else {
       setError('');
       localStorage.setItem('salary', salary);
@@ -207,7 +207,7 @@ export default function SelfEmployed(): ReactElement {
                   un salarié et de 34'416 CHF ou de maximum 20% de son salaire
                   AVS pour un indépendant. De plus, votre épargne au 3ème pilier
                   est exonérée d'impôts jusqu'à la retraite. Le montant minimum
-                  que vous pouvez investir est de 1200 CHF par an.
+                  que vous pouvez investir est de 1'200 CHF par an.
                 </div>
                 <div className="pop_up_text">
                   Il est important de savoir que lors du retrait de votre 3ème
