@@ -1,18 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './App.css';
-// import StepWizard from "react-step-wizard";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
   Redirect,
+  useLocation,
+  useHistory,
 } from 'react-router-dom';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import LinearProgress from '@mui/material/LinearProgress';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
 import Bar from './components/Bar/Bar';
 import Footer from './components/Footer/Footer';
 import Welcome from './components/Welcome/Welcome';
@@ -58,127 +55,171 @@ import ConfirmCode from './components/ConfirmCode/ConfirmCode';
 import FinalStep from './components/FinalStep/FinalStep';
 import ProgressBarWrapper from './components/ProgressBarWrapper/ProgressBarWrapper';
 import {ProgressContext} from './context/progressContext';
+import {useCookies} from 'react-cookie';
+import PathCache from './components/pathCache';
 
 function App() {
   const [steps, setSteps] = useState<number>(0);
+
+  const location = useLocation();
+  const history = useHistory();
+  const [path, setPath] = useState(location.pathname);
 
   const handleStepChange = (value: number) => {
     setSteps(value);
   };
 
+  const handlePath = () => {
+    const currentPath = localStorage.getItem('currentPath');
+    console.log(currentPath);
+    if (currentPath) {
+      history.push(currentPath);
+    }
+  };
+
+  const saveLastPath = useCallback(() => {
+    const currentPath = location.pathname;
+    console.log('saveLastPath', currentPath);
+    localStorage.setItem('currentPath', currentPath);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    handlePath();
+  }, []);
+
+  useEffect(() => {
+    saveLastPath();
+  }, [saveLastPath]);
+
   const routes = [
     {path: '/', name: '', Component: Welcome},
-    {path: '/user-data-birth', name: 'Âge', Component: UserData},
-    {path: '/user-age', name: '', Component: Age},
-    {path: '/difference-bank-and-insurance', name: '', Component: Difference},
-    {path: '/advantages', name: 'Avantages', Component: Advantages},
-    {path: '/tax', name: '', Component: Tax},
-    {path: '/housing-and-business', name: '', Component: Housing},
-    {path: '/abroad', name: '', Component: Abroad},
-    {path: '/guarantees', name: '', Component: Guarantees},
-    {path: '/occupation', name: 'Emploi', Component: Occupation},
-    {path: '/employee', name: '', Component: Employee},
-    {path: '/self-employed', name: '', Component: SelfEmployed},
-    {path: '/savings-calculation', name: '', Component: SavingCalculation},
+    {path: '/age', name: 'Âge', Component: UserData},
+    {path: '/duree', name: '', Component: Age},
+    {path: '/differences-assurance-banque', name: '', Component: Difference},
+    {path: '/avantages-3p', name: 'Avantages', Component: Advantages},
+    {path: '/impots', name: '', Component: Tax},
+    {path: '/logement-et-entreprise', name: '', Component: Housing},
+    {path: '/retraite-et-depart', name: '', Component: Abroad},
+    {path: '/garanties', name: '', Component: Guarantees},
+    {path: '/statut', name: 'Emploi', Component: Occupation},
+    {path: '/salarie', name: '', Component: Employee},
+    {path: '/independant', name: '', Component: SelfEmployed},
+    {path: '/economies', name: '', Component: SavingCalculation},
     {
-      path: '/guarantee-saving-solution',
+      path: '/solution-epargne',
       name: '',
       Component: GuaranteedSavingSolution,
     },
     {
-      path: '/what-is-saving-solution',
+      path: '/definition-solution-epargne',
       name: '',
       Component: WhatIsGuaranteesSolution,
     },
     {
-      path: '/saving-solution-advantages',
+      path: '/avantages-solution-epargne',
       name: '',
       Component: GuaranteesSolutionAdvantages,
     },
     {
-      path: '/saving-solution-for-whom',
+      path: '/qui-solution-epargne',
       name: '',
       Component: GuaranteesSavingSolutionForWhom,
     },
     {
-      path: '/half-guarantee-saving-solution',
+      path: '/solution-mi-garantie-mi-rendement',
       name: '',
       Component: HalfGuaranteedSolution,
     },
     {
-      path: '/what-is-half-guaranteed-solution',
+      path: '/definition-solution-mi-garantie-mi-rendement',
       name: '',
       Component: WhatIsHalfGuaranteedSolution,
     },
     {
-      path: '/half-guaranteed-solution-advantages',
+      path: '/avantages-solution-mi-garantie-mi-rendement',
       name: '',
       Component: HalfGuaranteedSolutionAdvantages,
     },
     {
-      path: '/half-guaranteed-solution-for-whom',
+      path: '/qui-solution-mi-garantie-mi-rendement',
       name: '',
       Component: HalfGuaranteedSolutionForWhom,
     },
     {
-      path: '/choose-solution',
+      path: '/choix-solution',
       name: 'Choix des solutions',
       Component: ChooseSolution,
     },
     {
-      path: '/saving-guarantee-interest',
+      path: '/epargne-taux',
       name: '',
       Component: SavingGuaranteeInterest,
     },
     {
-      path: '/saving-guarantee-interest-calculation',
+      path: '/epargne-calcul',
       name: '',
       Component: SavingGuaranteeInterestCalc,
     },
     {
-      path: '/half-guarantee-interest',
+      path: '/mi-garantie-mi-rendement-taux',
       name: '',
       Component: HalfGuaranteeSolutionInterest,
     },
     {
-      path: '/half-guarantee-optimal-proportion',
+      path: '/mi-garantie-mi-rendement-proportion',
       name: '',
       Component: HalfGOptimalProportion,
     },
-    {path: '/percent-calculation', name: '', Component: PercentCalc},
-    {path: '/additional-guaranties', name: '', Component: AdditionalGuaranties},
-    {path: '/scenario-calculation', name: '', Component: ScenarioCalc},
-    {path: '/modify-parameters', name: '', Component: ModifyParameters},
+    {
+      path: '/mi-garantie-mi-rendement-calcul',
+      name: '',
+      Component: PercentCalc,
+    },
+    {
+      path: '/garanties-supplementaires',
+      name: '',
+      Component: AdditionalGuaranties,
+    },
+    {
+      path: '/mi-garantie-mi-rendement-scenario',
+      name: '',
+      Component: ScenarioCalc,
+    },
+    {
+      path: '/mi-garantie-mi-rendement-recalcul',
+      name: '',
+      Component: ModifyParameters,
+    },
     {path: '/resume', name: 'Résumé', Component: Resume},
     {
-      path: '/resume-saving-solution',
+      path: '/resume-epargne',
       name: '',
       Component: ResumeSavingSolution,
     },
     {
-      path: '/resume-saving-solution-modify',
+      path: '/resume-epargne-recalcul',
       name: '',
       Component: ResumeSavingSolutionModify,
     },
     {
-      path: '/resume-half-guarantee-solution',
+      path: '/resume-mi-garantie-mi-rendement',
       name: '',
       Component: ResumeHalfSolution,
     },
     {
-      path: '/resume-half-guarantee-solution-modify',
+      path: '/resume-mi-garantie-mi-rendement-recalcul',
       name: '',
       Component: ResumeHalfSolutionModify,
     },
     {
-      path: '/user-address-info',
+      path: '/informations-adresse',
       name: 'Informations personnelles',
       Component: UserAddressInfo,
     },
-    {path: '/user-personal-info', name: '', Component: UserPersonalInfo},
-    {path: '/user-contact-info', name: '', Component: UserContactInfo},
-    {path: '/confirm-code', name: '', Component: ConfirmCode},
-    {path: '/final-step', name: '', Component: FinalStep},
+    {path: '/informations-profession', name: '', Component: UserPersonalInfo},
+    {path: '/informations-contact', name: '', Component: UserContactInfo},
+    {path: '/confirmation-code', name: '', Component: ConfirmCode},
+    {path: '/etape-finale', name: '', Component: FinalStep},
   ];
 
   useEffect(() => {
@@ -193,26 +234,28 @@ function App() {
           progress: steps,
           setProgress: handleStepChange,
         }}>
-        <Router>
-          <ProgressBarWrapper />
-          <div className="App">
-            <Bar />
-            {routes.map(({path, Component}) => (
-              <Route key={path} exact path={path}>
-                {({match}) => (
-                  <CSSTransition
-                    in={match != null}
-                    timeout={300}
-                    classNames="page"
-                    unmountOnExit>
-                    <Component />
-                  </CSSTransition>
-                )}
-              </Route>
-            ))}
-            <Footer />
-          </div>
-        </Router>
+        <ProgressBarWrapper />
+        <div className="App">
+          <Bar />
+          {routes.map(({path, Component}) => (
+            <Route key={path} exact path={path}>
+              {({match}) => (
+                <CSSTransition
+                  in={match != null}
+                  timeout={300}
+                  classNames="page"
+                  unmountOnExit>
+                  <PathCache path={path}>
+                    <div className="page">
+                      <Component />
+                    </div>
+                  </PathCache>
+                </CSSTransition>
+              )}
+            </Route>
+          ))}
+          <Footer />
+        </div>
       </ProgressContext.Provider>
     </>
   );

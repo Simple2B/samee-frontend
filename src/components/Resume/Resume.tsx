@@ -20,9 +20,9 @@ export default function Resume(): ReactElement {
 
   const handleSubmit = () => {
     if (solutions.includes('garanties')) {
-      history.push('/resume-saving-solution');
+      history.push('/resume-epargne');
     } else if (solutions.includes('rendement')) {
-      history.push('/resume-half-guarantee-solution');
+      history.push('/resume-mi-garantie-mi-rendement');
     }
   };
   return (
@@ -49,6 +49,7 @@ export default function Resume(): ReactElement {
         <button onClick={handleSubmit} className="next_button button_position">
           Continuer
         </button>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

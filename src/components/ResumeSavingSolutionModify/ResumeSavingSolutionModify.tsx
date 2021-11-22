@@ -10,7 +10,7 @@ import {FormControl, Select, MenuItem} from '@mui/material';
 const useStyles = makeStyles({
   root: {
     color: 'white !important',
-    fontSize: '24px !important',
+    fontSize: '1em !important',
     fontFamily: '"Archivo Narrow" !important',
     borderBottom: '1px solid white !important',
   },
@@ -28,21 +28,18 @@ const useStyles = makeStyles({
   },
 });
 
-// const savingsYears: string | null = localStorage.getItem('age');
-// const period: string | null = localStorage.getItem('period');
-// const savings: string | null = localStorage.getItem('salary');
-// const finalCapital: string | null = localStorage.getItem('finalCapital');
-// const interest: string | null = localStorage.getItem('interest');
-
 export default function ResumeSavingSolutionModify(): ReactElement {
   const [interest, setInterest] = useState<any>(
     localStorage.getItem('interest'),
   );
-  const [period, setPeriod] = useState<any>(localStorage.getItem('period'));
+  // const [period, setPeriod] = useState<any>(localStorage.getItem('period'));
   const [tax, setTax] = useState<any>();
   const [amount, setAmount] = useState<any>();
   const [finalAmount, setFinalAmount] = useState<any>(
     localStorage.getItem('finalCapital'),
+  );
+  const [solutions, setSolutions] = useState(
+    JSON.stringify(localStorage.getItem('solutionChoice')),
   );
 
   const [savingYears, setSavingYears] = useState<any>(
@@ -178,31 +175,38 @@ export default function ResumeSavingSolutionModify(): ReactElement {
 
   const handlePeriod = (e: {target: {value: any}}) => {
     localStorage.setItem('period', e.target.value);
-    setPeriod(e.target.value);
+    setPeriodFromLocal(e.target.value);
+    const newSalary =
+      e.target.value === 'annuel'
+        ? Math.floor(salaryFromLocal * 12)
+        : Math.floor(salaryFromLocal / 12);
+
+    setSalaryFromLocal(newSalary);
+    localStorage.setItem('salary', newSalary.toString());
   };
 
   const handleRecalculate = () => {
     if (
       occupation === 'Salarié' &&
-      period === 'mensuel' &&
+      periodFromLocal === 'mensuel' &&
       (salaryFromLocal < 100 || salaryFromLocal > 573)
     ) {
       setErrorAmount('Choissisez un montant entre CHF 100 to CHF 573');
     } else if (
       occupation === 'Salarié' &&
-      period === 'annuel' &&
+      periodFromLocal === 'annuel' &&
       (salaryFromLocal < 1200 || salaryFromLocal > 6883)
     ) {
       setErrorAmount("Choissisez un montant entre CHF 1'200 to CHF 6883");
     } else if (
       occupation === 'Indépendant' &&
-      period === 'mensuel' &&
+      periodFromLocal === 'mensuel' &&
       (salaryFromLocal < 100 || salaryFromLocal > 2868)
     ) {
       setErrorAmount('Choissisez un montant entre CHF 100 to CHF 2868');
     } else if (
       occupation === 'Indépendant' &&
-      period === 'annuel' &&
+      periodFromLocal === 'annuel' &&
       (salaryFromLocal < 1200 || salaryFromLocal > 34416)
     ) {
       setErrorAmount("Choissisez un montant entre CHF 1'200 to CHF 34416");
@@ -216,7 +220,12 @@ export default function ResumeSavingSolutionModify(): ReactElement {
   };
 
   const handleSubmit = () => {
-    history.push('resume-saving-solution');
+    localStorage.setItem('salary', salaryFromLocal);
+    if (solutions.includes('rendement')) {
+      history.push('/resume-mi-garantie-mi-rendement');
+    } else {
+      history.push('/informations-adresse');
+    }
   };
   return (
     <div className="resume_wrapper">
@@ -233,7 +242,8 @@ export default function ResumeSavingSolutionModify(): ReactElement {
             </div>
 
             <div className="resume_saving_solution_modify_text">
-              Avec un montant <span className="gold_text">{period}</span> de{' '}
+              Avec un montant{' '}
+              <span className="gold_text">{periodFromLocal}</span> de{' '}
               <NumberFormat
                 value={salaryFromLocal}
                 className="gold_text"
@@ -262,18 +272,19 @@ export default function ResumeSavingSolutionModify(): ReactElement {
                 displayType={'text'}
                 thousandSeparator={`'`}
                 prefix={'CHF '}
-              />
+              />{' '}
+              grâce aux intérêts
             </div>
 
-            <div className="resume_saving_solution_modify_text">
+            <div className="resume_saving_solution_modify_text margins">
               Vous pouvez essayer avec un autre montant
               <div className="wrapper">
                 d'épargne
-                <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
+                <FormControl variant="standard" sx={{m: 1, minWidth: 80}}>
                   <Select
                     labelId="demo-simple-select-standard-label"
                     id="demo-simple-select-standard"
-                    value={period}
+                    value={periodFromLocal}
                     onChange={handlePeriod}
                     label="salary"
                     className={classes.root}
@@ -289,7 +300,7 @@ export default function ResumeSavingSolutionModify(): ReactElement {
                     <MenuItem value="annuel">annuel</MenuItem>
                   </Select>
                 </FormControl>
-                {period === 'mensuel' ? (
+                {periodFromLocal === 'mensuel' ? (
                   <input
                     min="100"
                     max="573"
@@ -317,7 +328,7 @@ export default function ResumeSavingSolutionModify(): ReactElement {
               Votre capital final
             </div>
             <div className="resume_saving_solution_modify_final_amount">
-              <div className="countup_text" ref={countUpRef} />
+              <div className="gold_text" ref={countUpRef} />
             </div>
           </div>
         </div>
@@ -334,6 +345,7 @@ export default function ResumeSavingSolutionModify(): ReactElement {
             Recalculer
           </button>
         </div>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

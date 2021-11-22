@@ -30,4 +30,11 @@
   .button_position-1 {
     left: 20px;
   }
+
+  .employee_salary {
+    width: 60px;
+    height: 25px;
+    font-size: 12px;
+  }
+
 }

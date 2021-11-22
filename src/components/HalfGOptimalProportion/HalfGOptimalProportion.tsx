@@ -7,7 +7,7 @@ import {useHistory} from 'react-router-dom';
 import {ProgressContext} from '../../context/progressContext';
 
 export default function HalfGOptimalProportion(): ReactElement {
-  const [sliderValue, setSliderValue] = useState(10);
+  const [sliderValue, setSliderValue] = useState(90);
   const [error, setError] = useState('');
 
   const {setProgress} = useContext(ProgressContext);
@@ -22,7 +22,7 @@ export default function HalfGOptimalProportion(): ReactElement {
     localStorage.setItem('savingsPercent', JSON.stringify(sliderValue));
     localStorage.setItem('fondsPercent', JSON.stringify(100 - sliderValue));
 
-    history.push('/percent-calculation');
+    history.push('/mi-garantie-mi-rendement-calcul');
   };
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export default function HalfGOptimalProportion(): ReactElement {
         </div>
 
         <div className="half-optimal-proportion_percents">
-          <div className="proportion_percent">
+          <div className="proportion_percent left">
             <div className="percent gold_text">{`${sliderValue}%`}</div>
             <div className="percent-desc">Epargne</div>
           </div>
@@ -71,7 +71,7 @@ export default function HalfGOptimalProportion(): ReactElement {
             <div className="circle"></div>
           </div>
 
-          <div className="proportion_percent">
+          <div className="proportion_percent right">
             <div className="percent gold_text">{`${100 - sliderValue}%`}</div>
             <div className="percent-desc">Fonds</div>
           </div>
@@ -105,9 +105,7 @@ export default function HalfGOptimalProportion(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
                   Quelle est la proportion optimale ?

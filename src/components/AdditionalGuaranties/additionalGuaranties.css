@@ -17,3 +17,16 @@
 .bold_title {
   font-weight: bold;
 }
+
+@media (max-width: 425px) {
+  .additional-guaranties_title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .additional-guaranties {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}

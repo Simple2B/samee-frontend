@@ -17,9 +17,9 @@ export default function Occupation(): ReactElement {
   const handleSubmit = () => {
     localStorage.setItem('occupation', occupation);
     if (occupation === 'Salarié') {
-      return history.push('/employee');
+      return history.push('/salarie');
     } else if (occupation === 'Indépendant') {
-      return history.push('/self-employed');
+      return history.push('/independant');
     }
   };
 
@@ -85,13 +85,9 @@ export default function Occupation(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
-                <div className="pop_up_title">
-                  Troisième pilier: les différences entre salarié et indépendant
-                </div>
+                <div className="pop_up_title">Quelle est la différence?</div>
                 <div className="pop_up_text">
                   Il est important pour nous de savoir si vous êtes salarié ou
                   indépendant car la cotisation au 3ème pilier est différente.{' '}

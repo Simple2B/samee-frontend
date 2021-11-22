@@ -13,6 +13,27 @@
   flex-wrap: wrap;
 }
 
+.input_field-percent {
+  height: 35px;
+  width: 55px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid;
+  padding-left: 15px;
+  font-size: 17px;
+  font-family: "Archivo Narrow";
+
+}
+
+.percent_block {
+  margin-left: 15px;
+}
+
+.user_personal_info_profession-set {
+  display: flex;
+  justify-content: space-between;
+}
+
 .user_personal_info_text {
   margin: 45px 0 20px;
 }

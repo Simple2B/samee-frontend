@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  margin: 25px auto;
 }
 
 .scenario {
@@ -32,7 +33,7 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  border: 5px solid;
+  border: 8px solid;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,7 +50,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 5px solid;
+  border: 6px solid;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,7 +102,17 @@
   }
 
   .scenario_text {
-    font-size: 30px;
+    font-size: 25px;
+  }
+
+  .scenario-opt,
+  .scenario-pess {
+    font-size: 15px;
+  }
+
+  .scenario_num-opt,
+  .scenario_num-pess {
+    font-size: 20px;
   }
 }
 
@@ -115,7 +126,11 @@
   .resume_half_solution_pessimist {
     width: 140px;
     height: 140px;
+    margin: 10px;
   }
 
+  .resume_half_solution_main_circle {
+    margin-right: 0px;
+  }
 
 }

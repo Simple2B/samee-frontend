@@ -22,22 +22,22 @@ export default function HalfGuaranteedSolution(): ReactElement {
 
   const handleSubmit = () => {
     if (solutions.includes('garanties')) {
-      history.push('/saving-guarantee-interest');
+      history.push('/epargne-taux');
     } else {
-      history.push('/half-guarantee-interest');
+      history.push('/mi-garantie-mi-rendement-taux');
     }
   };
 
   const handleWhatIs = () => {
-    history.push('/what-is-half-guaranteed-solution');
+    history.push('/definition-solution-mi-garantie-mi-rendement');
   };
 
   const handleAdvantages = () => {
-    history.push('/half-guaranteed-solution-advantages');
+    history.push('/avantages-solution-mi-garantie-mi-rendement');
   };
 
   const handleForWhom = () => {
-    history.push('/half-guaranteed-solution-for-whom');
+    history.push('/qui-solution-mi-garantie-mi-rendement');
   };
 
   return (
@@ -91,11 +91,11 @@ export default function HalfGuaranteedSolution(): ReactElement {
                 | undefined,
             ) => (
               <>
-                <button className="close" onClick={close}>
+                <button className="close-video" onClick={close}>
                   X
                 </button>
                 <div className="pop_up_video">
-                  <video width="1000" height="auto" autoPlay controls>
+                  <video className="video_content" autoPlay controls>
                     <source
                       src="video/video2.mp4"
                       type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
@@ -113,6 +113,7 @@ export default function HalfGuaranteedSolution(): ReactElement {
           <button onClick={handleSubmit} className="next_button">
             Continuer
           </button>
+          <div className="empty_space"></div>
         </div>
       </div>
     </div>

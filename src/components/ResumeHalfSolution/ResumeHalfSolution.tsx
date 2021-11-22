@@ -38,11 +38,11 @@ export default function ResumeHalfSolution(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    history.push('/user-address-info');
+    history.push('/informations-adresse');
   };
 
   const handleSubmitModify = () => {
-    history.push('/resume-half-guarantee-solution-modify');
+    history.push('/resume-mi-garantie-mi-rendement-recalcul');
   };
 
   return (
@@ -104,7 +104,7 @@ export default function ResumeHalfSolution(): ReactElement {
                 <div className="scenario-opt">Scénario optimiste</div>
                 <NumberFormat
                   value={scenarioOptimistic}
-                  className="gold_text"
+                  className="scenario_num-opt gold_text"
                   displayType={'text'}
                   thousandSeparator={`'`}
                   prefix={'CHF '}
@@ -114,7 +114,7 @@ export default function ResumeHalfSolution(): ReactElement {
                 <div className="scenario-pess">Scénario pessimiste</div>
                 <NumberFormat
                   value={scenarioPessimistic}
-                  className="gold_text"
+                  className="scenario_num-pess gold_text"
                   displayType={'text'}
                   thousandSeparator={`'`}
                   prefix={'CHF '}
@@ -135,6 +135,7 @@ export default function ResumeHalfSolution(): ReactElement {
             Modifier les paramètres
           </button>
         </div>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

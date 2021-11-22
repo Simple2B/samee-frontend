@@ -1,7 +1,15 @@
-import {FormControlLabel, Radio, RadioGroup, TextField} from '@mui/material';
+import {
+  FormControlLabel,
+  MenuItem,
+  Radio,
+  RadioGroup,
+  Select,
+  TextField,
+} from '@mui/material';
 import React, {ReactElement, useContext, useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import {isNumber} from 'util';
 import {ProgressContext} from '../../context/progressContext';
 import {localStorageApi} from '../../helpers/localStorage';
 import {IComponentProps} from '../../types';
@@ -11,19 +19,31 @@ export default function UserData(): ReactElement {
   const [sex, setSex] = useState('');
   const [date, setDate] = useState<any>();
   const [error, setError] = useState('');
+  const [ageRange, setAgeRange] = useState<Array<number>>();
 
   const {setProgress} = useContext(ProgressContext);
 
   const history = useHistory();
 
   useEffect(() => {
-    localStorageApi.addCurrentStep('/user-data-birth');
+    localStorageApi.addCurrentStep('/age');
     setProgress(2);
+    getAgeRange();
   }, []);
+
+  const getAgeRange = () => {
+    let ageRange = [];
+
+    for (let i = 18; i <= 64; i++) {
+      ageRange.push(i);
+    }
+    console.log(ageRange);
+    setAgeRange(ageRange);
+  };
 
   const handleSubmit = () => {
     if (sex === '') {
-      setError('veuillez renseigner les informations');
+      setError('veuillez renseigner toutes les informations');
     } else if (
       new Date(date) > new Date(2004, 12) ||
       new Date(date) < new Date(1958, 1)
@@ -33,7 +53,7 @@ export default function UserData(): ReactElement {
       setError('');
       localStorage.setItem('sex', sex);
       localStorage.setItem('date', JSON.stringify(date));
-      return history.push('/user-age');
+      return history.push('/duree');
     }
   };
 
@@ -82,21 +102,30 @@ export default function UserData(): ReactElement {
 
         <div className="user_data_inputs_birth">
           <p className="age_lebel">Âge: </p>
+          <Select
+            sx={{
+              border: '1px solid',
+              fontFamily: '"Archivo Narrow" !important',
+              fontSize: '0.9em',
 
-          <input
-            className="user_data_input"
+              minWidth: 50,
+              height: '40px',
+              background: 'white',
+              textAlign: 'center',
+            }}
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
             value={date}
             onChange={e => {
-              console.log(e.target.value);
-
               setDate(e.target.value);
-            }}
-            // onKeyDown={e => e.preventDefault()}
-            id="age"
-            type="date"
-            max="2004-12-31"
-            min="1958-01-01"
-          />
+            }}>
+            {ageRange?.map(number => (
+              <MenuItem key={number} value={number}>
+                {number}
+              </MenuItem>
+            ))}
+          </Select>{' '}
+          ans
         </div>
       </div>
 
@@ -120,9 +149,7 @@ export default function UserData(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
                   Pourquoi ces données sont-elles essentielles ?

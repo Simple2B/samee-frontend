@@ -14,7 +14,7 @@ export default function Tax(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    return history.push('/housing-and-business');
+    return history.push('/logement-et-entreprise');
   };
   return (
     <div className="wrapper_tax">
@@ -64,12 +64,10 @@ export default function Tax(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
-                  En savoir plus sur l'économie fiscale
+                  En savoir plus sur cet avantage
                 </div>
                 <div className="pop_up_text">
                   L’un des avantages les plus connus du 3ème pilier est

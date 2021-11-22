@@ -32,17 +32,6 @@
   font-size: 40px;
 }
 
-.employee_salary {
-  width: 100px;
-  height: 40px;
-}
-
-/*
-.saving_interest_calc_list-text {
-  display: flex;
-  align-items: center;
-} */
-
 .button_recalc {
   padding: 10px 25px;
   cursor: pointer;
@@ -82,7 +71,7 @@
 
   .countup_text {
     color: #eac28c;
-    font-size: 30px;
+    font-size: 35px;
   }
 }
 
@@ -92,7 +81,11 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    margin-top: 50px;
+
+  }
+
+  .saving_interest_calc-final-calc {
+    margin: 15px auto;
   }
 
   .saving_interest_calc_list-text {
@@ -128,6 +121,6 @@
 
   .countup_text {
     color: #eac28c;
-    font-size: 20px;
+    font-size: 24px;
   }
 }

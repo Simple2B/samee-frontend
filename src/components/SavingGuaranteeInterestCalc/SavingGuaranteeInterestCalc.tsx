@@ -12,7 +12,7 @@ import {ProgressContext} from '../../context/progressContext';
 const useStyles = makeStyles({
   root: {
     color: 'white !important',
-    fontSize: '24px !important',
+    fontSize: '1em !important',
     fontFamily: '"Archivo Narrow" !important',
     borderBottom: '1px solid white !important',
   },
@@ -30,11 +30,9 @@ const useStyles = makeStyles({
   },
 });
 
-// const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
-
 export default function SavingGuaranteeInterestCalc(): ReactElement {
   const [interest, setInterest] = useState<any>(0);
-  const [period, setPeriod] = useState<any>('mensuel');
+  // const [period, setPeriod] = useState<any>(localStorage.getItem('period'));
   const [tax, setTax] = useState<any>();
   const [amount, setAmount] = useState<any>();
   const [finalAmount, setFinalAmount] = useState<any>();
@@ -181,31 +179,38 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
 
   const handlePeriod = (e: {target: {value: any}}) => {
     localStorage.setItem('period', e.target.value);
-    setPeriod(e.target.value);
+    setPeriodFromLocal(e.target.value);
+    const newSalary =
+      e.target.value === 'annuel'
+        ? Math.floor(salaryFromLocal * 12)
+        : Math.floor(salaryFromLocal / 12);
+
+    setSalaryFromLocal(newSalary);
+    localStorage.setItem('salary', newSalary.toString());
   };
 
   const handleRecalculate = () => {
     if (
       occupation === 'Salarié' &&
-      period === 'mensuel' &&
+      periodFromLocal === 'mensuel' &&
       (salaryFromLocal < 100 || salaryFromLocal > 573)
     ) {
       setError('Choissisez un montant entre CHF 100 to CHF 573');
     } else if (
       occupation === 'Salarié' &&
-      period === 'annuel' &&
+      periodFromLocal === 'annuel' &&
       (salaryFromLocal < 1200 || salaryFromLocal > 6883)
     ) {
       setError("Choissisez un montant entre CHF 1'200 to CHF 6883");
     } else if (
       occupation === 'Indépendant' &&
-      period === 'mensuel' &&
+      periodFromLocal === 'mensuel' &&
       (salaryFromLocal < 100 || salaryFromLocal > 2868)
     ) {
       setError('Choissisez un montant entre CHF 100 to CHF 2868');
     } else if (
       occupation === 'Indépendant' &&
-      period === 'annuel' &&
+      periodFromLocal === 'annuel' &&
       (salaryFromLocal < 1200 || salaryFromLocal > 34416)
     ) {
       setError("Choissisez un montant entre CHF 1'200 to CHF 34416");
@@ -214,6 +219,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
       localStorage.setItem('savings', amount);
       localStorage.setItem('savingsTax', tax);
       localStorage.setItem('interest', interest);
+      localStorage.setItem('salary', salaryFromLocal);
       setRecalculate(state => !state);
     }
   };
@@ -221,7 +227,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
   const handleSubmit = () => {
     localStorage.setItem('finalCapital', finalAmount);
     if (solutions.includes('rendement')) {
-      history.push('/half-guarantee-interest');
+      history.push('/mi-garantie-mi-rendement-taux');
     } else {
       history.push('/resume');
     }
@@ -278,11 +284,11 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
               Vous pouvez essayer avec un autre montant
               <div className="wrapper">
                 d'épargne
-                <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
+                <FormControl variant="standard" sx={{m: 1, minWidth: 80}}>
                   <Select
                     labelId="demo-simple-select-standard-label"
                     id="demo-simple-select-standard"
-                    value={period}
+                    value={periodFromLocal}
                     onChange={handlePeriod}
                     label="salary"
                     className={classes.root}
@@ -298,7 +304,7 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
                     <MenuItem value="annuel">annuel</MenuItem>
                   </Select>
                 </FormControl>
-                {period === 'mensuel' ? (
+                {periodFromLocal === 'mensuel' ? (
                   <input
                     min="100"
                     onChange={handleSalary}
@@ -354,12 +360,10 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
-                  Comment obtenons-nous ce résultat ?
+                  Plus d'explications sur le résultat
                 </div>
                 <div className="pop_up_text">
                   Le montant entouré correspond au capital total épargné à l’âge

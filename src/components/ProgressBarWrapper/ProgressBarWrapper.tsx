@@ -78,12 +78,12 @@ const theme = createTheme({
 });
 
 const stepsNames = [
-  {stepTitle: 'Âge', location: '/user-data-birth'},
-  {stepTitle: 'Avantages', location: '/advantages'},
-  {stepTitle: 'Emploi', location: '/occupation'},
-  {stepTitle: 'Choix des solutions', location: '/choose-solution'},
+  {stepTitle: 'Âge', location: '/age'},
+  {stepTitle: 'Avantages', location: '/avantages-3p'},
+  {stepTitle: 'Emploi', location: '/statut'},
+  {stepTitle: 'Choix des solutions', location: '/choix-solution'},
   {stepTitle: 'Résumé', location: '/resume'},
-  {stepTitle: 'Informations personnelles', location: '/user-address-info'},
+  {stepTitle: 'Informations personnelles', location: '/informations-adresse'},
 ];
 
 export default function ProgressBarWrapper(): ReactElement {

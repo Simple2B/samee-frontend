@@ -14,7 +14,7 @@ export default function SavingGuaranteeInterest(): ReactElement {
   }, []);
 
   const handleChange = () => {
-    history.push('/saving-guarantee-interest-calculation');
+    history.push('/epargne-calcul');
   };
   return (
     <div className="saving_interest">
@@ -53,7 +53,7 @@ export default function SavingGuaranteeInterest(): ReactElement {
           modal
           trigger={
             <div className="pop_up_triger">
-              Avec quelles institutions travaillez vous ?
+              Avec quelles institutions travaillez-vous ?
             </div>
           }>
           {(
@@ -64,27 +64,19 @@ export default function SavingGuaranteeInterest(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
-                  Avec quelles institutions travaillons-nous ?
+                  Avec quelles institutions travaillez-vous ?
                 </div>
                 <div className="pop_up_text">
-                  Nous travaillons avec la majorité des compagnies d'assurances
-                  et les principales banques afin de vous proposer la solution
-                  qui vous convient le mieux.
+                  Les principales institutions avec lesquelles nous travaillons
+                  sont :
                 </div>
                 <div className="pop_up_text">
-                  Quelques exemples de compagnies et de banques avec lesquelles
-                  nous travaillons:
-                </div>
-
-                <div className="pop_up_text">
-                  - Swiss Life, Bâloise Assurance, Vaudoise Assurance, AXA
-                  Winthertur, Zürich Assurance, Credit Suisse, VIAC,
-                  PostFinance, Retraites populaires, UBS, etc.
+                  Allianz, Axa Winterthur, Bâloise, Generali, Helvetia,
+                  Mobilière, Rentes genevoises, Retraites populaires, Swisslife,
+                  Vaudoise, Zugerberg, Zürich.
                 </div>
               </div>
             </>

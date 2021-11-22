@@ -62,7 +62,8 @@
   max-width: 1080px;
   height: 500px;
   padding: 50px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .pop_up_title {
@@ -85,15 +86,16 @@
 
 .close {
   position: absolute;
-  right: 15px;
-  top: 15px;
-  height: 40px;
-  width: 40px;
-  border-radius: 20px;
+  right: 20px;
+  top: 20px;
   background-color: transparent;
-  border: 1px solid #eac28c;
-  color: #eac28c;
+  border: none;
   z-index: 1000;
+  cursor: pointer;
+}
+
+.close::after {
+  content: url(/src/image/cross.svg);
 }
 
 .sex_radio_item {
@@ -101,6 +103,7 @@
   position: relative;
   padding: 0 10px;
   margin: 10px 0 0;
+  cursor: pointer;
 }
 
 .sex_radio_item input[type='radio'] {
@@ -121,6 +124,10 @@
   background-color: transparent;
 }
 
+.user_data_inputs_lebel {
+  cursor: pointer;
+}
+
 .sex_radio_item input[type=radio]:checked+label:after {
   border-radius: 11px;
   width: 16px;
@@ -134,31 +141,45 @@
 }
 
 @media (max-width: 768px) {
-  .user_data {
-    padding-top: 25%;
-    font-size: 20px;
+  .triger_inline {
+    display: inline;
   }
 }
 
+
 @media (max-width: 425px) {
-  .user_data {
-    /* padding: 25px; */
-    font-size: 20px;
-  }
 
   .sex_radio_item input[type=radio]:checked+label:after {
-    top: 10px;
+    top: 9px;
     left: 14px;
   }
 
+  .close::after {
+    content: url(/src/image/cross-little.svg);
+  }
+
+  .triger_inline {
+    display: inline;
+  }
+
   .pop_up {
-    font-size: 20px;
     margin: 20px;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 32px;
+  }
+
+  .pop_up_text {
+    font-size: 14px;
+  }
+
+
+  .pop_up_title {
+    font-size: 18px;
   }
 
   .close {
-    right: 30px;
+    right: 35px;
     top: 30px;
     height: 20px;
     width: 20px;
@@ -195,7 +216,10 @@
 
   }
 
-  /* .pop_up_triger {
-    display: inline-block;
-  } */
+}
+
+@media (max-width: 360px) {
+  .pop_up_triger {
+    font-size: 13ypx !important;
+  }
 }

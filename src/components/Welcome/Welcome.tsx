@@ -17,7 +17,7 @@ export default function Welcome(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    history.push('/user-data-birth');
+    history.push('/age');
   };
 
   return (
@@ -55,6 +55,7 @@ export default function Welcome(): ReactElement {
           Continuer
         </button>
       </div>
+      <div className="empty_space"></div>
     </div>
   );
 }

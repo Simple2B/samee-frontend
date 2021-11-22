@@ -14,7 +14,7 @@ export default function Abroad(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    return history.push('/guarantees');
+    return history.push('/garanties');
   };
 
   return (
@@ -70,13 +70,10 @@ export default function Abroad(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
-                  Plus d'informations sur le départ à l'étranger et la retraite
-                  en sécurité
+                  En savoir plus sur cet avantage
                 </div>
                 <div className="pop_up_text">
                   On entend souvent dire que le troisième pilier nous assure une

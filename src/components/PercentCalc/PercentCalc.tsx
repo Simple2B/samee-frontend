@@ -6,14 +6,18 @@ import './percentCalc.css';
 import {useHistory} from 'react-router-dom';
 import {ProgressContext} from '../../context/progressContext';
 
-const savingYears: string | null = localStorage.getItem('age');
-const savings: any = localStorage.getItem('savings');
-const tax: string | null = localStorage.getItem('savingsTax');
-const period: string | null = localStorage.getItem('period');
+// const savingYears: string | null = localStorage.getItem('age');
+// const savings: any = localStorage.getItem('savings');
+// const tax: string | null = localStorage.getItem('savingsTax');
+// const period: string | null = localStorage.getItem('period');
 
 export default function PercentCalc(): ReactElement {
   const [amountCapital, setAmountCapital] = useState<number>();
   const [amountFonds, setAmountFonds] = useState<number>();
+
+  const [savingYears] = useState(localStorage.getItem('age'));
+  const [savings] = useState<any>(localStorage.getItem('savings'));
+  const [tax] = useState(localStorage.getItem('savingsTax'));
 
   const [savingsPercent] = useState<any>(
     localStorage.getItem('savingsPercent'),
@@ -31,6 +35,7 @@ export default function PercentCalc(): ReactElement {
   const amountCapitalCalc = () => {
     const capitalCalc = Math.floor(savings * (savingsPercent / 100));
     setAmountCapital(capitalCalc);
+    console.log(capitalCalc);
   };
 
   const amountFondsCalc = () => {
@@ -46,7 +51,7 @@ export default function PercentCalc(): ReactElement {
   const handleSubmit = () => {
     localStorage.setItem('amountEpargne', JSON.stringify(amountCapital));
     localStorage.setItem('amount Fonds', JSON.stringify(amountFonds));
-    history.push('/scenario-calculation');
+    history.push('/mi-garantie-mi-rendement-scenario');
   };
 
   return (
@@ -88,7 +93,7 @@ export default function PercentCalc(): ReactElement {
           <div className="percent_calc_block">
             <div className="percent_calc_image">
               <img
-                src="image/analys.png"
+                src="image/lock.png"
                 className="percent_calc_img"
                 alt="percent"
               />
@@ -111,10 +116,10 @@ export default function PercentCalc(): ReactElement {
             </div>
           </div>
 
-          <div className="percent_calc_block">
+          <div className="percent_calc_block reverse">
             <div className="percent_calc_image">
               <img
-                src="image/lock.png"
+                src="image/analys.png"
                 className="percent_calc_img"
                 alt="percent"
               />
@@ -147,6 +152,7 @@ export default function PercentCalc(): ReactElement {
         <button onClick={handleSubmit} className="next_button button_position">
           Continuer
         </button>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ export default function GuaranteesSavingSolutionForWhom(): ReactElement {
   const history = useHistory();
 
   const handleSubmit = () => {
-    history.push('/guarantee-saving-solution');
+    history.push('/solution-epargne');
   };
 
   return (
@@ -33,6 +33,7 @@ export default function GuaranteesSavingSolutionForWhom(): ReactElement {
         <button onClick={handleSubmit} className="next_button button_position">
           C'est compris
         </button>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

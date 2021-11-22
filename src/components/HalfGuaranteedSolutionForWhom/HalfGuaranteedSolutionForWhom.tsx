@@ -6,7 +6,7 @@ export default function HalfGuaranteedSolutionForWhom(): ReactElement {
   const history = useHistory();
 
   const handleSubmit = () => {
-    history.push('/half-guarantee-saving-solution');
+    history.push('/solution-mi-garantie-mi-rendement');
   };
 
   return (
@@ -32,6 +32,7 @@ export default function HalfGuaranteedSolutionForWhom(): ReactElement {
         <button onClick={handleSubmit} className="next_button button_position">
           C'est compris
         </button>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

@@ -101,20 +101,19 @@ export default function ConfirmCode(): ReactElement {
   const handleSubmit = (e: any) => {
     if (!code1 || !code2 || !code3 || !code4 || !code5 || !code6) {
       e.preventDefault();
-      setError('veuillez renseigner les informations');
+      setError('veuillez renseigner toutes les informations');
     } else {
-      // userDataInstance
-      //   .post('/phone_validation', contactInfo)
-      //   .then(function (response) {
-      //     console.log(response);
-      //     localStorage.setItem('confirmCode', code);
-      //     history.push('/final-step');
-      //   })
-      //   .catch(function (error) {
-      //     console.log(error);
-      //     setError('Something goes wrong. Please try again.');
-      //   });
-      history.push('/final-step');
+      userDataInstance
+        .post('/phone_validation', contactInfo)
+        .then(function (response) {
+          console.log(response);
+          localStorage.setItem('confirmCode', code);
+          history.push('/etape-finale');
+        })
+        .catch(function (error) {
+          console.log(error);
+          setError(`Oups, ce code semble être invalide.`);
+        });
     }
   };
 
@@ -180,6 +179,7 @@ export default function ConfirmCode(): ReactElement {
             Recevoir le comparatif
           </button>
         </div>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

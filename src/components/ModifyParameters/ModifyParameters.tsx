@@ -9,7 +9,7 @@ import {useEffect} from 'react';
 const useStyles = makeStyles({
   root: {
     color: 'white !important',
-    fontSize: '24px !important',
+    fontSize: '1em !important',
     fontFamily: '"Archivo Narrow" !important',
     borderBottom: '1px solid white !important',
   },
@@ -32,7 +32,7 @@ export default function ModifyParameters(): ReactElement {
   const [salaryFromLocal, setSalaryFromLocal] = useState<any>(
     localStorage.getItem('salary'),
   );
-  const [sliderValue, setSliderValue] = useState(10);
+  const [sliderValue, setSliderValue] = useState(90);
   const [error, setError] = useState('');
   const [occupation] = useState(localStorage.getItem('occupation'));
   const [errorAmount, setErrorAmount] = useState('');
@@ -57,6 +57,15 @@ export default function ModifyParameters(): ReactElement {
 
   const handlePeriod = (e: {target: {value: any}}) => {
     setPeriod(e.target.value);
+    if (period === 'annuel') {
+      setSalaryFromLocal(Math.floor(salaryFromLocal / 12));
+      localStorage.setItem('salary', salaryFromLocal);
+    }
+
+    if (period === 'mensuel') {
+      setSalaryFromLocal(Math.floor(salaryFromLocal * 12));
+      localStorage.setItem('salary', salaryFromLocal);
+    }
   };
 
   const handleSliderChange = (e: number) => {
@@ -94,7 +103,7 @@ export default function ModifyParameters(): ReactElement {
       localStorage.setItem('fondsPercent', JSON.stringify(100 - sliderValue));
       localStorage.setItem('salary', salaryFromLocal);
       localStorage.setItem('period', period);
-      history.push('./scenario-calculation');
+      history.push('./mi-garantie-mi-rendement-scenario');
     }
   };
 
@@ -103,7 +112,7 @@ export default function ModifyParameters(): ReactElement {
       <div className="main_content">
         <div className="modify_parameters_text">
           Vous pouvez essayer avec un autre montant d'épargne
-          <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
+          <FormControl variant="standard" sx={{m: 1, minWidth: 80}}>
             <Select
               labelId="demo-simple-select-standard-label"
               id="demo-simple-select-standard"
@@ -147,7 +156,7 @@ export default function ModifyParameters(): ReactElement {
         </div>
 
         <div className="half-optimal-proportion_percents">
-          <div className="proportion_percent">
+          <div className="proportion_percent left">
             <div className="percent gold_text">{`${sliderValue}%`}</div>
             <div className="percent-desc">Epargne</div>
           </div>
@@ -168,7 +177,7 @@ export default function ModifyParameters(): ReactElement {
             <div className="circle"></div>
           </div>
 
-          <div className="proportion_percent">
+          <div className="proportion_percent right">
             <div className="percent gold_text">{`${100 - sliderValue}%`}</div>
             <div className="percent-desc">Fonds</div>
           </div>
@@ -188,6 +197,7 @@ export default function ModifyParameters(): ReactElement {
           <button onClick={handleRecalculate} className="next_button ">
             Recalculer
           </button>
+          <div className="empty_space"></div>
         </div>
       </div>
     </div>

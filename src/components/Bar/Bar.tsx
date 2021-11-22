@@ -1,4 +1,5 @@
 import React, {ReactElement} from 'react';
+import {useHistory} from 'react-router-dom';
 import ProgressBarWrapper from '../ProgressBarWrapper/ProgressBarWrapper';
 import './bar.css';
 

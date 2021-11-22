@@ -1,19 +1,29 @@
 import React, {ReactElement, useContext, useEffect} from 'react';
+import classNames from 'classnames';
 import {useState} from 'react';
 import Geosuggest from 'react-geosuggest';
 import {useHistory} from 'react-router-dom';
+import {Formik} from 'formik';
 import Popup from 'reactjs-popup';
 import {ProgressContext} from '../../context/progressContext';
 import './userAddressInfo.css';
 
+type Nullable<T> = T | null | undefined;
+
+interface IAddressInfo {
+  name: string;
+  lastName: string;
+  number: string;
+  postcode: string;
+  city: string;
+  street: string;
+}
+
 export default function UserAddressInfo(): ReactElement {
-  const [name, setName] = useState();
-  const [lastName, setLastName] = useState();
-  const [number, setNumber] = useState();
-  const [postcode, setPostcode] = useState();
-  const [city, setCity] = useState();
-  const [street, setStreet] = useState();
   const [error, setError] = useState('');
+  const [postcode, setPostcode] = useState('');
+  const [city, setCity] = useState('');
+  const [street, setStreet] = useState('');
 
   const history = useHistory();
 
@@ -23,48 +33,58 @@ export default function UserAddressInfo(): ReactElement {
     setProgress(26);
   }, []);
 
-  const addressData = {
-    name: name,
-    lastName: lastName,
-    number: number,
-    postcode: postcode,
-    city: city,
-    street: street,
+  const initialValues = {
+    name: '',
+    lastName: '',
+    number: '',
+    postcode: '',
+    city: '',
+    street: '',
   };
 
-  const handleName = (e: any) => {
-    const clearedValue = e.target.value.replace(/[0-9]/g, '');
-    setName(clearedValue);
+  const submitForm = (values: IAddressInfo) => {
+    setError('');
+    localStorage.setItem('userAddressData', JSON.stringify(values));
+    history.push('/informations-profession');
   };
 
-  const handleLastName = (e: any) => {
-    const clearedValue = e.target.value.replace(/[0-9]/g, '');
-    setLastName(clearedValue);
-  };
+  const validate = (values: IAddressInfo) => {
+    let errors = {} as IAddressInfo;
 
-  const handleStreet = (e: any) => {
-    console.log(e);
-    if (e) {
-      const clearedValue = e.description;
-      setStreet(clearedValue);
+    if (!values.name) {
+      errors.name = 'required';
     }
-  };
-
-  const handleNumber = (e: any) => {
-    const clearedValue = e.target.value.replace(/\D/g, '');
-    setNumber(clearedValue);
-  };
-
-  const handlePostcode = (e: any) => {
-    const clearedValue = e.target.value.replace(/\D/g, '');
-    setPostcode(clearedValue);
-  };
-
-  const handleCity = (e: any) => {
-    if (e) {
-      const clearedValue = e.description;
-      setCity(clearedValue);
+    if (!values.lastName) {
+      errors.lastName = 'required';
     }
+
+    if (!values.number) {
+      errors.number = 'required';
+    }
+
+    if (!values.postcode) {
+      errors.postcode = 'required';
+    }
+    if (!values.city) {
+      errors.city = 'required';
+    }
+    if (!values.street) {
+      errors.street = 'required';
+    }
+    if (
+      !values.name ||
+      !values.lastName ||
+      !values.number ||
+      !postcode ||
+      !city ||
+      !values.street
+    ) {
+      setError('Veuillez renseigner toutes les informations');
+    } else {
+      setError('');
+    }
+
+    return errors;
   };
 
   const onKeyPress = (event: any) => {
@@ -79,14 +99,24 @@ export default function UserAddressInfo(): ReactElement {
     }
   };
 
-  const handleSubmit = (e: {preventDefault: () => void}) => {
-    if (!name || !lastName || !number || !postcode || !city || !street) {
-      e.preventDefault();
-      setError('veuillez renseigner les informations');
+  const onKeyPressPostCode = (event: any) => {
+    console.log(event);
+    if (event.charCode >= 48 && event.charCode <= 67) {
+      return;
     } else {
-      setError('');
-      localStorage.setItem('userAddressData', JSON.stringify(addressData));
-      history.push('/user-personal-info');
+      event.preventDefault();
+    }
+  };
+
+  const handleChangeCity = (e: any) => {
+    console.log('city', e.target.value);
+    setCity(e.target.value);
+  };
+
+  const handleChangePostCode = (e: any) => {
+    if (e) {
+      console.log('postCode', e.target.value);
+      setPostcode(e.target.value);
     }
   };
 
@@ -99,93 +129,189 @@ export default function UserAddressInfo(): ReactElement {
           besoin de quelques informations supplémentaires.
         </div>
 
-        <div className="user_address_info_input_block">
-          <div className="user_address_info_input-left">
-            <div className="user_address_info_input-set">
-              <label htmlFor="name" className="input_label">
-                Nom
-              </label>
-              <input
-                value={name}
-                onChange={handleName}
-                name="name"
-                className="input_field"
-              />
-            </div>
-            <div className="user_address_info_input-set">
-              <label htmlFor="street" className="input_label">
-                Rue
-              </label>
-              <Geosuggest
-                value={street}
-                onChange={handleStreet}
-                inputClassName="input_field"
-                placeholder=""
-                country="CH"
-                onSuggestSelect={handleStreet}
-                suggestsHiddenClassName="hidden"
-                types={['geocode']}
-              />
-            </div>
-            <div className="user_address_info_input-set">
-              <label htmlFor="postcode" className="input_label">
-                NPA
-              </label>
-              <input
-                maxLength={4}
-                value={postcode}
-                onChange={handlePostcode}
-                name="postcode"
-                className="input_field"
-              />
-            </div>
-          </div>
-          <div className="user_address_info_input-right">
-            <div className="user_address_info_input-set">
-              <label htmlFor="lastname" className="input_label">
-                Prénom
-              </label>
-              <input
-                value={lastName}
-                onChange={handleLastName}
-                name="lastname"
-                className="input_field"
-              />
-            </div>
-            <div className="user_address_info_input-set">
-              <label htmlFor="number" className="input_label">
-                Numéro
-              </label>
-              <input
-                value={number}
-                onChange={handleNumber}
-                name="number"
-                className="input_field"
-              />
-            </div>
-            <div className="user_address_info_input-set">
-              <label htmlFor="city" className="input_label">
-                Ville
-              </label>
-              <Geosuggest
-                value={city}
-                inputClassName="input_field"
-                placeholder=""
-                country="CH"
-                onSuggestSelect={handleCity}
-                suggestsHiddenClassName="hidden"
-                onKeyPress={event => onKeyPress(event)}
-                types={['(cities)']}
-              />
-            </div>
-          </div>
-        </div>
+        <Formik
+          initialValues={initialValues}
+          validate={validate}
+          onSubmit={submitForm}>
+          {formik => {
+            const {
+              values,
+              handleSubmit,
+              handleChange,
+              errors,
+              touched,
+              handleBlur,
+              isValid,
+              dirty,
+            } = formik;
+            return (
+              <form
+                id="form"
+                onSubmit={values => handleSubmit(values)}
+                className="user_address_info_input_block">
+                <div className="user_address_info_input-left">
+                  <div className="user_address_info_input-set">
+                    <label htmlFor="name" className="input_label">
+                      Nom
+                    </label>
+                    <input
+                      tabIndex={1}
+                      value={values.name.replace(/[0-9]/g, '')}
+                      onChange={handleChange}
+                      name="name"
+                      className={
+                        errors.name && touched.name
+                          ? 'input_field error_input'
+                          : 'input_field'
+                      }
+                    />
+                  </div>
+                  <div className="user_address_info_input-set">
+                    <label htmlFor="street" className="input_label">
+                      Rue
+                    </label>
+                    <input
+                      tabIndex={3}
+                      value={values.street.replace(/[0-9]/g, '')}
+                      onChange={handleChange}
+                      name="street"
+                      className={
+                        errors.street && touched.street
+                          ? 'input_field error_input'
+                          : 'input_field'
+                      }
+                    />
+                    {/* <Geosuggest
+                      tabIndex={3}
+                      value={values.street || street}
+                      onChange={handleChange}
+                      name="street"
+                      inputClassName={
+                        errors.street && touched.street
+                          ? 'input_field error_input'
+                          : 'input_field'
+                      }
+                      placeholder=""
+                      country="CH"
+                      onSuggestSelect={(e: any) => {
+                        if (e) {
+                          const postcode = e.gmaps.address_components.filter(
+                            (item: any) => item.types[0] === 'postal_code',
+                          );
+
+                          if (postcode.length > 0) {
+                            setPostcode(postcode[0].long_name);
+                            console.log(postcode);
+                          } else {
+                            setPostcode('');
+                          }
+
+                          const city = e.gmaps.address_components.filter(
+                            (item: any) => item.types[0] === 'locality',
+                          );
+
+                          if (city) {
+                            setCity(city[0].long_name);
+                            console.log(city[0].long_name);
+                          }
+
+                          const street = e.gmaps.address_components.filter(
+                            (item: any) => item.types[0] === 'route',
+                          );
+                          console.log(street[0].long_name);
+
+                          setStreet(street[0].long_name);
+                          values.street = e.description;
+                        }
+                      }}
+                      suggestsHiddenClassName="hidden"
+                      types={['address']}
+                    /> */}
+                  </div>
+                  <div className="user_address_info_input-set">
+                    <label htmlFor="postcode" className="input_label">
+                      NPA
+                    </label>
+                    <input
+                      tabIndex={5}
+                      maxLength={4}
+                      value={values.postcode}
+                      onChange={handleChange}
+                      name="postcode"
+                      className={
+                        errors.postcode && touched.postcode
+                          ? 'input_field error_input'
+                          : 'input_field'
+                      }
+                      onKeyPress={onKeyPressPostCode}
+                    />
+                  </div>
+                </div>
+                <div className="user_address_info_input-right">
+                  <div className="user_address_info_input-set">
+                    <label htmlFor="lastname" className="input_label">
+                      Prénom
+                    </label>
+                    <input
+                      tabIndex={2}
+                      value={values.lastName.replace(/[0-9]/g, '')}
+                      onChange={handleChange}
+                      name="lastName"
+                      className={
+                        errors.lastName && touched.lastName
+                          ? 'input_field error_input'
+                          : 'input_field'
+                      }
+                    />
+                  </div>
+                  <div className="user_address_info_input-set">
+                    <label htmlFor="number" className="input_label">
+                      Numéro
+                    </label>
+                    <input
+                      tabIndex={4}
+                      value={values.number.replace(/\D/g, '')}
+                      onChange={handleChange}
+                      name="number"
+                      className={
+                        errors.number && touched.number
+                          ? 'input_field error_input'
+                          : 'input_field'
+                      }
+                    />
+                  </div>
+                  <div className="user_address_info_input-set">
+                    <label htmlFor="city" className="input_label">
+                      Ville
+                    </label>
+                    <input
+                      tabIndex={6}
+                      value={values.city}
+                      onChange={handleChange}
+                      name="city"
+                      className={
+                        errors.city && touched.city
+                          ? 'input_field error_input'
+                          : 'input_field'
+                      }
+                      onKeyPress={event => onKeyPress(event)}
+                    />
+                  </div>
+                </div>
+              </form>
+            );
+          }}
+        </Formik>
       </div>
 
       <div className="footer_contant">
         <div className="button_set button_position">
           <div className="error">{error}</div>
-          <button onClick={handleSubmit} className="next_button">
+          <button
+            type="submit"
+            form="form"
+            // onClick={handleSubmit}
+            className="next_button">
             Continuer
           </button>
         </div>
@@ -205,9 +331,7 @@ export default function UserAddressInfo(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
                   Pourquoi avez-vous besoin de ces informations ?

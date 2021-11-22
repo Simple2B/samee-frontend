@@ -14,7 +14,7 @@ import {useEffect} from 'react';
 const useStyles = makeStyles({
   root: {
     color: 'white !important',
-    fontSize: '24px !important',
+    fontSize: '1em !important',
     fontFamily: '"Archivo Narrow" !important',
     borderBottom: '1px solid white !important',
   },
@@ -53,6 +53,12 @@ export default function SelfEmployed(): ReactElement {
 
   const handlePeriod = (e: {target: {value: any}}) => {
     setPeriod(e.target.value);
+    const newSalary =
+      e.target.value === 'annuel'
+        ? Math.floor(salary * 12)
+        : Math.floor(salary / 12);
+
+    setSalary(newSalary);
   };
 
   const handleSalaryRange = (
@@ -72,7 +78,7 @@ export default function SelfEmployed(): ReactElement {
       setError('');
       localStorage.setItem('salary', salary);
       localStorage.setItem('period', period);
-      history.push('/savings-calculation');
+      history.push('/economies');
     }
   };
 
@@ -97,7 +103,7 @@ export default function SelfEmployed(): ReactElement {
         </ul>
         <div className="self-employed_inputs_set">
           <span className="self-employed_text">Choisir le montant </span>
-          <FormControl variant="standard" sx={{m: 1, minWidth: 120}}>
+          <FormControl variant="standard" sx={{m: 1, minWidth: 80}}>
             <Select
               labelId="demo-simple-select-standard-label"
               id="demo-simple-select-standard"
@@ -175,7 +181,7 @@ export default function SelfEmployed(): ReactElement {
           modal
           trigger={
             <div className="pop_up_triger">
-              Comment fonctionne l'économie d'impôts?
+              Comment fonctionne l'économie d'impôts ?
             </div>
           }>
           {(
@@ -186,9 +192,7 @@ export default function SelfEmployed(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
                   Comment fonctionne l'économie d'impôts ?
@@ -196,14 +200,14 @@ export default function SelfEmployed(): ReactElement {
                 <div className="pop_up_text">
                   Vous pouvez déduire de votre revenu imposable l’intégralité
                   des versements au 3ème pilier. Plus vous cotisez, plus vos
-                  économies seront importantes.{' '}
+                  économies seront importantes.
                 </div>
                 <div className="pop_up_text">
                   Le montant maximal annuel est actuellement de 6'883 CHF pour
                   un salarié et de 34'416 CHF ou de maximum 20% de son salaire
                   AVS pour un indépendant. De plus, votre épargne au 3ème pilier
-                  est exonérée d'impôts jusqu'à la retraite.
-                  Le montant minimum que vous pouvez investir est de 1'200 CHF par an.
+                  est exonérée d'impôts jusqu'à la retraite. Le montant minimum
+                  que vous pouvez investir est de 1'200 CHF par an.
                 </div>
                 <div className="pop_up_text">
                   Il est important de savoir que lors du retrait de votre 3ème
@@ -216,7 +220,7 @@ export default function SelfEmployed(): ReactElement {
                 <div className="pop_up_text">
                   Pour éviter de subir une imposition trop lourde, vous avez la
                   possibilité de diviser votre 3e pilier en plusieurs comptes
-                  afin de les retirer progressivement entre 60 et 65 ans.{' '}
+                  afin de les retirer progressivement entre 60 et 65 ans.
                 </div>
               </div>
             </>

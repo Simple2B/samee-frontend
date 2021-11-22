@@ -22,27 +22,19 @@ export default function Age(): ReactElement {
   const {setProgress} = useContext(ProgressContext);
 
   const ageCalculation = () => {
-    const today = new Date();
-    const birthDate = new Date(dateFromStorage);
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-
     let calcAge;
 
     if (sex === 'Femme') {
-      calcAge = retiredFemaleAge - age;
+      calcAge = retiredFemaleAge - dateFromStorage;
     } else if (sex === 'Homme') {
-      calcAge = retiredMaleAge - age;
+      calcAge = retiredMaleAge - dateFromStorage;
     }
     setAge(calcAge);
     return age;
   };
 
   const handleSubmitBack = () => {
-    return history.push('/user-data-birth');
+    return history.push('/age');
   };
 
   const handleSubmit = () => {
@@ -60,7 +52,7 @@ export default function Age(): ReactElement {
       localStorage.setItem('age', String(age));
       setErrorCheck(false);
       setError('');
-      return history.push('/difference-bank-and-insurance');
+      return history.push('/differences-assurance-banque');
     }
   };
 
@@ -98,6 +90,7 @@ export default function Age(): ReactElement {
             </button>
           )}
         </div>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

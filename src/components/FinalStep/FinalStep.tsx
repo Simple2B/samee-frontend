@@ -36,12 +36,18 @@ export default function FinalStep(): ReactElement {
           Nous mettons l'accent sur la transparence, la rapidité et la
           simplicité.
         </div>
+
+        <div className="final_step_text">
+          P.S. Si vous ne recevez pas notre message, pensez à vérifier vos
+          spams.
+        </div>
       </div>
 
       <div className="footer_content">
         <button onClick={handleSubmit} className="next_button button_position">
           Quitter
         </button>
+        <div className="empty_space"></div>
       </div>
     </div>
   );

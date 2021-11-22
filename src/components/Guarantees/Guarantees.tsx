@@ -14,7 +14,7 @@ export default function Guarantees(): ReactElement {
   }, []);
 
   const handleSubmit = () => {
-    return history.push('/occupation');
+    return history.push('/statut');
   };
   return (
     <div className="guarantees">
@@ -68,34 +68,55 @@ export default function Guarantees(): ReactElement {
               | undefined,
           ) => (
             <>
-              <button className="close" onClick={close}>
-                X
-              </button>
+              <button className="close" onClick={close}></button>
               <div className="pop_up">
                 <div className="pop_up_title">
-                  Plus d'informations sur la différence entre banque et
-                  assurance
+                  Plus d'informations sur la différence
                 </div>
                 <div className="pop_up_text">
-                  En choisissant un 3ème pilier en assurance,
-                  vous avez la possibilité, mais pas l’obligation,
-                  de bénéficier de ces avantages.
-                  Vous pouvez choisir uniquement certains avantages ou tous les avantages.
-                  Des frais seront déduits de votre rendement pour assurer ces prestations.
-                  Concernant le point 1, la libération du paiement des primes en cas d’invalidité,
-                  la personne peut choisir les délais d’attente entre 3,6 ou 12 mois.
-                  Si vous n’êtes plus en mesure de travailler suite à une maladie ou un accident,
-                  la compagnie d’assurance paiera vos primes jusqu’à l’âge de votre retraite. 
-                </div>
-                <div className="pop_up_text">
-                  Concernant le point 1, la libération du paiement des primes en
-                  cas d’invalidité, la personne peut choisir les délais
-                  d’attente entre 3,6 ou 12 mois d’attente.
-                </div>
-                <div className="pop_up_text">
-                  Si vous n’êtes plus en mesure de travailler suite à une
+                  En choisissant un 3ème pilier en assurance, vous avez la
+                  possibilité, mais pas l’obligation, de bénéficier de ces
+                  avantages. Vous pouvez choisir uniquement certains avantages
+                  ou tous les avantages. Des frais seront déduits de votre
+                  rendement pour assurer ces prestations. Concernant le point 1,
+                  la libération du paiement des primes en cas d’invalidité, la
+                  personne peut choisir les délais d’attente entre 3,6 ou 12
+                  mois. Si vous n’êtes plus en mesure de travailler suite à une
                   maladie ou un accident, la compagnie d’assurance paiera vos
-                  primes jusqu’à l’âge de votre retraite.
+                  primes jusqu’à l’âge de votre retraite. 
+                </div>
+                <div className="pop_up_text">
+                  1) Avec un 3<sup>ème</sup> pilier en assurance, appelé 3
+                  <sup>ème</sup> pilier lié, vous avez plus de garanties, en cas
+                  d’invalidité et en cas de décès. En cas d’invalidité, c’est
+                  l’assurance qui prend le relais et s’occupe du paiement de vos
+                  primes. Vous pouvez également toucher une rente complémentaire
+                  à votre salaire selon votre contrat. En cas de décès, vos
+                  proches obtiennent la totalité du 3<sup>ème</sup> pilier que
+                  vous auriez touché à la retraite. Aussi, avec un 3
+                  <sup>ème</sup> pilier en assurance, vous avez la garantie
+                  d’obtenir 100% du montant inscrit dans votre contrat, à votre
+                  retraite. Au contraire du troisième pilier en banque, celui en
+                  assurance est une épargne forcée, ce qui peut représenter un
+                  avantage, car au moment de payer vos primes vous n’aurez pas
+                  d’hésitation et investirez votre argent dans quelque chose de
+                  bénéfique pour vous. Il est aussi possible de ne pas payer la
+                  prime si une année est plus difficile et de la rattraper
+                  l’année suivante par exemple.
+                </div>
+                <div className="pop_up_text">
+                  2) Avec un 3<sup>ème</sup> pilier en banque, vous bénéficiez
+                  de plus de flexibilité, car vous n’êtes pas lié à un contrat
+                  de versement de primes. Ainsi, si durant une année vous ne
+                  souhaitez pas verser de primes, vous êtes libre de le faire.
+                  Si vous ne savez pas bien gérer vos finances, ce peut être
+                  problématique. Contrairement aux assurances, en cas de décès
+                  prématuré, vos proches toucheront uniquement ce qui a été
+                  versé. De même, en cas d’invalidité, avec un 3<sup>ème</sup>{' '}
+                  pilier en banque, vous ne bénéficiez pas d’une exonération des
+                  primes et vous vous retrouvez dans l’incapacité de continuer à
+                  cotiser. Finalement, en cas de faillite de la banque, seul
+                  100'000 CHF seraient garantis.
                 </div>
                 <div className="pop_up_text">
                   Pour le point 2 , selon votre contrat, vous vous assurez un
@@ -143,10 +164,11 @@ export default function Guarantees(): ReactElement {
 
                 <div className="pop_up_text">
                   Pour le point 4, toutes les compagnies ne le proposent pas,
-                  et, en général, vous pouvez suspendre votre prime durant un ou deux ans non consécutifs.
-                  Avec un contrat d’assurance, vous êtes obligé de verser une prime chaque année,
-                  ce qui peut être un désavantage comme un avantage, car vous épargnerez pour votre
-                  futur et éviterez certaines dépenses plus futiles.
+                  et, en général, vous pouvez suspendre votre prime durant un ou
+                  deux ans non consécutifs. Avec un contrat d’assurance, vous
+                  êtes obligé de verser une prime chaque année, ce qui peut être
+                  un désavantage comme un avantage, car vous épargnerez pour
+                  votre futur et éviterez certaines dépenses plus futiles.
                 </div>
                 <div className="pop_up_text">
                   Avec un contrat d’assurance, vous êtes obligé de verser une

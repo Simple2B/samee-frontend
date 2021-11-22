@@ -21,22 +21,22 @@ export default function GuaranteedSavingSolution(): ReactElement {
 
   const handleSubmit = () => {
     if (solutions.includes('rendement')) {
-      history.push('/half-guarantee-saving-solution');
+      history.push('/solution-mi-garantie-mi-rendement');
     } else {
-      history.push('/saving-guarantee-interest');
+      history.push('/epargne-taux');
     }
   };
 
   const handleWhatIs = () => {
-    history.push('/what-is-saving-solution');
+    history.push('/definition-solution-epargne');
   };
 
   const handleAdvantages = () => {
-    history.push('/saving-solution-advantages');
+    history.push('/avantages-solution-epargne');
   };
 
   const handleForWhom = () => {
-    history.push('/saving-solution-for-whom');
+    history.push('/qui-solution-epargne');
   };
 
   return (
@@ -89,11 +89,9 @@ export default function GuaranteedSavingSolution(): ReactElement {
                 | undefined,
             ) => (
               <>
-                <button className="close" onClick={close}>
-                  X
-                </button>
+                <button className="close-video" onClick={close}></button>
                 <div className="pop_up_video">
-                  <video width="1000" height="auto" autoPlay controls>
+                  <video className="video_content" autoPlay controls>
                     <source
                       src="video/video1.mp4"
                       type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
@@ -111,6 +109,7 @@ export default function GuaranteedSavingSolution(): ReactElement {
           <button onClick={handleSubmit} className="video_button_next">
             Continuer
           </button>
+          <div className="empty_space"></div>
         </div>
       </div>
     </div>

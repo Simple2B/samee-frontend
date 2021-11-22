@@ -6,26 +6,24 @@ import {useHistory} from 'react-router-dom';
 import {ProgressContext} from '../../context/progressContext';
 import './resumeSavingSolution.css';
 
-const savingsYears: string | null = localStorage.getItem('age');
-const period: string | null = localStorage.getItem('period');
-const savings: string | null = localStorage.getItem('salary');
-const finalCapital: string | null = localStorage.getItem('finalCapital');
-const interest: string | null = localStorage.getItem('interest');
+// const savingsYears: string | null = localStorage.getItem('age');
+// const period: string | null = localStorage.getItem('period');
+// const savings: string | null = localStorage.getItem('salary');
+// const finalCapital: string | null = localStorage.getItem('finalCapital');
+// const interest: string | null = localStorage.getItem('interest');
 
 // const solutions: any = JSON.stringify(localStorage.getItem('solutionChoice'));
 
 export default function ResumeSavingSolution(): ReactElement {
-  useEffect(() => {
-    const savingsYears: string | null = localStorage.getItem('age');
-    const period: string | null = localStorage.getItem('period');
-    const savings: string | null = localStorage.getItem('salary');
-    const finalCapital: string | null = localStorage.getItem('finalCapital');
-    const interest: string | null = localStorage.getItem('interest');
-  });
   const history = useHistory();
   const [solutions, setSolutions] = useState(
     JSON.stringify(localStorage.getItem('solutionChoice')),
   );
+  const [savingsYears] = useState(localStorage.getItem('age'));
+  const [period] = useState(localStorage.getItem('period'));
+  const [savings] = useState(localStorage.getItem('salary'));
+  const [finalCapital] = useState(localStorage.getItem('finalCapital'));
+  const [interest] = useState(localStorage.getItem('interest'));
 
   const {setProgress} = useContext(ProgressContext);
 
@@ -35,14 +33,14 @@ export default function ResumeSavingSolution(): ReactElement {
 
   const handleSubmit = () => {
     if (solutions.includes('rendement')) {
-      history.push('/resume-half-guarantee-solution');
+      history.push('/resume-mi-garantie-mi-rendement');
     } else {
-      history.push('/user-address-info');
+      history.push('/informations-adresse');
     }
   };
 
   const handleSubmitModify = () => {
-    history.push('/resume-saving-solution-modify');
+    history.push('/resume-epargne-recalcul');
   };
 
   return (
@@ -120,6 +118,7 @@ export default function ResumeSavingSolution(): ReactElement {
             Modifier les paramètres
           </button>
         </div>
+        <div className="empty_space"></div>
       </div>
     </div>
   );
