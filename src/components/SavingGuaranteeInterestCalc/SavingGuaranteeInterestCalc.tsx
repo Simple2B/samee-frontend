@@ -334,63 +334,66 @@ export default function SavingGuaranteeInterestCalc(): ReactElement {
         </div>
       </div>
 
-      <div className="footer_content">
-        <div className="buttons_set button_position">
-          <div className="error">{error}</div>
-          <button onClick={handleSubmit} className="next_button">
-            Continuer
-          </button>
-          <button onClick={handleRecalculate} className="button_recalc">
-            Recalculer
-          </button>
-        </div>
+      <div className="containerButtonPosition">
+        <div className="footer_content">
+          <div className="buttons_set button_position">
+            <div className="error">{error}</div>
+            <button onClick={handleSubmit} className="next_button">
+              Continuer
+            </button>
+            <button onClick={handleRecalculate} className="button_recalc">
+              Recalculer
+            </button>
+          </div>
 
-        <Popup
-          modal
-          trigger={
-            <div className="pop_up_triger">
-              Plus d'explications sur le résultat
-            </div>
-          }>
-          {(
-            close:
-              | ((
-                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-                ) => void)
-              | undefined,
-          ) => (
-            <>
-              <button className="close" onClick={close}></button>
-              <div className="pop_up">
-                <div className="pop_up_title">
-                  Plus d'explications sur le résultat
-                </div>
-                <div className="pop_up_text">
-                  Le montant entouré correspond au capital total épargné à l’âge
-                  de la retraite en fonction de votre investissement mensuel ou
-                  annuel et de la durée mentionnée. Il comprend les montants
-                  cotisés chaque année et les intérêts obtenus grâce à votre
-                  épargne. Le taux de 0.1% est indicatif et dépend du type de
-                  produit, de la compagnie d'assurance ou de la banque et des
-                  conditions de marché.
-                </div>
-                <div className="pop_up_text">
-                  Si vous avez choisi un 3ème pilier en assurance, le taux
-                  d’intérêt minimum sera fixé dans votre contrat et si la
-                  compagnie performe bien, vous recevrez des excédents.
-                </div>
-
-                <div className="pop_up_text">
-                  Si vous optez pour un 3ème pilier en banque, le taux d’intérêt
-                  ne sera que légèrement supérieur à celui d’un compte épargne
-                  et aucun montant ne pourra être garanti à l’échéance. Si vous
-                  avez un objectif précis en tête, il peut être intéressant de
-                  recalculer avec un montant d’épargne mensuel différent.
-                </div>
+          <Popup
+            modal
+            trigger={
+              <div className="pop_up_triger">
+                Plus d'explications sur le résultat
               </div>
-            </>
-          )}
-        </Popup>
+            }>
+            {(
+              close:
+                | ((
+                    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+                  ) => void)
+                | undefined,
+            ) => (
+              <>
+                <button className="close" onClick={close}></button>
+                <div className="pop_up">
+                  <div className="pop_up_title">
+                    Plus d'explications sur le résultat
+                  </div>
+                  <div className="pop_up_text">
+                    Le montant entouré correspond au capital total épargné à
+                    l’âge de la retraite en fonction de votre investissement
+                    mensuel ou annuel et de la durée mentionnée. Il comprend les
+                    montants cotisés chaque année et les intérêts obtenus grâce
+                    à votre épargne. Le taux de 0.1% est indicatif et dépend du
+                    type de produit, de la compagnie d'assurance ou de la banque
+                    et des conditions de marché.
+                  </div>
+                  <div className="pop_up_text">
+                    Si vous avez choisi un 3ème pilier en assurance, le taux
+                    d’intérêt minimum sera fixé dans votre contrat et si la
+                    compagnie performe bien, vous recevrez des excédents.
+                  </div>
+
+                  <div className="pop_up_text">
+                    Si vous optez pour un 3ème pilier en banque, le taux
+                    d’intérêt ne sera que légèrement supérieur à celui d’un
+                    compte épargne et aucun montant ne pourra être garanti à
+                    l’échéance. Si vous avez un objectif précis en tête, il peut
+                    être intéressant de recalculer avec un montant d’épargne
+                    mensuel différent.
+                  </div>
+                </div>
+              </>
+            )}
+          </Popup>
+        </div>
       </div>
     </div>
   );

@@ -9,6 +9,9 @@
   margin-bottom: 20px;
 }
 
+.choose_solution .containerButtonPosition {
+}
+
 .choose_solution_title {
   font-size: 30px;
 }
@@ -50,6 +53,20 @@
   margin-bottom: 30px;
 }
 
+@media (max-width: 1024px) {
+  .choose_solution_blocks {
+    flex-wrap: nowrap;
+  }
+  .choose_solution {
+    overflow-y: auto;
+  }
+  .choose_solution .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+    padding-top: 15px;
+  }
+}
+
 @media (max-width: 768px) {
   /* .pop_up_triger {
     display: none;
@@ -77,7 +94,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
   }
 
   .choose_solution_block-title {
@@ -85,16 +101,19 @@
     margin-bottom: 30px;
     text-align: inherit;
   }
-}
 
-@media (max-width: 1024px) {
-  .choose_solution_blocks {
-    flex-wrap: nowrap;
+  .choose_solution {
+    overflow-y: hidden;
+  }
+  .choose_solution .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+    padding-top: 10px;
+    bottom: 10px;
   }
 }
 
 @media (max-width: 425px) {
-
   .choose_solution_title {
     font-size: 20px;
   }
@@ -117,7 +136,6 @@
     width: 100%;
   }
 
-
   .choose_solution_list {
     font-size: 14px;
   }
@@ -125,14 +143,47 @@
   .choose_solution_block {
     display: flex;
 
-
     justify-content: space-between;
-
   }
 
   .choose_solution_block-title {
     white-space: normal;
     margin-bottom: 30px;
     text-align: inherit;
+  }
+}
+
+@media (max-width: 375px) {
+  .choose_solution {
+    overflow-y: hidden;
+  }
+  .choose_solution .containerButtonPosition {
+    width: 100%;
+    background-color: transparent;
+    padding-top: 10px;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .choose_solution {
+    overflow-y: auto;
+  }
+  .choose_solution .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+    bottom: -25px;
+  }
+}
+
+@media (max-width: 280px) {
+  .choose_solution {
+    overflow-y: auto;
+  }
+  .choose_solution .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+    padding-top: 10px;
+    bottom: 0;
   }
 }

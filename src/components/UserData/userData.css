@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 155px;
 }
 
 .sexe_lebel {
@@ -83,6 +84,9 @@
   margin-bottom: 2px;
 }
 
+.text_error_data {
+  margin-bottom: 38px;
+}
 
 .close {
   position: absolute;
@@ -110,9 +114,8 @@
   display: none;
 }
 
-
 .sex_radio_item label:before {
-  content: " ";
+  content: ' ';
   display: inline-block;
   position: relative;
   top: 5px;
@@ -128,14 +131,14 @@
   cursor: pointer;
 }
 
-.sex_radio_item input[type=radio]:checked+label:after {
+.sex_radio_item input[type='radio']:checked + label:after {
   border-radius: 11px;
   width: 16px;
   height: 16px;
   position: absolute;
   top: 15px;
   left: 14px;
-  content: " ";
+  content: ' ';
   display: block;
   background: #eac28c;
 }
@@ -146,10 +149,8 @@
   }
 }
 
-
 @media (max-width: 425px) {
-
-  .sex_radio_item input[type=radio]:checked+label:after {
+  .sex_radio_item input[type='radio']:checked + label:after {
     top: 9px;
     left: 14px;
   }
@@ -172,7 +173,6 @@
   .pop_up_text {
     font-size: 14px;
   }
-
 
   .pop_up_title {
     font-size: 18px;
@@ -200,11 +200,9 @@
     padding-left: 1px;
     margin-top: 0;
   }
-
 }
 
 @media (max-width: 375px) {
-
   .pop_up_triger::after {
     height: 10px;
     width: 10px;
@@ -212,10 +210,7 @@
     background-size: contain;
     padding-left: 3px;
     margin-top: 1px;
-
-
   }
-
 }
 
 @media (max-width: 360px) {

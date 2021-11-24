@@ -16,8 +16,6 @@
   display: block;
 }
 
-
-
 .input_field {
   height: 35px;
   width: 250px;
@@ -26,7 +24,7 @@
   border: 1px solid;
   padding-left: 15px;
   font-size: 17px;
-  font-family: "Archivo Narrow";
+  font-family: 'Archivo Narrow';
   margin-bottom: 15px;
 }
 
@@ -71,6 +69,17 @@
   margin: 0;
 }
 
+@media (max-width: 1024px) {
+  .user_address_info {
+    overflow-y: auto;
+    padding-bottom: 10px;
+  }
+  .user_address_info .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+  }
+}
+
 @media (max-width: 768px) {
   .input_field {
     width: 230px;
@@ -88,6 +97,12 @@
 
   .geosuggest__suggests {
     width: 195px;
+  }
+}
+
+@media (max-width: 540px) {
+  .user_address_info_input_block {
+    flex-wrap: wrap;
   }
 }
 
@@ -112,5 +127,22 @@
 
   .geosuggest__suggests {
     width: 138px;
+  }
+
+  .user_address_info .containerButtonPosition {
+    bottom: 5px;
+  }
+}
+
+@media (max-width: 280px) {
+  .user_address_info_input_block {
+    flex-wrap: wrap;
+  }
+  .user_address_info {
+    overflow-y: auto;
+  }
+  .user_address_info .containerButtonPosition {
+    background-color: black;
+    bottom: 10px;
   }
 }

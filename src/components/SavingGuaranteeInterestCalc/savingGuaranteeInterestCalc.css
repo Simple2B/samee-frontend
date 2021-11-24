@@ -41,7 +41,6 @@
   transition: background-color 1s;
 }
 
-
 .button_recalc:hover {
   background-color: rgb(187, 187, 187);
 }
@@ -73,6 +72,16 @@
     color: #eac28c;
     font-size: 35px;
   }
+
+  .interest_wrapper {
+    overflow: auto;
+    padding-bottom: 50px;
+  }
+
+  .interest_wrapper .containerButtonPosition {
+    width: 40%;
+    background-color: black;
+  }
 }
 
 @media (max-width: 768px) {
@@ -81,7 +90,6 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-
   }
 
   .saving_interest_calc-final-calc {
@@ -122,5 +130,71 @@
   .countup_text {
     color: #eac28c;
     font-size: 24px;
+  }
+}
+
+@media (max-width: 414px) {
+  .saving_interest_calc {
+    margin: 0;
+  }
+
+  .interest_wrapper .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+    bottom: 50px;
+  }
+}
+
+@media (max-width: 375px) {
+  .interest_wrapper {
+    padding: 0;
+  }
+  .interest_wrapper .main_content {
+    overflow-y: auto;
+    padding-top: 150px;
+  }
+  .interest_wrapper .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+    bottom: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .interest_wrapper {
+    overflow-y: hidden;
+  }
+  .interest_wrapper .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+    bottom: 50px;
+  }
+}
+
+@media (max-width: 540px) {
+  .interest_wrapper .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+    bottom: 50px;
+  }
+}
+
+@media (max-width: 320px) {
+  .interest_wrapper .main_content {
+    overflow-y: auto;
+    padding-top: 200px;
+    padding-bottom: 120px;
+    margin: 0;
+  }
+  .interest_wrapper .containerButtonPosition {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 280px) {
+  .interest_wrapper .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+    bottom: 5px;
   }
 }

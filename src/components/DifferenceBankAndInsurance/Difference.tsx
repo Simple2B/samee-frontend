@@ -23,7 +23,7 @@ export default function Difference(): ReactElement {
   };
   return (
     <div className="difference">
-      <div className="main_content">
+      <div className="main_content main_contentDifference">
         <div className="difference_title">
           Vous pouvez ouvrir un troisième pilier en banque ou/et en assurance.
           Les deux solutions ont des avantages.

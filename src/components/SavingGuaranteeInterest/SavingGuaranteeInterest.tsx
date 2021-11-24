@@ -42,46 +42,48 @@ export default function SavingGuaranteeInterest(): ReactElement {
         </div>
       </div>
 
-      <div className="footer_content">
-        <button
-          onClick={handleChange}
-          className="next_button-interest button_position">
-          Découvrir le montant que je pourrais obtenir
-        </button>
+      <div className="containerButtonPosition">
+        <div className="footer_content">
+          <button
+            onClick={handleChange}
+            className="next_button-interest button_position">
+            Découvrir le montant que je pourrais obtenir
+          </button>
 
-        <Popup
-          modal
-          trigger={
-            <div className="pop_up_triger">
-              Avec quelles institutions travaillez-vous ?
-            </div>
-          }>
-          {(
-            close:
-              | ((
-                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-                ) => void)
-              | undefined,
-          ) => (
-            <>
-              <button className="close" onClick={close}></button>
-              <div className="pop_up">
-                <div className="pop_up_title">
-                  Avec quelles institutions travaillez-vous ?
-                </div>
-                <div className="pop_up_text">
-                  Les principales institutions avec lesquelles nous travaillons
-                  sont :
-                </div>
-                <div className="pop_up_text">
-                  Allianz, Axa Winterthur, Bâloise, Generali, Helvetia,
-                  Mobilière, Rentes genevoises, Retraites populaires, Swisslife,
-                  Vaudoise, Zugerberg, Zürich.
-                </div>
+          <Popup
+            modal
+            trigger={
+              <div className="pop_up_triger">
+                Avec quelles institutions travaillez-vous ?
               </div>
-            </>
-          )}
-        </Popup>
+            }>
+            {(
+              close:
+                | ((
+                    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+                  ) => void)
+                | undefined,
+            ) => (
+              <>
+                <button className="close" onClick={close}></button>
+                <div className="pop_up">
+                  <div className="pop_up_title">
+                    Avec quelles institutions travaillez-vous ?
+                  </div>
+                  <div className="pop_up_text">
+                    Les principales institutions avec lesquelles nous
+                    travaillons sont :
+                  </div>
+                  <div className="pop_up_text">
+                    Allianz, Axa Winterthur, Bâloise, Generali, Helvetia,
+                    Mobilière, Rentes genevoises, Retraites populaires,
+                    Swisslife, Vaudoise, Zugerberg, Zürich.
+                  </div>
+                </div>
+              </>
+            )}
+          </Popup>
+        </div>
       </div>
     </div>
   );

@@ -168,65 +168,68 @@ export default function Employee(): ReactElement {
         )}
       </div>
 
-      <div className="footer_content">
-        <div className="error"> {error}</div>
+      <div className="containerButtonPosition">
+        <div className="footer_content">
+          <div className="error"> {error}</div>
 
-        <button
-          disabled={salary === '' || period === '' || salary === 0}
-          onClick={handleSubmit}
-          className="next_button button_position">
-          Continuer
-        </button>
+          <button
+            disabled={salary === '' || period === '' || salary === 0}
+            onClick={handleSubmit}
+            className="next_button button_position">
+            Continuer
+          </button>
 
-        <Popup
-          modal
-          trigger={
-            <div className="pop_up_triger">
-              Comment fonctionne l'économie d'impôts ?
-            </div>
-          }>
-          {(
-            close:
-              | ((
-                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-                ) => void)
-              | undefined,
-          ) => (
-            <>
-              <button className="close" onClick={close}></button>
-              <div className="pop_up">
-                <div className="pop_up_title">
-                  Comment fonctionne l'économie d'impôts ?
-                </div>
-                <div className="pop_up_text">
-                  Vous pouvez déduire de votre revenu imposable l’intégralité
-                  des versements au 3ème pilier. Plus vous cotisez, plus vos
-                  économies seront importantes.
-                </div>
-                <div className="pop_up_text">
-                  Le montant maximal annuel est actuellement de 6'883 CHF pour
-                  un salarié et de 34'416 CHF ou de maximum 20% de son salaire
-                  AVS pour un indépendant. De plus, votre épargne au 3ème pilier
-                  est exonérée d'impôts jusqu'à la retraite. Le montant minimum
-                  que vous pouvez investir est de 1'200 CHF par an.
-                </div>
-                <div className="pop_up_text">
-                  Il est important de savoir que lors du retrait de votre 3ème
-                  pilier, vous serez imposés entre 5% et 10% selon les
-                  différents cantons. Toutefois, l’économie d’impôts annuelle
-                  (entre 20% et 40% des montants investis sont récupérés sous
-                  forme de réduction fiscale) est fortement supérieure à l’impôt
-                  prélevé à l’échéance.
-                </div>
-                <div className="pop_up_text">
-                  Pour éviter de subir une imposition trop lourde, vous avez la
-                  possibilité de diviser votre 3e pilier en plusieurs comptes
-                  afin de les retirer progressivement entre 60 et 65 ans.
-                </div>
+          <Popup
+            modal
+            trigger={
+              <div className="pop_up_triger">
+                Comment fonctionne l'économie d'impôts ?
               </div>
-            </>
-          )}
-        </Popup>
+            }>
+            {(
+              close:
+                | ((
+                    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+                  ) => void)
+                | undefined,
+            ) => (
+              <>
+                <button className="close" onClick={close}></button>
+                <div className="pop_up">
+                  <div className="pop_up_title">
+                    Comment fonctionne l'économie d'impôts ?
+                  </div>
+                  <div className="pop_up_text">
+                    Vous pouvez déduire de votre revenu imposable l’intégralité
+                    des versements au 3ème pilier. Plus vous cotisez, plus vos
+                    économies seront importantes.
+                  </div>
+                  <div className="pop_up_text">
+                    Le montant maximal annuel est actuellement de 6'883 CHF pour
+                    un salarié et de 34'416 CHF ou de maximum 20% de son salaire
+                    AVS pour un indépendant. De plus, votre épargne au 3ème
+                    pilier est exonérée d'impôts jusqu'à la retraite. Le montant
+                    minimum que vous pouvez investir est de 1'200 CHF par an.
+                  </div>
+                  <div className="pop_up_text">
+                    Il est important de savoir que lors du retrait de votre 3ème
+                    pilier, vous serez imposés entre 5% et 10% selon les
+                    différents cantons. Toutefois, l’économie d’impôts annuelle
+                    (entre 20% et 40% des montants investis sont récupérés sous
+                    forme de réduction fiscale) est fortement supérieure à
+                    l’impôt prélevé à l’échéance.
+                  </div>
+                  <div className="pop_up_text">
+                    Pour éviter de subir une imposition trop lourde, vous avez
+                    la possibilité de diviser votre 3e pilier en plusieurs
+                    comptes afin de les retirer progressivement entre 60 et 65
+                    ans.
+                  </div>
+                </div>
+              </>
+            )}
+          </Popup>
+        </div>
       </div>
     </div>
   );

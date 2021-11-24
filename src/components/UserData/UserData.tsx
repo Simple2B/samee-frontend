@@ -129,49 +129,52 @@ export default function UserData(): ReactElement {
         </div>
       </div>
 
-      <div className="footer_content">
+      <div className="containerButtonPosition">
+        <div className="footer_content">
+          <Popup
+            modal
+            trigger={
+              <div className="pop_up_triger triger_position">
+                Pourquoi ces données sont-elles essentielles?
+              </div>
+            }>
+            {(
+              close:
+                | ((
+                    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+                  ) => void)
+                | undefined,
+            ) => (
+              <>
+                <button className="close" onClick={close}></button>
+                <div className="pop_up">
+                  <div className="pop_up_title">
+                    Pourquoi ces données sont-elles essentielles ?
+                  </div>
+                  <div className="pop_up_text">
+                    Vous avez la possibilité d’épargner pour votre troisième
+                    pilier jusqu’à l’âge de la retraite AVS. Pour les femmes, il
+                    est fixé à 64 ans et pour les hommes, à 65 ans. Nous
+                    calculons donc la différence entre l’âge officiel de la
+                    retraite et le vôtre, pour obtenir le nombre d’années durant
+                    lesquelles vous pourrez épargner.
+                  </div>
+                  <div className="pop_up_text">
+                    Vous pouvez cotiser à un 3ème pilier à partir de 18 ans à
+                    condition que vous disposiez d’un revenu soumis à l’AVS.
+                    Tout individu travaillant et payant ses impôts en Suisse
+                    peut cotiser au 3ème pilier, travailleurs frontaliers
+                    inclus.{' '}
+                  </div>
+                </div>
+              </>
+            )}
+          </Popup>
+        </div>
         <div className="text_error">{error}</div>
         <button onClick={handleSubmit} className="next_button button_position">
           Continuer
         </button>
-        <Popup
-          modal
-          trigger={
-            <div className="pop_up_triger triger_position">
-              Pourquoi ces données sont-elles essentielles?
-            </div>
-          }>
-          {(
-            close:
-              | ((
-                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-                ) => void)
-              | undefined,
-          ) => (
-            <>
-              <button className="close" onClick={close}></button>
-              <div className="pop_up">
-                <div className="pop_up_title">
-                  Pourquoi ces données sont-elles essentielles ?
-                </div>
-                <div className="pop_up_text">
-                  Vous avez la possibilité d’épargner pour votre troisième
-                  pilier jusqu’à l’âge de la retraite AVS. Pour les femmes, il
-                  est fixé à 64 ans et pour les hommes, à 65 ans. Nous calculons
-                  donc la différence entre l’âge officiel de la retraite et le
-                  vôtre, pour obtenir le nombre d’années durant lesquelles vous
-                  pourrez épargner.
-                </div>
-                <div className="pop_up_text">
-                  Vous pouvez cotiser à un 3ème pilier à partir de 18 ans à
-                  condition que vous disposiez d’un revenu soumis à l’AVS. Tout
-                  individu travaillant et payant ses impôts en Suisse peut
-                  cotiser au 3ème pilier, travailleurs frontaliers inclus.{' '}
-                </div>
-              </div>
-            </>
-          )}
-        </Popup>
       </div>
     </div>
   );

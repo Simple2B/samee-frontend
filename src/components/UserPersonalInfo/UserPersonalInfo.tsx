@@ -246,62 +246,64 @@ export default function UserPersonalInfo(): ReactElement {
         }}
       </Formik>
 
-      <div className="footer_content">
-        <div className="button_set button_position">
-          <div className="error">{error}</div>
-          <button
-            type="submit"
-            form="form"
-            // onClick={handleSubmit}
-            className="next_button">
-            Continuer
-          </button>
-        </div>
+      <div className="containerButtonPosition">
+        <div className="footer_content">
+          <div className="button_set button_position">
+            <div className="error">{error}</div>
+            <button
+              type="submit"
+              form="form"
+              // onClick={handleSubmit}
+              className="next_button">
+              Continuer
+            </button>
+          </div>
 
-        <Popup
-          modal
-          trigger={
-            <div className="pop_up_triger">
-              Pourquoi avez-vous besoin de ces informations ?
-            </div>
-          }>
-          {(
-            close:
-              | ((
-                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-                ) => void)
-              | undefined,
-          ) => (
-            <>
-              <button className="close" onClick={close}></button>
-              <div className="pop_up">
-                <div className="pop_up_title">
-                  Pourquoi avez-vous besoin de ces informations ?
-                </div>
-                <div className="pop_up_text">
-                  Ces différents facteurs servent à déterminer votre profil et
-                  peuvent influencer le coût du risque dans votre 3ème pilier.
-                  En répondant de manière transparente, nos experts pourront
-                  réaliser l’estimation la plus précise possible.
-                </div>
-                <div className="pop_up_text">
-                  Par exemple, si vous êtes fumeur et exercez une profession à
-                  haut risque, vous vous situez dans une classe de risque
-                  supérieure par rapport à une personne non-fumeuse avec un
-                  travail sans danger.
-                </div>
-
-                <div className="pop_up_text">
-                  Lors de la conclusion du contrat, les données renseignées à
-                  l'assureur devront être exactes afin qu'il adapte la
-                  proposition à chaque client. En cas d'informations erronées
-                  (réticence), l'assureur est en droit d'annuler la police et de
-                  réclamer les prestations éventuellement déjà versées.
-                </div>
+          <Popup
+            modal
+            trigger={
+              <div className="pop_up_triger">
+                Pourquoi avez-vous besoin de ces informations ?
               </div>
-            </>
-          )}
-        </Popup>
+            }>
+            {(
+              close:
+                | ((
+                    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+                  ) => void)
+                | undefined,
+            ) => (
+              <>
+                <button className="close" onClick={close}></button>
+                <div className="pop_up">
+                  <div className="pop_up_title">
+                    Pourquoi avez-vous besoin de ces informations ?
+                  </div>
+                  <div className="pop_up_text">
+                    Ces différents facteurs servent à déterminer votre profil et
+                    peuvent influencer le coût du risque dans votre 3ème pilier.
+                    En répondant de manière transparente, nos experts pourront
+                    réaliser l’estimation la plus précise possible.
+                  </div>
+                  <div className="pop_up_text">
+                    Par exemple, si vous êtes fumeur et exercez une profession à
+                    haut risque, vous vous situez dans une classe de risque
+                    supérieure par rapport à une personne non-fumeuse avec un
+                    travail sans danger.
+                  </div>
+
+                  <div className="pop_up_text">
+                    Lors de la conclusion du contrat, les données renseignées à
+                    l'assureur devront être exactes afin qu'il adapte la
+                    proposition à chaque client. En cas d'informations erronées
+                    (réticence), l'assureur est en droit d'annuler la police et
+                    de réclamer les prestations éventuellement déjà versées.
+                  </div>
+                </div>
+              </>
+            )}
+          </Popup>
+        </div>
       </div>
     </div>
   );

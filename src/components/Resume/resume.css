@@ -8,3 +8,9 @@
 .resume_text {
   margin-bottom: 20px;
 }
+
+@media (max-width: 540px) {
+  .resume .containerButtonPosition {
+    bottom: 1px;
+  }
+}

@@ -270,18 +270,20 @@ export default function UserContactInfo(): ReactElement {
         }}
       </Formik>
 
-      <div className="footer_content">
-        <div className="button_set button_position">
-          <div className="error">{error}</div>
-          <button
-            type="submit"
-            form="form"
-            // onClick={handleSubmit}
-            className="next_button">
-            Continuer
-          </button>
+      <div className="containerButtonPosition">
+        <div className="footer_content">
+          <div className="button_set button_position">
+            <div className="error">{error}</div>
+            <button
+              type="submit"
+              form="form"
+              // onClick={handleSubmit}
+              className="next_button">
+              Continuer
+            </button>
+          </div>
+          <div className="empty_space"></div>
         </div>
-        <div className="empty_space"></div>
       </div>
     </div>
   );

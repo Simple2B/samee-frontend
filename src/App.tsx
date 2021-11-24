@@ -1,15 +1,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-  useLocation,
-  useHistory,
-} from 'react-router-dom';
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
+import {Route, useLocation, useHistory} from 'react-router-dom';
+import {CSSTransition} from 'react-transition-group';
 import Bar from './components/Bar/Bar';
 import Footer from './components/Footer/Footer';
 import Welcome from './components/Welcome/Welcome';
@@ -55,7 +47,6 @@ import ConfirmCode from './components/ConfirmCode/ConfirmCode';
 import FinalStep from './components/FinalStep/FinalStep';
 import ProgressBarWrapper from './components/ProgressBarWrapper/ProgressBarWrapper';
 import {ProgressContext} from './context/progressContext';
-import {useCookies} from 'react-cookie';
 import PathCache from './components/pathCache';
 
 function App() {
@@ -63,7 +54,7 @@ function App() {
 
   const location = useLocation();
   const history = useHistory();
-  const [path, setPath] = useState(location.pathname);
+  // const [path, setPath] = useState(location.pathname);
 
   const handleStepChange = (value: number) => {
     setSteps(value);

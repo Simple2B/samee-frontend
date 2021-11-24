@@ -5,8 +5,35 @@
   flex-direction: column;
 }
 
+.guarantees .containerButtonPosition {
+  bottom: 65px;
+}
+
+@media (max-width: 1024px) {
+  .guarantees {
+    overflow-y: auto;
+  }
+  .guarantees .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+    bottom: 55px;
+  }
+}
+
 @media (max-width: 360px) {
   .guarantees {
     overflow-y: scroll;
+  }
+}
+
+@media (max-width: 320px) {
+  .guarantees .containerButtonPosition {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 280px) {
+  .guarantees .containerButtonPosition {
+    bottom: 25px;
   }
 }

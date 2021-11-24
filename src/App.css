@@ -6,7 +6,7 @@ body {
   background-color: #000519;
   color: #fff;
   font-size: 24px !important;
-  font-family: "Archivo Narrow" !important;
+  font-family: 'Archivo Narrow' !important;
   line-height: 1.8;
 }
 
@@ -44,9 +44,13 @@ a {
 
 button {
   font-size: 26px !important;
-  font-family: "Archivo Narrow" !important;
+  font-family: 'Archivo Narrow' !important;
 }
 
+.containerButtonPosition {
+  position: fixed;
+  bottom: 55px;
+}
 
 .button_position {
   margin-bottom: 20px;
@@ -93,7 +97,6 @@ li {
   display: none;
 }
 
-
 .stepper {
   position: fixed;
   top: 0;
@@ -102,7 +105,6 @@ li {
   padding-top: 20px;
   z-index: 100;
 }
-
 
 @media (min-width: 1800px) {
   body {
@@ -165,6 +167,6 @@ li {
 
   button {
     font-size: 15px !important;
-    font-family: "Archivo Narrow" !important;
+    font-family: 'Archivo Narrow' !important;
   }
 }

@@ -22,11 +22,58 @@
   align-items: center;
 }
 
+.self-employed .containerButtonPosition {
+  bottom: 65px;
+}
+
+@media (max-width: 1024px) {
+  .self-employed {
+    overflow-y: scroll;
+  }
+  .self-employed .containerButtonPosition {
+    width: 100%;
+    padding: 10px 0;
+    background-color: black;
+  }
+}
+
+@media (max-width: 540px) {
+  .self-employed {
+    overflow-y: scroll;
+    padding-bottom: 50px;
+  }
+  .self-employed .containerButtonPosition {
+    width: 100%;
+    padding: 10px 0;
+    background-color: black;
+  }
+}
+
 @media (max-width: 425px) {
   .self-employed_salary {
     width: 60px;
     height: 25px;
     font-size: 12px;
   }
+}
 
+@media (max-width: 320px) {
+  .self-employed {
+  }
+  .self-employed .containerButtonPosition {
+    padding: 0;
+    background-color: black;
+    bottom: 40px;
+  }
+}
+
+@media (max-width: 280px) {
+  .self-employed {
+    overflow-y: hidden;
+  }
+  .self-employed .containerButtonPosition {
+    width: 280px;
+    padding: 0;
+    background-color: black;
+  }
 }

@@ -1,7 +1,7 @@
 .welcome {
   display: flex;
   flex-direction: column;
-  height: 82vh;
+  /* height: 82vh; */
 }
 
 .empty_space {
@@ -50,20 +50,15 @@
   .welcome_image {
     display: none;
   }
-
 }
 
 @media (max-width: 425px) {
-
-
   .welcome_text_title {
     display: block;
     font-size: 20px;
   }
 
-
   .next_button {
     font-size: 20px;
   }
-
 }

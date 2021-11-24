@@ -26,6 +26,10 @@
   color: #eac28c;
 }
 
+.employee .containerButtonPosition {
+  bottom: 55px;
+}
+
 @media (max-width: 425px) {
   .button_position-1 {
     left: 20px;
@@ -36,5 +40,4 @@
     height: 25px;
     font-size: 12px;
   }
-
 }

@@ -108,17 +108,19 @@ export default function ResumeSavingSolution(): ReactElement {
         </div>
       </div>
 
-      <div className="footer_content">
-        <div className="buttons_set button_position">
-          <button onClick={handleSubmit} className="next_button">
-            Continuer
-          </button>
+      <div className="containerButtonPosition">
+        <div className="footer_content">
+          <div className="buttons_set button_position">
+            <button onClick={handleSubmit} className="next_button">
+              Continuer
+            </button>
 
-          <button onClick={handleSubmitModify} className="button_modify">
-            Modifier les paramètres
-          </button>
+            <button onClick={handleSubmitModify} className="button_modify">
+              Modifier les paramètres
+            </button>
+          </div>
+          <div className="empty_space"></div>
         </div>
-        <div className="empty_space"></div>
       </div>
     </div>
   );

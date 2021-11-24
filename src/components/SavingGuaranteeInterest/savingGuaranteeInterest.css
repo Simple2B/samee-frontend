@@ -1,5 +1,4 @@
 .saving_interest {
-
   position: relative;
   height: 82vh;
   display: flex;
@@ -23,8 +22,35 @@
   background-color: #a88b64;
 }
 
+@media (max-width: 1024px) {
+  .saving_interest {
+    overflow-y: auto;
+    padding-bottom: 50px;
+  }
+  .saving_interest .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+  }
+}
+
 @media (max-width: 425px) {
   .next_button-interest {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .saving_interest {
+    overflow-y: auto;
+    padding-bottom: 0;
+  }
+  .saving_interest .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+    bottom: 15px;
+  }
+
+  .next_button-interest {
+    margin: 0;
   }
 }

@@ -5,6 +5,11 @@
   flex-direction: column;
 }
 
+.wrapper_tax .containerButtonPosition {
+  width: 100%;
+  bottom: 65px;
+}
+
 .tax {
   display: flex;
   align-items: center;
@@ -31,6 +36,16 @@
   margin: 0 auto;
 }
 
+@media (max-width: 1024px) {
+  .wrapper_tax .containerButtonPosition {
+    position: fixed;
+    bottom: 55px;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+}
+
 @media (max-width: 768px) {
   .tax {
     display: block;
@@ -38,6 +53,29 @@
 
   .tax_text {
     margin-right: 0;
+  }
+
+  .wrapper_tax .containerButtonPosition {
+    position: fixed;
+    bottom: 60px;
+  }
+}
+
+@media (max-width: 540px) {
+  .wrapper_tax {
+    height: 90vh;
+    overflow-y: auto;
+    padding-bottom: 100px;
+  }
+
+  .wrapper_tax .containerButtonPosition {
+    padding-top: 25px;
+    background-color: black;
+    bottom: 50px;
+  }
+
+  .wrapper_tax .footer_content .pop_up_triger {
+    margin: 0;
   }
 }
 
@@ -57,5 +95,30 @@
   #lottie {
     height: 150px !important;
     width: 150px !important;
+  }
+}
+
+@media (max-width: 414px) {
+  .wrapper_tax .containerButtonPosition {
+    position: fixed;
+    bottom: 80px;
+  }
+}
+
+@media (max-width: 320px) {
+  .wrapper_tax .containerButtonPosition {
+    position: fixed;
+    bottom: 5 px;
+  }
+}
+
+@media (max-width: 280px) {
+  .wrapper_tax {
+    height: 80vh;
+    overflow-y: none;
+    padding-bottom: 0;
+  }
+  .wrapper_tax .containerButtonPosition {
+    bottom: 25px;
   }
 }

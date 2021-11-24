@@ -20,9 +20,35 @@
   flex-wrap: wrap;
 }
 
-
 .user_contact_info_text {
   margin-bottom: 15px;
+}
+
+@media (max-width: 1024px) {
+  .user_contact_info {
+    overflow-y: auto;
+  }
+  .user_contact_info .containerButtonPosition {
+    bottom: 10px;
+    width: 100%;
+    background-color: black;
+  }
+}
+@media (max-width: 375px) {
+  .user_contact_info {
+    overflow-y: hidden;
+  }
+}
+
+@media (max-width: 320px) {
+  .user_contact_info {
+    overflow-y: auto;
+  }
+
+  .user_contact_info .containerButtonPosition {
+    padding-top: 15px;
+    bottom: -35px;
+  }
 }
 
 @media (max-width: 425px) {

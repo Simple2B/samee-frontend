@@ -18,6 +18,26 @@
   font-weight: bold;
 }
 
+@media (max-width: 1024px) {
+  .additional-guaranties {
+    overflow-y: scroll;
+  }
+  .additional-guaranties .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+  }
+}
+
+@media (max-width: 540px) {
+  .additional-guaranties {
+    overflow-y: scroll;
+  }
+  .additional-guaranties .containerButtonPosition {
+    padding-top: 18px;
+    bottom: 45px;
+  }
+}
+
 @media (max-width: 425px) {
   .additional-guaranties_title {
     font-size: 20px;
@@ -28,5 +48,26 @@
   .additional-guaranties {
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+}
+
+@media (max-width: 320px) {
+  .additional-guaranties {
+    overflow-y: scroll;
+  }
+  .additional-guaranties .containerButtonPosition {
+    padding-top: 10px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 280px) {
+  .additional-guaranties {
+    overflow-y: scroll;
+  }
+  .additional-guaranties .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+    bottom: 20px;
   }
 }

@@ -304,51 +304,53 @@ export default function UserAddressInfo(): ReactElement {
         </Formik>
       </div>
 
-      <div className="footer_contant">
-        <div className="button_set button_position">
-          <div className="error">{error}</div>
-          <button
-            type="submit"
-            form="form"
-            // onClick={handleSubmit}
-            className="next_button">
-            Continuer
-          </button>
-        </div>
+      <div className="containerButtonPosition">
+        <div className="footer_contant">
+          <div className="button_set button_position">
+            <div className="error">{error}</div>
+            <button
+              type="submit"
+              form="form"
+              // onClick={handleSubmit}
+              className="next_button">
+              Continuer
+            </button>
+          </div>
 
-        <Popup
-          modal
-          trigger={
-            <div className="pop_up_triger">
-              Pourquoi avez-vous besoin de ces informations ?
-            </div>
-          }>
-          {(
-            close:
-              | ((
-                  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-                ) => void)
-              | undefined,
-          ) => (
-            <>
-              <button className="close" onClick={close}></button>
-              <div className="pop_up">
-                <div className="pop_up_title">
-                  Pourquoi avez-vous besoin de ces informations ?
-                </div>
-                <div className="pop_up_text">
-                  Ces informations sont nécessaires afin d’effectuer un
-                  comparatif des meilleures offres, en fonction de votre
-                  situation, vos besoins et votre propension au risque.
-                </div>
-                <div className="pop_up_text">
-                  Des différences existent selon votre canton et ville de
-                  résidence.
-                </div>
+          <Popup
+            modal
+            trigger={
+              <div className="pop_up_triger">
+                Pourquoi avez-vous besoin de ces informations ?
               </div>
-            </>
-          )}
-        </Popup>
+            }>
+            {(
+              close:
+                | ((
+                    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+                  ) => void)
+                | undefined,
+            ) => (
+              <>
+                <button className="close" onClick={close}></button>
+                <div className="pop_up">
+                  <div className="pop_up_title">
+                    Pourquoi avez-vous besoin de ces informations ?
+                  </div>
+                  <div className="pop_up_text">
+                    Ces informations sont nécessaires afin d’effectuer un
+                    comparatif des meilleures offres, en fonction de votre
+                    situation, vos besoins et votre propension au risque.
+                  </div>
+                  <div className="pop_up_text">
+                    Des différences existent selon votre canton et ville de
+                    résidence.
+                  </div>
+                </div>
+              </>
+            )}
+          </Popup>
+        </div>
       </div>
     </div>
   );

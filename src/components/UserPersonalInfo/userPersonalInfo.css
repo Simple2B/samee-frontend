@@ -21,8 +21,7 @@
   border: 1px solid;
   padding-left: 15px;
   font-size: 17px;
-  font-family: "Archivo Narrow";
-
+  font-family: 'Archivo Narrow';
 }
 
 .percent_block {
@@ -36,4 +35,28 @@
 
 .user_personal_info_text {
   margin: 45px 0 20px;
+}
+
+@media (max-width: 1024px) {
+  .user_personal_info {
+    overflow-y: scroll;
+  }
+  .user_personal_info .containerButtonPosition {
+    width: 100%;
+    background-color: black;
+  }
+}
+
+@media (max-width: 320px) {
+  .user_personal_info .containerButtonPosition {
+    padding: 0;
+    bottom: 15px;
+  }
+}
+
+@media (max-width: 280px) {
+  .user_personal_info .containerButtonPosition {
+    padding-top: 5px;
+    bottom: 10px;
+  }
 }

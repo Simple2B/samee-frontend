@@ -104,12 +104,14 @@ export default function GuaranteedSavingSolution(): ReactElement {
         </div>
       </div>
 
-      <div className="footer_content">
-        <div className="button_position">
-          <button onClick={handleSubmit} className="video_button_next">
-            Continuer
-          </button>
-          <div className="empty_space"></div>
+      <div className="containerButtonPosition">
+        <div className="footer_content">
+          <div className="button_position">
+            <button onClick={handleSubmit} className="video_button_next">
+              Continuer
+            </button>
+            <div className="empty_space"></div>
+          </div>
         </div>
       </div>
     </div>
