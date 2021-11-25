@@ -28,19 +28,32 @@
   .user_contact_info {
     overflow-y: auto;
   }
-  .user_contact_info .containerButtonPosition {
+
+  .user_contact_info .containerButtonPosition1 {
     bottom: 10px;
     width: 100%;
     background-color: #000519;
   }
 }
+
 @media (max-width: 375px) {
   .user_contact_info {
     overflow-y: hidden;
   }
-  .user_contact_info .containerButtonPosition {
+
+  .user_contact_info .containerButtonPosition1 {
     padding-top: 15px;
     bottom: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .user_personal_info_text {
+    margin: 20px 0;
+  }
+
+  .user_inputs_smoking {
+    margin: 20px 0;
   }
 }
 

@@ -131,6 +131,12 @@ export default function UserData(): ReactElement {
 
       <div className="containerButtonPosition">
         <div className="footer_content">
+          <div className="text_error">{error}</div>
+          <button
+            onClick={handleSubmit}
+            className="next_button button_position">
+            Continuer
+          </button>
           <Popup
             modal
             trigger={
@@ -171,10 +177,6 @@ export default function UserData(): ReactElement {
             )}
           </Popup>
         </div>
-        <div className="text_error">{error}</div>
-        <button onClick={handleSubmit} className="next_button button_position">
-          Continuer
-        </button>
       </div>
     </div>
   );

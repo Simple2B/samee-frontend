@@ -134,3 +134,52 @@
   }
 
 }
+
+@media (max-width: 360px) {
+  .resume_half_solution_main_circle {
+    width: 115px;
+    height: 115px;
+  }
+
+  .resume_half_solution_optimist,
+  .resume_half_solution_pessimist {
+    width: 85px;
+    height: 85px;
+    margin: 10px;
+  }
+
+  .resume_half_solution_main_circle {
+    margin-right: 0px;
+  }
+
+  .scenario {
+    font-size: 13px;
+  }
+
+  .scenario_text {
+    font-size: 13px;
+  }
+
+  .scenario-opt,
+  .scenario-pess {
+    font-size: 9px;
+  }
+
+  .scenario_num-opt,
+  .scenario_num-pess {
+    font-size: 11px;
+  }
+
+  .resume_half_solution_main_circle {
+    border: 4px solid;
+  }
+
+  .resume_half_solution_optimist,
+  .resume_half_solution_pessimist {
+
+    border: 3px solid;
+
+
+  }
+
+}

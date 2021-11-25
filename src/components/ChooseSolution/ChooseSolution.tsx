@@ -93,7 +93,7 @@ export default function ChooseSolution(): ReactElement {
           Veuillez cocher la case qui vous correspond le mieux. (vous pouvez
           cocher les deux cases)
         </div>
-        <div className="choose_solution_text">
+        <div className="choose_solution_text last">
           Il est bien de savoir que nous pourrons toujours trouver une solution
           sur-mesure. Ce calculateur est là pour vous aider à mieux visualiser
           les opportunités offertes par le troisième pilier. Résultats à titre

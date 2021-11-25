@@ -5,7 +5,7 @@
   flex-direction: column;
 }
 
-.wrapper_abroad .containerButtonPosition {
+.wrapper_abroad .containerButtonPosition1 {
   bottom: 58px;
   padding: 0;
 }
@@ -33,7 +33,7 @@
 }
 
 @media (max-width: 1024px) {
-  .wrapper_abroad .containerButtonPosition {
+  .wrapper_abroad .containerButtonPosition1 {
     background-color: #000519;
     /* padding: 13px 20px; */
     bottom: 50px;
@@ -53,7 +53,8 @@
     overflow-y: hidden;
     padding-bottom: 0;
   }
-  .wrapper_abroad .containerButtonPosition {
+
+  .wrapper_abroad .containerButtonPosition1 {
     background-color: transparent;
     /* width: 100%; */
   }
@@ -70,7 +71,8 @@
     overflow-y: scroll;
     padding-bottom: 50px;
   }
-  .wrapper_abroad .containerButtonPosition {
+
+  .wrapper_abroad .containerButtonPosition1 {
     width: 100%;
   }
 }
@@ -92,7 +94,8 @@
     overflow-y: hidden;
     padding-bottom: 0;
   }
-  .wrapper_abroad .containerButtonPosition {
+
+  .wrapper_abroad .containerButtonPosition1 {
     padding: 0;
     background-color: #000519;
     width: 100%;

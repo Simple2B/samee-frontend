@@ -41,21 +41,28 @@
   .user_personal_info {
     overflow-y: scroll;
   }
-  .user_personal_info .containerButtonPosition {
+
+  .user_personal_info .containerButtonPosition1 {
     width: 100%;
     background-color: #000519;
   }
 }
 
 @media (max-width: 414px) {
-  .user_personal_info .containerButtonPosition {
+  .user_personal_info .containerButtonPosition1 {
     padding: 0;
     bottom: 0;
   }
 }
 
+@media (max-width: 360px) {
+  .user_inputs_smoking {}
+}
+
+
+
 @media (max-width: 280px) {
-  .user_personal_info .containerButtonPosition {
+  .user_personal_info .containerButtonPosition1 {
     padding-top: 5px;
   }
 }

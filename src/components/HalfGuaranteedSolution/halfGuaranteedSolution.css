@@ -66,17 +66,17 @@
     margin: 20px 0;
   }
 
-  .video_wrapper .containerButtonPosition {
+  .video_wrapper .containerButtonPosition1 {
     bottom: 0;
   }
-  .video_wrapper .containerButtonPosition .button_position {
+  .video_wrapper .containerButtonPosition1 .button_position {
     padding: 0;
     margin: 0;
   }
 }
 
 @media (max-width: 375px) {
-  .video_wrapper .containerButtonPosition {
+  .video_wrapper .containerButtonPosition1 {
     bottom: -30px;
   }
 }

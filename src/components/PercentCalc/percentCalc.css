@@ -45,6 +45,12 @@
   .percent_calc_amount {
     font-size: 30px;
   }
+
+  .percent_calc_blocks {
+
+    margin-bottom: 20px;
+
+  }
 }
 
 @media (max-width: 320px) {

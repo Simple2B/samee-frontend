@@ -92,7 +92,7 @@
   .video_wrapper {
     overflow-y: auto;
   }
-  .video_wrapper .containerButtonPosition {
+  .video_wrapper .containerButtonPosition1 {
     bottom: 30px;
     width: 100%;
     background-color: #000519;
@@ -188,7 +188,7 @@
 }
 
 @media (max-width: 320px) {
-  .video_wrapper .containerButtonPosition {
+  .video_wrapper .containerButtonPosition1 {
     bottom: -15px;
     width: 100%;
     background-color: #000519;
@@ -199,7 +199,7 @@
   .video_wrapper {
     overflow-y: hidden;
   }
-  .video_wrapper .containerButtonPosition {
+  .video_wrapper .containerButtonPosition1 {
     bottom: 0;
     width: 100%;
     background-color: #000519;

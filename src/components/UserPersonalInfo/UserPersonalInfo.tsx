@@ -205,7 +205,7 @@ export default function UserPersonalInfo(): ReactElement {
                   </div>
                 </div>
 
-                <div className="user_data_inputs_sexe">
+                <div className="user_data_inputs_sexe user_inputs_smoking">
                   <div className="input_label">Fumeur</div>
                   <div className="sex_radio_item">
                     <input

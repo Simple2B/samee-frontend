@@ -35,6 +35,7 @@ px
   }
 }
 
+
 @media (max-width: 768px) {
   .main_contentDifference {
     /* padding-top: 150px; */
@@ -42,6 +43,12 @@ px
 
   .difference .footer_content {
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: 424px) {
+  .inline {
+    display: inline;
   }
 }
 
@@ -73,6 +80,7 @@ px
   .difference .footer_content {
     margin-bottom: 13px;
   }
+
   .pop_up_triger::after {
     padding-right: 10px;
   }

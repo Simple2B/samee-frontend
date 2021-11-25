@@ -26,7 +26,7 @@
   color: #eac28c;
 }
 
-.employee .containerButtonPosition {
+.employee .containerButtonPosition1 {
   bottom: 55px;
 }
 
@@ -34,7 +34,7 @@
   .button_position-1 {
     left: 20px;
   }
-  .employee .containerButtonPosition {
+  .employee .containerButtonPosition1 {
     bottom: 0;
   }
 

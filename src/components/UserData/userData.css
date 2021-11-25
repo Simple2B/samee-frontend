@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 155px;
+  /* margin-bottom: 155px; */
 }
 
 .sexe_lebel {
@@ -131,7 +131,7 @@
   cursor: pointer;
 }
 
-.sex_radio_item input[type='radio']:checked + label:after {
+.sex_radio_item input[type='radio']:checked+label:after {
   border-radius: 11px;
   width: 16px;
   height: 16px;
@@ -150,7 +150,7 @@
 }
 
 @media (max-width: 425px) {
-  .sex_radio_item input[type='radio']:checked + label:after {
+  .sex_radio_item input[type='radio']:checked+label:after {
     top: 9px;
     left: 14px;
   }
@@ -211,7 +211,8 @@
     padding-left: 3px;
     margin-top: 1px;
   }
-  .user_data .containerButtonPosition {
+
+  .user_data .containerButtonPosition1 {
     bottom: 0;
   }
 }

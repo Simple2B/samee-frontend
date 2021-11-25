@@ -58,9 +58,9 @@ export default function Welcome(): ReactElement {
             className="next_button button_position">
             Continuer
           </button>
+          <div className="empty_space"></div>
         </div>
       </div>
-      <div className="empty_space"></div>
     </div>
   );
 }

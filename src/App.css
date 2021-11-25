@@ -47,14 +47,14 @@ button {
   font-family: 'Archivo Narrow' !important;
 }
 
-.containerButtonPosition {
+/* .containerButtonPosition1 {
   padding: 0;
   position: fixed;
   bottom: 55px;
   display: flex;
   justify-content: space-between;
   flex-direction: column-reverse;
-}
+} */
 
 .button_position {
   margin-bottom: 20px;
@@ -173,7 +173,12 @@ li {
     font-size: 15px !important;
     font-family: 'Archivo Narrow' !important;
   }
-  .containerButtonPosition {
-    bottom: 0;
+
+  .empty_space {
+    display: none;
   }
+
+  /* .containerButtonPosition1 {
+    bottom: 0;
+  } */
 }

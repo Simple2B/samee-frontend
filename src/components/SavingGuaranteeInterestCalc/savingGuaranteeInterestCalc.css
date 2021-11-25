@@ -78,7 +78,7 @@
     padding-bottom: 50px;
   }
 
-  .interest_wrapper .containerButtonPosition {
+  .interest_wrapper .containerButtonPosition1 {
     width: 40%;
     background-color: #000519;
   }
@@ -138,7 +138,7 @@
     margin: 0;
   }
 
-  .interest_wrapper .containerButtonPosition {
+  .interest_wrapper .containerButtonPosition1 {
     width: 100%;
     background-color: #000519;
     bottom: 0;
@@ -149,11 +149,13 @@
   .interest_wrapper {
     padding: 0;
   }
+
   .interest_wrapper .main_content {
     overflow-y: auto;
     padding-top: 150px;
   }
-  .interest_wrapper .containerButtonPosition {
+
+  .interest_wrapper .containerButtonPosition1 {
     width: 100%;
     background-color: #000519;
   }
@@ -163,14 +165,15 @@
   .interest_wrapper {
     overflow-y: hidden;
   }
-  .interest_wrapper .containerButtonPosition {
+
+  .interest_wrapper .containerButtonPosition1 {
     width: 100%;
     background-color: #000519;
   }
 }
 
 @media (max-width: 540px) {
-  .interest_wrapper .containerButtonPosition {
+  .interest_wrapper .containerButtonPosition1 {
     width: 100%;
     background-color: #000519;
   }
@@ -186,7 +189,7 @@
 }
 
 @media (max-width: 280px) {
-  .interest_wrapper .containerButtonPosition {
+  .interest_wrapper .containerButtonPosition1 {
     width: 100%;
     background-color: #000519;
   }

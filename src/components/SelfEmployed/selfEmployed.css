@@ -22,7 +22,7 @@
   align-items: center;
 }
 
-.self-employed .containerButtonPosition {
+.self-employed .containerButtonPosition1 {
   bottom: 65px;
 }
 
@@ -30,7 +30,7 @@
   .self-employed {
     overflow-y: hidden;
   }
-  .self-employed .containerButtonPosition {
+  .self-employed .containerButtonPosition1 {
     width: 100%;
     padding: 10px 0;
     background-color: #000519;
@@ -42,7 +42,7 @@
     overflow-y: scroll;
     padding-bottom: 50px;
   }
-  .self-employed .containerButtonPosition {
+  .self-employed .containerButtonPosition1 {
     padding: 0;
     width: 100%;
     padding: 10px 0;
@@ -62,7 +62,7 @@
 @media (max-width: 320px) {
   .self-employed {
   }
-  .self-employed .containerButtonPosition {
+  .self-employed .containerButtonPosition1 {
     padding: 0;
     background-color: #000519;
   }
@@ -72,7 +72,7 @@
   .self-employed {
     overflow-y: hidden;
   }
-  .self-employed .containerButtonPosition {
+  .self-employed .containerButtonPosition1 {
     width: 280px;
     padding: 0;
     background-color: #000519;

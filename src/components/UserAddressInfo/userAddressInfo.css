@@ -74,7 +74,7 @@
     overflow-y: auto;
     padding-bottom: 10px;
   }
-  .user_address_info .containerButtonPosition {
+  .user_address_info .containerButtonPosition1 {
     width: 100%;
     background-color: #000519;
   }
@@ -118,7 +118,7 @@
   .user_address_info_input-left {
     margin-right: 10px;
   }
-  .user_address_info .containerButtonPosition {
+  .user_address_info .containerButtonPosition1 {
     bottom: 0;
   }
 }

@@ -23,7 +23,7 @@ export default function Difference(): ReactElement {
   };
   return (
     <div className="difference">
-      <div className="main_content main_contentDifference">
+      <div className="main_content main_contentDifference1">
         <div className="difference_title">
           Vous pouvez ouvrir un troisième pilier en banque ou/et en assurance.
           Les deux solutions ont des avantages.
@@ -83,7 +83,7 @@ export default function Difference(): ReactElement {
         <Popup
           modal
           trigger={
-            <div className="pop_up_triger">
+            <div className="pop_up_triger inline">
               Plus d'informations sur la différence entre banque et assurance
             </div>
           }>

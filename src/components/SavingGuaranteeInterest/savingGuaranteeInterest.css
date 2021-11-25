@@ -27,7 +27,7 @@
     overflow-y: auto;
     padding-bottom: 50px;
   }
-  .saving_interest .containerButtonPosition {
+  .saving_interest .containerButtonPosition1 {
     width: 100%;
     background-color: #000519;
   }
@@ -37,7 +37,7 @@
   .next_button-interest {
     font-size: 20px;
   }
-  .saving_interest .containerButtonPosition {
+  .saving_interest .containerButtonPosition1 {
     width: 100%;
     background-color: #000519;
     bottom: 0;
@@ -55,7 +55,7 @@
     overflow-y: auto;
     padding-bottom: 0;
   }
-  .saving_interest .containerButtonPosition {
+  .saving_interest .containerButtonPosition1 {
     width: 100%;
     background-color: #000519;
   }
