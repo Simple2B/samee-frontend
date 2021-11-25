@@ -5,6 +5,11 @@
   flex-direction: column;
 }
 
+.link {
+  text-decoration: none;
+  color: white;
+}
+
 .error_valid {
   padding-left: 10px;
   color: rgb(109, 0, 0);
