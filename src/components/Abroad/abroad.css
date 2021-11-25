@@ -7,6 +7,7 @@
 
 .wrapper_abroad .containerButtonPosition {
   bottom: 58px;
+  padding: 0;
 }
 
 .abroad {
@@ -33,8 +34,8 @@
 
 @media (max-width: 1024px) {
   .wrapper_abroad .containerButtonPosition {
-    background-color: black;
-    padding: 13px 20px;
+    background-color: #000519;
+    /* padding: 13px 20px; */
     bottom: 50px;
   }
 }
@@ -55,6 +56,12 @@
   .wrapper_abroad .containerButtonPosition {
     background-color: transparent;
     /* width: 100%; */
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper_abroad {
+    overflow-y: auto;
   }
 }
 
@@ -80,6 +87,11 @@
   .abroad_animation {
     display: none;
   }
+
+  .wrapper_abroad {
+    overflow-y: hidden;
+    padding-bottom: 0;
+  }
 }
 
 @media (max-width: 320px) {
@@ -88,8 +100,9 @@
     padding-bottom: 0;
   }
   .wrapper_abroad .containerButtonPosition {
-    background-color: black;
+    padding: 0;
+    background-color: #000519;
     width: 100%;
-    bottom: 25px;
+    bottom: 15px;
   }
 }

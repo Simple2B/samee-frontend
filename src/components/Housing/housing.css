@@ -8,7 +8,7 @@
 .wrapper_house .containerButtonPosition {
   /* width: 100%; */
   padding: 10px 23px;
-  background-color: black;
+  background-color: #000519;
   bottom: 65px;
 }
 
@@ -68,6 +68,11 @@
     display: block;
   }
 
+  .wrapper_house {
+    height: 82vh;
+    overflow-y: hidden;
+  }
+
   .housing_title {
     font-size: 20px;
   }
@@ -78,13 +83,8 @@
 }
 
 @media (max-width: 320px) {
-  .wrapper_house {
-    overflow-y: hidden;
-    height: 90vh;
-    padding-bottom: 100px;
-  }
   .wrapper_house .containerButtonPosition {
-    padding-top: 8px;
-    bottom: 25px;
+    padding: 0;
+    bottom: 15px;
   }
 }

@@ -15,7 +15,7 @@
   }
   .guarantees .containerButtonPosition {
     width: 100%;
-    background-color: black;
+    background-color: #000519;
     bottom: 55px;
   }
 }
@@ -23,6 +23,9 @@
 @media (max-width: 360px) {
   .guarantees {
     overflow-y: scroll;
+  }
+  .guarantees .containerButtonPosition {
+    bottom: 25px;
   }
 }
 

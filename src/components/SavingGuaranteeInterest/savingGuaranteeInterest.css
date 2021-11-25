@@ -29,13 +29,24 @@
   }
   .saving_interest .containerButtonPosition {
     width: 100%;
-    background-color: black;
+    background-color: #000519;
   }
 }
 
 @media (max-width: 425px) {
   .next_button-interest {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .saving_interest {
+    overflow-y: hidden;
+  }
+  .saving_interest .containerButtonPosition {
+    width: 100%;
+    background-color: #000519;
+    bottom: 18px;
   }
 }
 
@@ -46,7 +57,7 @@
   }
   .saving_interest .containerButtonPosition {
     width: 100%;
-    background-color: black;
+    background-color: #000519;
     bottom: 15px;
   }
 

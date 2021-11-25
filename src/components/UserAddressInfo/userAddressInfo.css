@@ -76,7 +76,7 @@
   }
   .user_address_info .containerButtonPosition {
     width: 100%;
-    background-color: black;
+    background-color: #000519;
   }
 }
 
@@ -142,7 +142,7 @@
     overflow-y: auto;
   }
   .user_address_info .containerButtonPosition {
-    background-color: black;
+    background-color: #000519;
     bottom: 10px;
   }
 }

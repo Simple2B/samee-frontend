@@ -95,7 +95,7 @@
   .video_wrapper .containerButtonPosition {
     bottom: 30px;
     width: 100%;
-    background-color: black;
+    background-color: #000519;
   }
 }
 
@@ -191,7 +191,7 @@
   .video_wrapper .containerButtonPosition {
     bottom: -15px;
     width: 100%;
-    background-color: black;
+    background-color: #000519;
   }
 }
 
@@ -202,6 +202,6 @@
   .video_wrapper .containerButtonPosition {
     bottom: 0;
     width: 100%;
-    background-color: black;
+    background-color: #000519;
   }
 }

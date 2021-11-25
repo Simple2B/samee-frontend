@@ -78,20 +78,22 @@ export default function Age(): ReactElement {
         )}
       </div>
 
-      <div className="footer_content">
-        <div className="buttons_set button_position">
-          <button onClick={handleSubmit} className="next_button ">
-            Continuer
-          </button>
-          {errorCheck && (
-            <button
-              onClick={handleSubmitBack}
-              className="next_button button_space">
-              Modifier mon âge
+      <div className="containerButtonPosition">
+        <div className="footer_content">
+          <div className="buttons_set button_position">
+            <button onClick={handleSubmit} className="next_button ">
+              Continuer
             </button>
-          )}
+            {errorCheck && (
+              <button
+                onClick={handleSubmitBack}
+                className="next_button button_space">
+                Modifier mon âge
+              </button>
+            )}
+          </div>
+          <div className="empty_space"></div>
         </div>
-        <div className="empty_space"></div>
       </div>
     </div>
   );

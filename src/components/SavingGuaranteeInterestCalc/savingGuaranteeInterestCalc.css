@@ -80,7 +80,7 @@
 
   .interest_wrapper .containerButtonPosition {
     width: 40%;
-    background-color: black;
+    background-color: #000519;
   }
 }
 
@@ -140,7 +140,7 @@
 
   .interest_wrapper .containerButtonPosition {
     width: 100%;
-    background-color: black;
+    background-color: #000519;
     bottom: 50px;
   }
 }
@@ -155,7 +155,7 @@
   }
   .interest_wrapper .containerButtonPosition {
     width: 100%;
-    background-color: black;
+    background-color: #000519;
     bottom: 50px;
   }
 }
@@ -166,7 +166,7 @@
   }
   .interest_wrapper .containerButtonPosition {
     width: 100%;
-    background-color: black;
+    background-color: #000519;
     bottom: 50px;
   }
 }
@@ -174,7 +174,7 @@
 @media (max-width: 540px) {
   .interest_wrapper .containerButtonPosition {
     width: 100%;
-    background-color: black;
+    background-color: #000519;
     bottom: 50px;
   }
 }
@@ -194,7 +194,7 @@
 @media (max-width: 280px) {
   .interest_wrapper .containerButtonPosition {
     width: 100%;
-    background-color: black;
+    background-color: #000519;
     bottom: 5px;
   }
 }
