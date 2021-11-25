@@ -47,16 +47,15 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 414px) {
   .user_personal_info .containerButtonPosition {
     padding: 0;
-    bottom: 15px;
+    bottom: 0;
   }
 }
 
 @media (max-width: 280px) {
   .user_personal_info .containerButtonPosition {
     padding-top: 5px;
-    bottom: 10px;
   }
 }

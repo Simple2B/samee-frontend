@@ -6,8 +6,6 @@
 }
 
 .wrapper_house .containerButtonPosition {
-  /* width: 100%; */
-  padding: 10px 23px;
   background-color: #000519;
   bottom: 65px;
 }
@@ -60,6 +58,7 @@
 
   .wrapper_house .containerButtonPosition {
     width: 100%;
+    bottom: 0;
   }
 }
 
@@ -80,11 +79,15 @@
   .housing_animation {
     display: none;
   }
+  .wrapper_house .containerButtonPosition {
+    padding: 0;
+    bottom: 0;
+  }
 }
 
 @media (max-width: 320px) {
   .wrapper_house .containerButtonPosition {
     padding: 0;
-    bottom: 15px;
+    /* bottom: 15px; */
   }
 }

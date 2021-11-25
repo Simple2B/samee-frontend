@@ -48,8 +48,12 @@ button {
 }
 
 .containerButtonPosition {
+  padding: 0;
   position: fixed;
   bottom: 55px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
 }
 
 .button_position {
@@ -168,5 +172,8 @@ li {
   button {
     font-size: 15px !important;
     font-family: 'Archivo Narrow' !important;
+  }
+  .containerButtonPosition {
+    bottom: 0;
   }
 }

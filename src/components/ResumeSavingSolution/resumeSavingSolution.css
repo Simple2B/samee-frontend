@@ -92,7 +92,7 @@
   }
   .resume_wrapper .containerButtonPosition {
     /* width: 100%; */
-    bottom: -5px;
+    bottom: 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

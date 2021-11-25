@@ -71,7 +71,7 @@
   .wrapper_tax .containerButtonPosition {
     padding-top: 25px;
     background-color: #000519;
-    bottom: 50px;
+    bottom: 0;
   }
 
   .wrapper_tax .footer_content .pop_up_triger {
@@ -108,14 +108,13 @@
 @media (max-width: 414px) {
   .wrapper_tax .containerButtonPosition {
     position: fixed;
-    bottom: 80px;
+    bottom: 0;
   }
 }
 
 @media (max-width: 320px) {
   .wrapper_tax .containerButtonPosition {
     position: fixed;
-    bottom: 5 px;
   }
 }
 
@@ -124,8 +123,5 @@
     height: 80vh;
     overflow-y: none;
     padding-bottom: 0;
-  }
-  .wrapper_tax .containerButtonPosition {
-    bottom: 25px;
   }
 }

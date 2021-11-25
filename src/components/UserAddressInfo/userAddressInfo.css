@@ -118,6 +118,9 @@
   .user_address_info_input-left {
     margin-right: 10px;
   }
+  .user_address_info .containerButtonPosition {
+    bottom: 0;
+  }
 }
 
 @media (max-width: 320px) {
@@ -128,10 +131,6 @@
   .geosuggest__suggests {
     width: 138px;
   }
-
-  .user_address_info .containerButtonPosition {
-    bottom: 5px;
-  }
 }
 
 @media (max-width: 280px) {
@@ -140,9 +139,5 @@
   }
   .user_address_info {
     overflow-y: auto;
-  }
-  .user_address_info .containerButtonPosition {
-    background-color: #000519;
-    bottom: 10px;
   }
 }

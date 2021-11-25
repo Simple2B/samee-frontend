@@ -144,7 +144,7 @@ export default function ChooseSolution(): ReactElement {
             className="next_button button_position">
             Continuer
           </button>
-          <div className="empty_space"></div>
+          {/* <div className="empty_space"></div> */}
         </div>
       </div>
     </div>

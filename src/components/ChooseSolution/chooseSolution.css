@@ -64,6 +64,7 @@
     width: 100%;
     background-color: #000519;
     padding-top: 15px;
+    bottom: 0;
   }
 }
 
@@ -160,8 +161,24 @@
   .choose_solution .containerButtonPosition {
     width: 100%;
     background-color: transparent;
-    padding-top: 10px;
+    /* padding-top: 10px; */
+    /* bottom: -20px; */
+  }
+}
+
+@media (max-width: 360px) {
+  .choose_solution {
+    /* overflow-y: auto; */
+  }
+  .choose_solution .containerButtonPosition {
+    width: 100%;
+    background-color: #000519;
     bottom: 0;
+  }
+
+  .choose_solution .containerButtonPosition .button_position {
+    /* padding: 0; */
+    margin: 0;
   }
 }
 
@@ -172,7 +189,7 @@
   .choose_solution .containerButtonPosition {
     width: 100%;
     background-color: #000519;
-    bottom: -25px;
+    bottom: 0;
   }
 }
 

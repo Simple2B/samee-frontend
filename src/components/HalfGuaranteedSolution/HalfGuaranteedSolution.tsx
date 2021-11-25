@@ -109,12 +109,14 @@ export default function HalfGuaranteedSolution(): ReactElement {
         </div>
       </div>
 
-      <div className="footer_content">
-        <div className="button_position">
-          <button onClick={handleSubmit} className="next_button">
-            Continuer
-          </button>
-          <div className="empty_space"></div>
+      <div className="containerButtonPosition">
+        <div className="footer_content">
+          <div className="button_position">
+            <button onClick={handleSubmit} className="next_button">
+              Continuer
+            </button>
+            <div className="empty_space"></div>
+          </div>
         </div>
       </div>
     </div>

@@ -38,16 +38,15 @@
   .user_contact_info {
     overflow-y: hidden;
   }
+  .user_contact_info .containerButtonPosition {
+    padding-top: 15px;
+    bottom: 0;
+  }
 }
 
 @media (max-width: 320px) {
   .user_contact_info {
     overflow-y: auto;
-  }
-
-  .user_contact_info .containerButtonPosition {
-    padding-top: 15px;
-    bottom: -35px;
   }
 }
 

@@ -92,17 +92,17 @@
     overflow-y: hidden;
     padding-bottom: 0;
   }
+  .wrapper_abroad .containerButtonPosition {
+    padding: 0;
+    background-color: #000519;
+    width: 100%;
+    bottom: 0;
+  }
 }
 
 @media (max-width: 320px) {
   .wrapper_abroad {
     overflow-y: scroll;
     padding-bottom: 0;
-  }
-  .wrapper_abroad .containerButtonPosition {
-    padding: 0;
-    background-color: #000519;
-    width: 100%;
-    bottom: 15px;
   }
 }

@@ -25,11 +25,11 @@
     overflow-y: scroll;
   }
   .guarantees .containerButtonPosition {
-    bottom: 25px;
+    bottom: 0;
   }
 }
 
-@media (max-width: 320px) {
+/* @media (max-width: 320px) {
   .guarantees .containerButtonPosition {
     bottom: 20px;
   }
@@ -39,4 +39,4 @@
   .guarantees .containerButtonPosition {
     bottom: 25px;
   }
-}
+} */

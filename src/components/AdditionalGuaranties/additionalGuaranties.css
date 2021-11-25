@@ -42,6 +42,10 @@
   .additional-guaranties_title {
     font-size: 20px;
   }
+  .additional-guaranties .containerButtonPosition {
+    padding-top: 10px;
+    bottom: 0;
+  }
 }
 
 @media (max-width: 360px) {
@@ -55,10 +59,6 @@
   .additional-guaranties {
     overflow-y: scroll;
   }
-  .additional-guaranties .containerButtonPosition {
-    padding-top: 10px;
-    bottom: 20px;
-  }
 }
 
 @media (max-width: 280px) {
@@ -68,6 +68,6 @@
   .additional-guaranties .containerButtonPosition {
     width: 100%;
     background-color: #000519;
-    bottom: 20px;
+    /* bottom: 20px; */
   }
 }

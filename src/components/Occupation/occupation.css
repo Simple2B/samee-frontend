@@ -63,4 +63,8 @@
     top: 9px;
     left: 14px;
   }
+
+  .occupation .containerButtonPosition {
+    bottom: 0;
+  }
 }

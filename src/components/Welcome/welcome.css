@@ -61,4 +61,7 @@
   .next_button {
     font-size: 20px;
   }
+  .welcome .containerButtonPosition {
+    bottom: 0;
+  }
 }

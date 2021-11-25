@@ -247,7 +247,7 @@ function App() {
               )}
             </Route>
           ))}
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </ProgressContext.Provider>
     </>
