@@ -253,15 +253,14 @@ export default function UserContactInfo(): ReactElement {
                 </div>
               </div>
 
-              <div className="links">
-                <a className="link" href="#">
-                  Some links
-                </a>
-              </div>
+              <div className="links"></div>
 
               <div className="user_contact_info_check_block">
-                <div className="choose_solution_list">
-                  J'ai lu et j'accepte les conditions générales
+                <label className="choose_solution_list">
+                  J'ai lu et j'accepte les{' '}
+                  <a className="link" href="#">
+                    conditions générales
+                  </a>
                   <Checkbox
                     value={values.check}
                     name="check"
@@ -269,7 +268,7 @@ export default function UserContactInfo(): ReactElement {
                     classes={{root: classes.root, checked: classes.checked}}
                     sx={{'& .MuiSvgIcon-root': {fontSize: 30}}}
                   />
-                </div>
+                </label>
               </div>
             </form>
           );

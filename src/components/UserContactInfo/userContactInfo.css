@@ -10,6 +10,15 @@
   color: white;
 }
 
+.link:hover {
+  /* text-decoration: underline; */
+  color: rgb(202, 202, 202);
+}
+
+.choose_solution_list {
+  cursor: pointer;
+}
+
 .error_valid {
   padding-left: 10px;
   color: rgb(109, 0, 0);
