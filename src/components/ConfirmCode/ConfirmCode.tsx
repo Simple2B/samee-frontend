@@ -104,7 +104,7 @@ export default function ConfirmCode(): ReactElement {
       setError('veuillez renseigner toutes les informations');
     } else {
       userDataInstance
-        .post('/phone_validation', contactInfo)
+        .post('/phone_validation/', contactInfo)
         .then(function (response) {
           console.log(response);
           localStorage.setItem('confirmCode', code);

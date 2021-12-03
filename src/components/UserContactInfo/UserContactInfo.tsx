@@ -96,7 +96,7 @@ export default function UserContactInfo(): ReactElement {
     console.log(userData);
 
     userDataInstance
-      .post('/add', userData)
+      .post('/add/', userData)
       .then(function (response) {
         console.log(response);
         const clientId = response.data;
