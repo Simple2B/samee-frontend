@@ -33,6 +33,16 @@
   height: 150px;
   border: 10px solid;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.arrows_ui {
+  width: 70px;
+  height: auto;
+  transform: scaleY(-1);
 }
 
 .percent {
