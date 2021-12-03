@@ -41,6 +41,7 @@ import PhoneInput from 'react-phone-number-input/input';
 import * as EmailValidator from 'email-validator';
 import {ProgressContext} from '../../context/progressContext';
 import {Formik} from 'formik';
+import Pdf from '../../documents/conditions.pdf';
 
 const useStyles = makeStyles({
   root: {
@@ -258,7 +259,11 @@ export default function UserContactInfo(): ReactElement {
               <div className="user_contact_info_check_block">
                 <label className="choose_solution_list">
                   J'ai lu et j'accepte les{' '}
-                  <a className="link" href="#">
+                  <a
+                    className="link"
+                    href={Pdf}
+                    rel="noopener noreferrer"
+                    target="_blank">
                     conditions générales
                   </a>
                   <Checkbox
