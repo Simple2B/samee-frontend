@@ -7,7 +7,6 @@ import './userPersonalInfo.css';
 import {useHistory} from 'react-router-dom';
 import {ProgressContext} from '../../context/progressContext';
 import {Formik} from 'formik';
-import {maritalStatus, profession, percent} from '../../api/userData';
 
 const useStyles = makeStyles({
   root: {

@@ -5,36 +5,7 @@ import {AxiosError, AxiosResponse} from 'axios';
 import './userContactInfo.css';
 import {useHistory} from 'react-router-dom';
 import {userDataInstance} from '../../api/axiosInstance';
-import {
-  birthday,
-  city,
-  epagneAmount,
-  finalCapital,
-  firstName,
-  fondAmount,
-  fondPercent,
-  interest,
-  lastName,
-  maritalStatus,
-  occupation,
-  percent,
-  period,
-  postcode,
-  profession,
-  savingsAmount,
-  savingsPercent,
-  savingsYears,
-  scenarioOptimistic,
-  scenarioPessimistic,
-  scenarioRealistic,
-  sex,
-  smoking,
-  solution,
-  street,
-  streetNumber,
-  tax,
-  totalSavings,
-} from '../../api/userData';
+import {getUserData} from '../../api/userData';
 import {phone} from 'phone';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input/input';
@@ -78,6 +49,13 @@ export default function UserContactInfo(): ReactElement {
 
   const classes = useStyles();
 
+  let userData: {[key: string]: string};
+  try {
+    userData = getUserData();
+  } catch (e: any) {
+    userData = {};
+  }
+
   const submitForm = (values: IContactlInfo) => {
     setError('');
     const contactInfo = {
@@ -85,17 +63,13 @@ export default function UserContactInfo(): ReactElement {
       phone: values.phone,
     };
     localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
-
     userData.phone_number =
       localStorage.getItem('contactInfo') &&
       JSON.parse(localStorage.getItem('contactInfo')!).phone;
-
     userData.email =
       localStorage.getItem('contactInfo') &&
       JSON.parse(localStorage.getItem('contactInfo')!).email;
-
     console.log(userData);
-
     userDataInstance
       .post('/add/', userData)
       .then(function (response) {
@@ -135,39 +109,6 @@ export default function UserContactInfo(): ReactElement {
     }
 
     return errors;
-  };
-
-  const userData = {
-    first_name: firstName,
-    last_name: lastName,
-    street_number: streetNumber,
-    street: street,
-    city: city,
-    zip: postcode,
-    email: '',
-    phone_number: '',
-    birthday: birthday,
-    profession: profession,
-    smoking: smoking,
-    marital_status: maritalStatus,
-    solution: solution,
-    type_of_save: period,
-    amount_of_money: savingsAmount,
-    sex: sex,
-    saving_years: savingsYears,
-    total_savings: totalSavings,
-    fonds_percent: fondPercent,
-    savings_percent: savingsPercent,
-    interest: interest,
-    occupation: occupation,
-    amount_of_fonds: fondAmount,
-    amount_of_savings: epagneAmount,
-    tax: tax,
-    scenario_optimistic: scenarioOptimistic,
-    scenario_pessimistic: scenarioPessimistic,
-    scenario_realistic: scenarioRealistic,
-    final_capital: finalCapital,
-    percent: percent,
   };
 
   return (
