@@ -175,6 +175,11 @@ export default function ModifyParameters(): ReactElement {
             />
 
             <div className="circle"></div>
+            <img
+              src="/image/arrows-two.svg"
+              className="two-arrows"
+              alt="arrows"
+            />
           </div>
 
           <div className="proportion_percent right">
