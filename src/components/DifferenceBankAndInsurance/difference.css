@@ -1,3 +1,10 @@
+.difference {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .pop_up_list-upper {
   list-style-type: lower-alpha;
 }
@@ -6,92 +13,12 @@
   list-style-type: lower-roman;
 }
 
-.difference {
-  position: relative;
-  height: 82vh;
+.difference_text {
   display: flex;
-  flex-direction: column;
-}
-
-.main_contentDifference {
-  margin-bottom: 10px;
-  /* padding-top: 150
-px
-; */
-  /* margin-top: 150
-px
-; */
-  height: 60%;
-  overflow-y: auto;
-}
-
-@media (max-width: 1024px) {
-  .main_contentDifference {
-    /* padding-top: 150px; */
-  }
-
-  .difference .footer_content {
-    margin-bottom: 45px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .main_contentDifference {
-    /* padding-top: 150px; */
-  }
-
-  .difference .footer_content {
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: 424px) {
-  .inline {
-    display: inline;
-  }
-}
-
-@media (max-width: 414px) {
-  .main_contentDifference {
-    padding-top: 15px;
-  }
-
-  .difference .footer_content {
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: 414px) {
-  .main_contentDifference {
-    padding-top: 110px;
-  }
-
-  .difference .footer_content {
-    margin-bottom: 13px;
-  }
-}
-
-@media (max-width: 320px) {
-  .main_contentDifference {
-    padding-top: 190px;
-  }
-
-  .difference .footer_content {
-    margin-bottom: 13px;
-  }
-
-  .pop_up_triger::after {
-    padding-right: 10px;
-  }
 }
 
 .difference_title {
   margin-bottom: 70px;
-}
-
-.difference_text {
-  display: flex;
 }
 
 .difference_block {
@@ -147,6 +74,31 @@ px
 .button_recalculate:hover {
   background-color: #a88b64;
 }
+
+
+@media (max-width: 1024px) {
+
+  .difference .footer_content {
+    margin-bottom: 45px;
+  }
+
+  .difference_text {
+    display: block;
+  }
+
+  .difference_block:first-child {
+
+    border-right: none;
+  }
+}
+
+
+@media (max-width: 424px) {
+  .inline {
+    display: inline;
+  }
+}
+
 
 @media (max-width: 768px) {
   .difference_block:first-child {
@@ -244,5 +196,9 @@ px
 @media (max-width: 320px) {
   .desc-img {
     width: 60px;
+  }
+
+  .pop_up_triger::after {
+    padding-right: 10px;
   }
 }

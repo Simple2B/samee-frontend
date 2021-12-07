@@ -46,6 +46,16 @@
   }
 }
 
+@media (max-width: 900px) {
+  .tax {
+    display: block;
+  }
+
+  .tax_text {
+    margin-right: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .tax {
     display: block;

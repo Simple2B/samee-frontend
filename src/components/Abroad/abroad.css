@@ -40,6 +40,16 @@
   }
 }
 
+@media (max-width: 900px) {
+  .abroad {
+    display: block;
+  }
+
+  .abroad_text {
+    margin-right: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .abroad {
     display: block;
@@ -50,7 +60,7 @@
   }
 
   .wrapper_abroad {
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     padding-bottom: 0;
   }
 
@@ -60,11 +70,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .wrapper_abroad {
-    overflow-y: auto;
-  }
-}
 
 @media (max-width: 540px) {
   .wrapper_abroad {

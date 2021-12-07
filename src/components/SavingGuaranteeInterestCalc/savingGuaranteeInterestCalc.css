@@ -74,13 +74,26 @@
   }
 
   .interest_wrapper {
-    overflow: auto;
+
     padding-bottom: 50px;
   }
 
   .interest_wrapper .containerButtonPosition1 {
     width: 40%;
     background-color: #000519;
+  }
+}
+
+@media (max-width: 900px) {
+  .saving_interest_calc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .saving_interest_calc-final-calc {
+    margin: 40px auto;
   }
 }
 
@@ -93,7 +106,7 @@
   }
 
   .saving_interest_calc-final-calc {
-    margin: 15px auto;
+    margin: 30px auto;
   }
 
   .saving_interest_calc_list-text {
@@ -150,11 +163,6 @@
     padding: 0;
   }
 
-  .interest_wrapper .main_content {
-    overflow-y: auto;
-    padding-top: 150px;
-  }
-
   .interest_wrapper .containerButtonPosition1 {
     width: 100%;
     background-color: #000519;
@@ -162,9 +170,7 @@
 }
 
 @media (max-width: 768px) {
-  .interest_wrapper {
-    overflow-y: hidden;
-  }
+
 
   .interest_wrapper .containerButtonPosition1 {
     width: 100%;

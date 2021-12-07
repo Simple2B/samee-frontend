@@ -23,6 +23,12 @@
 .circle_button {
   position: relative;
   margin: 0 70px;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .circle {
@@ -74,6 +80,11 @@
   display: flex;
   align-items: center;
   font-size: 20px;
+}
+
+.two-arrows {
+  position: absolute;
+  bottom: -30px;
 }
 
 

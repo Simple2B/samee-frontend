@@ -68,11 +68,12 @@ export default function HalfGOptimalProportion(): ReactElement {
               onChange={handleSliderChange}
             />
 
-            <div className="circle">
-              <div className="circle_arrows">
-                <img className="arrows_ui" src="/image/circul-arrows.svg" />
-              </div>
-            </div>
+            <div className="circle"></div>
+            <img
+              src="/image/arrows-two.svg"
+              className="two-arrows"
+              alt="arrows"
+            />
           </div>
 
           <div className="proportion_percent right">
