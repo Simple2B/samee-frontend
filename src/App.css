@@ -130,9 +130,24 @@ li {
   }
 }
 
+@media (max-width: 900px) {
+  .App {
+    padding: 20px 70px 55px;
+  }
+
+  .page {
+    position: absolute;
+    top: 88px;
+    bottom: 55px;
+    right: 90px;
+    left: 90px;
+  }
+
+}
+
 @media (max-width: 768px) {
   .App {
-    padding: 20px 100px 55px;
+    padding: 20px 70px 55px;
   }
 
   .page {

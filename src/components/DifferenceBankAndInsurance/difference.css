@@ -92,6 +92,44 @@
   }
 }
 
+@media (max-width: 900px) {
+
+  .difference_block:first-child {
+    padding-right: 30px;
+    border: none;
+  }
+
+  .difference_text {
+    display: block;
+  }
+
+  .difference_block_desc {
+    height: 205px;
+  }
+
+  .button_recalculate {
+    line-height: 1;
+    height: auto;
+    font-size: 18px;
+  }
+
+  .button_discover {
+    line-height: 1;
+    height: auto;
+    font-size: 18px;
+    padding: 10px 50px;
+  }
+
+  .difference_buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .difference_title {
+    margin-bottom: 40px;
+  }
+
+}
 
 @media (max-width: 424px) {
   .inline {

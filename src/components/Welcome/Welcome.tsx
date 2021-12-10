@@ -46,7 +46,7 @@ export default function Welcome(): ReactElement {
             </ul>
           </div>
           <div className="welcome_image">
-            <img className="phone_img" src="/image/screen1.png" alt="phone" />
+            <img className="phone_img" src="/image/Gif-Samee.gif" alt="phone" />
           </div>
         </div>
       </div>
