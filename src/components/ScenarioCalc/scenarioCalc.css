@@ -104,10 +104,60 @@
 @media (max-width: 1024px) {
   .charts_blocks {
     display: flex;
-    /* flex-wrap: wrap; */
+
     justify-content: center;
+
+  }
+
+
+  .charts_blocks {
+    margin: 18px 0 126px;
+  }
+
+  .chart_block_amount {
+    font-size: 30px;
+  }
+
+  .optimistic {
+    top: 220px;
+    right: 170px;
+  }
+
+  .chart_block_title {
+    font-size: 15px;
+  }
+
+  .chart_block_amount {
+    font-size: 24px;
+  }
+
+  .pessimistic {
+    top: 220px;
+    left: 170px;
+  }
+
+  .real-text {
+    font-size: 20px;
+  }
+
+  .real-amount {
+    font-size: 30px;
+  }
+
+  .chart_block_label-down,
+  .chart_block_label-up {
+    font-size: 17px;
+    left: 190px;
+  }
+
+  .chart_block_label-down-big,
+  .chart_block_label-up-big {
+    font-size: 17px;
+    left: 210px;
   }
 }
+
+
 
 @media (max-width: 768px) {
 
