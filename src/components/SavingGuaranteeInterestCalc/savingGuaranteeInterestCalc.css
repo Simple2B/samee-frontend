@@ -92,7 +92,13 @@
   }
 
   .saving_interest_calc-final-calc {
-    margin: 40px auto;
+    margin: 18px auto;
+  }
+
+  .saving_interest_calc-final-calc {
+    min-width: 230px;
+    height: 230px;
+
   }
 }
 
@@ -104,9 +110,9 @@
     justify-content: space-between;
   }
 
-  .saving_interest_calc-final-calc {
+  /* .saving_interest_calc-final-calc {
     margin: 30px auto;
-  }
+  } */
 
   .saving_interest_calc_list-text {
     display: block;

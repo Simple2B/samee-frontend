@@ -104,14 +104,12 @@
 @media (max-width: 1024px) {
   .charts_blocks {
     display: flex;
-
     justify-content: center;
-
   }
 
 
   .charts_blocks {
-    margin: 18px 0 126px;
+    margin: 18px 0 155px;
   }
 
   .chart_block_amount {
@@ -119,8 +117,8 @@
   }
 
   .optimistic {
-    top: 220px;
-    right: 170px;
+    top: 245px;
+    right: 110px;
   }
 
   .chart_block_title {
@@ -132,8 +130,8 @@
   }
 
   .pessimistic {
-    top: 220px;
-    left: 170px;
+    top: 245px;
+    left: 110px;
   }
 
   .real-text {
@@ -147,13 +145,13 @@
   .chart_block_label-down,
   .chart_block_label-up {
     font-size: 17px;
-    left: 190px;
+    left: 205px;
   }
 
   .chart_block_label-down-big,
   .chart_block_label-up-big {
     font-size: 17px;
-    left: 210px;
+    left: 230px;
   }
 }
 
