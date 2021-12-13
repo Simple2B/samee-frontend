@@ -75,7 +75,7 @@
 .error_block_position {
   position: absolute;
   bottom: 10%;
-  right: 5%;
+  right: -10%;
   max-width: 450px;
   display: flex;
   align-items: center;
