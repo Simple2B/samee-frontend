@@ -1,6 +1,7 @@
 .half-optimal-proportion {
   position: relative;
   height: 82vh;
+  margin: auto;
   display: flex;
   flex-direction: column;
 }

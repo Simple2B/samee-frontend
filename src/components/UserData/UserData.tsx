@@ -9,7 +9,6 @@ import {
 import React, {ReactElement, useContext, useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import Popup from 'reactjs-popup';
-import {isNumber} from 'util';
 import {ProgressContext} from '../../context/progressContext';
 import {localStorageApi} from '../../helpers/localStorage';
 import {IComponentProps} from '../../types';
@@ -42,13 +41,8 @@ export default function UserData(): ReactElement {
   };
 
   const handleSubmit = () => {
-    if (sex === '') {
+    if (sex === '' || !date) {
       setError('veuillez renseigner toutes les informations');
-    } else if (
-      new Date(date) > new Date(2004, 12) ||
-      new Date(date) < new Date(1958, 1)
-    ) {
-      setError(`la date de naissance n'est pas correcte`);
     } else {
       setError('');
       localStorage.setItem('sex', sex);

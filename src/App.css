@@ -30,6 +30,10 @@ a {
   cursor: pointer;
 }
 
+.close {
+  border: none;
+}
+
 .App {
   padding: 20px 140px 55px;
   height: 99vh;

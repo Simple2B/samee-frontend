@@ -102,6 +102,10 @@
   content: url(/src/image/cross.svg);
 }
 
+.close:focus-visible {
+  outline: none;
+}
+
 .sex_radio_item {
   display: inline-block;
   position: relative;
