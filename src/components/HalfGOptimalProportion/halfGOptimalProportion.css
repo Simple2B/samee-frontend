@@ -4,6 +4,8 @@
   margin: auto;
   display: flex;
   flex-direction: column;
+  touch-action: none;
+
 }
 
 .half-optimal-proportion_text {
