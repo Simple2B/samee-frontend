@@ -4,8 +4,6 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  touch-action: none;
-
 }
 
 .half-optimal-proportion_text {
@@ -26,12 +24,10 @@
 .circle_button {
   position: relative;
   margin: 0 70px;
-
-
+  touch-action: none;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .circle {
@@ -45,7 +41,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  touch-action: none;
 }
 
 .arrows_ui {
