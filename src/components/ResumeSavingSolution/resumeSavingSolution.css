@@ -29,6 +29,7 @@
 }
 
 .button_modify {
+  background-color: white;
   padding: 10px 25px;
   border: none;
   margin-left: 25px;
@@ -90,6 +91,7 @@
   .resume_wrapper {
     overflow-y: auto;
   }
+
   .resume_wrapper .containerButtonPosition1 {
     /* width: 100%; */
     bottom: 0;
