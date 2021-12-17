@@ -1,0 +1,68 @@
+.user_personal_info {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.user_personal_info_block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 800px;
+  flex-wrap: wrap;
+}
+
+.input_field-percent {
+  height: 35px;
+  width: 55px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid;
+  padding-left: 15px;
+  font-size: 17px;
+  font-family: 'Archivo Narrow';
+}
+
+.percent_block {
+  margin-left: 15px;
+}
+
+.user_personal_info_profession-set {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user_personal_info_text {
+  margin: 45px 0 20px;
+}
+
+@media (max-width: 1024px) {
+  .user_personal_info {
+    overflow-y: scroll;
+  }
+
+  .user_personal_info .containerButtonPosition1 {
+    width: 100%;
+    background-color: #000519;
+  }
+}
+
+@media (max-width: 414px) {
+  .user_personal_info .containerButtonPosition1 {
+    padding: 0;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .user_inputs_smoking {}
+}
+
+
+
+@media (max-width: 280px) {
+  .user_personal_info .containerButtonPosition1 {
+    padding-top: 5px;
+  }
+}

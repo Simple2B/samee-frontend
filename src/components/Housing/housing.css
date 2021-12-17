@@ -1,0 +1,92 @@
+.wrapper_house {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper_house .containerButtonPosition1 {
+  background-color: #000519;
+  bottom: 65px;
+}
+
+.housing {
+  display: flex;
+  align-items: center;
+}
+
+.housing_text {
+  margin-right: 150px;
+}
+
+.housing_animation {
+  background-color: white;
+  border-radius: 150px;
+  margin-left: 20px;
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.housing_title {
+  font-size: 30px;
+}
+
+@media (max-width: 1024px) {
+  .wrapper_house .containerButtonPosition1 {
+    padding-top: 8px;
+    bottom: 55px;
+  }
+}
+
+@media (max-width: 900px) {
+  .housing {
+    display: block;
+  }
+
+  .housing_text {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .housing {
+    display: block;
+  }
+
+  .housing_text {
+    margin-right: 0;
+  }
+}
+
+
+@media (max-width: 425px) {
+  .housing {
+    display: block;
+  }
+
+  .wrapper_house {
+    height: 82vh;
+    overflow-y: hidden;
+  }
+
+  .housing_title {
+    font-size: 20px;
+  }
+
+  .housing_animation {
+    display: none;
+  }
+
+  .wrapper_house .containerButtonPosition1 {
+    padding: 0;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .wrapper_house .containerButtonPosition1 {
+    padding: 0;
+    /* bottom: 15px; */
+  }
+}

@@ -1,0 +1,49 @@
+.guarantees {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.guarantees_list {
+  margin-bottom: 0;
+}
+
+.guarantees .containerButtonPosition1 {
+  bottom: 65px;
+}
+
+@media (max-width: 1024px) {
+  .guarantees {
+    overflow-y: auto;
+  }
+
+  .guarantees .containerButtonPosition1 {
+    width: 100%;
+    background-color: #000519;
+    bottom: 55px;
+  }
+}
+
+@media (max-width: 360px) {
+  .guarantees {
+    overflow-y: scroll;
+  }
+
+  .guarantees .containerButtonPosition1 {
+    bottom: 0;
+  }
+}
+
+/* @media (max-width: 320px) {
+  .guarantees .containerButtonPosition1 {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 280px) {
+  .guarantees .containerButtonPosition1 {
+    bottom: 25px;
+  }
+} */

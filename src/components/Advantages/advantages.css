@@ -1,0 +1,6 @@
+.advantages {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}

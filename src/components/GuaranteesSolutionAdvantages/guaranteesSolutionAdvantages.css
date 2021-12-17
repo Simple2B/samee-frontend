@@ -1,0 +1,15 @@
+.solution_advantages {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.solution_advantages_title {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.solution_advantages_text {
+  margin-bottom: 20px;
+}

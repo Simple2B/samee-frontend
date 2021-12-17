@@ -1,0 +1,207 @@
+.interest_wrapper {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.saving_interest_calc {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.saving_interest_calc-final-calc-text {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.saving_interest_calc-final-calc {
+  min-width: 300px;
+  height: 300px;
+  border: 5px solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.countup_text {
+  color: #eac28c;
+  font-size: 40px;
+}
+
+.button_recalc {
+  padding: 10px 25px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  margin-left: 30px;
+  transition: background-color 1s;
+}
+
+.button_recalc:hover {
+  background-color: rgb(187, 187, 187);
+}
+
+/* .buttons_set {
+  position: absolute;
+  bottom: 120px;
+} */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .saving_interest_calc {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .saving_interest_calc_list-text {
+    display: block;
+  }
+
+  .countup_text {
+    color: #eac28c;
+    font-size: 35px;
+  }
+
+  .interest_wrapper {
+
+    padding-bottom: 50px;
+  }
+
+  .interest_wrapper .containerButtonPosition1 {
+    width: 40%;
+    background-color: #000519;
+  }
+}
+
+@media (max-width: 900px) {
+  .saving_interest_calc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .saving_interest_calc-final-calc {
+    margin: 18px auto;
+  }
+
+  .saving_interest_calc-final-calc {
+    min-width: 230px;
+    height: 230px;
+
+  }
+}
+
+@media (max-width: 768px) {
+  .saving_interest_calc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* .saving_interest_calc-final-calc {
+    margin: 30px auto;
+  } */
+
+  .saving_interest_calc_list-text {
+    display: block;
+  }
+}
+
+@media (max-width: 425px) {
+  .saving_interest_calc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .saving_interest_calc_list-text {
+    display: block;
+  }
+
+  .saving_interest_calc-final-calc {
+    min-width: 200px;
+    height: 200px;
+    border: 5px solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: gold; */
+    flex-direction: column;
+    margin: 25px auto;
+  }
+
+  .countup_text {
+    color: #eac28c;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 414px) {
+  .saving_interest_calc {
+    margin: 0;
+  }
+
+  .interest_wrapper .containerButtonPosition1 {
+    width: 100%;
+    background-color: #000519;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .interest_wrapper {
+    padding: 0;
+  }
+
+  .interest_wrapper .containerButtonPosition1 {
+    width: 100%;
+    background-color: #000519;
+  }
+}
+
+@media (max-width: 768px) {
+
+
+  .interest_wrapper .containerButtonPosition1 {
+    width: 100%;
+    background-color: #000519;
+  }
+}
+
+@media (max-width: 540px) {
+  .interest_wrapper .containerButtonPosition1 {
+    width: 100%;
+    background-color: #000519;
+  }
+}
+
+@media (max-width: 320px) {
+  .interest_wrapper .main_content {
+    overflow-y: auto;
+    padding-top: 200px;
+    padding-bottom: 120px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 280px) {
+  .interest_wrapper .containerButtonPosition1 {
+    width: 100%;
+    background-color: #000519;
+  }
+}

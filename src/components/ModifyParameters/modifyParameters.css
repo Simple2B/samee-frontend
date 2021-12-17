@@ -1,0 +1,16 @@
+.modify_parameters {
+  position: relative;
+  height: 82vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.modify_parameters_text {
+  display: flex;
+  align-items: center;
+}
+
+.modify_parameters_text:last-child {
+  margin-bottom: 20px;
+}

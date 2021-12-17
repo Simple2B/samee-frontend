@@ -1,0 +1,16 @@
+.resume {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.resume_text {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 540px) {
+  .resume .containerButtonPosition1 {
+    bottom: 1px;
+  }
+}

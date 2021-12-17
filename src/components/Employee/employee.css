@@ -1,0 +1,46 @@
+.employee {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.employee_salary_range {
+  display: block;
+}
+
+.employee_salary {
+  width: 100px;
+  height: 40px;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.employee_inputs_set {
+  display: flex;
+  align-items: center;
+}
+
+.gold_text {
+  color: #eac28c;
+}
+
+.employee .containerButtonPosition1 {
+  bottom: 55px;
+}
+
+@media (max-width: 425px) {
+  .button_position-1 {
+    left: 20px;
+  }
+  .employee .containerButtonPosition1 {
+    bottom: 0;
+  }
+
+  .employee_salary {
+    width: 60px;
+    height: 25px;
+    font-size: 12px;
+  }
+}

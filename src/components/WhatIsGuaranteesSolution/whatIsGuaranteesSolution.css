@@ -1,0 +1,15 @@
+.what_is_solution {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.what_is_solution_title {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.what_is_solution_text {
+  margin-bottom: 20px;
+}

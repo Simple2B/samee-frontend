@@ -1,0 +1,32 @@
+.age {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.age_text {
+  margin-bottom: 20px;
+}
+
+.age_calculation {
+  color: #eac28c;
+}
+
+.age_text:nth-child(2) {
+  margin-bottom: 60px;
+}
+
+.button_space {
+  margin-left: 15px;
+}
+
+.error_img {
+  width: 100px;
+  height: auto;
+}
+
+.error_block {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,42 @@
+.code_wrapper {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.confirm_code {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.code_input {
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  margin: 0 5px;
+  font-size: 24px;
+  padding-left: 7px;
+}
+
+.confirm_code_text {
+  margin-right: 60px;
+}
+
+@media (max-width: 425px) {
+  .confirm_code {
+    flex-wrap: wrap;
+  }
+
+  .confirm_code_text {
+    margin-right: 0;
+  }
+
+  .code_input {
+    height: 20px;
+    width: 20px;
+    margin: 0 2px;
+    font-size: 17px;
+    padding-left: 2px;
+  }
+}

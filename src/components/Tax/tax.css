@@ -1,0 +1,137 @@
+.wrapper_tax {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper_tax .containerButtonPosition1 {
+  width: 100%;
+  bottom: 65px;
+}
+
+.tax {
+  display: flex;
+  align-items: center;
+}
+
+.tax_title {
+  font-size: 30px;
+}
+
+.tax_text {
+  margin-right: 150px;
+}
+
+.pop_up_triger {
+  color: white;
+}
+
+.tax_animation {
+  background-color: white;
+  border-radius: 150px;
+  margin-left: 20px;
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .wrapper_tax .containerButtonPosition1 {
+    position: fixed;
+    bottom: 55px;
+    background-color: #000519;
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .tax {
+    display: block;
+  }
+
+  .tax_text {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .tax {
+    display: block;
+  }
+
+  .tax_text {
+    margin-right: 0;
+  }
+
+  .wrapper_tax .containerButtonPosition1 {
+    position: fixed;
+    bottom: 35px;
+  }
+}
+
+@media (max-width: 540px) {
+  .wrapper_tax {
+    height: 90vh;
+    overflow-y: auto;
+    /* padding-bottom: 100px; */
+  }
+
+  .wrapper_tax .containerButtonPosition1 {
+    padding-top: 25px;
+    background-color: #000519;
+    bottom: 0;
+  }
+
+  .wrapper_tax .footer_content .pop_up_triger {
+    margin: 0;
+  }
+}
+
+@media (max-width: 414px) {
+  .wrapper_tax {
+    height: 82vh;
+    overflow-y: hidden;
+  }
+}
+
+@media (max-width: 425px) {
+  .tax {
+    display: block;
+  }
+
+  .tax_title {
+    font-size: 20px;
+  }
+
+  .tax_animation {
+    display: none;
+  }
+
+  #lottie {
+    height: 150px !important;
+    width: 150px !important;
+  }
+}
+
+@media (max-width: 414px) {
+  .wrapper_tax .containerButtonPosition1 {
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .wrapper_tax .containerButtonPosition1 {
+    position: fixed;
+  }
+}
+
+@media (max-width: 280px) {
+  .wrapper_tax {
+    height: 80vh;
+    overflow-y: none;
+    padding-bottom: 0;
+  }
+}

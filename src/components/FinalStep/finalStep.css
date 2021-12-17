@@ -1,0 +1,10 @@
+.final_step {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.final_step_text {
+  margin-bottom: 25px;
+}

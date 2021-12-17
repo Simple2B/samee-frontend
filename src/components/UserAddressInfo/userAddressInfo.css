@@ -1,0 +1,143 @@
+.user_address_info {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.user_address_info_input_block {
+  display: flex;
+  justify-content: space-between;
+  max-width: 700px;
+  margin-top: 20px;
+}
+
+.input_label {
+  display: block;
+}
+
+.input_field {
+  height: 35px;
+  width: 250px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid;
+  padding-left: 15px;
+  font-size: 17px;
+  font-family: 'Archivo Narrow';
+  margin-bottom: 15px;
+}
+
+.error_input {
+  border-color: rgb(131, 11, 11) !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: rgb(131, 11, 11);
+  margin-bottom: 3px;
+}
+
+.error_border {
+  border: 1px solid rgb(131, 11, 11);
+}
+
+.geosuggest__suggests-wrapper {
+  position: relative;
+}
+
+.geosuggest__suggests {
+  width: 250px;
+  font-size: 13px;
+  list-style: none;
+  padding: 0;
+  /* border: 1px solid; */
+  margin: 0;
+  max-height: 120px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  background-color: #000519;
+}
+
+.geosuggest__item {
+  border-bottom: 1px solid;
+  padding: 5px;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .user_address_info {
+    overflow-y: auto;
+    padding-bottom: 10px;
+  }
+  .user_address_info .containerButtonPosition1 {
+    width: 100%;
+    background-color: #000519;
+  }
+}
+
+@media (max-width: 768px) {
+  .input_field {
+    width: 230px;
+  }
+
+  .geosuggest__suggests {
+    width: 230px;
+  }
+}
+
+@media (max-width: 600px) {
+  .input_field {
+    width: 195px;
+  }
+
+  .geosuggest__suggests {
+    width: 195px;
+  }
+}
+
+@media (max-width: 540px) {
+  .user_address_info_input_block {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 425px) {
+  .input_field {
+    max-width: 150px;
+  }
+
+  .geosuggest__suggests {
+    max-width: 150px;
+  }
+
+  .user_address_info_input-left {
+    margin-right: 10px;
+  }
+  .user_address_info .containerButtonPosition1 {
+    bottom: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .input_field {
+    width: 138px;
+  }
+
+  .geosuggest__suggests {
+    width: 138px;
+  }
+}
+
+@media (max-width: 280px) {
+  .user_address_info_input_block {
+    flex-wrap: wrap;
+  }
+  .user_address_info {
+    overflow-y: auto;
+  }
+}

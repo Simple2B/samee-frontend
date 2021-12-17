@@ -1,0 +1,282 @@
+.scenario-calc {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.blue_text {
+  color: #5cbbbb;
+}
+
+.title-little {
+  font-size: 20px;
+}
+
+
+
+.charts_blocks {
+  display: flex;
+  margin: 30px 0 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modif_button {
+  background-color: white;
+  padding: 10px 25px;
+  border: none;
+  transition: background-color 1s;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+.display_none {
+  display: none;
+}
+
+.charts_block {
+  margin-top: 40px;
+}
+
+.chart_block {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart_block:hover {
+  transform: scale(1.2);
+}
+
+.chart_block:hover .display_none {
+  display: flex;
+}
+
+.chart_block_title {
+  position: absolute;
+  top: 30%;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.chart_block_amount {
+  position: absolute;
+  font-size: 42px;
+}
+
+
+
+.chart_block_label-up {
+  position: absolute;
+  top: 0;
+  left: 250px;
+  white-space: nowrap;
+}
+
+.chart_block_label-down {
+  position: absolute;
+  bottom: 0;
+  left: 250px;
+  white-space: nowrap;
+}
+
+.chart_block_label-up-big {
+  position: absolute;
+  top: 0;
+  left: 310px;
+  white-space: nowrap;
+}
+
+.chart_block_label-down-big {
+  position: absolute;
+  bottom: 0;
+  left: 310px;
+  white-space: nowrap;
+}
+
+.amount-little {
+  font-size: 36px;
+}
+
+@media (max-width: 1024px) {
+  .charts_blocks {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .charts_blocks {
+    margin: 18px 0 155px;
+  }
+
+  .chart_block_amount {
+    font-size: 30px;
+  }
+
+  .optimistic {
+    top: 245px;
+    right: 110px;
+  }
+
+  .chart_block_title {
+    font-size: 15px;
+  }
+
+  .chart_block_amount {
+    font-size: 24px;
+  }
+
+  .pessimistic {
+    top: 245px;
+    left: 110px;
+  }
+
+  .real-text {
+    font-size: 20px;
+  }
+
+  .real-amount {
+    font-size: 30px;
+  }
+
+  .chart_block_label-down,
+  .chart_block_label-up {
+    font-size: 17px;
+    left: 205px;
+  }
+
+  .chart_block_label-down-big,
+  .chart_block_label-up-big {
+    font-size: 17px;
+    left: 230px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+
+  .charts_blocks {
+    margin: 18px 0 126px;
+  }
+
+  .chart_block_amount {
+    font-size: 30px;
+  }
+
+  .optimistic {
+    top: 220px;
+    right: 170px;
+  }
+
+  .chart_block_title {
+    font-size: 15px;
+  }
+
+  .chart_block_amount {
+    font-size: 24px;
+  }
+
+  .pessimistic {
+    top: 220px;
+    left: 170px;
+  }
+
+  .real-text {
+    font-size: 20px;
+  }
+
+  .real-amount {
+    font-size: 30px;
+  }
+
+  .chart_block_label-down,
+  .chart_block_label-up {
+    font-size: 17px;
+    left: 190px;
+  }
+
+  .chart_block_label-down-big,
+  .chart_block_label-up-big {
+    font-size: 17px;
+    left: 210px;
+  }
+}
+
+@media (max-width: 425px) {
+  .charts_blocks {
+    margin: 30px 0 100px;
+  }
+
+  .optimistic {
+    top: 150px;
+    right: 132px;
+  }
+
+  .chart_block_title {
+    font-size: 11px;
+  }
+
+  .chart_block_amount {
+    font-size: 16px;
+  }
+
+  .pessimistic {
+    top: 150px;
+    left: 132px;
+  }
+
+  .real-text {
+    font-size: 15px;
+  }
+
+  .real-amount {
+    font-size: 20px;
+  }
+
+  .chart_block_label-down,
+  .chart_block_label-up {
+    font-size: 12px;
+    left: 120px;
+  }
+
+  .chart_block_label-down-big,
+  .chart_block_label-up-big {
+    font-size: 14px;
+    left: 150px;
+  }
+}
+
+@media (max-width: 360px) {
+  .charts_blocks {
+    margin: 1px 0 150px;
+  }
+
+  .chart_block_label-down,
+  .chart_block_label-up {
+    font-size: 10px;
+    left: 120px;
+  }
+
+  .chart_block_label-down-big,
+  .chart_block_label-up-big {
+    font-size: 12px;
+    left: 150px;
+  }
+
+}
+
+@media (max-width: 320px) {
+  .modif_button {
+
+    margin-left: 0;
+  }
+
+  .charts_blocks {
+    margin: 30px 0 140px;
+  }
+}

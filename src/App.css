@@ -1,38 +1,203 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000519;
+  color: #fff;
+  font-size: 24px !important;
+  font-family: 'Archivo Narrow' !important;
+  line-height: 1.8;
+}
+
+a {
+  font-size: 24px;
+}
+
+.nav {
+  color: #fff;
+}
+
+.step-component {
+  padding: 20px 140px;
+}
+
+.btn-component {
+  padding: 0 140px;
+}
+
+.progress_change {
+  cursor: pointer;
+}
+
+.close {
+  border: none;
+}
+
 .App {
-  text-align: center;
+  padding: 20px 140px 55px;
+  height: 99vh;
+  width: 100%;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.phone_img {
+  width: 250px;
+  height: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  font-size: 26px !important;
+  font-family: 'Archivo Narrow' !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* .containerButtonPosition1 {
+  padding: 0;
+  position: fixed;
+  bottom: 55px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+} */
+
+.button_position {
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.609);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+li {
+  margin-bottom: 17px;
+}
+
+.page {
+  position: absolute;
+  top: 88px;
+  bottom: 55px;
+  right: 140px;
+  left: 140px;
+}
+
+.page-enter {
+  opacity: 0;
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translate(0, 100%);
+  margin-top: 50vh;
+  transition: opacity 500ms transform 500ms margin-top 500ms;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translate(-100%);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.Mui-disabled {
+  display: none;
+}
+
+.stepper {
+  position: fixed;
+  top: 0;
+  background: #000519;
+  width: 100%;
+  padding-top: 20px;
+  z-index: 100;
+}
+
+@media (min-width: 1800px) {
+  body {
+    font-size: 50px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App {
+    padding: 40px 99px 55px;
   }
+
+  .title {
+    font-size: 55px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .App {
+    padding: 20px 120px 55px;
+  }
+}
+
+@media (max-width: 900px) {
+  .App {
+    padding: 20px 70px 55px;
+  }
+
+  .page {
+    position: absolute;
+    top: 88px;
+    bottom: 55px;
+    right: 90px;
+    left: 90px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 20px 70px 55px;
+  }
+
+  .page {
+    position: absolute;
+    top: 88px;
+    bottom: 55px;
+    right: 100px;
+    left: 100px;
+  }
+}
+
+@media (max-width: 425px) {
+  body {
+    font-size: 15px !important;
+  }
+
+  .App {
+    padding: 20px 20px 55px;
+  }
+
+  .page {
+    position: absolute;
+    top: 88px;
+    bottom: 55px;
+    right: 20px;
+    left: 20px;
+  }
+
+  .title {
+    font-size: 20px !important;
+  }
+
+  a {
+    font-size: 15px;
+  }
+
+  button {
+    font-size: 15px !important;
+    font-family: 'Archivo Narrow' !important;
+  }
+
+  .empty_space {
+    display: none;
+  }
+
+  /* .containerButtonPosition1 {
+    bottom: 0;
+  } */
 }

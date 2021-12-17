@@ -1,0 +1,66 @@
+.saving_interest {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.next_button-interest {
+  padding: 10px 20px;
+  background-color: #eac28c;
+  color: #000519;
+  border: none;
+  font-size: 30px;
+  font-family: 'Archivo Narrow, sans-serif';
+  margin-top: 20px;
+  cursor: pointer;
+  margin: 50px 0 20px 0;
+  transition: background-color 1s;
+}
+
+.next_button-interest:hover {
+  background-color: #a88b64;
+}
+
+@media (max-width: 1024px) {
+  .saving_interest {
+    overflow-y: auto;
+    padding-bottom: 50px;
+  }
+  .saving_interest .containerButtonPosition1 {
+    width: 100%;
+    background-color: #000519;
+  }
+}
+
+@media (max-width: 425px) {
+  .next_button-interest {
+    font-size: 20px;
+  }
+  .saving_interest .containerButtonPosition1 {
+    width: 100%;
+    background-color: #000519;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .saving_interest {
+    overflow-y: hidden;
+  }
+}
+
+@media (max-width: 320px) {
+  .saving_interest {
+    overflow-y: auto;
+    padding-bottom: 0;
+  }
+  .saving_interest .containerButtonPosition1 {
+    width: 100%;
+    background-color: #000519;
+  }
+
+  .next_button-interest {
+    margin: 0;
+  }
+}

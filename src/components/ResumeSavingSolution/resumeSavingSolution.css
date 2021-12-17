@@ -1,0 +1,134 @@
+.resume_wrapper {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.resume_saving_solution {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.resume_saving_solution_final_text {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.resume_saving_solution_number_block {
+  width: 350px;
+  height: 350px;
+  border: 8px solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button_modify {
+  background-color: white;
+  padding: 10px 25px;
+  border: none;
+  margin-left: 25px;
+  cursor: pointer;
+  transition: background-color 1s;
+}
+
+.button_modify:hover {
+  background-color: rgb(187, 187, 187);
+}
+
+.resume_saving_solution_final_amount {
+  color: #eac28c;
+  font-size: 50px;
+}
+
+.resume_saving_solution_title {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .resume_saving_solution_number_block {
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .resume_saving_solution_number_block {
+    width: 230px;
+    height: 230px;
+  }
+
+  .resume_saving_solution_title {
+    font-size: 20px;
+  }
+
+  .resume_saving_solution_final_amount {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 320px) {
+  .button_modify {
+    margin-left: 0 !important;
+  }
+
+  .resume_saving_solution_final_amount {
+    font-size: 30px;
+  }
+
+  .resume_saving_solution_number_block {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 540px) {
+  .resume_wrapper {
+    overflow-y: auto;
+  }
+
+  .resume_wrapper .containerButtonPosition1 {
+    /* width: 100%; */
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #000519;
+  }
+
+  .resume_wrapper .containerButtonPosition1 button {
+    margin: 0;
+  }
+
+  .resume_wrapper .containerButtonPosition1 button:first-child {
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .resume_wrapper {
+    overflow-y: hidden;
+  }
+}
+
+@media (max-width: 320px) {
+  .resume_wrapper {
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 280px) {
+  .resume_wrapper .containerButtonPosition1 {
+    bottom: -25px;
+  }
+
+  .resume_wrapper .containerButtonPosition1 button:first-child {
+    margin-bottom: 10px;
+  }
+}

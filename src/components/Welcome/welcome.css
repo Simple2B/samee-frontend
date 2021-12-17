@@ -1,0 +1,68 @@
+.welcome {
+  display: flex;
+  flex-direction: column;
+  height: 82vh;
+}
+
+.empty_space {
+  height: 30px;
+  margin: 0 0 15px;
+}
+
+.welcome_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome_text {
+  max-width: 800px;
+  padding-left: 10px;
+}
+
+.welcome_text_title {
+  display: block;
+  font-size: 30px;
+}
+
+.next_button {
+  background-color: #eac28c;
+  color: #000519;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 1s;
+}
+
+.next_button:disabled {
+  background-color: grey;
+}
+
+.next_button:disabled:hover {
+  background-color: grey;
+}
+
+.next_button:hover {
+  background-color: #a88b64;
+}
+
+@media (max-width: 768px) {
+  .welcome_image {
+    display: none;
+  }
+}
+
+@media (max-width: 425px) {
+  .welcome_text_title {
+    display: block;
+    font-size: 20px;
+  }
+
+  .next_button {
+    font-size: 20px;
+  }
+
+  .welcome .containerButtonPosition1 {
+    bottom: 0;
+  }
+}

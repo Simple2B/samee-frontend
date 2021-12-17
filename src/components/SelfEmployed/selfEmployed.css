@@ -1,0 +1,80 @@
+.self-employed {
+  position: relative;
+  height: 82vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.self-employed_salary {
+  width: 100px;
+  height: 40px;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.self-employed_salary_range {
+  display: block;
+}
+
+.self-employed_inputs_set {
+  display: flex;
+  align-items: center;
+}
+
+.self-employed .containerButtonPosition1 {
+  bottom: 65px;
+}
+
+@media (max-width: 1024px) {
+  .self-employed {
+    overflow-y: hidden;
+  }
+  .self-employed .containerButtonPosition1 {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #000519;
+  }
+}
+
+@media (max-width: 540px) {
+  .self-employed {
+    overflow-y: scroll;
+    padding-bottom: 50px;
+  }
+  .self-employed .containerButtonPosition1 {
+    padding: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #000519;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .self-employed_salary {
+    width: 60px;
+    height: 25px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .self-employed {
+  }
+  .self-employed .containerButtonPosition1 {
+    padding: 0;
+    background-color: #000519;
+  }
+}
+
+@media (max-width: 280px) {
+  .self-employed {
+    overflow-y: hidden;
+  }
+  .self-employed .containerButtonPosition1 {
+    width: 280px;
+    padding: 0;
+    background-color: #000519;
+  }
+}
