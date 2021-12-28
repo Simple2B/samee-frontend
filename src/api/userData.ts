@@ -29,6 +29,7 @@ export const getUserData = () => {
     scenarioPessimistic: 'scenario_pessimistic',
     scenarioRealistic: 'scenario_realistic',
     finalCapital: 'final_capital',
+    amountFonds: 'amount_of_fonds',
   };
 
   const localStorageItemsList = {
